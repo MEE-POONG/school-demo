@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import Navbar from '@/components/navbar'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -7,11 +8,10 @@ export default function Home() {
   return (
     <>
 
-
       <div className='container mx-auto py-24'>
 
       <div className='flex justify-center md:hidden '>
-      <button type="button" className="text-2xl text-white bg-[#1F306A] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5 mr-2 mb-2 ">
+      <button type="button" className="text-2xl text-white bg-[#0000B8] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5 mr-2 mb-2 ">
                   สมัครเรียน
                 </button> 
       </div>
@@ -21,7 +21,7 @@ export default function Home() {
             <div className='flex justify-between'>
               <div><h1 className='text-2xl  md:text-4xl text-[#1F306A]'>คณะ/หลักสูตร</h1></div>
               <div className='hidden md:flex'>
-                <button type="button" className="text-xl text-white bg-[#1F306A] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5 mr-2 mb-2 ">
+                <button type="button" className="text-xl text-white bg-[#0000B8] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5 mr-2 mb-2 ">
                   สมัครเรียน
                 </button>
               </div>
