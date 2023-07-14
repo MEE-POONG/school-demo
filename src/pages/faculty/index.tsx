@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-import Navbar from '@/components/navbar'
+import Navbar from '@/pages/navbar'
 import RootLayout from '@/components/layout'
 
 
@@ -18,7 +18,7 @@ export default function Home() {
       </div>
 
 
-          <div className=''>
+          
             <div className='flex justify-between'>
               <div><h1 className='text-2xl  md:text-4xl text-[#1F306A]'>คณะ/หลักสูตร</h1></div>
               <div className='hidden md:flex'>
@@ -28,9 +28,9 @@ export default function Home() {
               </div>
             </div>
             <div className='bg-[#1F306A] w-full h-1  mb-7 md:mb-14'></div>
-          </div>
+          
 
-        <div className='flex flex-col md:flex-row justify-center gap-8 mb-8  '>
+        <div className='flex flex-col md:flex-row justify-center gap-8 mb-8   '>
           <div>
             <img src="/img/faculty/Fbus.png" width="400px" height="100px" />
             <div className='flex mt-3 mb-3'>
@@ -42,7 +42,7 @@ export default function Home() {
                   คณะบริหารธุรกิจ
                 </h1>
                 <div>
-                  <h1 className='text-l md:text-2xl text-[#1F306A]'>Faculty of Business Administration</h1>
+                  <h1 className='text-l md:text-xl text-[#1F306A]'>Faculty of Business Administration</h1>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function Home() {
               <div className='ml-2'>
                 <h1 className='text-l md:text-2xl text-[#1F306A]'>คณะวิทยาศาสตร์และเทคโนโลยี </h1>
                 <div>
-                  <h1 className='text-l md:text-2xl text-[#1F306A]'>Faculty of Science and Technology</h1>
+                  <h1 className='text-l md:text-xl text-[#1F306A]'>Faculty of Science and Technology</h1>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function Home() {
         </div>
 
 
-        <div className='flex flex-col md:flex-row justify-center   gap-8 mb-8 '>
+        <div className='flex flex-col md:flex-row justify-center gap-8 mb-8 '>
 
 
 
@@ -95,7 +95,7 @@ export default function Home() {
                   คณะศิลปศาสตร์
                 </h1>
                 <div>
-                  <h1 className='text-l md:text-2xl text-[#1F306A]'>Faculty of Liberal arts</h1>
+                  <h1 className='text-l md:text-xl text-[#1F306A]'>Faculty of Liberal arts</h1>
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function Home() {
               <div className='ml-2'>
                 <h1 className='text-l md:text-2xl text-[#1F306A]'>คณะวิศวกรรมศาสตร์</h1>
                 <div>
-                  <h1 className='text-l md:text-2xl text-[#1F306A]'>Faculty of Engineering</h1>
+                  <h1 className='text-l md:text-xl text-[#1F306A]'>Faculty of Engineering</h1>
                 </div>
               </div>
             </div>
