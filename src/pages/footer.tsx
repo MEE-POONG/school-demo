@@ -108,7 +108,7 @@ const Footer = () => {
       <div className=" bg-black h-6 ">
         <hr className="" />
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-        <p className="text-white"> © 2023{" "} Me Prompt Technology CONPANY LIMITED. All Rights Reserved.</p>
+        <p className="text-white"> © 2023{" "} Me Prompt Technology COMPANY LIMITED. All Rights Reserved.</p>
           <a href="https://flowbite.com/" className="hover:underline">
           </a>
         </span>
