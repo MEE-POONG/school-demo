@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="flex-shrink-0 mt-[]">
               {/* Your logo or brand */}
               <img
-                className="h-[70px] mr-3"
+                className="h-[8 0px] mr-3"
                 src="/img/Logo_panomwan.png"
                 alt="Logo"
               />
