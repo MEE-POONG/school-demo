@@ -36,17 +36,13 @@ export default function Contact() {
                     <p className=" text-slate-600"><strong className="text-blue-900 mr-2">Facbook</strong> teacher Pornpimol</p>
                 </div>
                 <div className="">
-                    <img className=" w-36 mx-auto border border-black " src="/img/Qrline.jpg" />
+                    <img className=" w-36 mx-auto border border-black rounded-lg" src="/img/Qrline.jpg" />
                 </div>
             </div>
 
-            <div className=" mt-4">
-            <iframe className=" w-full h-72" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15410.825965346847!2d102.1841477!3d15.0643421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311949e7e29a02b3%3A0x8b0fbbc3758d561f!2z4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4LiZ4Lih4Lin4Lix4LiZ4LiX4LmMIFBoYW5vbXdhbiBDb2xsZWdlIG9mIFRlY2hub2xvZ3k!5e0!3m2!1sth!2sth!4v1689326551888!5m2!1sth!2sth" ></iframe>
+            <div className=" mt-4 ">
+            <iframe className=" w-full h-72 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15410.825965346847!2d102.1841477!3d15.0643421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311949e7e29a02b3%3A0x8b0fbbc3758d561f!2z4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4LiZ4Lih4Lin4Lix4LiZ4LiX4LmMIFBoYW5vbXdhbiBDb2xsZWdlIG9mIFRlY2hub2xvZ3k!5e0!3m2!1sth!2sth!4v1689326551888!5m2!1sth!2sth" ></iframe>
             </div>
-
-            
-
-
         </div>
         </RootLayout>
     )
