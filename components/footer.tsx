@@ -66,7 +66,7 @@ const Footer = () => {
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://flowbite.com/"
+                    href=""
                     className="hover:underline text-white"
                   >
                     สมัครเรียน
