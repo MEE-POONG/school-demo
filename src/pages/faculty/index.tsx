@@ -20,10 +20,11 @@ export default function Home() {
       <div className='flex columns-2 gap-8'>
 
 
-
+        
 
 
         <div>
+        <img src="/img/faculty/Fbus.png" width="400px" height="100px" />
           <div className='flex '>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#1f306a" d="M22 21H2V3h2v16h2v-9h4v9h2V6h4v13h2v-5h4v7Z" /></svg>
             <div>คณะบริหารธุรกิจ  <div>Faculty of Business Administration</div></div>
@@ -39,6 +40,7 @@ export default function Home() {
         </div>
 
         <div>
+        <img src="/img/faculty/Fsci.png" width="400px" height="100px" />
           <div className='flex '>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#1f306a" d="M22 21H2V3h2v16h2v-9h4v9h2V6h4v13h2v-5h4v7Z" /></svg>
             <div>คณะวิทยาศาสตร์และเทคโนโลยี  <div>Faculty of Science and Technology</div></div>
