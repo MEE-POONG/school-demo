@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-import Navbar from '@/components/navbar'
+import Navbar from '@/pages/navbar'
 import RootLayout from '@/components/layout'
 
 
