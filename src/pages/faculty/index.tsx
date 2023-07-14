@@ -8,7 +8,7 @@ export default function Home() {
     <>
 
 
-      <div className='container mx-auto'>
+      <div className='container mx-auto py-24'>
 
 
         <div className='flex justify-between'>
@@ -22,12 +22,7 @@ export default function Home() {
         <div className='bg-[#0000B8] w-full h-1'></div>
 
 
-        <div className='flex columns-2 gap-8 mb-8'>
-
-
-
-
-
+        <div className='flex justify-center columns-2 gap-8 mb-8'>
           <div>
             <img src="/img/faculty/Fbus.png" width="400px" height="100px" />
             <div className='flex mt-3 mb-3'>
