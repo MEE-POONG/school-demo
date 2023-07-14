@@ -16,6 +16,10 @@
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "flowbite": "^1.7.0",
+<<<<<<< HEAD
+=======
+    "flowbite-react": "^0.4.11",
+>>>>>>> 827ba722ff9c5a622de7bcb34a8b87466d5a66ac
     "next": "13.4.9",
     "postcss": "8.4.26",
     "react": "18.2.0",
