@@ -48,7 +48,7 @@ const Navbar = () => {
                   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
                 >
-                  รู้จัก &quotพนมวันท์&quot
+                  รู้จัก &quot;พนมวันท์&quot;
                 </a>
                 <a
                   href="#"
