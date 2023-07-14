@@ -27,12 +27,19 @@ export default function Home() {
         <img src="/img/faculty/Fbus.png" width="400px" height="100px" />
           <div className='flex '>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#1f306a" d="M22 21H2V3h2v16h2v-9h4v9h2V6h4v13h2v-5h4v7Z" /></svg>
-            <div>คณะบริหารธุรกิจ  <div>Faculty of Business Administration</div></div>
+            <div>
+                <h1 className='text-2xl text-blue-700' >
+                คณะบริหารธุรกิจ
+                </h1>  
+              <div>
+                <h1 className='text-2xl text-blue-700'>Faculty of Business Administration</h1>
+              </div>
+            </div>
           </div>
 
           <ul className="list-disc list-inside ">
             <li>สาขาวิชาการบัญชี (บช.บ.)</li>
-            <li>สาขาวิชาการจัดการ (บธ.บ.)p</li>
+            <li>สาขาวิชาการจัดการ (บธ.บ.)</li>
             <li>สาขาวิชาระบบสารสนเทศ (บธ.บ.)</li>
             <li>สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)</li>
             <li>สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)</li>
@@ -43,7 +50,12 @@ export default function Home() {
         <img src="/img/faculty/Fsci.png" width="400px" height="100px" />
           <div className='flex '>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#1f306a" d="M22 21H2V3h2v16h2v-9h4v9h2V6h4v13h2v-5h4v7Z" /></svg>
-            <div>คณะวิทยาศาสตร์และเทคโนโลยี  <div>Faculty of Science and Technology</div></div>
+            <div>
+                <h1 className='text-2xl text-blue-700'>คณะวิทยาศาสตร์และเทคโนโลยี </h1>
+              <div>
+                <h1 className='text-2xl text-blue-700'>Faculty of Science and Technology</h1>
+              </div>
+            </div>
           </div>
 
           <ul className="list-disc list-inside ">
@@ -52,6 +64,12 @@ export default function Home() {
         </div>
 
       </div>
+      
+
+
+
+
+
       
 
 
