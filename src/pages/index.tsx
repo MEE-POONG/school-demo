@@ -12,8 +12,8 @@ export default function Home() {
 
 
     <RootLayout>
-    <div className=''>
-
+    <div className='container mx-auto py-24'>
+      <h2 className='text-blue-500 text-2xl font-fontTH'>Test Font ทดสอบฟอนต์</h2>
     
     
     </div>
