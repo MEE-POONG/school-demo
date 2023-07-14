@@ -62,18 +62,28 @@ const Navbar = () => {
                 >
                   สวัสดิการ
                 </a>
-                {/* <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
-                >
-                  สนใจสมัครเรียน
-                </a> */}
                 <div className="relative">
                   <button
                     className=" text-white py-2 px-4 rounded-md focus:outline-none"
                     onClick={toggleDropdown}
                   >
+                    <span className=" flex">
                       สนใจสมัครเรียน
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        className="w-4 h-4 mt-1"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </span>
                   </button>
                   {isOpen && (
                     <ul className="absolute top-10 right-0 bg-white shadow-lg rounded-md py-2 px-4">
@@ -102,7 +112,6 @@ const Navbar = () => {
             </div>
           </div>
           {/* Right-aligned elements */}
-     
         </div>
       </div>
     </nav>
