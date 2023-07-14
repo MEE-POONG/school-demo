@@ -1,12 +1,13 @@
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
+import RootLayout from '@/components/layout'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <>
+    <RootLayout>
 
       <div className='container mx-auto py-24'>
 
@@ -129,6 +130,6 @@ export default function Home() {
       </div>
 
 
-    </>
+    </RootLayout>
   )
 }
