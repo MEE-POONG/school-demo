@@ -2,19 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    // <footer classNameName="bg-[#FFFFFF] py-6">
-    //   <div classNameName=" h-[260px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    //     <div classNameName="flex justify-center items-center">
-    //       <p classNameName="text-gray-300">Your Footer Content</p>
-    //     </div>
-    //   </div>
-
-    //   <div classNameName=" h-3 bg-black py-6">
-
-    //   </div>
-    // </footer>
-
-    <footer className="bg-[#1F306A] rounded-lg shadow dark:bg-gray-900 w-full">
+    <footer className="bg-[#1F306A] shadow dark:bg-gray-900 w-full">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a href="#" className="flex items-center mb-4 sm:mb-0">
