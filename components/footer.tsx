@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1F306A] shadow dark:bg-gray-900 w-full">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8 container">
+    <footer className="bg-[#1F306A] w-full">
+      <div className="w-full p-4 md:py-8s">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center mb-4 sm:mb-0">
             <img
@@ -92,16 +92,17 @@ const Footer = () => {
             </div>
           </ul>
         </div>
+
+
+        <div className="text-white text-sm bg-black mt-3 flex justify-center">
+          <div>
+            <p className="">© 2023{" "} Me Prompt Technology COMPANY LIMITED. All Rights Reserved.</p>
+          </div>
+        </div>
       </div>
-      <div className=" bg-black h-6 ">
-        <hr className="" />
-        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-        <p className="text-white"> © 2023{" "} Me Prompt Technology CONPANY LIMITED. All Rights Reserved.</p>
-          <a href="https://flowbite.com/" className="hover:underline">
-          </a>
-        </span>
-      </div>
+
     </footer>
+
   );
 };
 
