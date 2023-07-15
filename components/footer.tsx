@@ -3,9 +3,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1F306A] shadow dark:bg-gray-900 w-full">
-      <div className="mx-auto py-8 container">
-        <div className="flex items-center justify-between">
+    <footer className="bg-[#1F306A] shadow dark:bg-gray-900 w-full py-8">
+      <div className="container justify-between mx-auto">
+        <div className="flex ">
           <Link href="/" className="mb-4 ">
             <img
               src="/img/Logo_panomwan.png"
