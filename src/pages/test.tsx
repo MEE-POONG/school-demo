@@ -77,7 +77,8 @@ export default function Test() {
                 </div>
 
                 {/* Emoji */}
-                <div className="grid md:grid-flow-col justify-center gap-3 md:gap-10">
+                <h3 className="text-center mb-10">ยินดีต้อนรับ</h3>
+                <div className="grid md:grid-flow-col justify-center gap-3 md:gap-10 animate-bounce animate-thrice animate-ease-out">
                   
                         <div className="text-center">
                             <div className="bg-red-500 text-white p-3 rounded-full hover:bg-white hover:text-red-500 border-2 border-red-500">
