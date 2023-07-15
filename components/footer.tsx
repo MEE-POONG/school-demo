@@ -1,11 +1,12 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="bg-[#1F306A] shadow dark:bg-gray-900 w-full">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div className="sm:flex sm:items-center justify-between">
-          <a href="#" className="mb-4 ">
+      <div className="mx-auto py-8 container">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="mb-4 ">
             <img
               src="/img/Logo_panomwan.png"
               className="h-[70px] mr-3"
@@ -17,7 +18,7 @@ const Footer = () => {
               <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
               <p>TEL : 044-955121-122 FAX : 044-955120</p>
             </span>
-          </a>
+          </Link>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             <div className=" mr-10">
               <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
@@ -25,36 +26,36 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
+                  <Link
+                    href="faculty"
                     className="hover:underline text-white"
                   >
                     คณะบริหารธรุกิจ
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
+                  <Link
+                    href="faculty"
                     className="hover:underline text-white"
                   >
                     คณะวิทยาศาสตร์และเทคโนโลยี
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
+                  <Link
+                    href="faculty"
                     className="hover:underline text-white"
                   >
                     คณะวิทยาศาสตร์
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="https://tailwindcss.com/"
                     className="hover:underline text-white"
                   >
                     คณะศิลปศาสตร์
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -65,28 +66,28 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a
+                  <Link
                     href=""
                     className="hover:underline text-white"
                   >
                     สมัครเรียน
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a
+                  <Link
                     href="https://tailwindcss.com/"
                     className="hover:underline text-white"
                   >
                     ปรึกษาเรื่องทุน
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4">
-                  <a
+                  <Link
                     href="https://tailwindcss.com/"
                     className="hover:underline text-white"
                   >
                     ปรึกษาเรื่องสมัครเรียน
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -97,8 +98,8 @@ const Footer = () => {
         <hr className="" />
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
         <p className="text-white"> © 2023{" "} Me Prompt Technology CONPANY LIMITED. All Rights Reserved.</p>
-          <a href="https://flowbite.com/" className="hover:underline">
-          </a>
+          <Link href="https://flowbite.com/" className="hover:underline">
+          </Link>
         </span>
       </div>
     </footer>
