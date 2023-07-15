@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="bg-[#1F306A] h-[130px] font-fontTH">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center mt-[5%]"> 
+          <div className="flex items-center mt-[5%]">
             <div className="flex-shrink-0 mt-[]">
               {/* Your logo or brand */}
               <img
