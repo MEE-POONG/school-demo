@@ -5,8 +5,8 @@ import RootLayout from "@/components/layout";
 export default function Contact() {
     return (
         <RootLayout>
-        <div className="container mx-auto py-24 text-blue-900 ">
-            <h1 className="font-fontTH text-4xl">ติดต่อเรา</h1>
+        <div className="container mx-auto py-5 md:py-24  text-blue-900 ">
+            <h1 className="font-fontTH text-2xl md:text-4xl ">ติดต่อเรา</h1>
             <div className=" w-full h-0.5 bg-black mt-2"></div>
             <h1 className="mt-2 text-2xl">
                 วิทยาลัยเทคโนโลยีพนมวันท์
