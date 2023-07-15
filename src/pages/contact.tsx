@@ -5,9 +5,9 @@ import RootLayout from "@/components/layout";
 export default function Contact() {
     return (
         <RootLayout>
-        <div className="container mx-auto py-5 md:py-24  text-blue-900 ">
+        <div className="container mx-auto py-5 md:py-24 text-blue-900">
             <h1 className="font-fontTH text-2xl md:text-4xl  ml-3 md:ml-0">ติดต่อเรา</h1>
-            <div className=" w-full h-0.5 bg-black mt-2"></div>
+            <div className=" w-full h-0.5 bg-blue-900 mt-2"></div>
             <h1 className="mt-2 text-lg md:text-2xl ml-3 md:ml-0">
                 วิทยาลัยเทคโนโลยีพนมวันท์
             </h1>
@@ -24,7 +24,7 @@ export default function Contact() {
 
             </div>
 
-            <div className=" w-full h-0.5 bg-black my-8"></div>
+            <div className=" w-full h-0.5 bg-blue-900 my-8"></div>
 
             <h1 className=" text-lg md:text-2xl ml-3 md:ml-0">
             ที่ปรึกษา อ.พรพิมล ลักขษร
