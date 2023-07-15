@@ -1,6 +1,5 @@
 import RootLayout from "@/components/layout";
 import { BsFill1CircleFill } from "react-icons/bs";
-
 export default function Test() {
     return (
         <RootLayout>
