@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#1F306A] shadow dark:bg-gray-900 w-full">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <a href="#" className="flex items-center mb-4 sm:mb-0">
+        <div className="sm:flex sm:items-center justify-between">
+          <a href="#" className="mb-4 ">
             <img
               src="/img/Logo_panomwan.png"
               className="h-[70px] mr-3"
