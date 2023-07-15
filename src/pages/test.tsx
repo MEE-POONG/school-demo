@@ -1,6 +1,6 @@
 import RootLayout from "@/components/layout";
 import Link from "next/link";
-import { BsEmojiNeutral, BsFill1CircleFill,BsEmojiFrown,BsEmojiSmile,BsEmojiLaughing } from "react-icons/bs";
+import { BsEmojiNeutral, BsFill1CircleFill, BsEmojiFrown, BsEmojiSmile, BsEmojiLaughing } from "react-icons/bs";
 
 export default function Test() {
     return (
@@ -78,20 +78,32 @@ export default function Test() {
 
                 {/* Emoji */}
                 <div className="grid md:grid-flow-col justify-center gap-5">
-                    <div className="bg-red-500 text-white p-3 rounded-full hover:bg-white hover:text-red-500 border-2 border-red-600">
-                       <Link href=""><BsEmojiFrown size={80}/></Link>
+                    <div className="text-center">
+                        <div className="bg-red-500 text-white p-3 rounded-full hover:bg-white hover:text-red-500 border-2 border-red-500">
+                            <Link href=""><BsEmojiFrown size={80} /></Link>
+                        </div>
+                        <p>แย่</p>
                     </div>
 
-                    <div className="bg-amber-600 text-white p-3 rounded-full hover:bg-white hover:text-amber-500 border-2 border-amber-600">
-                        <Link href=""><BsEmojiNeutral size={80}/></Link>
+                    <div className="text-center">
+                        <div className="bg-white text-amber-600 p-3 rounded-full hover:bg-amber-600 hover:text-white border-2 border-amber-500">
+                            <Link href=""><BsEmojiNeutral size={80} /></Link>
+                        </div>
+                        <p>เฉยๆ</p>
                     </div>
 
-                    <div className="bg-green-500 text-white p-3 rounded-full hover:bg-white hover:text-green-500 border-2 border-green-600">
-                        <Link href=""><BsEmojiSmile size={80}/></Link>
+                    <div className="text-center">
+                        <div className="bg-green-500 text-white p-3 rounded-full hover:bg-white hover:text-green-500 border-2 border-green-500">
+                            <Link href=""><BsEmojiSmile size={80} /></Link>
+                        </div>
+                        <p>ดี</p>
                     </div>
 
-                    <div className="bg-pink-500 text-white p-3 rounded-full hover:bg-white hover:text-pink-500 border-2 border-pink-600">
-                        <Link href=""><BsEmojiLaughing size={80}/></Link>
+                    <div className="text-center">
+                        <div className="bg-white text-pink-500 p-3 rounded-full hover:bg-pink-500 hover:text-white border-2 border-pink-500">
+                            <Link href=""><BsEmojiLaughing size={80} /></Link>
+                        </div>
+                        <p>ดีมาก</p>
                     </div>
                 </div>
 
