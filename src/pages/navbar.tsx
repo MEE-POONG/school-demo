@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = () => {
@@ -14,11 +15,13 @@ const Navbar = () => {
           <div className="flex items-center mt-[5%]">
             <div className="flex-shrink-0 mt-[]">
               {/* Your logo or brand */}
-              <img
-                className="h-[70px] mr-3"
-                src="/img/Logo_panomwan.png"
-                alt="Logo"
-              />
+              <Link href="/">
+                <img
+                  className="h-[70px] mr-3"
+                  src="/img/Logo_panomwan.png"
+                  alt="Logo"
+                />
+              </Link>
             </div>
             <div className="flex items-center justify-center">
               <div className="">
@@ -38,30 +41,30 @@ const Navbar = () => {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {/* Navigation links */}
-                <a
+                <Link
                   href=""
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium "
                 >
                   หน้าแรก
-                </a>
-                <a
+                </Link>
+                <Link
                   href="about"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
                 >
                   รู้จัก &quot;พนมวันท์&quot;
-                </a>
-                <a
+                </Link>
+                <Link
                   href="faculty"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
                 >
                   คณะ/หลักสูตร
-                </a>
-                <a
+                </Link>
+                <Link
                   href="welfare"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
                 >
                   สวัสดิการ
-                </a>
+                </Link>
                 <div className="relative">
                   <button
                     className=" text-white py-2 px-4 rounded-md focus:outline-none"
@@ -88,20 +91,20 @@ const Navbar = () => {
                   {isOpen && (
                     <ul className="absolute top-10 right-0 bg-white shadow-lg rounded-md py-2 px-4">
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="text-gray-800 hover:bg-gray-200 block py-2"
                         >
                           วิธีการสมัคร
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
+                        <Link
                           href="#"
                           className="text-gray-800 hover:bg-gray-200 block py-2"
                         >
                           ทีมที่ปรึกษา
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   )}
