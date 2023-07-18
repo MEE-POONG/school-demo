@@ -79,7 +79,7 @@ export default function Welfare() {
             </div>
         </div>
 
-        <div className="flex flex-col md:flex-row  justify-center gap-10 mb-8">
+        {/* <div className="flex flex-col md:flex-row  justify-center gap-10 mb-8">
             <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
                 <MdSupportAgent size={50} />
                 <div className="w-60 h-40">
@@ -97,6 +97,31 @@ export default function Welfare() {
                     <p className="text-[16px] text-[#536878]">นักศึกษามีสิทธิ์สมัครเรียนวิชาการ (รด.) 
                             ต่อเนื่องปี 4 ปี 5 ได้ 
                             พร้อมทำเรื่องผ่อนผันการเกณฑ์ทหาร</p>
+                </div>
+            </div>
+        </div> */}
+
+
+        <div className="flex flex-col md:flex-row  justify-center gap-10 mb-8">
+            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
+                <MdSupportAgent size={50} />
+                <div className="w-72 h-40">
+                    <h3 className='text-[#1F306A]'>สวัสดิการรัฐ</h3>
+                    <p className="text-[16px] text-[#536878]">บุตรข้าราชการสามารถเบิกค่าเล่าเรียนได้ตลอดหลักสูตร
+
+                    </p>
+                </div>
+            </div>
+            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
+                <TbStars size={50} />
+                <div className="w-60 h-40">
+                    <h3 className='text-[#1F306A]'>นักศึกษาวิชาทหาร</h3>
+                    <p className="text-[16px] text-[#536878]">
+                    นักศึกษามีสิทธิ์สมัครเรียนวิชาการ (รด.) 
+                            ต่อเนื่องปี 4 ปี 5 ได้ 
+                            พร้อมทำเรื่องผ่อนผันการเกณฑ์ทหาร
+
+                    </p>
                 </div>
             </div>
         </div>
