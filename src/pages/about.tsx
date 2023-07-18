@@ -63,21 +63,14 @@ export default function About() {
                 </div>
                 <div className=" w-full h-0.5 bg-blue-900 mb-7">
                 </div>
-                <div className=' container mx-auto'>
+                <div className='  mx-auto '>
                 <img src="/img/imgSlider/school1.jpg" width="800px" height="100px"/>
                 </div>
-                < div className="grid grid-cols-3 gap-3 mt-5  container mx-auto">
+                < div className="grid grid-cols-3 gap-3 mt-5  mx-auto">
                    <img src="/img/imgSlider/school6.jpg" width="250px" height="100px"/>
                     <img src="/img/register/regis.png" width="250px" height="100px"/>
                     <img src="/img/imgSlider/school3.jpg" width="250px" height="100px"/>
                 </div>
-
-
-
-
-
-
-
 
             </div>
         </RootLayout>
