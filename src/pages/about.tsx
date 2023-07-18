@@ -121,7 +121,7 @@ export default function About() {
                         />
                     </Link>
                 </div>
-                <div className="grid grid-cols-5 items-center">
+                <div className="grid-cols-5 text-center flex  justify-evenly">
                 <div className="box-border h-32 w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
                     <h1 className=" text-blue-800 text-lg">คณะ</h1>
                     <h1 className=" text-blue-500 text-3xl">4</h1>
