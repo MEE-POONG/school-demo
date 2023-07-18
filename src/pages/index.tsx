@@ -5,7 +5,6 @@ import Footer from '@/components/footer'
 import Navbar from '@/pages/navbar'
 import Slider from '@/pages/slider'
 import { RiFilePaper2Line } from "react-icons/ri";
-import { GrMoney } from "react-icons/gr";
 import { RiGraduationCapLine } from "react-icons/ri";
 import { FaUserGraduate } from "react-icons/fa";
 import Link from 'next/link'
@@ -61,7 +60,7 @@ export default function Home() {
           <div className="order-last">อ่านทั้งหมด</div>
           <div></div>
         </div>
-        
+    
       </div>
     </RootLayout>
   )
