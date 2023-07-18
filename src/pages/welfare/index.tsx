@@ -48,7 +48,7 @@ export default function Welfare() {
                     </p>
                 </div>
             </div>
-            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
+            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md hover:scale-105">
                 <IoNewspaperSharp size={50} />
                 <div className="w-60 h-40">
                     <h3 className='text-[#1F306A]'>กู้เรียน</h3>
@@ -58,7 +58,7 @@ export default function Welfare() {
         </div>
 
         <div className="flex flex-col md:flex-row  justify-center gap-10 mb-8">
-            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
+            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md hover:scale-105">
                 <GoBook size={50} />
                 <div className="w-72 h-40">
                     <h3 className='text-[#1F306A]'>ศูนย์การเรียนรู้</h3>
@@ -67,7 +67,7 @@ export default function Welfare() {
                     </p>
                 </div>
             </div>
-            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
+            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md hover:scale-105">
                 <PiHandCoinsBold size={50} />
                 <div className="w-60 h-40">
                     <h3 className='text-[#1F306A]'>รายได้ระหว่างเรียน</h3>
@@ -103,7 +103,7 @@ export default function Welfare() {
 
 
         <div className="flex flex-col md:flex-row  justify-center gap-10 mb-8">
-            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
+            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md hover:scale-105">
                 <MdSupportAgent size={50} />
                 <div className="w-72 h-40">
                     <h3 className='text-[#1F306A]'>สวัสดิการรัฐ</h3>
@@ -112,7 +112,7 @@ export default function Welfare() {
                     </p>
                 </div>
             </div>
-            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
+            <div className="flex items-center text-[#536878] gap-5 bg-gray-600/5 p-6 rounded-md shadow-md hover:scale-105">
                 <TbStars size={50} />
                 <div className="w-60 h-40">
                     <h3 className='text-[#1F306A]'>นักศึกษาวิชาทหาร</h3>

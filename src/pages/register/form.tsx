@@ -34,10 +34,14 @@ export default function Home() {
 
 
             <div className=' outline outline-1'>
-                <div className='bg-[#91A3B0] text-[#1F306A]'>
-                    ข้อมูลผู้สมัคร
+                <div className='bg-[#91A3B0] w-full h-[50px] '>
+                    <h1 className='text-xl text-[#1F306A] p-2   '> ข้อมูลผู้สมัคร</h1>
                 </div>
-                dsadsad
+                
+                <form action="">
+                    <div></div>
+                </form>
+
             </div>
 
 

@@ -72,13 +72,6 @@ export default function About() {
                 <Link href=""><img src="/img/imgSlider/school3.jpg" width="490px" height="100px"/></Link>
                 </div>
 
-
-
-
-
-
-
-
             </div>
         </RootLayout>
     )
