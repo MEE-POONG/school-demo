@@ -39,13 +39,13 @@ const Navbar = () => {
               <div className="ml-10 flex items-baseline space-x-4">
                 {/* Navigation links */}
                 <a
-                  href="about"
+                  href=""
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium "
                 >
                   หน้าแรก
                 </a>
                 <a
-                  href=""
+                  href="about"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
                 >
                   รู้จัก &quot;พนมวันท์&quot;
