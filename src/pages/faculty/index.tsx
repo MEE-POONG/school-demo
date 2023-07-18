@@ -5,7 +5,7 @@ import RootLayout from '@/components/layout'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Faculty() {
   return (
     <RootLayout>
 
