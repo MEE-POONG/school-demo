@@ -63,13 +63,13 @@ export default function About() {
                 </div>
                 <div className="w-full h-0.5 bg-blue-900 mb-7">
                 </div>
-                <div className=' container mx-auto py-2 '>
-                <img src="/img/imgSlider/school1.jpg" width="1000px" height="100px"/>
+                <div className=' container mx-auto py-2 items-center justify-center'>
+                <img src="/img/imgSlider/school1.jpg" width="1500px" height="100px"/>
                 </div>
                 < div className="grid grid-cols-3 gap-3 mt-5  lg:container mx-auto">
-                <Link href=""><img src="/img/imgSlider/school6.jpg" width="300px" height="100px"/></Link>
-                <Link href=""><img src="/img/register/regis.png" width="300px" height="100px"/></Link>
-                <Link href=""><img src="/img/imgSlider/school3.jpg" width="300px" height="100px"/></Link>
+                <Link href=""><img src="/img/imgSlider/school6.jpg" width="490px" height="100px"/></Link>
+                <Link href=""><img src="/img/register/regis.png" width="490px" height="100px"/></Link>
+                <Link href=""><img src="/img/imgSlider/school3.jpg" width="490px" height="100px"/></Link>
                 </div>
 
 
