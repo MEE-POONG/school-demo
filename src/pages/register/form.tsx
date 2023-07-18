@@ -35,11 +35,13 @@ export default function Home() {
 
             <div className=' outline outline-1'>
                 <div className='bg-[#91A3B0] w-full h-[50px] '>
-                    <h1 className='text-xl text-[#1F306A] p-2   '> ข้อมูลผู้สมัคร</h1>
+                    <h1 className='text-xl text-[#1F306A] p-2'> ข้อมูลผู้สมัคร</h1>
                 </div>
                 
                 <form action="">
-                    <div></div>
+                    <div>
+                      <label for='username'>dsads</label>
+                    </div>
                 </form>
 
             </div>
