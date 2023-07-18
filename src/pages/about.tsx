@@ -143,8 +143,6 @@ export default function About() {
                     <h1 className=" text-blue-500 text-3xl">1222</h1>
                 </div>
                 </div>
-                
-
             </div>
 
         </RootLayout>
