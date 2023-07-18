@@ -28,10 +28,10 @@ export default function Home() {
 
 
 
-        <div className=' grid grid-cols-1 md:grid-cols-2 md:gap-24 gap-12 '>
+        <div className=' grid grid-cols-1  md:grid-cols-2 md:gap-12 gap-12 p-6 '>
                   <div className=''>
 
-                      <button type="button" className="  w-full text-2xl md:text-5xl text-white bg-[#8DB600] hover:bg-[#FFBF00] rounded-full  px-5 py-2.5 mr-2 mb-10 ">
+                      <button type="button" className="  w-full text-2xl md:text-5xl text-white bg-[#8DB600] hover:bg-[#FFBF00] rounded-full  px-5 py-2.5  mb-10 ">
                           สมัครเรียน
                       </button>
 
