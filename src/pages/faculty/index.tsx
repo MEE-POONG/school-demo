@@ -12,7 +12,7 @@ export default function Faculty() {
       <div className='container mx-auto md:py-24 py-12'>
 
       <div className='flex justify-center md:hidden '>
-      <button type="button" className="text-2xl text-white bg-[#0000B8] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5 mr-2 mb-2 ">
+      <button type="button" className="text-2xl w-full text-white bg-[#0000B8] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5  mb-2 ">
                   สมัครเรียน
                 </button> 
       </div>
