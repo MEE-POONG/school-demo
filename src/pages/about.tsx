@@ -73,7 +73,7 @@ export default function About() {
                     <Link href="">
                         <img
                             src="/img/imgSlider/school6.jpg"
-                            
+                    
                         />
                     </Link>
                     <Link href="">
@@ -133,17 +133,17 @@ export default function About() {
 
                     <div className="outline outline-1 h-12 w-12 md:h-32 md:w-32 flex flex-col items-center justify-center">
                         <h1 className=" text-blue-800 text-xs md:text-lg">บุคลากร</h1>
-                        <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
+                        <h1 className=" text-blue-500 text-xl md:text-3xl">54</h1>
                     </div>
 
                     <div className="outline outline-1 h-12 w-24 ml-12 md:ml-0 md:h-32 md:w-32  flex flex-col items-center justify-center">
                         <h1 className=" text-blue-800 text-xs md:text-lg">นักศึกษาปัจจุบัน</h1>
-                        <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
+                        <h1 className=" text-blue-500 text-xl md:text-3xl">1500</h1>
                     </div>
 
                     <div className="outline outline-1 h-12 w-24 ml-32 md:ml-0 md:h-32 md:w-32  flex flex-col items-center justify-center">
                         <h1 className=" text-blue-800 text-xs md:text-lg">ผู้เข้าชมเว็บไซต์</h1>
-                        <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
+                        <h1 className=" text-blue-500 text-xl md:text-3xl">1222</h1>
                     </div>
 
                 </div>
