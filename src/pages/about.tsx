@@ -121,7 +121,7 @@ export default function About() {
                         />
                     </Link>
                 </div>
-                <div className=" grid grid-cols-3 md:grid-cols-5 text-center container mx-auto py-2 justify-evenly ml-6 md:ml-1">
+                <div className="grid grid-cols-3 md:grid-cols-5  text-center container mx-auto py-2 justify-evenly ml-6 md:ml-">
                 <div className="box-border h-24 w-24 md:h-32 md:w-32  p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
                     <h1 className=" text-blue-800 text-xs md:text-lg">คณะ</h1>
                     <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
