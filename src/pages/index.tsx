@@ -9,6 +9,7 @@ import { RiGraduationCapLine } from "react-icons/ri";
 import { FaUserGraduate } from "react-icons/fa";
 import Link from 'next/link'
 import { FaMoneyBill } from "react-icons/fa";
+import BannerSlider from '@/container/home/BannerSlider'
 
 
 
@@ -18,7 +19,8 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <RootLayout>
-      <Slider />
+      {/* <Slider /> */}
+      <BannerSlider/>
 
       <div className="grid md:grid-flow-col justify-center gap-3 md:gap-10 mt-6">
 
