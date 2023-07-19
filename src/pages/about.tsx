@@ -17,7 +17,7 @@ export default function About() {
     return (
         <RootLayout>
             <Slider />
-            
+        <div className="container mx-auto">
             <div className="   flex justify-evenly md:grid-flow-col md:gap-10 md:justify-center mt-6">
                 <div className="text-center">
                     <div className="bg-white text-[28px] md:text-[70px] text-blue-900 p-4  rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
@@ -67,31 +67,29 @@ export default function About() {
                 </div>
                 <div className="md:w-full h-0.5 bg-blue-900 mb-7"></div>
                 <div className=" container mx-auto py-2 items-center justify-center">
-                    <img src="/img/imgSlider/school1.jpg" width="1500px" height="100px" />
+                    <img src="/img/imgSlider/school1.jpg" />
                 </div>
                 <div className="grid grid-cols-3 gap-3 mt-5  lg:container mx-auto ">
                     <Link href="">
                         <img
                             src="/img/imgSlider/school6.jpg"
-                            width="490px"
-                            height="100px"
+                    
                         />
                     </Link>
                     <Link href="">
-                        <img src="/img/register/regis.png" width="490px" height="100px" />
+                        <img src="/img/register/regis.png" />
                     </Link>
                     <Link href="">
                         <img
                             src="/img/imgSlider/school3.jpg"
-                            width="490px"
-                            height="100px"
+                            
                         />
                     </Link>
                 </div>
             </div>
 
             <div className="container mx-auto md:py-24 text-blue-900  ">
-                <h1 className="font-fontTH text-xl md:text-4xl ml-3 md:ml-0 mt-5">
+                <h1 className="font-fontTH text-xl md:text-4xl  md:ml-0 mt-5">
                     ข่าวกิจกรรม
                 </h1>
                 <div className="flex justify-between">
@@ -100,51 +98,59 @@ export default function About() {
                     </div>
                     <div></div>
                 </div>
-                <div className="w-full h-0.5 bg-blue-900 ml-3 md:ml-1"></div>
+                <div className="h-0.5 bg-blue-900 md:ml-1"></div>
                 <div className=" container mx-auto py-2 items-center justify-center"></div>
-                <div className="grid grid-cols-3 gap-3 mt-5 ml-3">
+                <div className="grid grid-cols-3 gap-3 mt-5 ">
                     <Link href="">
                         <img
                             src="/img/event/event1.png"
-                            width="490px"
-                            height="100px"
                         />
                     </Link>
                     <Link href="">
-                        <img src="/img/event/event6.png" width="490px" height="100px" />
+                        <img src="/img/event/event6.png" />
                     </Link>
                     <Link href="">
                         <img
                             src="/img/event/event3.png"
-                            width="490px"
-                            height="100px"
+                          
                         />
                     </Link>
                 </div>
-                <div className="grid grid-cols-3 md:grid-cols-5  text-center container mx-auto py-2 justify-evenly ml-6 md:ml-">
-                <div className="box-border h-24 w-24 md:h-32 md:w-32  p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                    <h1 className=" text-blue-800 text-xs md:text-lg">คณะ</h1>
-                    <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
-                </div>
-                <div className="box-border h-24 w-24 md:h-32 md:w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                <h1 className=" text-blue-800 text-xs md:text-lg">หลักสูตร</h1>
-                    <h1 className=" text-blue-500 text-xl md:text-3xl">9</h1>
-                </div>
-                <div className="box-border h-24 w-24  md:h-32 md:w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                <h1 className=" text-blue-800 text-xs md:text-lg">บุคลากร</h1>
-                    <h1 className=" text-blue-500 text-xl md:text-3xl">54</h1>
-                </div>
-                <div className="box-border h-24 w-24  md:h-32 md:w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                <h1 className=" text-blue-800 text-xs md:text-lg">นักศึกษาปัจจุบัน</h1>
-                    <h1 className=" text-blue-500 text-xl md:text-3xl">1500</h1>
-                </div>
-                <div className="box-border h-24 w-24 md:h-32 md:w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                <h1 className=" text-blue-800 text-xs md:text-lg">ผู้เข้าชมเว็บไซต์</h1>
-                    <h1 className=" text-blue-500 text-xl md:text-3xl">1222</h1>
-                </div>
-                </div>
-            </div>
+                
 
+
+                <div className="grid grid-cols-3 md:grid-cols-5 gap-5 m-10 place-items-center">
+                    <div className="outline outline-1 h-12 w-12 md:h-32 md:w-32 flex flex-col items-center justify-center">
+                        <h1 className=" text-blue-800 text-xs md:text-lg">คณะ</h1>
+                        <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
+                    </div>
+
+                    <div className="outline outline-1 h-12 w-12 md:h-32 md:w-32 flex flex-col items-center justify-center">
+                        <h1 className=" text-blue-800 text-xs md:text-lg">หลักสูตร</h1>
+                        <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
+                    </div>
+
+                    <div className="outline outline-1 h-12 w-12 md:h-32 md:w-32 flex flex-col items-center justify-center">
+                        <h1 className=" text-blue-800 text-xs md:text-lg">บุคลากร</h1>
+                        <h1 className=" text-blue-500 text-xl md:text-3xl">54</h1>
+                    </div>
+
+                    <div className="outline outline-1 h-12 w-24 ml-12 md:ml-0 md:h-32 md:w-32  flex flex-col items-center justify-center">
+                        <h1 className=" text-blue-800 text-xs md:text-lg">นักศึกษาปัจจุบัน</h1>
+                        <h1 className=" text-blue-500 text-xl md:text-3xl">1500</h1>
+                    </div>
+
+                    <div className="outline outline-1 h-12 w-24 ml-32 md:ml-0 md:h-32 md:w-32  flex flex-col items-center justify-center">
+                        <h1 className=" text-blue-800 text-xs md:text-lg">ผู้เข้าชมเว็บไซต์</h1>
+                        <h1 className=" text-blue-500 text-xl md:text-3xl">1222</h1>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            </div>
         </RootLayout>
     );
 }
