@@ -104,7 +104,6 @@ export default function About() {
                     <Link href="">
                         <img
                             src="/img/event/event1.png"
-                           
                         />
                     </Link>
                     <Link href="">
