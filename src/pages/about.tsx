@@ -17,59 +17,59 @@ export default function About() {
     return (
         <RootLayout>
             <Slider />
-
-            <div className="grid md:grid-flow-col justify-center gap-3 md:gap-10 mt-6">
+            
+            <div className="   flex justify-evenly md:grid-flow-col md:gap-10 md:justify-center mt-6">
                 <div className="text-center">
-                    <div className="bg-white text-blue-900 p-3 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
-                        <Link href="">
-                            <RiFilePaper2Line size={70} />
+                    <div className="bg-white text-[28px] md:text-[70px] text-blue-900 p-4  rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
+                        <Link href="" className="">
+                            <RiFilePaper2Line/>
                         </Link>
                     </div>
-                    <p className="text-blue-900">สมัครเรียน</p>
+                    <p className="text-blue-900 text-sm md:text-lg">สมัครเรียน</p>
                 </div>
 
                 <div className="text-center">
-                    <div className="bg-white text-blue-900 p-3 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
+                    <div className="bg-white text-[30px]  md:text-[70px] text-blue-900 p-4 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
                         <Link href="">
-                            <FaMoneyBill size={70} />
+                            <FaMoneyBill  />
                         </Link>
                     </div>
-                    <p className="text-blue-900">ทุนการศึกษา</p>
+                    <p className="text-blue-900 text-xs md:text-lg">ทุนการศึกษา</p>
                 </div>
 
                 <div className="text-center">
-                    <div className="bg-white text-blue-900 p-3 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
+                    <div className="bg-white text-[30px] md:text-[70px] text-blue-900 p-4 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
                         <Link href="">
-                            <RiGraduationCapLine size={70} />
+                            <RiGraduationCapLine  />
                         </Link>
                     </div>
-                    <p className="text-blue-900">ปรึกษาเพิ่มเติม</p>
+                    <p className="text-blue-900 text-xs md:text-lg">ปรึกษาเพิ่มเติม</p>
                 </div>
 
                 <div className="text-center">
-                    <div className="bg-white text-blue-900 p-3 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
+                    <div className="bg-white text-[30px] md:text-[70px] text-blue-900 p-4 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
                         <Link href="">
-                            <FaUserGraduate size={70} />
+                            <FaUserGraduate />
                         </Link>
                     </div>
-                    <p className="text-blue-900">คณะที่เปิดสอน</p>
+                    <p className="text-blue-900 text-xs md:text-lg">คณะที่เปิดสอน</p>
                 </div>
             </div>
-            <div className="container mx-auto  md:py-10 text-blue-900">
-                <h1 className="font-fontTH text-2xl md:text-4xl ml-3 md:ml-0">
+            <div className="container mx-auto  md:py-10 text-blue-900 py-2 justify-evenly">
+                <h1 className="font-fontTH text-xl md:text-4xl ml-3 md:ml-0 mt-5 ">
                     ข่าวประชาสัมพันธ์
                 </h1>
-                <div className="flex justify-between ...">
-                    <div className="order-last">
+                <div className="flex justify-between ">
+                    <div className="order-last text-xs md:text-lg">
                         <Link href="about">อ่านทั้งหมด</Link>
                     </div>
                     <div></div>
                 </div>
-                <div className="w-full h-0.5 bg-blue-900 mb-7"></div>
+                <div className="md:w-full h-0.5 bg-blue-900 mb-7"></div>
                 <div className=" container mx-auto py-2 items-center justify-center">
                     <img src="/img/imgSlider/school1.jpg" width="1500px" height="100px" />
                 </div>
-                <div className="grid grid-cols-3 gap-3 mt-5  lg:container mx-auto">
+                <div className="grid grid-cols-3 gap-3 mt-5  lg:container mx-auto ">
                     <Link href="">
                         <img
                             src="/img/imgSlider/school6.jpg"
@@ -90,19 +90,19 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="container mx-auto md:py-24 text-blue-900 ">
-                <h1 className="font-fontTH text-2xl md:text-4xl ml-3 md:ml-0">
+            <div className="container mx-auto md:py-24 text-blue-900  ">
+                <h1 className="font-fontTH text-xl md:text-4xl ml-3 md:ml-0 mt-5">
                     ข่าวกิจกรรม
                 </h1>
                 <div className="flex justify-between">
-                    <div className="order-last">
+                    <div className="order-last text-xs md:text-lg">
                         <Link href="about">อ่านทั้งหมด</Link>
                     </div>
                     <div></div>
                 </div>
-                <div className="w-full h-0.5 bg-blue-900"></div>
+                <div className="w-full h-0.5 bg-blue-900 ml-3 md:ml-1"></div>
                 <div className=" container mx-auto py-2 items-center justify-center"></div>
-                <div className="grid grid-cols-3 gap-3 mt-5 ">
+                <div className="grid grid-cols-3 gap-3 mt-5 ml-3">
                     <Link href="">
                         <img
                             src="/img/event/event1.png"
@@ -121,26 +121,26 @@ export default function About() {
                         />
                     </Link>
                 </div>
-                <div className="grid-cols-5 text-center flex  justify-evenly">
-                <div className="box-border h-32 w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                    <h1 className=" text-blue-800 text-lg">คณะ</h1>
-                    <h1 className=" text-blue-500 text-3xl">4</h1>
+                <div className=" grid grid-cols-3 md:grid-cols-5 text-center container mx-auto py-2 justify-evenly ml-6 md:ml-1">
+                <div className="box-border h-24 w-24 md:h-32 md:w-32  p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
+                    <h1 className=" text-blue-800 text-xs md:text-lg">คณะ</h1>
+                    <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
                 </div>
-                <div className="box-border h-32 w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                    <h1 className=" text-blue-800 text-lg">หลักสูตร</h1>
-                    <h1 className=" text-blue-500 text-3xl">9</h1>
+                <div className="box-border h-24 w-24 md:h-32 md:w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
+                <h1 className=" text-blue-800 text-xs md:text-lg">หลักสูตร</h1>
+                    <h1 className=" text-blue-500 text-xl md:text-3xl">9</h1>
                 </div>
-                <div className="box-border h-32 w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                    <h1 className=" text-blue-800 text-lg">บุคลากร</h1>
-                    <h1 className=" text-blue-500 text-3xl">54</h1>
+                <div className="box-border h-24 w-24  md:h-32 md:w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
+                <h1 className=" text-blue-800 text-xs md:text-lg">บุคลากร</h1>
+                    <h1 className=" text-blue-500 text-xl md:text-3xl">54</h1>
                 </div>
-                <div className="box-border h-32 w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                    <h1 className=" text-blue-800 text-lg">นักศึกษาปัจจุบัน</h1>
-                    <h1 className=" text-blue-500 text-3xl">1500</h1>
+                <div className="box-border h-24 w-24  md:h-32 md:w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
+                <h1 className=" text-blue-800 text-xs md:text-lg">นักศึกษาปัจจุบัน</h1>
+                    <h1 className=" text-blue-500 text-xl md:text-3xl">1500</h1>
                 </div>
-                <div className="box-border h-32 w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
-                    <h1 className=" text-blue-800 text-lg">ผู้เข้าชมเว็บไซต์</h1>
-                    <h1 className=" text-blue-500 text-3xl">1222</h1>
+                <div className="box-border h-24 w-24 md:h-32 md:w-32 p-4 border-4 border-blue-800 text-center mt-4 grid grid-cols-1 gap-2">
+                <h1 className=" text-blue-800 text-xs md:text-lg">ผู้เข้าชมเว็บไซต์</h1>
+                    <h1 className=" text-blue-500 text-xl md:text-3xl">1222</h1>
                 </div>
                 </div>
             </div>
