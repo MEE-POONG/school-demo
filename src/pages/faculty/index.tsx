@@ -48,9 +48,9 @@ export default function Faculty() {
             </div>
 
             <ul className="list-disc list-inside text-[#536878] ml-3 text-xs md:text-base  ">
-              <li>สาขาวิชาการบัญชี (บช.บ.)</li>
-              <li>สาขาวิชาการจัดการ (บธ.บ.)</li>
-              <li>สาขาวิชาระบบสารสนเทศ (บธ.บ.)</li>
+              <li>สาขาวิชาการบัญชี (บช.บ.) +</li>
+              <li>สาขาวิชาการจัดการ (บธ.บ.) +</li>
+              <li>สาขาวิชาระบบสารสนเทศ (บธ.บ.) +</li>
               <li>สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)</li>
               <li>สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)</li>
             </ul>
@@ -63,7 +63,7 @@ export default function Faculty() {
                   <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="#1f306a" d="M5 21q-1.275 0-1.813-1.137t.263-2.113L9 11V5H8q-.425 0-.713-.288T7 4q0-.425.288-.713T8 3h8q.425 0 .713.288T17 4q0 .425-.288.713T16 5h-1v6l5.55 6.75q.8.975.263 2.113T19 21H5Zm0-2h14l-6-7.3V5h-2v6.7L5 19Zm7-7Z" /></svg>
                 </div>
               <div className='ml-2'>
-                <h1 className='text-l md:text-2xl text-[#1F306A]'>คณะวิทยาศาสตร์และเทคโนโลยี </h1>
+                <h1 className='text-l md:text-2xl text-[#1F306A]'>คณะวิทยาศาสตร์และเทคโนโลยี  </h1>
                 <div>
                   <h1 className='text-l md:text-xl text-[#1F306A]'>Faculty of Science and Technology</h1>
                 </div>
@@ -71,7 +71,7 @@ export default function Faculty() {
             </div>
 
             <ul className="list-disc list-inside text-[#536878] ml-3  text-xs md:text-base ">
-              <li>สาขาวิชาสาธารณสุขศาสตร์ (สบ.)</li>
+              <li>สาขาวิชาสาธารณสุขศาสตร์ (สบ.) +</li>
             </ul>
           </div>
 
@@ -92,12 +92,11 @@ export default function Faculty() {
                 <div>
                   <h1 className='text-l md:text-xl text-[#1F306A]'>Faculty of Liberal arts</h1>
                 </div>
-              </div>
+              </div>      
             </div>
 
             <ul className="list-disc list-inside text-[#536878] ml-3 text-xs md:text-base  ">
-              <li>สาขาวิชารัฐประศาสนศาสตร์ (รป.บ)</li>
-              <li>สาขาวิชาการศึกษาปฐมวัย (ศษ.บ)</li>
+              <li>สาขาวิชารัฐประศาสนศาสตร์ (รป.บ) +</li>
             </ul>
           </div>
 
@@ -116,11 +115,26 @@ export default function Faculty() {
             </div>
 
             <ul className="list-disc list-inside text-[#536878] ml-3 text-xs md:text-base ">
-              <li>สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.)</li>
+              <li>สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.) +</li>
             </ul>
-          </div>
 
+
+          </div>
         </div>
+
+        <div className='flex flex-col md:flex-row gap-16 lg:ml-28 '>
+          <div className='text-red-500'>
+            
+            <div># หมายเหตุ : เสาร์-อาทิตย์ เรียนออนไลน์</div>
+            <div># เครื่องหมาย + แทนสาขาที่เปิดหลักสูตร วันเสาร์-อาทิตย์</div>
+          </div>
+        </div>
+
+
+
+
+      
+        
 
       </div>
 
