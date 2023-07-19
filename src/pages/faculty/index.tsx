@@ -122,7 +122,7 @@ export default function Faculty() {
           </div>
         </div>
 
-        <div className='flex flex-col md:flex-row gap-16 lg:ml-28 '>
+        <div className='flex flex-col md:flex-row gap-16 mt-5 '>
           <div className='text-red-500'>
             
             <div># หมายเหตุ : เสาร์-อาทิตย์ เรียนออนไลน์</div>
