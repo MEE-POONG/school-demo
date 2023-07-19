@@ -39,39 +39,39 @@ export default function Home() {
                     </div>
 
                     <form action="">
-                        <div className='grid grid-cols-12 '>
+                        <div className=' md:grid md:grid-cols-12 grid-cols-1 pb-2 '>
                             {/* บัตรประชาชน กับ วันเดือนปี */}
                           
-                            <div className='col-start-2 col-end-4 text-right p-3 my-2'>
+                            <div className='col-start-1 col-end-4 md:md:text-right p-3 my-2'>
                               <label className=''>บัตรประจำตัวประชาชน:</label>    
                             </div>
                             <div className=' col-span-2 my-2'>
                               <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
-                            <div className='col-start-6 col-end-8 text-right p-3 my-2 '>
+                            <div className='col-start-6 col-end-8 md:md:text-right p-3 my-2 '>
                               <label className=''>วัน/เดือน/ปีเกิด:</label>    
                             </div>
                             <div className='col-span-2 my-2'>
-                              <input type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
+                              <input type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
 
 
                             {/* คำนำหน้า เพศ สัญชาติ */}
                           
-                            <div className='col-start-2 col-end-4 text-right p-3 my-2'>
+                            <div className='col-start-2 col-end-4 md:md:text-right p-3 my-2'>
                               <label className=''>คำนำหน้าชื่อ:</label>    
                             </div>
-                            <div className=' col-span-1 my-2'>
-                                  <select className=' block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                            <div className=' col-span-1 md:col-span-2  md:my-2'>
+                                  <select className=' block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
                                     <option>นาย</option>
                                     <option>นาง</option>
                                     <option>นางสาว</option>
                                   </select>
                             </div>
-                            <div className='col-start-5 text-right p-3 my-2 '>
+                            <div className='col-start-5 md:col-start-6 md:text-right p-3 my-2 '>
                               <label className=''>เพศ:</label>    
                             </div>
-                            <div className='col-span-1 my-2'>
+                            <div className='col-span-1 md:col-span-2 my-2'>
                                   <select className=' block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                                     <option>นาย</option>
                                     <option>นาง</option>
@@ -79,23 +79,23 @@ export default function Home() {
                                   </select>
                             </div>
 
-                            <div className='col-start-7 text-right p-3 my-2 '>
-                              <label className=''>สัญชาติ:</label>    
+                            <div className='col-start-7 md:col-start-9 md:text-right p-3 my-2 '>
+                              <label className=''>สัญชาติ: </label>    
                             </div>
-                            <div className='col-span-2 my-2'>
+                            <div className='col-span-2 my-2 md:ml-2'>
                               <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
 
 
                             {/* ชื่อ นามสกุล */}
                           
-                            <div className='col-start-2 col-end-4 text-right p-3 my-2'>
+                            <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                               <label className=''>ชื่อ:</label>    
                             </div>
                             <div className=' col-span-2 my-2'>
                               <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
-                            <div className='col-start-6 col-end-8 text-right p-3 my-2 '>
+                            <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                               <label className=''>นามสกุล:</label>    
                             </div>
                             <div className='col-span-2 my-2'>
@@ -105,13 +105,13 @@ export default function Home() {
 
                             {/* Name Surname */}
                           
-                            <div className='col-start-2 col-end-4 text-right p-3 my-2'>
+                            <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                               <label className=''>Name:</label>    
                             </div>
                             <div className=' col-span-2 my-2'>
                               <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
-                            <div className='col-start-6 col-end-8 text-right p-3 my-2 '>
+                            <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                               <label className=''>Surname:</label>    
                             </div>
                             <div className='col-span-2 my-2'>
@@ -120,16 +120,16 @@ export default function Home() {
                           
                           {/* เบอร์โทร อีเมลล์ */}
                           
-                          <div className='col-start-2 col-end-4 text-right p-3 my-2'>
-                              <label className=''>เบอร์โทรศัพท์ติดต่อ</label>    
+                          <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
+                              <label className=''>เบอร์โทรศัพท์ติดต่อ:</label>    
                             </div>
                             <div className=' col-span-2 my-2'>
                               <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
-                            <div className='col-start-6 col-end-8 text-right p-3 my-2 '>
-                              <label className=''>Email</label>    
+                            <div className='col-start-7 col-end-8 md:text-right p-3 my-2 '>
+                              <label className=''>Email:</label>    
                             </div>
-                            <div className='col-span-2 my-2'>
+                            <div className='col-span-2 my-2 '>
                               <input type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
 
@@ -144,17 +144,17 @@ export default function Home() {
 
 
             {/* ประวัติการศึกษา  */}
-            <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10'>
+            <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
                     <div className='bg-[#91A3B0] w-full h-[50px] drop-shadow-md  shadow-md '>
                         <h1 className='text-3xl text-[#1F306A] p-2'>ประวัติการศึกษา</h1>
                     </div>
 
                     <form action="">
-                        <div className='grid grid-cols-12 '>
+                        <div className='md:grid md:grid-cols-12 grid-cols-1  '>
                             {/* สถาบันการศึกษา */}
                           
-                            <div className='col-start-2 col-end-4 text-right p-3 my-2'>
+                            <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                               <label className=''>สถาบันการศึกษา:</label>    
                             </div>
                             <div className=' col-span-6 my-2'>
@@ -165,7 +165,7 @@ export default function Home() {
 
                             {/* คำนำหน้า เพศ สัญชาติ */}
                           
-                            <div className='col-start-2 col-end-4 text-right p-3 my-2'>
+                            <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                               <label className=''>คำนำหน้าชื่อ:</label>    
                             </div>
                             <div className=' col-span-2 my-2'>
@@ -174,7 +174,7 @@ export default function Home() {
                                     <option>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
                                   </select>
                             </div>
-                            <div className='col-start-6 col-end-8 text-right p-3 my-2 '>
+                            <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                               <label className=''>เกรดเฉลี่ย</label>    
                             </div>
                             <div className='col-span-2 my-2'>
@@ -195,27 +195,27 @@ export default function Home() {
 
             
             {/* คณะ/สาขา  */}
-            <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10'>
+            <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
                     <div className='bg-[#91A3B0] w-full h-[50px] drop-shadow-md  shadow-md '>
                         <h1 className='text-3xl text-[#1F306A] p-2'>คณะ/สาขา</h1>
                     </div>
 
                     <form action="">
-                        <div className='grid grid-cols-12 '>
+                        <div className='md:grid md:grid-cols-12 grid-cols-1 '>
                             {/* หลักสูตร */}
                           
-                            <div className='col-start-2 col-end-4 text-right p-3 my-2'>
+                            <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                               <label className=''>หลักสูตร:</label>    
                             </div>
-                            <div className='col-span-1 my-2 self-center flex justify-center'>
+                            <div className='md:col-span-1 md:my-2 md:self-center md:flex md:justify-center ml-5 flex items-center'>
                               <input type="radio" className="w-5 h-5" /> 
-                              <label className='ml-4'>4 ปี</label>  
+                              <label className='ml-4 md:ml-1 md:text-sm '>4 ปี</label>  
                             </div>
                             
-                            <div className='col-span-2 my-2 self-center flex justify-center'>
-                              <input type="radio"className="w-5 h-5" /> 
-                              <label className='ml-4 '>2 ปี (ต่อเนื่อง)</label>    
+                            <div className='md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center '>
+                              <input type="radio"className="w-5 h-5 " /> 
+                              <label className='ml-4 md:ml-1 md:text-sm'>2 ปี (ต่อเนื่อง)</label>    
                             </div>
                             
                             
@@ -223,7 +223,7 @@ export default function Home() {
 
                             {/* คำนำหน้า เพศ สัญชาติ */}
                           
-                            <div className='col-start-2 col-end-4 text-right p-3 my-2'>
+                            <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                               <label className=''>คำนำหน้าชื่อ:</label>    
                             </div>
                             <div className=' col-span-2 my-2'>
@@ -232,7 +232,7 @@ export default function Home() {
                                     <option>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
                                   </select>
                             </div>
-                            <div className='col-start-6 col-end-8 text-right p-3 my-2 '>
+                            <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                               <label className=''>เกรดเฉลี่ย:</label>    
                             </div>
                             <div className='col-span-2 my-2'>
