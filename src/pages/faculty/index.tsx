@@ -23,7 +23,7 @@ export default function Faculty() {
       <div className='container mx-auto md:py-24 py-12'>
 
       <div className='flex justify-center md:justify-end mb-5 md:mb-5  '>
-        <button type="button" className="text-4xl md:text-2xl text-[#1F306A] bg-[#FFBF00] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5  mb-2 ">
+        <button type="button" className="text-4xl md:text-2xl text-[#1F306A] bg-[#FFBF00] hover:bg-[#6CB4EE] rounded-md-lg  px-5 py-2.5  mb-2 ">
                   สมัครเรียน
                 </button> 
       </div>
@@ -32,8 +32,8 @@ export default function Faculty() {
      
 
       {/* คณะบริหารธุรกิจ*/}
-      <div className='bg-neutral-800 rounded flex mb-5 '>
-          <img className='hidden md:flex md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFbus.png" alt="" />
+      <div className='bg-neutral-800 rounded-md flex mb-5 '>
+          <img className='rounded-l-md hidden md:flex md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFbus.png" alt="" />
           <div className='pl-4 pt-4'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะบริหารธุรกิจ </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'> Faculty of Business Administration</h1>
@@ -50,7 +50,7 @@ export default function Faculty() {
 
 
       {/* คณะวิทยาศาสตร์และเทคโนโลยี */}
-      <div className='bg-neutral-800 rounded flex justify-between '>
+      <div className='bg-neutral-800 rounded-md flex justify-between '>
           
           <div className='pl-4 pt-4 mr-5'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะวิทยาศาสตร์และเทคโนโลยี  </h1>
@@ -59,12 +59,12 @@ export default function Faculty() {
                 <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชาสาธารณสุขศาสตร์ (สบ.) +</li>
               </ul>
           </div>
-          <img className='hidden md:flex  md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFsci.png" alt="" />
+          <img className='rounded-r-md hidden md:flex  md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFsci.png" alt="" />
       </div>
 
       {/* คณะศิลปศาสตร์*/}
-      <div className='bg-neutral-800 rounded flex mt-5 '>
-          <img className='hidden md:flex md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFlib.png" alt="" />
+      <div className='bg-neutral-800 rounded-md flex mt-5 '>
+          <img className='rounded-l-md hidden md:flex md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFlib.png" alt="" />
           <div className='pl-4 pt-4'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะศิลปศาสตร์ </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'>Faculty of Liberal arts</h1>
@@ -76,7 +76,7 @@ export default function Faculty() {
 
 
       {/* คณะวิศวกรรมศาสตร์ */}
-      <div className='bg-neutral-800 rounded flex justify-between mt-5 '>
+      <div className='bg-neutral-800 rounded-md flex justify-between mt-5 '>
           
           <div className='pl-4 pt-4 mr-5'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะวิศวกรรมศาสตร์  </h1>
@@ -85,7 +85,7 @@ export default function Faculty() {
                 <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.) +</li>
               </ul>
           </div>
-          <img className='hidden md:flex  md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFeng.png" alt="" />
+          <img className='rounded-r-md hidden md:flex  md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFeng.png" alt="" />
       </div>
 
       {/* ขีด */}
