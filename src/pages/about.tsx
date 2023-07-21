@@ -16,7 +16,223 @@ const inter = Inter({ subsets: ["latin"] });
 export default function About() {
     return (
         <RootLayout>
+
+
+            {/* div container */}
+            <div className="container mx-auto text-xl py-8 md:py-24 ">
+
+                <div className='flex justify-between'>
+                    <div>
+                        <h1 className='text-2xl  md:text-5xl text-[#1F306A] mb-2'>
+                        รู้จัก”พนมวันท์”
+                        </h1>
+                    
+                    </div>
+
+                </div>
+                {/* div ขีด */}
+                <div className='bg-[#1F306A] w-full h-1  mb-7 md:mb-14'></div>
+                {/*  */}
+
+                    {/* วิทยาลัยเทคโนโลยีพนมวันท์ และรูป  */}
+                    <div>
+                        <h1 className="text-[#1F306A] font-bold text-2xl md:text-4xl">วิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                        <img className='py-4' src="/img/school/panomtext.png" alt="" />
+                    </div>
+
+                    {/* ข้อมูลสถาบัน  */}
+
+                    <h1 className="text-[#1F306A] text-2xl md:text-3xl py-5">ข้อมูลสถาบัน</h1>
+                    
+                    <div>
+                        <p className="mb-4">
+                            วิทยาลัยเทคโนโลยีพนมวันท์ ก่อตั้งขึ้นเมื่อวันที่ 21 พฤศจิกายน 2550 ด้วยเจตนารมณ์ที่ตระหนักถึงความสำคัญของการศึกษา
+                            ในระดับปริญญาตรีอันจะนำไปสู่การพัฒนาทางด้านความคิดทักษะเชิงวิชาชีพมนุษยสัมพันธ์และคุณธรรม
+                            ซึ่งจะช่วยส่งเสริมและพัฒนาเยาวชนและประชาชนในท้องถิ่นโดยเฉพาะจังหวัดนครราชสีมาและจังหวัดใกล้เคียงรวมทั้งประเทศชาติ แบบยั่งยืน ดังนั้นวิทยาลัยเทคโนโลยีพนมวันท์ จึงจัดให้มีการเรียนการสอน โดยให้ความสำคัญกับการเตรียมความพร้อม
+                            ในด้านศักยกาพและทรัพยากรสนับสนุนต่างๆเพื่อให้การจัดการเรีนการสอนเป็นไปอย่างมีประสิทธิภาพและบรรลุตามปนิธานที่ได้ตั้งไว้
+
+                        </p>
+
+
+                        <p className="mb-4">
+                            วิทยาลัยได้เริ่มเปิดทำการสอนตั้งแต่ปีการศึกษา 2551 ซึ่งได้จัดการเรียนการสอนในหลักสูตรบริหารธุรกิจบัณทิต
+                            และหลักสูตรบัญชีบัณฑิตด้วยความมุ่งมั่นของผู้ก่อตั้ง ผู้บริหาร และ คณาจารย์ที่จะพัฒนาวิทยาลัยเทคโนโลยีพนมวันท์ ให้มี
+                            ความเจริญก้าวหน้าอย่างต่อเนื่องและมั่นคงสามารถผลิตบุคลากรที่มีคุณค่าต่อสังคมเพื่อตอบสนองต่อความต้องการของท้องถิ่น และประเทศชาติ พร้อมทั้งเป็นแหล่งข้อมูลเชิงวิชาการให้แก่ ชุมชนและท้องถิ่นทั้งนี้เพื่อให้วิทยาลัยฯ
+                            ได้อย่างแท้จริงตามเจตนารมณ์ของการก่อตั้งวิทยาลัยเทคโนโลยีพนมวันท์
+
+                        </p>
+                    </div>
+
+                    {/* ตราสัญลักษณ์ของวิทยาลัยเทคโนโลยีพนมวันท์  */}
+                    <h1 className="text-[#1F306A] text-xl md:text-3xl py-5">ตราสัญลักษณ์ของวิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                    <div>
+                        <img className='w-80 h-80 p-12' src="/img/school/logo panomwan.png" alt="" />
+                        <p className="mb-10">
+                            สัญลักษณ์ของวิทยาลัยเทคโนโลยีพนมวันท์มีเครื่องหมายเป็นรูปตรา
+                            วงกลม ภานในวงกลม เป็นรูปดอกบัวบาน 8  กลีบล้อมรอบ
+                            ปราสาทหิน
+                        </p>
+                        
+                        <div className="md:flex">
+                            <div className="text-[#0000B8] mr-2">ดอกบัวบาน 8 กลีบ </div><div>หมายถึง ทางแห่งความสำเร็จมรรค 8 </div>
+                        </div>
+                        <div className="md:flex">
+                            <div className="text-[#0000B8] mr-2">กลีบบัวทั้ง 8 </div><div>หมายถึง ปรัชญาและปณิธานของวิทยาลัย </div>
+                        </div>
+                        <div className="md:flex">
+                            <div className="text-[#0000B8] mr-2">ยอดปราสาทหิน </div><div> หมายถึง ความสูงสุด ความแข็งแกร่งอุตสาหะ พากเพียร ศิลปและวัฒนธรรมท้องถิ่น </div>
+                        </div>
+                        <div className="md:flex">
+                            <div className="text-[#0000B8] mr-2">ปรัชญาและปณิธานของวิทยาลัย </div><div> ฝีมือ เทคโนโลยี วิจัย วัฒนธรรม คุณธรรม ความก้าวหน้า ความสำเร็จและสนองสังคม </div>
+                        </div>
+                    </div>
+
+                    {/* สีของวิทยาลัยเทคโนโลยีพนมวันท์  */}
+                    <h1 className="text-[#1F306A] text-xl md:text-3xl py-5">สีของวิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                    <div className="p-10">
+                        <div className="bg-[#1F306A] w-60 h-20"></div>
+                        <div className="bg-[#FFBF00] w-60 h-20"></div>
+                    </div>
+
+
+                    <div className="md:flex">
+                        <div className="">สีของวิทยาลัยเทคโนโลยีพนมวันท์ คือ น้ำเงินและเหลืองทอง</div>
+                    </div>
+                    <div className="md:flex">
+                        <div className="text-[#0000B8] mr-2">น้ำเงิน</div><div>หมายถึง ความลุ่มลึก ความหนักแน่น มั่นคงในเชิง วิชาการ เปรียบ เสมือนน้ำทะเลสีน้ำเงิน  </div>
+                    </div>
+                    <div className="md:flex">
+                        <div className="text-[#FFBF00] mr-2 ">เหลืองทอง </div><div className="mb-20"> หมายถึง ความมีชื่อเสียง คุณธรรม คุณภาพ และเป็นเอกลักษณ์ ของความยิ่งใหญ่ </div>
+                    </div>
+
+
                 
+
+
+
+
+
+
+{/* ท่อนคณะกรรมการ */}
+                {/* div ขีด */}
+                <div className='bg-[#1F306A] w-full h-1  mb-7 md:mb-7'></div>
+                {/* */}
+
+                {/* แทบ คณะกรรมการสภาวิทยาลัย */}
+
+                <div className="bg-[#1F306A] h-32 justify-center flex flex-col mb-10">
+                    <div className="text-white text-2xl  md:text-4xl text-center mb-2">
+                    <h1>คณะกรรมการสภาวิทยาลัย</h1>
+                    </div>
+                    <div className="text-white text-lg md:text-2xl text-center">
+                    <h5>รายนามคณะกรรมการสภาวิทยาลัย</h5>
+                    </div>
+                </div>
+                {/*  */}
+
+                {/* นายกสภาวิทยาลัย  */}
+                <div className="columns-1">
+                    <div className="items-center justify-center flex flex-col">
+                        <h1 className="text-[#1F306A] font-bold mb-2">นายกสภาวิทยาลัย</h1>
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ศาสตราจารย์ ดร.บุญทัน ดอกไธสง</h5>
+                    </div>
+                </div>
+                {/*  */}
+
+
+
+                {/* กรรมการสภาวิทยาลัย อธิการบดี  */}
+                <div className="columns-1">
+                    <div className="items-center justify-center flex flex-col mt-10">
+                        <h1 className="text-[#1F306A] font-bold mb-2">กรรมการสภาวิทยาลัย อธิการบดี</h1>
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ดร.พิสิษฐ์ ศิริรักษ์</h5>
+                    </div>
+                </div>
+                {/*  */}
+
+                {/* กรรมการสภาวิทยาลัย  */}
+                <h1 className="text-[#1F306A] font-bold mb-2 text-center py-12">กรรมการสภาวิทยาลัย</h1>
+                
+                <div className="columns-1 md:columns-4">
+                    <div className="items-center justify-center flex flex-col ">
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ดร.อินทร์ จันทร์เจริญ</h5>
+                    </div>
+
+                    <div className="items-center justify-center flex flex-col mt-10">
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ศ.ดร.จุลละพงษ์ จุลละโพธิ์</h5>
+                    </div>
+
+                    <div className="items-center justify-center flex flex-col mt-10">
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ดร.ทิวา พงษ์ธนไพบูลย์</h5>
+                    </div>
+
+                    <div className="items-center justify-center flex flex-col mt-10">
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">รอง ศ.ดร.ชัยยุทธ ช่างสาร</h5>
+                    </div>
+
+
+                    <div className="items-center justify-center flex flex-col ">
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ผู้ช่วย ศ.ฉัตรชัย เธียรหิรัญ</h5>
+                    </div>
+
+                    <div className="items-center justify-center flex flex-col mt-10">
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ดร.วราภรณ์ สีหนาท</h5>
+                    </div>
+
+                    <div className="items-center justify-center flex flex-col mt-10">
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ดร.รอง ศ.ดร.อัญชลี สารรัตนะ</h5>
+                    </div>
+
+                    <div className="items-center justify-center flex flex-col mt-10">
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">รอง ศ.ดร.ปพฤกษ์ อุตสาหะวาณิชกิจ</h5>
+                    </div>
+
+
+                </div>
+                {/*  */}
+
+
+
+                {/* เลขานุการสภาวิทยาลัย  */}
+                <div className="columns-1">
+                    <div className="items-center justify-center flex flex-col mt-20 ">
+                        <h1 className="text-[#1F306A] font-bold mb-2">เลขานุการสภาวิทยาลัย</h1>
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ผู้ช่วย ศ.กุลธนี ศิริรักษ์</h5>
+                    </div>
+                </div>
+                {/*  */}
+
+
+
+                {/* กรรมการสภาวิทยาลัย อธิการบดี  */}
+                <div className="columns-1">
+                    <div className="items-center justify-center flex flex-col mt-10">
+                        <h1 className="text-[#1F306A] font-bold mb-2">ผู้ช่วยเลขานุการสภามหาวิทยาลัย</h1>
+                        <img src="https://static.wikia.nocookie.net/heroes-and-villain/images/8/8b/Snape_%281%29.jpg" alt="" />
+                        <h5 className="text-[#536878] text-sm mt-2 ">ผู้ช่วย ศ.ดร.สมพร เจนคุณาวัฒน์</h5>
+                    </div>
+                </div>
+                {/*  */}
+
+                
+
+
+                
+
+            {/* div container */}
+            </div>
+
         </RootLayout>
     );
 }
