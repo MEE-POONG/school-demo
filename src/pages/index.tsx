@@ -84,11 +84,11 @@ export default function About() {
                 <h1 className=" text-2xl md:text-xl  md:ml-0 mt-1 text-center text-yellow-400">
                 กิจกรรมที่ผ่านมา
                 </h1>
-                <div className="grid grid-cols-3 gap-3 mt-5 ">
-                    <Link href="">
-                        <img 
-                            src="/img/event/event1.png"
-                        />
+                <div className="grid grid-cols-3 gap-3 mt-5 container mx-auto">
+                    <Link  href="" >
+                        <img className=""
+                            src="/img/event/event1.png"/>
+                            
                     </Link>
                     <Link href="">
                         <img src="/img/event/event6.png"/>
@@ -100,9 +100,13 @@ export default function About() {
                     </div>
                 </div>
                 </div>
-                <div className="md:w-full h-0.5  mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
-
+                <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+                <div className=" text-2xl md:text-xl md:ml-0 mt-1 text-center">
+                อ่านทั้งหมด
+                </div>
                 
+                </div>
+               
 
 
                 {/* <div className="grid grid-cols-3 md:grid-cols-5 gap-5 m-10 place-items-center">
@@ -132,7 +136,7 @@ export default function About() {
                     </div>
 
                 </div> */}
-            </div>
+          
         </RootLayout>
     );
 }
