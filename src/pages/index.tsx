@@ -17,7 +17,11 @@ export default function About() {
     return (
         <RootLayout>
          <div className=" mt-3">
+
+         <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+
             <Slider />
+            <div className="md:w-full h-1  mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
             </div>
             <div className="relative w-full h-full mt-3 ">
             <img className=" relative w-full h-44" src="/img/event/111.png"/>         
@@ -25,7 +29,7 @@ export default function About() {
                 <div className="text-center">
                     <div className="text-[28px] md:text-[70px] text-white hover:text-orange-500">
                         <Link href="">
-                            <RiFilePaper2Line className="mx-auto" />
+                            <RiFilePaper2Line className="mx-auto"/>
                         </Link>
                     </div>
                     <p className="text-white hover:text-orange-500 text-sm md:text-base">สมัครเรียน</p>
@@ -59,75 +63,49 @@ export default function About() {
                 </div>
             </div>
             </div>
+
+            <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
             <div className="container mx-auto  md:py-10 py-2 text-center">
             <span className="text-4xl ">
                      <span className=" text-blue-800">ข่าว</span> 
                      <span className=" text-yellow-500">“พนมวันท์”</span> 
                 </span>
-                {/* <h1 className=" text-xl md:text-4xl ml-3 md:ml-0 mt-5  ">
-                    ข่าวประชาสัมพันธ์
-                </h1> */}    
-                {/* <div className="flex justify-between  text-blue-900 ">
-                    <div className="order-last text-xs md:text-lg">
-                        <Link href="about">อ่านทั้งหมด</Link>
-                    </div>
-                    <div></div>
-                </div> */}
-                <div className="md:w-full h-0.5 bg-blue-900 mb-7"></div>
+                 <div className="md:w-full h-0.5  mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
                 <div className=" container mx-auto py-2 items-center justify-center">
-                    <img src="/img/imgSlider/school1.jpg" />
+            <Slider />
+                 
                 </div>
-                <div className="grid grid-cols-3 gap-3 mt-5  lg:container mx-auto ">
-                    <Link href="">
-                        <img
-                            src="/img/imgSlider/school6.jpg"
-                    
-                        />
-                    </Link>
-                    <Link href="">
-                        <img src="/img/register/regis.png" />
-                    </Link>
-                    <Link href="">
-                        <img
-                            src="/img/imgSlider/school3.jpg"
-                            
-                        />
-                    </Link>
-                </div>
+               
             </div>
 
-            <div className="container mx-auto md:py-24 text-blue-900  ">
-                <h1 className="font-fontTH text-xl md:text-4xl  md:ml-0 mt-5">
-                    ข่าวกิจกรรม
+            <div className=" p-8">
+                <div className=" h-56 bg-blue-900  ">
+                <div className=" container mx-auto items-center justify-center">
+                <h1 className=" text-2xl md:text-xl  md:ml-0 mt-1 text-center text-yellow-400">
+                กิจกรรมที่ผ่านมา
                 </h1>
-                <div className="flex justify-between">
-                    <div className="order-last text-xs md:text-lg">
-                        <Link href="about">อ่านทั้งหมด</Link>
-                    </div>
-                    <div></div>
-                </div>
-                <div className="h-0.5 bg-blue-900 md:ml-1"></div>
-                <div className=" container mx-auto py-2 items-center justify-center"></div>
                 <div className="grid grid-cols-3 gap-3 mt-5 ">
                     <Link href="">
-                        <img
+                        <img 
                             src="/img/event/event1.png"
                         />
                     </Link>
                     <Link href="">
-                        <img src="/img/event/event6.png" />
+                        <img src="/img/event/event6.png"/>
                     </Link>
                     <Link href="">
                         <img
-                            src="/img/event/event3.png"
-                          
-                        />
+                            src="/img/event/event3.png"/>
                     </Link>
+                    </div>
                 </div>
+                </div>
+                <div className="md:w-full h-0.5  mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+
                 
 
 
-                <div className="grid grid-cols-3 md:grid-cols-5 gap-5 m-10 place-items-center">
+                {/* <div className="grid grid-cols-3 md:grid-cols-5 gap-5 m-10 place-items-center">
                     <div className="outline outline-1 h-12 w-12 md:h-32 md:w-32 flex flex-col items-center justify-center">
                         <h1 className=" text-blue-800 text-xs md:text-lg">คณะ</h1>
                         <h1 className=" text-blue-500 text-xl md:text-3xl">4</h1>
@@ -153,7 +131,7 @@ export default function About() {
                         <h1 className=" text-blue-500 text-xl md:text-3xl">1222</h1>
                     </div>
 
-                </div>
+                </div> */}
             </div>
         </RootLayout>
     );
