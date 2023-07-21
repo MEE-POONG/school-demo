@@ -1,4 +1,4 @@
-import LogoPanomwan from "@/container/panomwan/LogoPanomwan";
+import LogoPanomwan from "@/container/LogoPanomwan";
 import React, { useState } from "react";
 
 const Navbar: React.FC = () => {
@@ -13,7 +13,6 @@ const Navbar: React.FC = () => {
       <nav className="bg-[#1F306A] h-[130px] font-fontTH ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="container flex flex-wrap items-center justify-between h-16">
-          {/* <div className="container  flex flex-wrap items-center justify-between h-16 "> */}
             <div className="flex flex-wrap items-center mt-[2%]">
 
               <div className="mr-4"><LogoPanomwan/></div>
@@ -96,7 +95,7 @@ const Navbar: React.FC = () => {
                   <div className="relative">
                   <button
                     className=" text-white py-2 px-4 rounded-md focus:outline-none"
-                    onClick={toggleDropdown}
+                    // onClick={toggleDropdown}
                   >
                     <span className=" flex">
                       สนใจสมัครเรียน
