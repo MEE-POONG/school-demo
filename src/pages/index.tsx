@@ -16,55 +16,63 @@ const inter = Inter({ subsets: ["latin"] });
 export default function About() {
     return (
         <RootLayout>
+         <div className=" mt-3">
             <Slider />
-        <div className="container mx-auto">
-            <div className="   flex justify-evenly md:grid-flow-col md:gap-10 md:justify-center mt-6">
+            </div>
+            <div className="relative w-full h-full mt-3 ">
+            <img className=" relative w-full h-44" src="/img/event/111.png"/>         
+            <div className=" absolute inset-0 flex justify-evenly md:grid-flow-col md:gap-20 md:justify-center mt-6  ">
                 <div className="text-center">
-                    <div className="bg-white text-[28px] md:text-[70px] text-blue-900 p-4  rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
+                    <div className="text-[28px] md:text-[70px] text-white hover:text-orange-500">
+                        <Link href="">
+                            <RiFilePaper2Line className="mx-auto" />
+                        </Link>
+                    </div>
+                    <p className="text-white hover:text-orange-500 text-sm md:text-base">สมัครเรียน</p>
+                </div>
+
+                <div className="text-center">
+                    <div className="text-[30px] md:text-[70px] text-white hover:text-orange-500">
                         <Link href="" className="">
-                            <RiFilePaper2Line/>
+                            <FaMoneyBill className="mx-auto"/>
                         </Link>
                     </div>
-                    <p className="text-blue-900 text-sm md:text-lg">สมัครเรียน</p>
+                    <p className="text-white hover:text-orange-500 text-xs md:text-base ">ทุนการศึกษา</p>
                 </div>
 
                 <div className="text-center">
-                    <div className="bg-white text-[30px]  md:text-[70px] text-blue-900 p-4 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
+                    <div className=" text-[30px] md:text-[70px] text-white hover:text-orange-500">
                         <Link href="">
-                            <FaMoneyBill  />
+                            <RiGraduationCapLine className="mx-auto"/>
                         </Link>
                     </div>
-                    <p className="text-blue-900 text-xs md:text-lg">ทุนการศึกษา</p>
+                    <p className="text-white hover:text-orange-500 text-xs md:text-base">ปรึกษาเพิ่มเติม</p>
                 </div>
 
                 <div className="text-center">
-                    <div className="bg-white text-[30px] md:text-[70px] text-blue-900 p-4 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
+                    <div className=" text-[30px] md:text-[70px] text-white hover:text-orange-500">
                         <Link href="">
-                            <RiGraduationCapLine  />
+                            <FaUserGraduate className="mx-auto"/>
                         </Link>
                     </div>
-                    <p className="text-blue-900 text-xs md:text-lg">ปรึกษาเพิ่มเติม</p>
-                </div>
-
-                <div className="text-center">
-                    <div className="bg-white text-[30px] md:text-[70px] text-blue-900 p-4 rounded-full hover:bg-blue-900 hover:text-white border-2 border-blue-900">
-                        <Link href="">
-                            <FaUserGraduate />
-                        </Link>
-                    </div>
-                    <p className="text-blue-900 text-xs md:text-lg">คณะที่เปิดสอน</p>
+                    <p className="text-white hover:text-orange-500 text-xs md:text-base">คณะที่เปิดสอน</p>
                 </div>
             </div>
-            <div className="container mx-auto  md:py-10 text-blue-900 py-2 justify-evenly">
-                <h1 className="font-fontTH text-xl md:text-4xl ml-3 md:ml-0 mt-5 ">
+            </div>
+            <div className="container mx-auto  md:py-10 py-2 text-center">
+            <span className="text-4xl ">
+                     <span className=" text-blue-800">ข่าว</span> 
+                     <span className=" text-yellow-500">“พนมวันท์”</span> 
+                </span>
+                {/* <h1 className=" text-xl md:text-4xl ml-3 md:ml-0 mt-5  ">
                     ข่าวประชาสัมพันธ์
-                </h1>
-                <div className="flex justify-between ">
+                </h1> */}    
+                {/* <div className="flex justify-between  text-blue-900 ">
                     <div className="order-last text-xs md:text-lg">
                         <Link href="about">อ่านทั้งหมด</Link>
                     </div>
                     <div></div>
-                </div>
+                </div> */}
                 <div className="md:w-full h-0.5 bg-blue-900 mb-7"></div>
                 <div className=" container mx-auto py-2 items-center justify-center">
                     <img src="/img/imgSlider/school1.jpg" />
@@ -146,10 +154,6 @@ export default function About() {
                     </div>
 
                 </div>
-
-
-
-            </div>
             </div>
         </RootLayout>
     );
