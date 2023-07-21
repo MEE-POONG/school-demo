@@ -139,15 +139,6 @@ export default function About() {
                     1000 
                     <span className="my-auto text-xl text-white mr-2">&nbsp;ผู้เข้าชมเว็บไซต์</span>
                 </div>
-                {/* <div className=" my-auto text-2xl text-yellow-400">9</div>
-                <div className=" my-auto text-xl text-white border-r-2 border-gray-500">หลักสูตร</div>
-                <div className=" my-auto text-2xl text-yellow-400">20</div>
-                <div className=" my-auto text-xl text-white border-r-2 border-gray-500">บุคลากร</div>
-                <div className=" my-auto text-2xl text-yellow-400">500</div>
-                <div className=" my-auto text-xl text-white">นักศึกษาปัจจุบัน</div>
-                <div className="border-r-2 border-gray-500 "></div>
-                <div className=" my-auto text-2xl text-yellow-400">1000</div>
-                <div className=" my-auto text-xl text-white ">ผู้เข้าชมเว็บไซต์</div> */}
             </div>
             </div>
 
