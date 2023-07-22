@@ -34,8 +34,8 @@ export default function Home() {
            {/* ข้อมูลผู้สมัคร  */}
             <div className=' outline outline-1  drop-shadow-xl shadow-xl'>
 
-                    <div className='bg-[#91A3B0] w-full h-[50px] drop-shadow-md  shadow-md '>
-                        <h1 className='text-3xl text-[#1F306A] p-2'> ข้อมูลผู้สมัคร</h1>
+                    <div className='bg-black bg-opacity-80 w-full h-[50px] drop-shadow-md  shadow-md '>
+                        <h1 className='text-3xl text-[#FFBF00] p-2'> ข้อมูลผู้สมัคร</h1>
                     </div>
 
                     <form action="">
@@ -146,8 +146,8 @@ export default function Home() {
             {/* ประวัติการศึกษา  */}
             <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
-                    <div className='bg-[#91A3B0] w-full h-[50px] drop-shadow-md  shadow-md '>
-                        <h1 className='text-3xl text-[#1F306A] p-2'>ประวัติการศึกษา</h1>
+                    <div className='bg-black bg-opacity-80 w-full h-[50px] drop-shadow-md  shadow-md '>
+                        <h1 className='text-3xl text-[#FFBF00] p-2'>ประวัติการศึกษา</h1>
                     </div>
 
                     <form action="">
@@ -197,8 +197,8 @@ export default function Home() {
             {/* คณะ/สาขา  */}
             <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
-                    <div className='bg-[#91A3B0] w-full h-[50px] drop-shadow-md  shadow-md '>
-                        <h1 className='text-3xl text-[#1F306A] p-2'>คณะ/สาขา</h1>
+                    <div className='bg-black bg-opacity-80 w-full h-[50px] drop-shadow-md  shadow-md '>
+                        <h1 className='text-3xl text-[#FFBF00] p-2'>คณะ/สาขา</h1>
                     </div>
 
                     <form action="">

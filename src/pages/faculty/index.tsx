@@ -23,7 +23,7 @@ export default function Faculty() {
       <div className='container mx-auto md:py-24 py-12'>
 
       <div className='flex justify-center md:justify-end mb-5 md:mb-5  '>
-        <button type="button" className="text-4xl md:text-2xl text-[#1F306A] bg-[#FFBF00] hover:bg-[#6CB4EE] rounded-md-lg  px-5 py-2.5  mb-2 ">
+        <button type="button" className="text-4xl md:text-2xl text-[#1F306A] bg-[#FFBF00] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5  mb-2 ">
                   สมัครเรียน
                 </button> 
       </div>
@@ -50,7 +50,7 @@ export default function Faculty() {
 
 
       {/* คณะวิทยาศาสตร์และเทคโนโลยี */}
-      <div className='bg-neutral-800 rounded-md flex justify-between '>
+      <div className='bg-[#536878] rounded-md flex justify-between '>
           
           <div className='pl-4 pt-4 mr-5'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะวิทยาศาสตร์และเทคโนโลยี  </h1>
@@ -76,7 +76,7 @@ export default function Faculty() {
 
 
       {/* คณะวิศวกรรมศาสตร์ */}
-      <div className='bg-neutral-800 rounded-md flex justify-between mt-5 '>
+      <div className='bg-[#536878] rounded-md flex justify-between mt-5 '>
           
           <div className='pl-4 pt-4 mr-5'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะวิศวกรรมศาสตร์  </h1>
