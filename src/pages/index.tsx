@@ -16,9 +16,14 @@ const inter = Inter({ subsets: ["latin"] });
 export default function About() {
     return (
         <RootLayout>
+
+
             <div className=" mt-8">
-                <div className="md:w-full h-1   bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
-                <Slider />
+                <div className="md:w-full h-1 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+
+
+                {/* <Slider /> */}
+         
                 <div className="md:w-full h-1  mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
             </div>
             <div className="relative w-full h-full mt-3 ">

@@ -1,10 +1,16 @@
 import LogoPanomwan from "@/container/LogoPanomwan";
 import React, { useState } from "react";
+import Dropdown from "../../../components/dropdown";
+
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleDropdown1 = () => {
     setIsOpen(!isOpen);
   };
 
@@ -15,8 +21,7 @@ const Navbar: React.FC = () => {
         <div className="container flex flex-wrap items-center justify-between h-16">
             <div className="flex flex-wrap items-center mt-[2%]">
 
-              <div className="mr-4"><LogoPanomwan/></div>
-
+              <div className=" flex mr"><LogoPanomwan/>
               <div className="flex md:order-2 ml-5">
                 <button
                   onClick={toggleDropdown}
@@ -52,6 +57,7 @@ const Navbar: React.FC = () => {
                     ></path>
                   </svg>
                 </button>
+                </div>
               </div>
 
               {/* คำสั่ง เมนู */}
@@ -66,36 +72,47 @@ const Navbar: React.FC = () => {
                 <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium bg-[#1F306A] ">
                   <a
                     href="about"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium "
+                    className="text-white  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium "
                   >
                     หน้าแรก
                   </a>
 
                   <a
                     href="about"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
+                    className="text-white  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
                   >
                     รู้จัก &quot;พนมวันท์&quot;
                   </a>
 
                   <a
                     href="faculty"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
+                    className="text-white  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
                   >
                     คณะ/หลักสูตร
                   </a>
 
                   <a
                     href="welfare"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
+                    className="text-white  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium"
                   >
                     สวัสดิการ
                   </a>
+                  
+                  <a ><Dropdown/></a>
+                  
 
-                  <div className="relative">
+
+
+
+
+
+
+
+
+                  {/* <div className="relative">
                   <button
                     className=" text-white py-2 px-4 rounded-md focus:outline-none"
-                    // onClick={toggleDropdown}
+                    onClick={toggleDropdown1}
                   >
                     <span className=" flex">
                       สนใจสมัครเรียน
@@ -136,7 +153,7 @@ const Navbar: React.FC = () => {
                       </li>
                     </ul>
                   )}
-                </div>
+                </div> */}
                 </ul>
               </div>
             </div>
