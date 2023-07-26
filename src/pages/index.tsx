@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import RootLayout from "../../components/layout";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import Slider from "@/container/slider";
+import Slider from "@/pages/slider";
 import { RiFilePaper2Line } from "react-icons/ri";
 import { GrMoney } from "react-icons/gr";
 import { RiGraduationCapLine } from "react-icons/ri";
@@ -17,25 +17,24 @@ const inter = Inter({ subsets: ["latin"] });
 export default function About() {
   return (
     <RootLayout>
-      <div className=" mt-8">
-        <div className="md:w-full h-1 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+     
+      <Slider/>
 
-         <Slider/> 
 
-        <div className="md:w-full h-1  mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
-      </div>
-        <Menu/>
+
+        {/* <Menu/> */}
 
       <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
       <div className="container mx-auto  md:py-10 py-2 text-center">
+
         <span className=" text-2xl md:text-4xl">
           <span className=" text-blue-800 ">ข่าว</span>
           <span className=" text-yellow-500">“พนมวันท์”</span>
         </span>
-        <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+        {/* <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
         <div className=" mx-auto py-2 items-center justify-center">
           <Slider />
-        </div>
+        </div> */}
       </div>
 
       <div className=" p-8">
