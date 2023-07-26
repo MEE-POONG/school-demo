@@ -41,7 +41,58 @@ export default function Welfare() {
         </div>
 
         {/* เนื้อหาข่าวประชาสัมพันธ์ */}
-        <div>
+        <div className='bg-[#E5E4E2]'>
+            {/* คอลั่ม */}
+            <div className='grid grid-cols-2 md:grid-cols-4'>
+            {/* ข้อมูลในคอลั่ม */}
+
+
+                <div className='p-5'>
+                    <div className='box-content shadow-xl rounded-lg '>
+                        <img className='rounded-lg' src="/img/imgSlider/school7.jpg" alt="" />
+                        <h1 className='text-[#1F306A] px-2 pt-2 h-14 text-sm truncate '>
+                        เปิดรับสมัครนักศึกษาใหม่ 2566
+
+                        </h1>
+                    </div>
+                </div>
+
+
+                <div className='p-5'>
+                    <div className='box-content shadow-xl rounded-lg '>
+                        <img className='rounded-lg' src="/img/imgSlider/school7.jpg" alt="" />
+                        <h1 className='text-[#1F306A] px-2 pt-2 h-14 text-sm truncate '>
+                        เปิดรับสมัครนักศึกษาใหม่ 2566
+
+                        </h1>
+                    </div>
+                </div>
+
+
+                <div className='p-5'>
+                    <div className='box-content shadow-xl rounded-lg '>
+                        <img className='rounded-lg' src="/img/imgSlider/school7.jpg" alt="" />
+                        <h1 className='text-[#1F306A] px-2 pt-2 h-14 text-sm truncate '>
+                        เปิดรับสมัครนักศึกษาใหม่ 2566
+
+                        </h1>
+                    </div>
+                </div>
+
+
+                <div className='p-5'>
+                    <div className='box-content shadow-xl rounded-lg '>
+                        <img className='rounded-lg' src="/img/imgSlider/school7.jpg" alt="" />
+                        <h1 className='text-[#1F306A] px-2 pt-2 h-14 text-sm truncate '>
+                        เปิดรับสมัครนักศึกษาใหม่ 2566
+
+                        </h1>
+                    </div>
+                </div>
+
+
+            {/* ปิดคอลั่ม */}
+            </div>
         </div>
 
 
@@ -63,7 +114,59 @@ export default function Welfare() {
 
 
         {/* เนื้อหาข่าวกิจกรรม */}
-        <div>
+        <div className='bg-[#E5E4E2]'>
+
+                    {/* คอลั่ม */}
+            <div className='grid grid-cols-2 md:grid-cols-4'>
+            {/* ข้อมูลในคอลั่ม */}
+
+                <div className='p-5'>
+                    <div className='box-content shadow-xl rounded-lg '>
+                        <img className='rounded-lg' src="/img/imgSlider/school7.jpg" alt="" />
+                        <h1 className='text-[#1F306A] px-2 pt-2 h-14 text-sm truncate '>
+                        เปิดรับสมัครนักศึกษาใหม่ 2566
+
+                        </h1>
+                    </div>
+                </div>
+
+
+                <div className='p-5'>
+                    <div className='box-content shadow-xl rounded-lg '>
+                        <img className='rounded-lg' src="/img/imgSlider/school7.jpg" alt="" />
+                        <h1 className='text-[#1F306A] px-2 pt-2 h-14 text-sm truncate '>
+                        เปิดรับสมัครนักศึกษาใหม่ 2566
+
+                        </h1>
+                    </div>
+                </div>
+
+
+                <div className='p-5'>
+                    <div className='box-content shadow-xl rounded-lg '>
+                        <img className='rounded-lg' src="/img/imgSlider/school7.jpg" alt="" />
+                        <h1 className='text-[#1F306A] px-2 pt-2 h-14 text-sm truncate '>
+                        เปิดรับสมัครนักศึกษาใหม่ 2566
+
+                        </h1>
+                    </div>
+                </div>
+
+
+                <div className='p-5'>
+                    <div className='box-content shadow-xl rounded-lg '>
+                        <img className='rounded-lg' src="/img/imgSlider/school7.jpg" alt="" />
+                        <h1 className='text-[#1F306A] px-2 pt-2 h-14 text-sm truncate '>
+                        เปิดรับสมัครนักศึกษาใหม่ 2566
+
+                        </h1>
+                    </div>
+                </div>
+
+
+            {/* ปิดคอลั่ม */}
+            </div>
+
         </div>
 
 
