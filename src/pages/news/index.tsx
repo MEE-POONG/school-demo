@@ -28,6 +28,49 @@ export default function Welfare() {
                 </div>
             </div>
 
+    
+        {/* แทบ ข่าวประชาสัมพันธ์ */}
+        <div className=''>
+                    <div className="bg-black bg-opacity-80">
+                        <h1 className='text-xl md:text-3xl text-[#FFBF00] text-center py-4 md:py-6'>
+                            ข่าวประชาสัมพันธ์
+                        </h1>
+                    
+                    </div>
+
+        </div>
+
+        {/* เนื้อหาข่าวประชาสัมพันธ์ */}
+        <div>
+        </div>
+
+
+        {/* ปุ่มโหลดเพิ่มเติม 1 */}
+        <div className=' py-8 flex justify-center items-center'>
+            <button className='bg-black bg-opacity-80 text-white rounded-lg  drop-shadow-lg h-12 w-28'>โหลดเพิ่มเติม</button>
+        </div>
+
+        {/* แทบ ข่าวกิจกรรม */}
+        <div className=''>
+                    <div className="bg-black bg-opacity-80">
+                        <h1 className='text-xl md:text-3xl text-[#FFBF00] text-center py-4 md:py-6'>
+                            ข่าวกิจกรรม
+                        </h1>
+                    
+                    </div>
+
+        </div>
+
+
+        {/* เนื้อหาข่าวกิจกรรม */}
+        <div>
+        </div>
+
+
+        {/* ปุ่มโหลดเพิ่มเติม 2 */}
+        <div className=' py-8 flex justify-center items-center'>
+            <button className='bg-black bg-opacity-80 text-white rounded-lg  drop-shadow-lg h-12 w-28'>โหลดเพิ่มเติม</button>
+        </div>
 
 
         </RootLayout>
