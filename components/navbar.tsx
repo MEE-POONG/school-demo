@@ -1,4 +1,4 @@
-import LogoPanomwan from "@/container/LogoPanomwan";
+import LogoPanomwan from "@/container/LOGO/LogoPanomwan";
 import React, { useState } from "react";
 import Dropdown from "../components/dropdown";
 
@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="container flex flex-wrap items-center justify-between h-16">
             <div className="flex flex-wrap items-center mt-[2%]">
-              <div className=" flex mr">
+              <div className=" flex mt-5 ">
                 <LogoPanomwan />
                 
                 <div className="flex md:order-2 ml-5">

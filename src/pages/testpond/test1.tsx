@@ -1,4 +1,4 @@
-import LogoPanomwan from "@/container/LogoPanomwan";
+import LogoPanomwan from "@/container/LOGO/LogoPanomwan";
 import React, { useState } from "react";
 import Dropdown from "../../../components/dropdown";
 
