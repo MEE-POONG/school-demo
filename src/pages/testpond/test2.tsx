@@ -1,12 +1,17 @@
 import Link from "next/link";
 import React from "react";
+import Test from '../test';
+import LogoPanomwan2 from "@/container/LOGO/Logopanomwan2";
 
 const Footer = () => {
   return (
     <footer className="bg-[#1F306A] w-full font-fontTH">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <Link href="/" className="mb-4 flex">
+
+          <LogoPanomwan2/>
+          
+          {/* <Link href="/" className="mb-4 flex">
             <img
               src="/img/Logo_panomwan.png"
               className="h-[70px] mr-3"
@@ -19,7 +24,7 @@ const Footer = () => {
               <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
               <p>TEL : 044-955121-122 FAX : 044-955120</p>
             </span>
-          </Link>
+          </Link> */}
 
           <div className="md:flex text-gray-500 my-8">
             <div className="md:mr-10">
@@ -63,7 +68,7 @@ const Footer = () => {
             </div>
 
             <div className="">
-              <h2 className="mb-6 text-sm font-semibold text-white ">
+            <h2 className="mb-6 text-md font-semibold text-white">
                 รายการ
               </h2>
               <ul className="text-white">
@@ -96,15 +101,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-black h-9">
-        {/* <hr className="" /> */}
-        <span className="block text-sm">
-          © 2023{" "}  
-          <Link href="" className="hover:underline ">
-            Me Prompt Technology CONPANY LIMITED.
-          </Link>
-          All Rights Reserved.
-        </span>
+
+      <div className=" bg-black w-full ">
+      <span className=" text-white font-serif sm:text-sm">
+    <p className=" text-center">
+      <a href="">© 2023{" "}  Me Prompt Technology CONPANY LIMITED.  All Rights Reserved.</a>
+    </p>
+    </span>
       </div>
     </footer>
 
