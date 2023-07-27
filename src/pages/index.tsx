@@ -46,13 +46,13 @@ export default function About() {
             </h1>
             <div className="grid grid-cols-3 gap-3 mt-5 container mx-auto">
               <Link href="">
-                <img className="" src="/img/event/event1.png" />
+                <img className="" src="/img/event/event1.png"/>
               </Link>
               <Link href="">
-                <img src="/img/event/event6.png" />
+                <img src="/img/event/event6.png"/>
               </Link>
               <Link href="">
-                <img src="/img/event/event3.png" />
+                <img src="/img/event/event3.png"/>
               </Link>
             </div>
           </div>
@@ -61,12 +61,11 @@ export default function About() {
       </div>
 
       <div className="text-center min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-1 lg:overflow-visible ">
-        <button
-          className=" underline underline-offset-1 middle none center mr-4 rounded-lg bg-blue-900 py-3 px-6 font-sans text-sm font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          data-ripple-light="true"
-        >
+        <Link href="news">
+        <button className=" underline underline-offset-1 middle none center mr-4 rounded-lg bg-blue-900 py-3 px-6 font-sans text-sm font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">
           อ่านทั้งหมด
         </button>
+        </Link>
       </div>
 
       <div className="container mx-auto  md:py-2 py-2  ">

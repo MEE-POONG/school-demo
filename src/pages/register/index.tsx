@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import RootLayout from '@/components/layout'
+import Link from 'next/link';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,9 +18,11 @@ export default function Home() {
             </div>
             <div className=' bg-zinc-800 w-full text-center'>
                   <h1 className=' text-sm text-white md:text-xl text-center'>“ทำงานอยู่ก็เรียนได้” สนใจสมัครเรียน..
+                  <Link href="register/form">
                   <button type="button" className=" text-xs md:text-xl text-white bg-[#FFBF00] hover:bg-[#6CB4EE] rounded-lg px-2 py-1   md:px-5 md:py-2  mb-2 mt-2">
                   คลิก
                 </button>
+                </Link>
                   </h1>
                 </div>
             <img className='' src="/img/register/b1.png" alt=""/>

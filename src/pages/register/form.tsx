@@ -24,12 +24,6 @@ export default function Home() {
         
         <div className='bg-[#1F306A] w-full h-1  mb-7 '>
         </div>
-
-
-
-
-
-
         <div className=''>
            {/* ข้อมูลผู้สมัคร  */}
             <div className=' outline outline-1  drop-shadow-xl shadow-xl'>

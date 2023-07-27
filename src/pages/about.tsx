@@ -245,8 +245,9 @@ export default function About() {
                         <h1 className='md:text-3xl text-white text-center py-10'>
                         ติดต่อขอคำปรึกษา 
                         </h1>
+                        <Link href="advisor" >
                         <button className="bg-[#FFBF00] rounded-lg text-white ml-1 w-14 md:w-24  md:text-3xl">คลิก</button>
-                    
+                        </Link>
                     </div>
 
             </div>

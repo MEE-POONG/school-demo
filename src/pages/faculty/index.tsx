@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import RootLayout from '@/components/layout'
+import Link from 'next/link';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,10 +23,12 @@ export default function Faculty() {
 {/* container ใหญ่ */}
       <div className='container mx-auto md:py-24 py-12'>
 
-      <div className='flex justify-center md:justify-end mb-5 md:mb-5  '>
+      <div className='flex justify-center md:justify-end mb-5 md:mb-5'>
+        <Link href="register">
         <button type="button" className="text-4xl md:text-2xl text-[#1F306A] bg-[#FFBF00] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2.5  mb-2 ">
                   สมัครเรียน
                 </button> 
+                </Link>
       </div>
       {/* ขีด */}
       <div className='bg-gradient-to-r from-black via-[#FFBF00] to-black w-full h-1  mb-7 md:mb-14'></div>
