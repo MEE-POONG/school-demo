@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
           <div className="container flex flex-wrap items-center justify-between h-16">
             <div className="flex flex-wrap items-center mt-[2%]">
               <div className=" flex mt-5 ">
-                <LogoPanomwan />
+                <LogoPanomwan/>
                 
                 <div className="flex md:order-2 ml-5">
                   <button
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
               >
                 <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium bg-[#1F306A] ">
                   <a
-                    href="about"
+                    href="./"
                     className="text-white  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-20 font-medium "
                   >
                     หน้าแรก
@@ -100,8 +100,6 @@ const Navbar: React.FC = () => {
                   <a>
                     <Dropdown />
                   </a>
-
-                 
                 </ul>
               </div>
             </div>
