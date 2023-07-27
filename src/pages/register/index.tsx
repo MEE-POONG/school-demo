@@ -28,7 +28,7 @@ export default function Home() {
             <img className='' src="/img/register/b2.png" alt=""/>
             <div className=' bg-zinc-800'>
             <div className='container mx-auto md:py-4 py-2'>
-                <div className=' text-yellow-600 text-2xl'>สิ่งที่ควรรู้ก่อนสมัครเรียน </div>
+                <div className=' text-yellow-600 text-2xl drop-shadow-md'>สิ่งที่ควรรู้ก่อนสมัครเรียน </div>
                     <div className="grid grid-row-2 grid-flow-col gap-4 rounded-md bg-yellow-500 p-4 ">
                         <div className='border-r-2 border-black p-2'>
                             <h2 className=' text-xl text-blue-950'>คุณสมบัติของผู้เรียน</h2>
