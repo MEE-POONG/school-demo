@@ -17,10 +17,13 @@ export default function Home() {
             <h2 className=' text-white text-3xl'>วิทยาลัยเทคโนโลยีพนมวันท์</h2>
             </div>
             </div>
-
-            <div className=' bg-zinc-800'>
-                  <h1 className=' text-white text-xl text-center'>“ทำงานอยู่ก็เรียนได้” สนใจสมัครเรียน..</h1>
-            </div>
+            <div className=' bg-zinc-800 w-full text-center'>
+                  <h1 className=' text-white text-xl text-center'>“ทำงานอยู่ก็เรียนได้” สนใจสมัครเรียน..
+                  <button type="button" className=" md:text-xl text-white bg-[#FFBF00] hover:bg-[#6CB4EE] rounded-lg  px-5 py-2 mb-2 mt-2">
+                  คลิก
+                </button>
+                  </h1>
+                </div>
             <img className='' src="/img/register/b1.png" alt=""/>
             <img className='' src="/img/register/b2.png" alt=""/>
             <div className=' bg-zinc-800'>
