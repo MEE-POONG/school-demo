@@ -11,9 +11,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             try {
                 const id = req.query.id;
 
-                const data = await prisma.welfare.findUnique({
+                const data = await prisma.major.findUnique({
                     where: {
                         id: id as string,
+                    },
+                    include: {
+                        faculty : true,
                     },
                 });
 
@@ -27,10 +30,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             try {
                 const id = req.query.id;
 
-                const data = await prisma.welfare.update({
+                const data = await prisma.major.update({
                     where: {
                         id: id as string,
                     },
+                    
+                    include: {
+                        faculty : true,
+                    },
+                    
                     data: req.body,
                 });
 
@@ -44,7 +52,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             try {
                 const id = req.query.id;
 
-                const data = await prisma.welfare.delete({
+                const data = await prisma.major.delete({
                     where: {
                         id: id as string,
                     },

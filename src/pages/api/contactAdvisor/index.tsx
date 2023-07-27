@@ -12,28 +12,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 const page: number = Number(req.query.page) || 1;
                 const pageSize: number = Number(req.query.pageSize) || 10;
 
-                const welfare = await prisma.welfare.findMany({
+                const contactAdvisor = await prisma.contactAdvisor.findMany({
                     skip: (page - 1) * pageSize,
                     take: pageSize,
                 });
 
-                const totalwelfare = await prisma.welfare.count();
-                const totalPage: number = Math.ceil(totalwelfare / pageSize);
-                res.status(200).json({ welfare });
+                const totalcontactAdvisor = await prisma.contactAdvisor.count();
+                const totalPage: number = Math.ceil(totalcontactAdvisor / pageSize);
+                res.status(200).json({ contactAdvisor });
             } catch (error) {
-                res.status(500).json({ error: "An error occurred while fetching the welfare" });
+                res.status(500).json({ error: "An error occurred while fetching the contactAdvisor" });
             }
             break;
 
         case 'POST':
             try {
-                const newwelfare = await prisma.welfare.create({
+                const newcontactAdvisor = await prisma.contactAdvisor.create({
                     data: req.body,
                 });
 
-                res.status(201).json(newwelfare);
+                res.status(201).json(newcontactAdvisor);
             } catch (error) {
-                res.status(500).json({ error: "An error occurred while creating the welfare" });
+                res.status(500).json({ error: "An error occurred while creating the contactAdvisor" });
             }
             break;
 
