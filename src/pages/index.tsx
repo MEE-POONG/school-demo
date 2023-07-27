@@ -31,11 +31,12 @@ export default function About() {
           <span className=" text-blue-800 ">ข่าว</span>
           <span className=" text-yellow-500">“พนมวันท์”</span>
         </span>
-        {/* <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+        <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
         <div className=" mx-auto py-2 items-center justify-center">
           <Slider />
-        </div> */}
+        </div>
       </div>
+
 
       <div className=" p-8">
         <div className="  bg-blue-900 md:h-56 lg:h-96">
