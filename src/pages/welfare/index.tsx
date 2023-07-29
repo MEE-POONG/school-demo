@@ -32,11 +32,12 @@ export default function Welfare() {
 
         {/* ข้อมูล 6 ช่อง */}
         <div className='bg-black bg-opacity-80'>
-
+ 
             {/* ขีด */}
             <div className='py-5 px-10'>
                 <div className='bg-gradient-to-r from-[#1F306A] via-[#FFBF00] to-black w-full h-1 '></div>
             </div>
+            <div className=' container mx-auto'>
 
             {/* 6 คอลั่ม */}
             <div className='grid md:grid-cols-3 px-5 md:px-0 '>
@@ -55,10 +56,10 @@ export default function Welfare() {
                   
                   {/* กู้เรียน */}
                   <div className='md:p-10 py-5'>
-                        <div className='bg-[#1F306A] rounded-t-xl'>
+                        <div className='bg-[#1F306A]  rounded-t-xl'>
                             <h1 className='font-bold text-white text-2xl md:text-lg lg:text-2xl py-3 pl-2'>กู้เรียน</h1>
                         </div>
-                        <div className='bg-white rounded-b-xl h-36 md:h-56 lg:h-36 p-4'>
+                        <div className='bg-white rounded-b-xl h-36 md:h-56  lg:h-36 p-4'>
                             <p className=''>ได้รับพิจารณาให้กู้ กยศ. หรือ กรอ. ตลอดจนจบการศึกษา โดยไม่ต้องสำรองจ่าย</p>
                         </div>
 
@@ -106,6 +107,7 @@ export default function Welfare() {
                             <p className=''> นักศึกษามีสิทธิ์สมัครเรียนวิชาการ (รด.) 
                             ต่อเนื่องปี 4 ปี 5 ได้ 
                             พร้อมทำเรื่องผ่อนผันการเกณฑ์ทหาร</p>
+                        </div>
                         </div>
 
                   </div>
