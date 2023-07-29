@@ -82,7 +82,7 @@ const ComponentsNavbar: React.FC = () => {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="#"
+                                href="register"
                                 className={classNames(
                                   active
                                     ? "bg-gray-100 text-gray-900"
@@ -97,7 +97,7 @@ const ComponentsNavbar: React.FC = () => {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="#"
+                                href="advisor"
                                 className={classNames(
                                   active
                                     ? "bg-gray-100 text-gray-900"
