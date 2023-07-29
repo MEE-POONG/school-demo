@@ -24,12 +24,6 @@ export default function Home() {
         
         <div className='bg-[#1F306A] w-full h-1  mb-7 '>
         </div>
-
-
-
-
-
-
         <div className=''>
            {/* ข้อมูลผู้สมัคร  */}
             <div className=' outline outline-1  drop-shadow-xl shadow-xl'>
@@ -62,7 +56,7 @@ export default function Home() {
                               <label className=''>คำนำหน้าชื่อ:</label>    
                             </div>
                             <div className=' col-span-1 md:col-span-2  md:my-2'>
-                                  <select className=' block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
+                                  <select className=' block w-full md:w-1/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
                                     <option>นาย</option>
                                     <option>นาง</option>
                                     <option>นางสาว</option>
@@ -72,7 +66,7 @@ export default function Home() {
                               <label className=''>เพศ:</label>    
                             </div>
                             <div className='col-span-1 md:col-span-2 my-2'>
-                                  <select className=' block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                                  <select className=' block w-full md:w-1/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                                     <option>นาย</option>
                                     <option>นาง</option>
                                     <option>นางสาว</option>
@@ -83,7 +77,7 @@ export default function Home() {
                               <label className=''>สัญชาติ: </label>    
                             </div>
                             <div className='col-span-2 my-2 md:ml-2'>
-                              <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
+                              <input type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
 
 
@@ -246,11 +240,13 @@ export default function Home() {
                         </div>
 
                     </form>
+                    
             </div>
 
-
-        
-
+          {/* ปุ่มส่งใบสมัคร */}
+            <div className='flex justify-center'>
+              <button className='bg-black bg-opacity-80 text-[#FFBF00] rounded w-56 h-20 text-3xl'>ส่งใบสมัคร</button>
+            </div>
 
 
         </div>
