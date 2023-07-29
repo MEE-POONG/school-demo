@@ -6,7 +6,7 @@ const Slider: React.FC = () => {
   const handleSlideTo = (index: number) => {
     setActiveSlide(index);
   };
-
+ 
   const handlePrevSlide = () => {
     setActiveSlide((prevSlide) => (prevSlide === 0 ? 4 : prevSlide - 1));
   };

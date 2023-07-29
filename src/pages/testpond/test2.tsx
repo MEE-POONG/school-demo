@@ -1,122 +1,42 @@
-import Link from "next/link";
 import React from "react";
-import Test from '../test';
-import LogoPanomwan2 from "@/container/LOGO/Logopanomwan2";
 
-const Footer = () => {
+const Profile: React.FC = () => {
   return (
-    <footer className="bg-[#1F306A] w-full font-fontTH">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between">
+    <div className="bg-gray-100">
+      <div className="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
+        <img
+          className="w-32 h-32 rounded-full mx-auto"
+          src="https://picsum.photos/200"
+          alt="Profile picture"
+        />
 
-          <LogoPanomwan2/>
-          
-          {/* <Link href="/" className="mb-4 flex">
-            <img
-              src="/img/Logo_panomwan.png"
-              className="h-[70px] mr-3"
-              alt="Flowbite Logo"
-            />
+        <h2 className="text-center text-2xl font-semibold mt-3">John Doe</h2>
 
-            <span className="self-center text-x font-semibold text-gray-300">
-              <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
-              <hr className="w-[320px] h-[2px] bg-white" />
-              <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
-              <p>TEL : 044-955121-122 FAX : 044-955120</p>
-            </span>
-          </Link> */}
+        <p className="text-center text-gray-600 mt-1">Software Engineer</p>
 
-          <div className="md:flex text-gray-500 my-8">
-            <div className="md:mr-10">
-              <h2 className="mb-6 text-md font-semibold text-white">
-                คณะที่เปิดสอน
-              </h2>
-              <ul className="text-gray-500">
-                <li className="mb-4">
-                  <Link
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    คณะบริหารธรุกิจ
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    คณะวิทยาศาสตร์และเทคโนโลยี
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    คณะวิทยาศาสตร์
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    คณะศิลปศาสตร์
-                  </Link>
-                </li>
-              </ul>
-            </div>
+        <div className="flex justify-center mt-5">
+          <a href="#" className="text-blue-500 hover:text-blue-700 mx-3">
+            Twitter
+          </a>
+          <a href="#" className="text-blue-500 hover:text-blue-700 mx-3">
+            LinkedIn
+          </a>
+          <a href="#" className="text-blue-500 hover:text-blue-700 mx-3">
+            GitHub
+          </a>
+        </div>
 
-            <div className="">
-            <h2 className="mb-6 text-md font-semibold text-white">
-                รายการ
-              </h2>
-              <ul className="text-white">
-                <li className="mb-4">
-                  <Link
-                    href=""
-                    className="hover:underline "
-                  >
-                    สมัครเรียน
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href="https://tailwindcss.com/"
-                    className="hover:underline "
-                  >
-                    ปรึกษาเรื่องทุน
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href="https://tailwindcss.com/"
-                    className="hover:underline "
-                  >
-                    ปรึกษาเรื่องสมัครเรียน
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div className="mt-5">
+          <h3 className="text-xl font-semibold">Bio</h3>
+          <p className="text-gray-600 mt-2">
+            John is a software engineer with over 10 years of experience in
+            developing web and mobile applications. He is skilled in
+            JavaScript, React, and Node.js.
+          </p>
         </div>
       </div>
-
-      <div className=" bg-black w-full ">
-      <span className=" text-white font-serif sm:text-sm">
-    <p className=" text-center">
-      <a href="">© 2023{" "}  Me Prompt Technology CONPANY LIMITED.  All Rights Reserved.</a>
-    </p>
-    </span>
-      </div>
-    </footer>
-
-    
+    </div>
   );
 };
 
-export default Footer;
-
-
-
-
+export default Profile;
