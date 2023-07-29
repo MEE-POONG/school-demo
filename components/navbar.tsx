@@ -21,7 +21,7 @@ const ComponentsNavbar: React.FC = () => {
           <div className="flex flex-wrap items-center mt-[2%] ">
             <div className="flex md:order-2 ml-5">
               <LogoPanomwan />
-              <button
+              {/* <button
                 onClick={toggleDropdown}
                 data-collapse-toggle="mobile-menu-3"
                 type="button"
@@ -54,7 +54,7 @@ const ComponentsNavbar: React.FC = () => {
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-              </button>
+              </button> */}
               <div
               className={`md:flex justify-between items-center w-full md:w-auto md:order-1 ${
                 isOpen ? "" : "hidden"
@@ -163,7 +163,12 @@ const ComponentsNavbar: React.FC = () => {
           </div>
         </div>
       </div>
+      {/*------------------------ mobile -----------------*/}
+      <div className="">
+                                  
+      </div>
     </nav>
+
   );
 };
 export default ComponentsNavbar;
