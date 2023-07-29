@@ -43,6 +43,7 @@ export default function Welfare() {
         {/* เนื้อหาข่าวประชาสัมพันธ์ */}
         <div className='bg-[#E5E4E2]'>
             {/* คอลั่ม */}
+            <div className=' container mx-auto'>
             <div className='grid grid-cols-2 md:grid-cols-4'>
             {/* ข้อมูลในคอลั่ม */}
 
@@ -93,6 +94,7 @@ export default function Welfare() {
 
             {/* ปิดคอลั่ม */}
             </div>
+            </div>
         </div>
 
 
@@ -115,7 +117,7 @@ export default function Welfare() {
 
         {/* เนื้อหาข่าวกิจกรรม */}
         <div className='bg-[#E5E4E2]'>
-
+        <div className=' container mx-auto'>
                     {/* คอลั่ม */}
             <div className='grid grid-cols-2 md:grid-cols-4'>
             {/* ข้อมูลในคอลั่ม */}
@@ -166,7 +168,7 @@ export default function Welfare() {
 
             {/* ปิดคอลั่ม */}
             </div>
-
+            </div>
         </div>
 
 
