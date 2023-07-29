@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
             <div className="flex flex-wrap items-center mt-[2%]">
               <div className=" flex mt-5 ">
                 <LogoPanomwan/>
-                
+                <div></div>
                 <div className="flex md:order-2 ml-5">
                   <button
                     onClick={toggleDropdown}
