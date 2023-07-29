@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import RootLayout from "../../components/layout";
 import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
 import Slider from "@/pages/slider";
 import { RiFilePaper2Line } from "react-icons/ri";
 import { GrMoney } from "react-icons/gr";
