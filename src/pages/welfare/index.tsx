@@ -56,10 +56,10 @@ export default function Welfare() {
                   
                   {/* กู้เรียน */}
                   <div className='md:p-10 py-5'>
-                        <div className='bg-[#1F306A] rounded-t-xl'>
+                        <div className='bg-[#1F306A]  rounded-t-xl'>
                             <h1 className='font-bold text-white text-2xl md:text-lg lg:text-2xl py-3 pl-2'>กู้เรียน</h1>
                         </div>
-                        <div className='bg-white rounded-b-xl h-36 md:h-56 lg:h-36 p-4'>
+                        <div className='bg-white rounded-b-xl h-36 md:h-56  lg:h-36 p-4'>
                             <p className=''>ได้รับพิจารณาให้กู้ กยศ. หรือ กรอ. ตลอดจนจบการศึกษา โดยไม่ต้องสำรองจ่าย</p>
                         </div>
 
