@@ -11,9 +11,9 @@ export default function Home() {
         <RootLayout>
             <div className='relative'>
             <img className='contrast-50' src="/img/register/17.3.jpg" alt=""/>
-            <div className='absolute inset-x-0 bottom-0 h-20 text-center'>
-            <h1 className=' text-xl md:text-3xl text-yellow-400'>สมัครเข้าศึกษา</h1>
-            <h2 className=' text-xl text-white md:text-3xl'>วิทยาลัยเทคโนโลยีพนมวันท์</h2>
+            <div className='absolute inset-x-0 bottom-0 md:h-40 text-center'>
+            <h1 className=' text-xl md:text-6xl text-yellow-400 drop-shadow-md'>สมัครเข้าศึกษา</h1>
+            <h2 className=' text-xl text-white md:text-6xl'>วิทยาลัยเทคโนโลยีพนมวันท์</h2>
             </div>
             </div>
             <div className=' bg-zinc-800 w-full text-center'>
@@ -28,7 +28,7 @@ export default function Home() {
             <img className='' src="/img/register/b1.png" alt=""/>
             <img className='' src="/img/register/b2.png" alt=""/>
             <div className=' bg-zinc-800'>
-            <div className='container mx-auto md:py-10 py-7 '>
+            <div className='container mx-auto md:py-10 py-7'>
                 <div className=' text-yellow-600 text-xl md:text-2xl drop-shadow-md mx-5 font-semibold mb-2'>สิ่งที่ควรรู้ก่อนสมัครเรียน </div>
                     <div className="grid grid-row-2 md:grid-flow-col gap-4 rounded-md bg-yellow-500 p-4 mx-5">
                         <div className='md:border-r-2 border-black p-2'>
