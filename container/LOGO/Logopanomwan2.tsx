@@ -4,7 +4,7 @@ import React from "react";
 export default function LogoPanomwan2() {
   return (
     <div className="w-full mt-10 md:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Link href="/" className="mb-4 flex">
+      <Link href="./" className="mb-4 flex">
         <img
           src="/img/Logo_panomwan.png"
           className="h-[70px] mr-3"

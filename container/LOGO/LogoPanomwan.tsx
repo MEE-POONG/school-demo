@@ -1,6 +1,6 @@
 export default function LogoPanomwan(){
     return(
-        <a href="#" className="flex">
+        <a href="./" className="flex">
         <div className="flex-shrink-0 mt-[]">
           {/* Your logo or brand */}
           <img

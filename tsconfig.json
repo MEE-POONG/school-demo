@@ -18,6 +18,7 @@
       "@/*": ["./src/*"],
       "@/components/*": ["./components/*"],
       "@/container/*": ["./container/*"],
+      "@/data/*": ["./data/*"],
       
     }
   },
