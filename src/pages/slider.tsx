@@ -6,17 +6,14 @@ const Slider: React.FC = () => {
   const handleSlideTo = (index: number) => {
     setActiveSlide(index);
   };
-
   const handlePrevSlide = () => {
     setActiveSlide((prevSlide) => (prevSlide === 0 ? 4 : prevSlide - 1));
   };
-
   const handleNextSlide = () => {
     setActiveSlide((prevSlide) => (prevSlide === 4 ? 0 : prevSlide + 1));
   };
 
   return (
-  
       <div id="default-carousel" className="relative w-full h-full" data-carousel="slide">
         {/* Carousel wrapper */}
         <div className="relative h-36 overflow-hidden md:h-[323px] lg:h-[780px]">

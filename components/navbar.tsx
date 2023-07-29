@@ -29,7 +29,7 @@ const ComponentsNavbar: React.FC = () => {
             >
               <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-lg  md:font-medium  ">
                 <a
-                  href="about"
+                  href="./"
                   className="text-white  hover:bg-[#18BCEB] hover:text-white px-3 py-2 rounded-md  font-medium "
                 >
                   หน้าแรก

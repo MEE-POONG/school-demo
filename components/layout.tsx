@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import React from "react";
 import Footer from './footer';
-import Navbar from '@/pages/testpond/test1';
 import ComponentsNavbar from './navbar';
 
 
