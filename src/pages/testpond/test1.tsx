@@ -1,6 +1,6 @@
 import LogoPanomwan from "@/container/LOGO/LogoPanomwan";
 import React, { useState } from "react";
-import Dropdown from "../../../components/dropdown";
+import Dropdown from "../../../components/dropdownRegister";
 
 
 const Navbar: React.FC = () => {

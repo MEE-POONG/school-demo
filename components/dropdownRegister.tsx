@@ -6,11 +6,11 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function DropdownRegister() {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block  ">
       <div>
-        <Menu.Button className="inline-flex w-full gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm">
+        <Menu.Button className="inline-flex w-full gap-x-1.5 rounded-md px-3 py-2 text-20 font-medium text-white text-sm font-fontTH  shadow-sm">
           สนใจสมัครเรียน
           <ChevronDownIcon
             className="-mr-1 h-5 w-5 text-gray-400"
