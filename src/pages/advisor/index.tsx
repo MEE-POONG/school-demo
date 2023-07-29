@@ -95,7 +95,7 @@ export default function Welfare() {
 
 
                     {/* ปิด 3 รูปและข้อมูล */}
-                </div>
+                
 
 
 
@@ -151,6 +151,7 @@ export default function Welfare() {
                         </div>
 
                     </div>
+                    </div>
 
 
                     {/* ปิด 3 รูปและข้อมูล */}
@@ -171,9 +172,8 @@ export default function Welfare() {
             {/* เนื้อหาส่วนช่องทางการติดต่อ */}
             <div className='bg-black bg-opacity-80 px-2 md:px-14 pb-10'>
                 <div className='py-4'>
-                    <h1 className='text-[#FFBF00] text-xl'>วิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                    <h1 className='text-[#FFBF00] text-xl mx-a'>วิทยาลัยเทคโนโลยีพนมวันท์</h1>
                 </div>
-
                 {/* ที่อยู่วิทยาลัย */}
                 <div className='grid grid-cols-12 text-white mb-5 lg:text-lg md:text-sm text-[7px]  '>
                     <div className='col-span-1 space-y-2'>
@@ -231,9 +231,9 @@ export default function Welfare() {
                     <div className='bg-black rounded-lg mt-2  flex justify-center items-center drop-shadow-lg'>
                         <FaLocationDot className='text-[#FFBF00] mr-2 text-center' />
                         <h1 className='text-2xl text-[#FFBF00] text-center'>Main Campus</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
 
