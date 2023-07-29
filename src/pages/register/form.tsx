@@ -174,11 +174,6 @@ export default function Home() {
                             <div className='col-span-2 my-2'>
                               <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                             </div>
-
-
-                            
-
-
                         </div>
 
                     </form>
