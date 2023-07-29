@@ -11,11 +11,11 @@ export default function LogoPanomwan(){
         </div>
         <div className="flex items-center justify-center">
           <div className="">
-            <p className="text-gray-300 text-sm/[20px]">
+            <p className="text-gray-300 text-lg/[20px]">
               วิทยาลัยเทคโนโลยีพนมวันท์
             </p>
             <hr className="w-65 h-[2px] bg-white" />
-            <p className="text-gray-300 text-sm/[20px]">
+            <p className="text-gray-300 text-lg/[20px]">
               Phanomwan College of Technology
             </p>
           </div>
