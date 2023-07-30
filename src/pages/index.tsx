@@ -54,35 +54,6 @@ export default function About() {
             1000<span className="my-auto text-2xl text-white mr-2">&nbsp;ผู้เข้าชมเว็บไซต์</span>
           </div>
         </div>
-        {/* <div className="md:grid md:grid-flow-col md:auto-cols-max md:gap-2 md:justify-center h-36 text-center">
-          <div className=" my-auto text-2xl text-yellow-400 md:border-r-2 border-gray-500 ">
-            4<span className="my-auto text-xl text-white mr-2">&nbsp;คณะ</span>
-          </div>
-          <div className=" my-auto text-2xl text-yellow-400 md:border-r-2 border-gray-500">
-            9
-            <span className="my-auto text-xl text-white mr-2">
-              &nbsp;หลักสูตร
-            </span>
-          </div>
-          <div className=" my-auto text-2xl text-yellow-400 md:border-r-2 border-gray-500">
-            20
-            <span className="my-auto text-xl text-white mr-2">
-              &nbsp;บุคลากร
-            </span>
-          </div>
-          <div className=" my-auto text-2xl text-yellow-400 md:border-r-2 border-gray-500">
-            500
-            <span className="my-auto text-xl text-white mr-2">
-              &nbsp;นักศึกษาปัจจุบัน
-            </span>
-          </div>
-          <div className=" my-auto text-2xl text-yellow-400 ">
-            1000
-            <span className="my-auto text-xl text-white mr-2">
-              &nbsp;ผู้เข้าชมเว็บไซต์
-            </span>
-          </div>
-        </div> */}
       </div>
     </RootLayout>
   );
