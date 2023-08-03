@@ -16,7 +16,6 @@ const ComponentsNavbar: React.FC = () => {
   return (
     <nav className=" bg-[#1F306A] sm/h-[130px] font-fontTH ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-wrap  h-[100%] justify-between ">
-       
       <a href="./" className="flex">
         {/* <div className="flex-shrink-0"> */}
           {/* Your logo or brand */}
