@@ -19,7 +19,6 @@ export default function Home() {
               <div className='self-end'>
                 <h1 className='text-2xl  md:text-3xl  text-[#1F306A]'>กลับ</h1>
               </div>
-              
         </div>
         
         <div className='bg-[#1F306A] w-full h-1  mb-7 '>

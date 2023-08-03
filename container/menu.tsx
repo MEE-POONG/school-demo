@@ -11,26 +11,35 @@ export default function Menu() {
         className=" relative w-full h-full"
         src="/img/event/111.png"
       />
-      <div className="absolute  inset-0 flex md:grid-flow-col md:gap-20 md:justify-center items-center">
-        <Link href="" className="text-white text-[30px] text-center mx-5 px-5 ">
-          <RiFilePaper2Line className="mx-auto h-20 w-20 mb-2" />
-          สมัครเรียน
+      <div className="absolute inset-0 flex md:grid-flow-col md:gap-20 md:justify-center items-center">
+        <Link href="/register" className="contactIcon text-[30px] text-center mx-5 px-5 ">
+          <div className="contactIcon">
+            <RiFilePaper2Line className="mx-auto h-20 w-20 mb-2" />
+            สมัครเรียน
+          </div>
         </Link>
-        <Link href="" className="text-white text-[30px] text-center mx-5 px-5 hover:text-sky-400">
-          <FaMoneyBill className="mx-auto h-20 w-20 mb-2" />
-          ทุนการศึกษา
+
+
+        <Link href="/welfare" className="contactIcon text-[30px] text-center mx-5 px-5 ">
+          <div className="contactIcon">
+            <FaMoneyBill className="mx-auto h-20 w-20 mb-2" />
+            สวัสดิการ
+          </div>
         </Link>
-        <Link href="" className="text-white text-[30px] text-center mx-5 px-5 hover:text-sky-400">
-          <RiGraduationCapLine className="mx-auto h-20 w-20 mb-2" />
-          ปรึกษาเพิ่มเติม
+
+        <Link href="/advisor" className="contactIcon text-[30px] text-center mx-5 px-5 ">
+          <div className="contactIcon">
+            <RiGraduationCapLine className="mx-auto h-20 w-20 mb-2" />
+            ปรึกษาเพิ่มเติม
+          </div>
         </Link>
-        <Link href="">
-          <div className="text-white text-[30px] text-center mx-5 px-5 hover:text-sky-400   hover:bg-[#18BCEB]">
+
+        <Link href="/faculty" className="contactIcon text-[30px] text-center mx-5 px-5 ">
+          <div className="contactIcon">
             <FaUserGraduate className="mx-auto h-20 w-20 mb-2" />
             คณะที่เปิดสอน
           </div>
         </Link>
-
 
       </div>
       {/* <div className=" absolute inset-0 flex justify-evenly md:grid-flow-col md:gap-20 md:justify-center mt-6 py-7 ">
