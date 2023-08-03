@@ -18,6 +18,7 @@ export default function Welfare() {
     return (
         <RootLayout>
 
+
         {/* banner คณะและหลักสูตร */}
         <div className="relative">
             <img src="/img/news/building2.png" alt="" />
