@@ -21,7 +21,7 @@ export default function Home() {
               </div>
         </div>
         
-        <div className='bg-[#1F306A] w-full h-1  mb-7 '>
+        <div className='bg-[#1F306A] w-full h-1  mb-7  '>
         </div>
         <div className=''>
            {/* ข้อมูลผู้สมัคร  */}
@@ -55,7 +55,7 @@ export default function Home() {
                               <label className=''>คำนำหน้าชื่อ:</label>    
                             </div>
                             <div className=' col-span-1 md:col-span-2  md:my-2'>
-                                  <select className=' block w-full md:w-1/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
+                                  <select className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
                                     <option>นาย</option>
                                     <option>นาง</option>
                                     <option>นางสาว</option>
@@ -65,7 +65,7 @@ export default function Home() {
                               <label className=''>เพศ:</label>    
                             </div>
                             <div className='col-span-1 md:col-span-2 my-2'>
-                                  <select className=' block w-full md:w-1/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                                  <select className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                                     <option>นาย</option>
                                     <option>นาง</option>
                                     <option>นางสาว</option>
