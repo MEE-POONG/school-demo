@@ -4,12 +4,16 @@ import Menu from "@/container/menu";
 import Activity from "@/components/activity";
 import Slider from "@/components/slider";
 import Thesliderbar from "@/components/Thesliderbar";
+import StickyBox from "react-sticky-box";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
   return (
+    
     <RootLayout>
+      
       <Thesliderbar/>
       <Menu />
       <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>

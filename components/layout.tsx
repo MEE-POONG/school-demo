@@ -5,7 +5,7 @@ import ComponentsNavbar from './navbar';
 import StickyBox from 'react-sticky-box';
 import Link from 'next/link';
 
-
+ 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
@@ -18,14 +18,15 @@ export default function RootLayout({
    
       <ComponentsNavbar/>
       <StickyBox offsetTop={10} offsetBottom={10} >
-            <Link href="" >
+            <Link href="https://www.facebook.com/PhanomwanCollege/" >
                 <div className=" relative ">
-            <img className=" w-14 absolute right-8 top-1 " src="/img/messenger-Logo.png"/>
+            <img className=" w-14 absolute right-8 top-1 bottom-auto " src="/img/messenger-Logo.png"/>
             </div>
             </Link>
            </StickyBox>
       <main className={inter.className}>{children}
       </main>
+      
     
       
       <Footer />
