@@ -20,7 +20,7 @@ const Footer = () => {
               <ul className="text-gray-500">
                 <li className="mb-4">
                   <Link
-                    href="https://flowbite.com/"
+                    href=""
                     className="hover:underline text-white"
                   >
                     คณะบริหารธรุกิจ
@@ -28,7 +28,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="https://flowbite.com/"
+                    href=""
                     className="hover:underline text-white"
                   >
                     คณะวิทยาศาสตร์และเทคโนโลยี
@@ -36,7 +36,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="https://flowbite.com/"
+                    href=""
                     className="hover:underline text-white"
                   >
                     คณะวิทยาศาสตร์
@@ -44,7 +44,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://tailwindcss.com/"
+                    href=""
                     className="hover:underline text-white"
                   >
                     คณะศิลปศาสตร์
@@ -68,7 +68,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="https://tailwindcss.com/"
+                    href=""
                     className="hover:underline "
                   >
                     ปรึกษาเรื่องทุน
@@ -76,7 +76,7 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="https://tailwindcss.com/"
+                    href=""
                     className="hover:underline "
                   >
                     ปรึกษาเรื่องสมัครเรียน
