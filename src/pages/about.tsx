@@ -99,7 +99,7 @@ export default function About() {
                         <div className="text-white">สีของวิทยาลัยเทคโนโลยีพนมวันท์ คือ น้ำเงินและเหลืองทอง</div>
                     </div>
                     <div className="md:flex">
-                        <div className="text-[#0000B8] mr-2">น้ำเงิน</div><div className="text-white">หมายถึง ความลุ่มลึก ความหนักแน่น มั่นคงในเชิง วิชาการ เปรียบ เสมือนน้ำทะเลสีน้ำเงิน  </div>
+                        <div className="text-[#005cb8] mr-2">น้ำเงิน</div><div className="text-white">หมายถึง ความลุ่มลึก ความหนักแน่น มั่นคงในเชิง วิชาการ เปรียบ เสมือนน้ำทะเลสีน้ำเงิน  </div>
                     </div>
                     <div className="md:flex">
                         <div className="text-[#FFBF00] mr-2 ">เหลืองทอง </div><div className="mb-20 text-white"> หมายถึง ความมีชื่อเสียง คุณธรรม คุณภาพ และเป็นเอกลักษณ์ ของความยิ่งใหญ่ </div>
@@ -115,13 +115,14 @@ export default function About() {
 
                     {/* ท่อนคณะกรรมการ */}
                     {/* แทบ คณะกรรมการสภาวิทยาลัย */}
-
-                    <div className="bg-[#2797FF] h-32 justify-center flex flex-col mb-10">
-                        <div className="text-white text-2xl  md:text-4xl text-center mb-2">
-                            <h1>คณะกรรมการสภาวิทยาลัย</h1>
-                        </div>
-                        <div className="text-white text-lg md:text-2xl text-center">
-                            <h5>รายนามคณะกรรมการสภาวิทยาลัย</h5>
+                    <div className="flex justify-center">
+                        <div className="bg-[#2797FF] w-full h-32  flex justify-center  flex-col mb-10 rounded-xl">
+                            <div className="text-white text-2xl  md:text-4xl text-center mb-2">
+                                <h1>คณะกรรมการสภาวิทยาลัย</h1>
+                            </div>
+                            <div className="text-white text-lg md:text-2xl text-center">
+                                <h5>รายนามคณะกรรมการสภาวิทยาลัย</h5>
+                            </div>
                         </div>
                     </div>
                     {/*  */}
