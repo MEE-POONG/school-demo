@@ -88,21 +88,21 @@ const ComponentsNavbar: React.FC = () => {
             </a>
 
             <a
-              href="about"
+              href="/about"
               className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
             >
               รู้จัก &quot;พนมวันท์&quot;
             </a>
 
             <a
-              href="faculty"
+              href="/faculty"
               className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
             >
               คณะ/หลักสูตร
             </a>
 
             <a
-              href="welfare"
+              href="/welfare"
               className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
             >
               สวัสดิการ
@@ -135,7 +135,7 @@ const ComponentsNavbar: React.FC = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="register"
+                            href="/register"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900 hover:bg-[#BEBEBE] hover:text-black "
@@ -150,7 +150,7 @@ const ComponentsNavbar: React.FC = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="advisor"
+                            href="/advisor"
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900 hover:bg-[#BEBEBE] hover:text-black"
