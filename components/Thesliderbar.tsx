@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Slider: React.FC = () => {
+const Thesliderbar: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleSlideTo = (index: number) => {
@@ -109,4 +109,4 @@ const Slider: React.FC = () => {
   );
 };
 
-export default Slider;
+export default Thesliderbar;
