@@ -26,7 +26,7 @@ export default function Welfare() {
 
         {/* สิ่งที่นักศึกษาจะได้ */}
         <div className='flex justify-center py-5'>
-            <h1 className='text-[10px] md:text-xl font-bold'>สิ่งที่นักศึกษาจะได้จากการเรียนที่ วิทยาลัยเทคโนโลยีพนมวันท์</h1>
+            <h1 className='text-[11px] md:text-xl lg:text-2xl font-bold'>สิ่งที่นักศึกษาจะได้จากการเรียนที่ วิทยาลัยเทคโนโลยีพนมวันท์</h1>
         </div>
 
 
