@@ -22,7 +22,7 @@ const Slider: React.FC = () => {
         <div className="relative h-36 overflow-hidden md:h-[323px] lg:h-[780px]">
           {/* Item 1 */}
           <div className={` ${activeSlide === 0 ? '' : 'opacity-0'}`} data-carousel-item>
-            <img src="/img/imgslider/school1.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+            <img src="/img/imgslider/school1.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
           </div>
           {/* Item 2 */}
           <div className={` ${activeSlide === 1 ? '' : 'opacity-0'}`} data-carousel-item>
@@ -30,15 +30,15 @@ const Slider: React.FC = () => {
           </div>
           {/* Item 3 */}
           <div className={` ${activeSlide === 2 ? '' : 'opacity-0'}`} data-carousel-item>
-            <img src="/img/imgslider/school3.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+            <img src="/img/imgslider/school3.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
           </div>
           {/* Item 4 */}
           <div className={` ${activeSlide === 3 ? '' : 'opacity-0'}`} data-carousel-item>
-            <img src="/img/imgslider/school4.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+            <img src="/img/imgslider/school4.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
           </div>
           {/* Item 5 */}
           <div className={` ${activeSlide === 4 ? '' : 'opacity-0'}`} data-carousel-item>
-            <img src="/img/imgslider/school7.jpg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+            <img src="/img/imgslider/school7.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
           </div>
         </div>
         {/* Slider indicators */}
