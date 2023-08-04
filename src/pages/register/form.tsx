@@ -1,3 +1,4 @@
+
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import RootLayout from '@/components/layout'
@@ -5,10 +6,12 @@ import RootLayout from '@/components/layout'
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
+import  Modal from '@/components/modal';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState(null);
   const router = useRouter();
@@ -90,6 +93,28 @@ export default function Home() {
     axios.post("/api/registerForm", data).then((response) => {
       console.log("done!");
       router.push("/register/form");
+      console.log(response.data);
+
+      //รีเซ็ทค่า
+      event.target.regIdpersonal.value = "";
+      event.target.regBirth.value = "";
+      event.target.regPrefix.value = "";
+      event.target.regSex.value = "";
+      event.target.regNation.value = "";
+      event.target.regName.value = "";
+      event.target.regLastname.value = "";
+      event.target.regEname.value = "";
+      event.target.regElastname.value = "";
+      event.target.regPhone.value = "";
+      event.target.regEmail.value = "";
+      event.target.regSchool.value = "";
+      event.target.regDegree.value = "";
+      event.target.regGpa.value = "";
+      event.target.regProgram.value = "";
+      event.target.regFaculty.value = "";
+      event.target.regMajor.value = "";
+      setRegImg("");
+      
     });
   };
 
@@ -174,7 +199,7 @@ export default function Home() {
                                 <label className=''>บัตรประจำตัวประชาชน:</label>    
                               </div>
                               <div className=' col-span-2 my-2'>
-                                <input name='regIdpersonal'  type="number" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
+                                <input name='regIdpersonal'  type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                               </div>
                               <div className='col-start-6 col-end-8 md:md:text-right p-3 my-2 '>
                                 <label className=''>วัน/เดือน/ปีเกิด:</label>    
@@ -312,7 +337,7 @@ export default function Home() {
                                 <label className=''>เกรดเฉลี่ย</label>    
                               </div>
                               <div className='col-span-2 my-2'>
-                                <input name='regGpa' type="number" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
+                                <input name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                               </div>
                           </div>
 
