@@ -4,17 +4,13 @@ import Menu from "@/container/menu";
 import Activity from "@/components/activity";
 import Slider from "@/components/slider";
 import Thesliderbar from "@/components/Thesliderbar";
-import StickyBox from "react-sticky-box";
-import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
   return (
-    
     <RootLayout>
-      
-      <Thesliderbar/>
+      <Thesliderbar />
       <Menu />
       <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
       <div className="container mx-auto  md:py-10 py-2 text-center">
@@ -24,7 +20,7 @@ export default function About() {
         </span>
         <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
         <div className=" mx-auto py-2 items-center justify-center">
-        <Slider />
+          <Slider />
         </div>
       </div>
       <Activity />
@@ -35,39 +31,33 @@ export default function About() {
           <div className="bg-blue-900 w-20 h-0.5"></div>
         </div>
       </div>
-    
-      {/* <div className=" bg-slate-800 w-full sm:h-48 md:h-full ">
-        <div className="md:grid md:grid-flow-col md:auto-cols-max md:gap-2 md:justify-center h-36 text-center ">
-          <div className="flex my-auto px-5 text-yellow-400 md:border-r-2 border-gray-500 text-2xl	">
-            4<span className="my-auto text-2xl text-white mr-2">&nbsp;คณะ</span>
-          </div>
-          <div className="flex my-auto  px-5 text-yellow-400 md:border-r-2 border-gray-500 text-2xl	">
-            20<span className="my-auto text-2xl text-white mr-2">&nbsp;หลักสูตร</span>
-          </div>
-          <div className="flex my-auto  px-5 text-yellow-400 md:border-r-2 border-gray-500 text-2xl	">
-            500<span className="my-auto text-2xl text-white mr-2">&nbsp;กำลังศึกษา</span>
-          </div>
-          <div className="flex my-auto px-5 text-yellow-400 text-2xl	">
-            1000<span className="my-auto text-2xl text-white mr-2">&nbsp;ผู้เข้าชมเว็บไซต์</span>
-          </div>
-        </div>
-      </div> */}
 
       <div className=" bg-slate-800 w-full sm:h-48 md:h-full   ">
         <div className="md:grid md:grid-flow-col md:auto-cols-max md:gap-2 md:justify-center h-36 text-center">
-        <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500  text-2xl">4
-        <span className="my-auto px-5 text-white   text-2xl">คณะ</span></p> 
-        <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-2xl"> 20
-        <span className="my-auto px-5 text-white  text-2xl">หลักสูตร</span></p> 
-        <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-2xl">  500
-        <span className="my-auto px-5 text-white  text-2xl">กำลังศึกษา</span></p> 
-        <p className=" my-auto px-5 text-yellow-400  text-2xl"> 1000
-        <span className="my-auto px-5 text-white  text-2xl">ผู้เข้าชมเว็บไซต์</span></p> 
+          <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500  text-2xl">
+            4<span className="my-auto px-5 text-white   text-2xl">คณะ</span>
+          </p>
+          <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-2xl">
+            {" "}
+            20
+            <span className="my-auto px-5 text-white  text-2xl">หลักสูตร</span>
+          </p>
+          <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-2xl">
+            {" "}
+            500
+            <span className="my-auto px-5 text-white  text-2xl">
+              กำลังศึกษา
+            </span>
+          </p>
+          <p className=" my-auto px-5 text-yellow-400  text-2xl">
+            {" "}
+            1000
+            <span className="my-auto px-5 text-white  text-2xl">
+              ผู้เข้าชมเว็บไซต์
+            </span>
+          </p>
         </div>
-        </div>
-      
-
-
+      </div>
     </RootLayout>
   );
 }
