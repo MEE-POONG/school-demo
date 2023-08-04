@@ -16,7 +16,42 @@ export default function Home() {
   const [regFaculty, setRegFaculty] = useState<string>("");
   const [regMajor, setRegMajor] = useState<string>("");
 
+  const [regImg, setRegImg] = useState<string>("");
 
+  // ตรงนี้ทำให้ถ้าเลือก คณะ สาขาจะแตกต่างกันไปตามคณะ
+  const majorOptionsByFaculty: { [key: string]: string[] } = {
+    "คณะบริหารธุรกิจ": [
+      "สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)",
+      "สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)",
+      "สาขาวิชาระบบสารสนเทศ (บธ.บ.)",
+      "สาขาวิชาการจัดการ (บธ.บ.)",
+      "สาขาวิชาการบัญชี (บช.บ.)",
+      // ... Add other options for this faculty ...
+    ],
+    "คณะวิทยาศาสตร์และเทคโนโลยี": [
+      "สาขาวิชาสาธารณสุขศาสตร์ (สบ.)"
+      // Add options for this faculty...
+    ],
+    "คณะศิลปศาสตร์": [
+      "สาขาวิชารัฐประศาสนศาสตร์ (รป.บ)"
+      // Add options for this faculty...
+    ],
+    "คณะวิศวกรรมศาสตร์": [
+      "สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.)"
+      // Add options for this faculty...
+    ],
+    // ... Add options for other faculties ...
+  };
+
+  // Handle the change event of the faculty select
+  const handleFacultyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedFaculty = event.target.value;
+    setRegFaculty(selectedFaculty);
+    setRegMajor(""); // Reset the selected major when changing faculty
+  };
+
+
+  
   
 
   useEffect(() => {
@@ -49,15 +84,60 @@ export default function Home() {
       regProgram: event.target.regProgram.value,
       regFaculty: event.target.regFaculty.value,
       regMajor: event.target.regMajor.value,
+      regImg: regImg,
     };
 
     axios.post("/api/registerForm", data).then((response) => {
-      console.log("done!")
+      console.log("done!");
       router.push("/register/form");
     });
   };
 
 
+  
+    // ส่วนนี้อัพโหลดรูปและแปลงเป็น base64
+    //  โค้ดนี้ใช้วัตถุ image เพื่อดึงขนาดของรูปภาพ หากขนาดของรูปภาพมากกว่า 1000 พิกเซล ฟังก์ชันจะลดขนาดของรูปภาพโดยอัตราส่วนสูงสุดระหว่างความกว้างและความยาวของรูปภาพ จากนั้นฟังก์ชันจะวาดรูปภาพขนาดใหม่ลงบนผืนผ้าใบ และแปลงผืนผ้าใบกลับเป็นสตริงฐาน 64
+    const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files && event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64String = reader.result as string;
+          const splittedString = base64String.split(",")[1]; // ตัดส่วน "data:image/png;base64," ออก
+          if (event.target.id === "regImg") {
+            const image = new Image();
+            image.src = `data:image/png;base64,${splittedString}`;
+            image.onload = () => {
+              const width = image.width;
+              const height = image.height;
+              const maxSize = 400; //กำหนดขนาดตรงนี้ หมายถึงไซส์
+              if (width > maxSize || height > maxSize) {
+                const ratio = Math.max(width / maxSize, height / maxSize);
+                const newWidth = width / ratio;
+                const newHeight = height / ratio;
+                const canvas = document.createElement("canvas");
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+                const ctx = canvas.getContext("2d");
+                if (ctx === null) {
+                  console.log("Context is null");
+                } else {
+                  ctx.drawImage(image, 0, 0, newWidth, newHeight);
+                   // ตัดส่วน "data:image/png;base64," ออก และเซฟเป็น png
+                  const base64String = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
+                  setRegImg(base64String);
+                }
+              } else {
+                setRegImg(splittedString);
+              }
+            };
+          } else {
+            event.target.value = '';
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    };
 
 
   return (
@@ -94,7 +174,7 @@ export default function Home() {
                                 <label className=''>บัตรประจำตัวประชาชน:</label>    
                               </div>
                               <div className=' col-span-2 my-2'>
-                                <input name='regIdpersonal'  type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
+                                <input name='regIdpersonal'  type="number" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                               </div>
                               <div className='col-start-6 col-end-8 md:md:text-right p-3 my-2 '>
                                 <label className=''>วัน/เดือน/ปีเกิด:</label>    
@@ -180,7 +260,14 @@ export default function Home() {
                                 <input name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                               </div>
 
-
+                              {/* รูป */}
+                              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
+                                <label className=''>อัพโหลดรูปภาพ :</label>    
+                              </div>
+                              <div className='md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 '>
+                                <input type="file" id='regImg' name="regImg" className='' onChange={handleFileUpload} />
+                              </div>
+                              
 
 
                           </div>
@@ -225,7 +312,7 @@ export default function Home() {
                                 <label className=''>เกรดเฉลี่ย</label>    
                               </div>
                               <div className='col-span-2 my-2'>
-                                <input name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
+                                <input name='regGpa' type="number" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" /> 
                               </div>
                           </div>
 
@@ -269,30 +356,33 @@ export default function Home() {
                                 <label className=''>คณะ:</label>    
                               </div>
                               <div className=' col-span-2 my-2'>
-                                    <select name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
-                                      <option>คณะบริหารธุรกิจ</option>
-                                      <option>คณะวิทยาศาสตร์และเทคโนโลยี</option>
-                                      <option>คณะศิลปศาสตร์</option>
-                                      <option>คณะวิศวกรรมศาสตร์ </option>
+                                    <select name='regFaculty'  className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white' onChange={handleFacultyChange}>
+                                      <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
+                                      <option value="คณะวิทยาศาสตร์และเทคโนโลยี">คณะวิทยาศาสตร์และเทคโนโลยี</option>
+                                      <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
+                                      <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
                                     </select>
                               </div>
                               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                                 <label className=''>สาขา:</label>    
                               </div>
                               <div className='col-span-2 my-2'>
-                                    <select name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
-                                      <option>สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)</option>
-                                      <option>สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)</option>
-                                      <option>สาขาวิชาระบบสารสนเทศ (บธ.บ.)</option>
-                                      <option>สาขาวิชาการจัดการ (บธ.บ.)</option>
-                                      <option>สาขาวิชาการบัญชี (บช.บ.)</option>
-                                      <option>สาขาวิชาสาธารณสุขศาสตร์ (สบ.)</option>
-                                      <option>สาขาวิชารัฐประศาสนศาสตร์ (รป.บ)</option>
-                                      <option>สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.)</option>
+                                    <select  name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'
+                                    disabled={!regFaculty} // Disable the select if faculty is not selected
+                                    value={regMajor}
+                                    onChange={(e) => setRegMajor(e.target.value)}
+                                    >
+                                      {majorOptionsByFaculty[regFaculty]?.map((major) => (
+                                        <option key={major} value={major}>
+                                          {major}
+                                        </option>
+                                      ))}
                                     </select>
                               </div>
 
 
+                      
+                            
                               
 
 
