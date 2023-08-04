@@ -35,7 +35,7 @@ export default function Contact() {
 
             </div>
             <div>
-                dsd
+                
             </div>
 
            
