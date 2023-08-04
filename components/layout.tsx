@@ -17,7 +17,7 @@ export default function RootLayout({
     <>
    
       <ComponentsNavbar/>
-      <StickyBox offsetTop={10} offsetBottom={10} >
+      <StickyBox offsetTop={10} offsetBottom={10}>
             <Link href="https://www.facebook.com/PhanomwanCollege/" >
                 <div className=" relative ">
             <img className=" w-14 absolute right-8 top-1 bottom-auto " src="/img/messenger-Logo.png"/>
