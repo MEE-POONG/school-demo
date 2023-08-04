@@ -19,8 +19,8 @@ export default function RootLayout({
       <ComponentsNavbar/>
       <StickyBox offsetTop={10} offsetBottom={10}>
             <Link href="https://www.facebook.com/PhanomwanCollege/" >
-                <div className=" relative ">
-            <img className=" w-14 absolute right-8 top-1 bottom-auto " src="/img/messenger-Logo.png"/>
+                <div className="relative ">
+            <img className=" absolute inset-y-0 right-0 w-16" src="/img/messenger-Logo.png"/>
             </div>
             </Link>
            </StickyBox>
