@@ -70,8 +70,13 @@ model IndexPage  {
 //กิจกรรมในหน้า index
 model IndexActivity  { 
   id  String  @id @default(auto()) @map("_id") @db.ObjectId
-  activityTitle String? // ชื่อกิจกรรม
+  activityName String? // ชื่อกิจกรรม
+  activityTitle String? // // หัวข้อหลัก
+  activitySubTitle String? // หัวข้อย่่อ 
+  activitySubDetail String? // รายละเอียด
   activityImg String? // รูปกิจกรรม
+  activityDate String? // วันที่
+
   activityDescription String? // รายละเอียดขอมูลกิจกรรม
 }
 
@@ -184,3 +189,7 @@ model ContactAdvisor  {
   advisorFB  String?
   advisorLine  String?
 }
+
+
+// หน้าย่อข่าวกิจกรรม
+
