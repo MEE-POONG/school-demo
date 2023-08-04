@@ -63,14 +63,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className=" bg-black w-full ">
-        <span className=" text-white font-serif sm:text-sm">
-          <p className=" text-center">
-            <a href="">
-              © 2023 Me Prompt Technology CONPANY LIMITED. All Rights Reserved.
-            </a>
-          </p>
-        </span>
+      <div className=" bg-black w-full md:p-4 p-2">
+        <p className=" text-white font-serif text-center text-xs">
+          © 2023 Me Prompt Technology CONPANY LIMITED. All Rights Reserved.
+        </p>
       </div>
     </footer>
   );
