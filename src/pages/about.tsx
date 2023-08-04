@@ -99,7 +99,7 @@ export default function About() {
                         <div className="text-white">สีของวิทยาลัยเทคโนโลยีพนมวันท์ คือ น้ำเงินและเหลืองทอง</div>
                     </div>
                     <div className="md:flex">
-                        <div className="text-[#005cb8] mr-2">น้ำเงิน</div><div className="text-white">หมายถึง ความลุ่มลึก ความหนักแน่น มั่นคงในเชิง วิชาการ เปรียบ เสมือนน้ำทะเลสีน้ำเงิน  </div>
+                        <div className="text-[#80bfff] mr-2">น้ำเงิน</div><div className="text-white">หมายถึง ความลุ่มลึก ความหนักแน่น มั่นคงในเชิง วิชาการ เปรียบ เสมือนน้ำทะเลสีน้ำเงิน  </div>
                     </div>
                     <div className="md:flex">
                         <div className="text-[#FFBF00] mr-2 ">เหลืองทอง </div><div className="mb-10 text-white"> หมายถึง ความมีชื่อเสียง คุณธรรม คุณภาพ และเป็นเอกลักษณ์ ของความยิ่งใหญ่ </div>
