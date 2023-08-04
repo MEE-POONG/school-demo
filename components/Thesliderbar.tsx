@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
+import StickyBox from 'react-sticky-box';
 
 const Thesliderbar: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -16,12 +18,11 @@ const Thesliderbar: React.FC = () => {
   };
 
   return (
+    
   
       <div id="default-carousel" className="relative w-full h-full" data-carousel="slide">
         {/* Carousel wrapaper */}
         <div className="">
-
-
           {/* Item 1 */}
           <div className={` ${activeSlide === 0 ? '' : 'opacity-0'}`} data-carousel-item>
             <img src="/img/imgslider/school1.png" className="" alt="..." />

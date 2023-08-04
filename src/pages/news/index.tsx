@@ -1,6 +1,6 @@
-import { Inter } from "next/font/google";
 import RootLayout from "@/components/layout";
-import Link from "next/link";
+import { Inter } from "next/font/google";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -94,7 +94,7 @@ export default function Welfare() {
       <div className=" py-8 flex justify-center items-center">
         {/* <button className='bg-black bg-opacity-80 text-white rounded-lg  drop-shadow-lg h-12 w-28'>โหลดเพิ่มเติม</button> */}
         <button className="group relative h-12 w-40 overflow-hidden rounded-2xl bg-black bg-opacity-80 text-lg font-bold text-white">
-        โหลดเพิ่มเติม
+          โหลดเพิ่มเติม
           <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30" />
         </button>
       </div>
@@ -174,11 +174,11 @@ export default function Welfare() {
 
       {/* ปุ่มโหลดเพิ่มเติม 2 */}
       <div className=" py-8 flex justify-center items-center">
-      <button className="group relative h-12 w-40 overflow-hidden rounded-2xl bg-black bg-opacity-80 text-lg font-bold text-white">
-        โหลดเพิ่มเติม
+        <button className="group relative h-12 w-40 overflow-hidden rounded-2xl bg-black bg-opacity-80 text-lg font-bold text-white">
+          โหลดเพิ่มเติม
           <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30" />
         </button>
       </div>
-    </RootLayout>
+      </RootLayout>
   );
 }
