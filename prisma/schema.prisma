@@ -111,6 +111,7 @@ model RegisterForm  {
   regElastname String?
   regPhone String?
   regEmail String?
+  regImg String?
 
 
   //ประวัติการศึกษา
