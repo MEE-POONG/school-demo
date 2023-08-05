@@ -12,6 +12,14 @@ export default function About() {
   return (
     <RootLayout>
       <Thesliderbar />
+      <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
+      <Link href="https://www.facebook.com/PhanomwanCollege/">
+      <p className="text-gray-400 underline"> <img
+            className=" absolute inset-y-0 right-0 w-16"
+            src="/img/messenger-Logo.png"
+          /></p>
+          </Link>
+    </div>
       
       <Menu />
       <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
