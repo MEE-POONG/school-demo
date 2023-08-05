@@ -13,13 +13,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  // State variable to track the modal's open/close status
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Function to handle the modal open event
-  const handleModalOpen = () => {
-    setIsModalOpen(true);
-  };
 
 
 
@@ -79,7 +72,9 @@ export default function Home() {
   }, []);
 
 
-
+  const testM = (data: any) => {
+    console.log(data);
+  };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -104,38 +99,35 @@ export default function Home() {
       regMajor: event.target.regMajor.value,
       regImg: regImg,
     };
-
+   
     console.log(data);
 
-    axios.post("/api/registerForm", data).then((response) => {
-      console.log("done!");
-      router.push("/register/form");
-      console.log(response.data);
+    // axios.post("/api/registerForm", data).then((response) => {
+    //   console.log("done!");
+    //   router.push("/register/form");
+    //   console.log(response.data);
 
-      //รีเซ็ทค่า
-      event.target.regIdpersonal.value = "";
-      event.target.regBirth.value = "";
-      event.target.regPrefix.value = "";
-      event.target.regSex.value = "";
-      event.target.regNation.value = "";
-      event.target.regName.value = "";
-      event.target.regLastname.value = "";
-      event.target.regEname.value = "";
-      event.target.regElastname.value = "";
-      event.target.regPhone.value = "";
-      event.target.regEmail.value = "";
-      event.target.regSchool.value = "";
-      event.target.regDegree.value = "";
-      event.target.regGpa.value = "";
-      event.target.regProgram.value = "";
-      event.target.regFaculty.value = "";
-      event.target.regMajor.value = "";
-      setRegImg("");
+    //   //รีเซ็ทค่า
+    //   event.target.regIdpersonal.value = "";
+    //   event.target.regBirth.value = "";
+    //   event.target.regPrefix.value = "";
+    //   event.target.regSex.value = "";
+    //   event.target.regNation.value = "";
+    //   event.target.regName.value = "";
+    //   event.target.regLastname.value = "";
+    //   event.target.regEname.value = "";
+    //   event.target.regElastname.value = "";
+    //   event.target.regPhone.value = "";
+    //   event.target.regEmail.value = "";
+    //   event.target.regSchool.value = "";
+    //   event.target.regDegree.value = "";
+    //   event.target.regGpa.value = "";
+    //   event.target.regProgram.value = "";
+    //   event.target.regFaculty.value = "";
+    //   event.target.regMajor.value = "";
+    //   setRegImg("");
 
-    });
-  };
-  const testSubmit = () => {
-    handleSubmit();
+    // });
   };
 
 
@@ -441,7 +433,7 @@ export default function Home() {
 {/* ปุ่มส่งใบสมัคร */}
 <div className='flex justify-center'>
           {/* Modal */}
-          <Modal onSubmit={testSubmit} />
+          <Modal onSubmit={testM} />
         </div>
 
 

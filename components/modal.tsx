@@ -7,17 +7,12 @@ export default function Modal({ onSubmit }: any) {
 
   const cancelButtonRef = useRef(null)
 
-  const handleConfirm = () => {
-    onSubmit(); // Call the handleSubmit function from the parent component
-    //onClose(); // Close the modal after successful form submission
-  };
 
   return (
     <>
       <button onClick={() => setOpen(!openSubmit)} className='bg-black bg-opacity-80  text-[#FFBF00] rounded w-56 h-20 text-3xl'>
         ส่งใบสมัคร
-        {openSubmit === true ?"aa":"bbb"}
-        </button>
+      </button>
 
       <Transition.Root show={openSubmit} as={Fragment}>
         <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} open={openSubmit} onClose={setOpen}>
