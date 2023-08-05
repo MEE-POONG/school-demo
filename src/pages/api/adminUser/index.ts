@@ -12,28 +12,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 const page: number = Number(req.query.page) || 1;
                 const pageSize: number = Number(req.query.pageSize) || 10;
 
-                const aboutPanom = await prisma.aboutPanom.findMany({
+                const welfare = await prisma.welfare.findMany({
                     skip: (page - 1) * pageSize,
                     take: pageSize,
                 });
 
-                const totalaboutPanom = await prisma.aboutPanom.count();
-                const totalPage: number = Math.ceil(totalaboutPanom / pageSize);
-                res.status(200).json({ aboutPanom });
+                const totalwelfare = await prisma.welfare.count();
+                const totalPage: number = Math.ceil(totalwelfare / pageSize);
+                res.status(200).json({ welfare });
             } catch (error) {
-                res.status(500).json({ error: "An error occurred while fetching the aboutPanom" });
+                res.status(500).json({ error: "An error occurred while fetching the welfare" });
             }
             break;
 
         case 'POST':
             try {
-                const newaboutPanom = await prisma.aboutPanom.create({
+                const newwelfare = await prisma.welfare.create({
                     data: req.body,
                 });
 
-                res.status(201).json(newaboutPanom);
+                res.status(201).json(newwelfare);
             } catch (error) {
-                res.status(500).json({ error: "An error occurred while creating the aboutPanom" });
+                res.status(500).json({ error: "An error occurred while creating the welfare" });
             }
             break;
 
