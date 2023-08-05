@@ -18,6 +18,13 @@ datasource db {
 //   posts Post[]
 // }
 
+// ล็อคอินแอดมิน
+model Admin {
+  id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  username String?
+  password String?
+
+}
 
 
 //สวัสดิการ
@@ -27,14 +34,12 @@ model Welfare  {
   welfareDescription String?
 }
 
-
 //หน้า สมัครเรียน  (แต่ไม่ใช่แบบฟอร์มสมัคร)
 model IndexReg  {
   id  String  @id @default(auto()) @map("_id") @db.ObjectId
   irImg String?
   irDescription String? 
 }
-
 
 //ทีมที่ปรึกษา
 model Advisor  { 
@@ -191,5 +196,6 @@ model ContactAdvisor  {
 }
 
 
-// หน้าย่อข่าวกิจกรรม
+
+
 
