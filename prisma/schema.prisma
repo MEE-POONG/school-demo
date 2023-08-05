@@ -19,7 +19,7 @@ datasource db {
 // }
 
 // ล็อคอินแอดมิน
-model Admin {
+model AdminUser {
   id  String  @id @default(auto()) @map("_id") @db.ObjectId
   username String?
   password String?
