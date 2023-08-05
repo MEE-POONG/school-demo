@@ -27,7 +27,7 @@
     "react-sticky-box": "^2.0.4",
     "react-sticky-el": "^2.1.0",
     "react-sticky-ts": "^1.0.7",
-    "sass": "^1.63.6",
+    "sass": "^1.64.2",
     "slick-carousel": "^1.8.1",
     "tw-elements": "^1.0.0-beta2",
     "typescript": "5.1.6"
