@@ -72,7 +72,9 @@ export default function Home() {
   }, []);
 
 
-
+  const testM = (data: any) => {
+    console.log(data);
+  };
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -97,7 +99,7 @@ export default function Home() {
       regMajor: event.target.regMajor.value,
       regImg: regImg,
     };
-
+   
     console.log(data);
 
     // axios.post("/api/registerForm", data).then((response) => {
@@ -429,7 +431,7 @@ export default function Home() {
 {/* ปุ่มส่งใบสมัคร */}
 <div className='flex justify-center'>
           {/* Modal */}
-          <Modal onSubmit={handleSubmit} />
+          <Modal onSubmit={testM} />
         </div>
 
 
