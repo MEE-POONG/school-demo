@@ -119,11 +119,11 @@ export default function Welfare() {
               <div className="box-content shadow-xl rounded-lg ">
                 <img
                   className="rounded-lg"
-                  src="/img/imgSlider/school7.jpg"
+                  src="/img/activity/activity3.jpg"
                   alt=""
                 />
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
-                  เปิดรับสมัครนักศึกษาใหม่ 2566
+                พิธีไหว้ครู และ ปฐมนิเทศนักศึกษา 2565 
                 </h1>
               </div>
             </div>
@@ -132,11 +132,11 @@ export default function Welfare() {
               <div className="box-content shadow-xl rounded-lg ">
                 <img
                   className="rounded-lg"
-                  src="/img/imgSlider/school7.jpg"
+                  src="/img/activity/activity2.jpg"
                   alt=""
                 />
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
-                  เปิดรับสมัครนักศึกษาใหม่ 2566
+                กีฬาสัมพันธ์ 2565
                 </h1>
               </div>
             </div>
@@ -145,11 +145,11 @@ export default function Welfare() {
               <div className="box-content shadow-xl rounded-lg ">
                 <img
                   className="rounded-lg"
-                  src="/img/imgSlider/school7.jpg"
+                  src="/img/activity/activity1.jpg"
                   alt=""
                 />
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
-                  เปิดรับสมัครนักศึกษาใหม่ 2566
+                พิธีปัจฉิมนิเทศนักศึกษา 2565
                 </h1>
               </div>
             </div>
@@ -158,11 +158,11 @@ export default function Welfare() {
               <div className="box-content shadow-xl rounded-lg ">
                 <img
                   className="rounded-lg"
-                  src="/img/imgSlider/school7.jpg"
+                  src="/img/activity/activity4.jpg"
                   alt=""
                 />
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
-                  เปิดรับสมัครนักศึกษาใหม่ 2566
+                พิธีไหว้ครู และ ปฐมนิเทศนักศึกษา 2566 
                 </h1>
               </div>
             </div>
