@@ -1,20 +1,29 @@
-import React, { useState } from "react";
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import React, { useState } from 'react';
+import { Offcanvas, Button, Nav, Image, Dropdown, NavDropdown } from 'react-bootstrap';
+import { FaBars, FaRegEnvelope, FaShoppingBag, FaTachometerAlt, FaUserEdit } from 'react-icons/fa';
+import { useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+interface TheOffcanvasProps {
+    show: boolean;
+    onToggleShow: () => void;
 }
-const Testdb: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+const TheOffcanvas: React.FC<TheOffcanvasProps> = ({ show, onToggleShow }) => {
+    const handleClose = () => onToggleShow();
+    const { asPath } = useRouter();
+    const [checkClickPath, setCheckClickPath] = useState<string>('/');
+    useEffect(() => {
+        setCheckClickPath(asPath);
+    }, [asPath])
+    const handlePath = (valPath: string): void => { checkClickPath === valPath ? setCheckClickPath('') : setCheckClickPath(valPath) };
 
-  return (
-    <nav className=" w-[200px] font-fontTH ">
+    return (
+        <>
+            <Offcanvas show={show} onHide={handleClose} placement="start" backdrop={false} scroll={true} >
+                <Offcanvas.Body className='ps-0 pe-2'>
+                <nav className=" w-[200px] font-fontTH ">
         <div
             id="sidebar"
             className="bg-white h-screen md:block shadow-xl px-3 w-30 md:w-60 lg:w-60 overflow-x-hidden transition-transform duration-300 ease-in-out"
@@ -195,6 +204,45 @@ const Testdb: React.FC = () => {
             </div>
           </div>
     </nav>
-  );
+
+
+                 
+
+
+
+                   
+
+
+
+                  
+
+
+
+
+
+                   
+
+
+
+
+
+
+
+
+                   
+                </Offcanvas.Body>
+            </Offcanvas>
+
+        </>
+    );
 };
-export default Testdb;
+const TheButtonOffcanvas: React.FC<TheOffcanvasProps> = ({ show, onToggleShow }) => {
+    const handleShow = () => onToggleShow();
+    return (
+        <Button onClick={handleShow} bsPrefix={`slide-toggle-icon ${show ? 'active' : ''} me-auto`}>
+            <FaBars />
+        </Button>
+    );
+}
+export { TheButtonOffcanvas };
+export default TheOffcanvas;

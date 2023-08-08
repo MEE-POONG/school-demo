@@ -1,6 +1,10 @@
-
-
-export default function TheNavBar(){
+import { TheButtonOffcanvas } from './TheOffcanvas';
+interface TheNavBarProps {
+   show: boolean;
+   onToggleShow: () => void;
+ }
+// export default function TheNavBar(){
+   const TheNavBar: React.FC<TheNavBarProps> = ({ show, onToggleShow }) => {
   return(
    
 <nav id="header" className="w-full z-30 top-10 py-1 bg-white shadow-lg border-b border-blue-400 mt-24">
@@ -12,6 +16,7 @@ export default function TheNavBar(){
             </svg>
          </label>
          {/* <input className="hidden" type="checkbox" id="menu-toggle"> */}
+         <TheButtonOffcanvas show={show} onToggleShow={onToggleShow} />
          <div className=" order-2 md:order-3 flex flex-wrap mr-0 md:mr-4" id="nav-content">
             <div className=" auth flex items-center w-full md:w-full">
              วิทยาลัยเทคโนโลยีพนมวันท์
@@ -29,5 +34,7 @@ export default function TheNavBar(){
 
 
     
-  )
-}
+);
+};
+
+export default TheNavBar;

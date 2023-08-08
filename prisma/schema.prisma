@@ -26,13 +26,37 @@ model AdminUser {
 
 }
 
+// หมวดหมู่หน้า INDEX
+// รูปสไลด์แรก
+model ImgSlider{
+ id  String  @id @default(auto()) @map("_id") @db.ObjectId
+ img1 String?
+ img2 String?
+ img3 String?
+ img4 String?
+ img5 String?
+ img6 String?
+}
+
+// รูปสไลด์ข่าวว
+model ImgNewSlider{
+ id  String  @id @default(auto()) @map("_id") @db.ObjectId
+ img1 String?
+ img2 String?
+ img3 String?
+ img4 String?
+ img5 String?
+ img6 String?
+}
+
 
 //สวัสดิการ
 model Welfare  {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id  String  @id @default(auto()) @map("_id") @db.ObjectId
   welfareTitle String?
   welfareDescription String?
 }
+
 
 //หน้า สมัครเรียน  (แต่ไม่ใช่แบบฟอร์มสมัคร)
 model IndexReg  {
