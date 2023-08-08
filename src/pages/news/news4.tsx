@@ -22,11 +22,11 @@ const NewsArticle: React.FC = () => {
             </Link>
           </div>
           <div className="w-full text-blue-900 text-2xl md:text-4xl px-5 font-bold leading-none py-2">
-          เปิดรับนักศึกษาใหม่ 2566 </div>
+          หลักสูตร เสาร์-อาทิตย์ เรียนออนไลน์ 100%</div>
           <p className=' text-end'>2023-07-20</p>
           <img
                   className=""
-                  src="/img/banner/banner4.png"
+                  src="/img/banner/bannerwts.png"
                   alt=""
                 />
                 <p className=' text-lg md:text-2xl text-blue-900 py-2'>วิทยาลัยเทคโนโลยีพนมวันท์ เปิดรับนักศึกษาใหม่ ประจำปีการศึกษา 2566 </p>
