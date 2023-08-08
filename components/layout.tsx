@@ -3,6 +3,7 @@ import React from "react";
 import Footer from "./footer";
 import ComponentsNavbar from "./navbar";
 import Link from "next/link";
+import Head from "next/head";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,15 +17,16 @@ export default function RootLayout({
     <>
   
     
-      <ComponentsNavbar />
-      <title>PhanomwanCollege</title>
+      <ComponentsNavbar/>
+      <Head>
+       <title>PhanomwanCollege</title>
        <meta
           name="description"
           content="T ACTIVE"
-          
         />
-         <link rel="icon" href="/favicon.ico" />
-         
+         <link rel="icon" href="/panomwan.ico" />
+         </Head>
+      
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
       <Link href="https://www.facebook.com/PhanomwanCollege/">
       <p className="text-gray-400 underline"> <img

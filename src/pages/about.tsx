@@ -10,7 +10,7 @@ export default function About() {
                  <title>about</title>
             {/* banner คณะและหลักสูตร */}
             <div className="relative">
-                <img src="/img/about/building.png" alt="" />
+                <img src="/img/about/build1.png" alt="" />
                 <div className="absolute inset-0  mb-2 md:mb-24  flex justify-center items-center">
                     {/* <h1 className='text-white text-xl md:text-6xl lg:text-7xl '>
                     วิทยาลัยเทคโนโลยีพนมวันท์
@@ -116,17 +116,7 @@ export default function About() {
                 {/* ปิด div พื้นหลังใหญ่ */}
             </div>
             {/* แทบ รู้จักพนมวันท์ */}
-            <div className=''>
-                <div className="bg-[#1F306A] bg-opacity-80 flex justify-center items-center">
-                    <h1 className='md:text-3xl text-white text-center py-10 px-2'>
-                        ติดต่อขอคำปรึกษา...
-                    </h1>
-                    <Link href="advisor" >
-                        <button className="bg-[#FFBF00] rounded-lg text-white ml-1 w-14 md:w-24  md:text-3xl">คลิก</button>
-                    </Link>
-                </div>
-
-            </div>
+           
         </RootLayout>
     );
 }
