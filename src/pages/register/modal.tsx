@@ -1,12 +1,13 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/router'
+
 
 export default function Modal({ onSubmit }: any) {
   const [openSubmit, setOpen] = useState(false)
-
+  const router = useRouter()
   const cancelButtonRef = useRef(null)
-
 
   return (
     <>
@@ -61,7 +62,11 @@ export default function Modal({ onSubmit }: any) {
                     <button
                       type="button"
                       className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto"
-                      onClick={onSubmit}
+                      onClick={() => {
+                        onSubmit()
+                        setOpen(!openSubmit)
+                        router.push('/register/sum')
+                      }}
                     >
                       ยืนยัน
                     </button>
