@@ -11,7 +11,7 @@ import Modal from "./modal";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Sum() {
 
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState(null);
@@ -21,104 +21,6 @@ export default function Home() {
   const [regMajor, setRegMajor] = useState<string>("");
 
   const [regImg, setRegImg] = useState<string>("");
-
-
-  // สร้างฟังก์ชัน handleSubmit เพื่อทำการส่งข้อมูลไปยัง API ผ่านเมธอด POST
-  const handleSubmit = () => {
-    const formData = {
-      regIdpersonal: (document.getElementsByName(
-        "regIdpersonal"
-      )[0] as HTMLInputElement).value,
-      regBirth: (document.getElementsByName(
-        "regBirth"
-      )[0] as HTMLInputElement).value,
-
-      regPrefix: (document.getElementsByName(
-        "regPrefix"
-      )[0] as HTMLInputElement).value,
-
-      regSex: (document.getElementsByName(
-        "regSex"
-      )[0] as HTMLInputElement).value,
-
-      regNation: (document.getElementsByName(
-        "regNation"
-      )[0] as HTMLInputElement).value,
-
-      regName: (document.getElementsByName(
-        "regName"
-      )[0] as HTMLInputElement).value,
-
-      regLastname: (document.getElementsByName(
-        "regLastname"
-      )[0] as HTMLInputElement).value,
-
-      regEname: (document.getElementsByName(
-        "regEname"
-      )[0] as HTMLInputElement).value,
-
-      regElastname: (document.getElementsByName(
-        "regElastname"
-      )[0] as HTMLInputElement).value,
-
-      regPhone: (document.getElementsByName(
-        "regPhone"
-      )[0] as HTMLInputElement).value,
-      regEmail: (document.getElementsByName(
-        "regEmail"
-      )[0] as HTMLInputElement).value,
-
-      regImg: regImg,
-
-      // เพิ่มข้อมูลอื่นๆ ที่ต้องการส่งไปยัง API
-      // ...
-    };
-
-    axios
-      .post("/api/registerForm", formData)
-      .then((response) => {
-        // สำเร็จ
-        console.log("ส่งข้อมูลเรียบร้อยแล้ว", response.data);
-      })
-      .catch((error) => {
-        // เกิดข้อผิดพลาดในการส่งข้อมูล
-        console.error("เกิดข้อผิดพลาดในการส่งข้อมูล", error);
-      });
-  };
-  
-
-  // ตรงนี้ทำให้ถ้าเลือก คณะ สาขาจะแตกต่างกันไปตามคณะ
-  const majorOptionsByFaculty: { [key: string]: string[] } = {
-    "คณะบริหารธุรกิจ": [
-      "สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)",
-      "สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)",
-      "สาขาวิชาระบบสารสนเทศ (บธ.บ.)",
-      "สาขาวิชาการจัดการ (บธ.บ.)",
-      "สาขาวิชาการบัญชี (บช.บ.)",
-      // ... Add other options for this faculty ...
-    ],
-    "คณะวิทยาศาสตร์และเทคโนโลยี": [
-      "สาขาวิชาสาธารณสุขศาสตร์ (สบ.)"
-      // Add options for this faculty...
-    ],
-    "คณะศิลปศาสตร์": [
-      "สาขาวิชารัฐประศาสนศาสตร์ (รป.บ)"
-      // Add options for this faculty...
-    ],
-    "คณะวิศวกรรมศาสตร์": [
-      "สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.)"
-      // Add options for this faculty...
-    ],
-    // ... Add options for other faculties ...
-  };
-
-  // Handle the change event of the faculty select
-  const handleFacultyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedFaculty = event.target.value;
-    setRegFaculty(selectedFaculty);
-    setRegMajor(""); // Reset the selected major when changing faculty
-  };
-
 
 
   // ส่วนนี้อัพโหลดรูปและแปลงเป็น base64
@@ -175,7 +77,7 @@ export default function Home() {
 
         <div className='flex justify-between'>
           <div>
-            <h1 className='text-2xl  md:text-5xl text-[#1F306A]'>กรอกข้อมูล</h1>
+            <h1 className='text-2xl  md:text-5xl text-[#1F306A]'>สรุปข้อมูล</h1>
           </div>
 
           <div className='self-end'>
@@ -218,20 +120,15 @@ export default function Home() {
                   <label className=''>คำนำหน้าชื่อ:</label>
                 </div>
                 <div className=' col-span-1 md:col-span-2  md:my-2'>
-                  <select name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
-                    <option>นาย</option>
-                    <option>นาง</option>
-                    <option>นางสาว</option>
-                  </select>
+                  <input name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
+                  </input>
                 </div>
                 <div className='col-start-5 md:col-start-6 md:text-right p-3 my-2 '>
                   <label className=''>เพศ:</label>
                 </div>
                 <div className='col-span-1 md:col-span-2 my-2'>
-                  <select name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
-                    <option>ชาย</option>
-                    <option>หญิง</option>
-                  </select>
+                  <input name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  </input>
                 </div>
 
                 <div className='col-start-7 md:col-start-9 md:text-right p-3 my-2 '>
@@ -331,10 +228,8 @@ export default function Home() {
                   <label className=''>สำเร็จการศึกษาระดับ:</label>
                 </div>
                 <div className=' col-span-2 my-2'>
-                  <select name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
-                    <option>มัธยมศึกษาปีที่ 6</option>
-                    <option>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
-                  </select>
+                  <input name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  </input>
                 </div>
                 <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                   <label className=''>เกรดเฉลี่ย</label>
@@ -384,29 +279,15 @@ export default function Home() {
                   <label className=''>คณะ:</label>
                 </div>
                 <div className=' col-span-2 my-2'>
-                  <select name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white' onChange={handleFacultyChange}>
-                    <option value="">-- เลือกคณะ --</option>
-                    <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
-                    <option value="คณะวิทยาศาสตร์และเทคโนโลยี">คณะวิทยาศาสตร์และเทคโนโลยี</option>
-                    <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
-                    <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
-                  </select>
+                  <input name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  </input>
                 </div>
                 <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                   <label className=''>สาขา:</label>
                 </div>
                 <div className='col-span-2 my-2'>
-                  <select name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'
-                    disabled={!regFaculty} // Disable the select if faculty is not selected
-                    value={regMajor}
-                    onChange={(e) => setRegMajor(e.target.value)}
-                  >
-                    {majorOptionsByFaculty[regFaculty]?.map((major) => (
-                      <option key={major} value={major}>
-                        {major}
-                      </option>
-                    ))}
-                  </select>
+                  <input name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  </input>
                 </div>
 
 
@@ -424,7 +305,9 @@ export default function Home() {
 {/* ปุ่มส่งใบสมัคร */}
 <div className='flex justify-center'>
           {/* Modal */}
-          <Modal onSubmit={handleSubmit}/>
+          <button className='bg-black bg-opacity-80  text-[#FFBF00] rounded w-56 h-20 text-3xl'>
+        กลับ
+      </button>
         </div>
 
 
