@@ -1,5 +1,6 @@
 import RootLayout from "@/components/layout";
 import { Inter } from "next/font/google";
+import Link from 'next/link';
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -117,6 +118,7 @@ export default function Welfare() {
 
             <div className="p-5">
               <div className="box-content shadow-xl rounded-lg ">
+               <Link href="/news/news1">
                 <img
                   className="rounded-lg"
                   src="/img/activity/activity3.jpg"
@@ -125,6 +127,7 @@ export default function Welfare() {
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
                 พิธีไหว้ครู และ ปฐมนิเทศนักศึกษา 2565 
                 </h1>
+                </Link>
               </div>
             </div>
 

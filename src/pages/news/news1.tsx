@@ -1,37 +1,63 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import RootLayout from '@/components/layout'
-import { BsBuildingFill } from "react-icons/bs";
-import { IoNewspaperSharp } from "react-icons/io5";
-import { PiHandCoinsBold } from "react-icons/pi";
-import { GoBook } from "react-icons/go";
-import { MdSupportAgent } from "react-icons/md";
-import { TbStars } from "react-icons/tb";
-import { FaLocationDot } from "react-icons/fa6";
-import StickyBox from 'react-sticky-box';
+import React from 'react';
+import RootLayout from '@/components/layout';
 import Link from 'next/link';
 
+const NewsArticle: React.FC = () => {
+  return (
+    <RootLayout>
+      <body className="relative">
+        <div className="">
+          <div className=" p-3">
+            <button className="text-2xl font-thin ">
+              <i className="fa fa-bars"></i>
+            </button>
+          </div>
+          <div className="w-3/5 p-3">
+            <center>
+            </center>
+          </div>
+          
+        </div>
+
+        <div className="w-full md:w-3/5 mx-auto">
+          <div className="mx-5 my-3 text-sm">
+            <Link href="./" className=" font-bold tracking-widest underline">
+              กลับ
+            </Link>
+          </div>
+          <div className="w-full text-gray-800 text-4xl px-5 font-bold leading-none py-2">
+          พิธีปฐมนิเทศนักศึกษา และ พิธีไหว้ครู 2566</div>
+          <p className=' text-end'>2023-06-19</p>
+          <img
+                  className=""
+                  src="/img/news/new1-1.png"
+                  alt=""
+                />
+                <p className=' text-xl py-2'>พิธีปฐมนิเทศนักศึกษา และไหว้ครู ประจำปีการศึกษา 2566 เมื่อวันที่ 19 มิถุนายน 2566 
+ณ หอประชุม ศรีพนมวันท์ วิทยาลัยเทคโนโลยีพนมวันท์</p>
+
+<img
+                  className=""
+                  src="/img/news/new1-2.png"
+                  alt=""
+                />
+                 <img
+                  className=" py-2 mb-32"
+                  src="/img/news/new1-3.png"
+                  alt=""
+                />
 
 
-
-const inter = Inter({ subsets: ['latin'] })
-
-export default function News() {
-    return (
-       
-       
-        <RootLayout>
-            <div className=' container mx-auto'>
-                <p>พิธีปฐมนิเทศนักศึกษา และ พิธีไหว้ครู 2566</p>
-                <p>2023-06-19</p>
-
-            </div>
+          
 
 
-      
+        </div>
 
+        
+      </body>
+      </RootLayout>
 
-        </RootLayout>
+  );
+};
 
-    )
-}
+export default NewsArticle;
