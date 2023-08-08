@@ -61,9 +61,6 @@ export default function Home() {
   };
 
 
-
-
-
   useEffect(() => {
     axios.get("/api/registerForm").then((response) => {
       setUsers(response.data);
