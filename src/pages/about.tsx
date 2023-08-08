@@ -10,7 +10,7 @@ export default function About() {
                  <title>about</title>
             {/* banner คณะและหลักสูตร */}
             <div className="relative">
-                <img src="/img/about/building.png" alt="" />
+                <img src="/img/about/build1.png" alt="" />
                 <div className="absolute inset-0  mb-2 md:mb-24  flex justify-center items-center">
                     {/* <h1 className='text-white text-xl md:text-6xl lg:text-7xl '>
                     วิทยาลัยเทคโนโลยีพนมวันท์
