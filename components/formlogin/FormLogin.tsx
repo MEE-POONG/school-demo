@@ -1,6 +1,25 @@
-export default function FormLogin() {
+import React, { useEffect, useState } from "react";
+import Head from "next/head";
+
+
+  const FormLogin: React.FC = () => {
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+    };
+
   return (
-    // ซ้าย
+<>
+    <Head>
+    <title>Login</title>
+    <meta name="description" content="I2AROBOT 2" />
+    <link rel="icon" href="#" />
+  </Head>
+
+    {/* // ซ้าย */}
     <div className="h-screen flex">
       <div className="flex w-1/2 bg-gradient-to-tr bg-[#1F306A] i justify-around items-center">
         <span>
@@ -82,5 +101,7 @@ export default function FormLogin() {
         </form>
       </div>
     </div>
+    </>
   );
 }
+export default FormLogin;
