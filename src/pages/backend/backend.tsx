@@ -7,7 +7,9 @@ const HomePage: React.FC = () => {
 
   return (
 <>
-<Backendlayout children={undefined}/>
+<Backendlayout>
+  
+</Backendlayout>
 
 </>
 

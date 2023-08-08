@@ -6,11 +6,14 @@ import Slider from "@/components/slider";
 import Thesliderbar from "@/components/Thesliderbar";
 import Link from "next/link";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
   return (
+    
     <RootLayout>
+       <title>PhanomwanCollege</title>
       <Thesliderbar />
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
       <Link href="https://www.facebook.com/PhanomwanCollege/">
