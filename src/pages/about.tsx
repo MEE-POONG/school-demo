@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function About() {
     return (
         <RootLayout>
-
+                 <title>about</title>
             {/* banner คณะและหลักสูตร */}
             <div className="relative">
                 <img src="/img/about/building.png" alt="" />
