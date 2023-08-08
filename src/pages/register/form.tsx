@@ -28,6 +28,33 @@ export default function Home() {
 
   const [regImg, setRegImg] = useState<string>("");
 
+
+  // สร้างฟังก์ชัน handleSubmit เพื่อทำการส่งข้อมูลไปยัง API ผ่านเมธอด POST
+  const handleSubmit = () => {
+    const formData = {
+      regIdpersonal: (document.getElementsByName(
+        "regIdpersonal"
+      )[0] as HTMLInputElement).value,
+      regBirth: (document.getElementsByName(
+        "regBirth"
+      )[0] as HTMLInputElement).value,
+      // เพิ่มข้อมูลอื่นๆ ที่ต้องการส่งไปยัง API
+      // ...
+    };
+
+    axios
+      .post("/api/registerForm", formData)
+      .then((response) => {
+        // สำเร็จ
+        console.log("ส่งข้อมูลเรียบร้อยแล้ว", response.data);
+      })
+      .catch((error) => {
+        // เกิดข้อผิดพลาดในการส่งข้อมูล
+        console.error("เกิดข้อผิดพลาดในการส่งข้อมูล", error);
+      });
+  };
+  
+
   // ตรงนี้ทำให้ถ้าเลือก คณะ สาขาจะแตกต่างกันไปตามคณะ
   const majorOptionsByFaculty: { [key: string]: string[] } = {
     "คณะบริหารธุรกิจ": [
@@ -60,75 +87,6 @@ export default function Home() {
     setRegMajor(""); // Reset the selected major when changing faculty
   };
 
-
-
-
-
-  useEffect(() => {
-    axios.get("/api/registerForm").then((response) => {
-      setUsers(response.data);
-      console.log(response.data)
-    });
-  }, []);
-
-
-  const testM = (data: any) => {
-    console.log(data);
-  };
-
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-
-    const data = {
-      regIdpersonal: event.target.regIdpersonal.value,
-      regBirth: event.target.regBirth.value,
-      regPrefix: event.target.regPrefix.value,
-      regSex: event.target.regSex.value,
-      regNation: event.target.regNation.value,
-      regName: event.target.regName.value,
-      regLastname: event.target.regLastname.value,
-      regEname: event.target.regEname.value,
-      regElastname: event.target.regElastname.value,
-      regPhone: event.target.regPhone.value,
-      regEmail: event.target.regEmail.value,
-      regSchool: event.target.regSchool.value,
-      regDegree: event.target.regDegree.value,
-      regGpa: event.target.regGpa.value,
-      regProgram: event.target.regProgram.value,
-      regFaculty: event.target.regFaculty.value,
-      regMajor: event.target.regMajor.value,
-      regImg: regImg,
-    };
-   
-    console.log(data);
-
-    // axios.post("/api/registerForm", data).then((response) => {
-    //   console.log("done!");
-    //   router.push("/register/form");
-    //   console.log(response.data);
-
-    //   //รีเซ็ทค่า
-    //   event.target.regIdpersonal.value = "";
-    //   event.target.regBirth.value = "";
-    //   event.target.regPrefix.value = "";
-    //   event.target.regSex.value = "";
-    //   event.target.regNation.value = "";
-    //   event.target.regName.value = "";
-    //   event.target.regLastname.value = "";
-    //   event.target.regEname.value = "";
-    //   event.target.regElastname.value = "";
-    //   event.target.regPhone.value = "";
-    //   event.target.regEmail.value = "";
-    //   event.target.regSchool.value = "";
-    //   event.target.regDegree.value = "";
-    //   event.target.regGpa.value = "";
-    //   event.target.regProgram.value = "";
-    //   event.target.regFaculty.value = "";
-    //   event.target.regMajor.value = "";
-    //   setRegImg("");
-
-    // });
-  };
 
 
   // ส่วนนี้อัพโหลดรูปและแปลงเป็น base64
@@ -196,7 +154,7 @@ export default function Home() {
         <div className='bg-[#1F306A] w-full h-1  mb-7  '>
         </div>
         <div className=''>
-        <form onSubmit={handleSubmit}>
+
             {/* ข้อมูลผู้สมัคร  */}
             <div className=' outline outline-1  drop-shadow-xl shadow-xl'>
 
@@ -429,15 +387,15 @@ export default function Home() {
 
 
             </div>
-
+                  
 {/* ปุ่มส่งใบสมัคร */}
 <div className='flex justify-center'>
           {/* Modal */}
-          <Modal onSubmit={testM} />
+          <Modal onSubmit={handleSubmit}/>
         </div>
 
 
-            </form>
+
         </div>
 
 
