@@ -59,7 +59,7 @@ export default function Menu() {
     <div className="relative ">
       <img className=" relative w-full h-40" src="/img/event/111.png" />
       <div className="absolute  inset-1 mb-8 flex flex-wrap place-content-evenly h-[100%] items-center">
-        <Link href="/register" className="contactIcon text-center ">
+        <Link href="/register/form" className="contactIcon text-center ">
           <RiFilePaper2Line className="mx-auto mb-2 h-[80px] w-16 md:w-32 lg:w-48 " />
           สมัครเรียน
         </Link>
