@@ -13,19 +13,15 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const [users, setUsers] = useState([]);
-  const [user, setUser] = useState(null);
   const router = useRouter();
-
   const [regFaculty, setRegFaculty] = useState<string>("");
   const [regMajor, setRegMajor] = useState<string>("");
-
   const [regImg, setRegImg] = useState<string>("");
 
 
   // สร้างฟังก์ชัน handleSubmit เพื่อทำการส่งข้อมูลไปยัง API ผ่านเมธอด POST
   const handleSubmit = () => {
-    const formData = {
+    const formData:any = {
       regIdpersonal: (document.getElementsByName(
         "regIdpersonal"
       )[0] as HTMLInputElement).value,
@@ -70,6 +66,31 @@ export default function Home() {
 
       regImg: regImg,
 
+
+      regSchool: (document.getElementsByName(
+        "regSchool"
+      )[0] as HTMLInputElement).value,
+
+      regDegree: (document.getElementsByName(
+        "regDegree"
+      )[0] as HTMLInputElement).value,
+
+      regGpa: (document.getElementsByName(
+        "regGpa"
+      )[0] as HTMLInputElement).value,
+
+      regProgram: (document.getElementsByName(
+        "regProgram"
+      )[0] as HTMLInputElement).value,
+
+      regFaculty: (document.getElementsByName(
+        "regFaculty"
+      )[0] as HTMLInputElement).value,
+
+      regMajor: (document.getElementsByName(
+        "regMajor"
+      )[0] as HTMLInputElement).value,
+
       // เพิ่มข้อมูลอื่นๆ ที่ต้องการส่งไปยัง API
       // ...
     };
@@ -79,11 +100,24 @@ export default function Home() {
       .then((response) => {
         // สำเร็จ
         console.log("ส่งข้อมูลเรียบร้อยแล้ว", response.data);
+        console.log("ID", response.data.id);
+        router.push({
+          pathname: "/register/sum",
+          query: {
+            id: response.data.id,
+          },
+          
+        });
+
+
       })
       .catch((error) => {
         // เกิดข้อผิดพลาดในการส่งข้อมูล
         console.error("เกิดข้อผิดพลาดในการส่งข้อมูล", error);
       });
+
+      
+
   };
   
 
@@ -421,8 +455,8 @@ export default function Home() {
 
             </div>
                   
-{/* ปุ่มส่งใบสมัคร */}
-<div className='flex justify-center'>
+        {/* ปุ่มส่งใบสมัคร */}
+        <div className='flex justify-center'>
           {/* Modal */}
           <Modal onSubmit={handleSubmit}/>
         </div>
