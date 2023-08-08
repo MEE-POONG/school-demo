@@ -13,13 +13,7 @@ export default function About() {
   return (
     
     <RootLayout>
-       <title>PhanomwanCollege</title>
-       <meta
-          name="description"
-          content="T ACTIVE"
-          
-        />
-         <link rel="icon" href="/favicon.ico" />
+      
       <Thesliderbar />
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
       <Link href="https://www.facebook.com/PhanomwanCollege/">

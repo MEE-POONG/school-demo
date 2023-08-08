@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const Dashborad: React.FC = () => {
   return (
     <>
-      <div className="font-poppins antialiased">
+      <div className="font-poppins antialiased bg-[#1F306A]">
         <div
           id="view"
           className="h-full w-screen flex flex-row"
