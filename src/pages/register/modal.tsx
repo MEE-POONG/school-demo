@@ -4,7 +4,8 @@ import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/router'
 
 
-export default function Modal({ onSubmit }: any) {
+
+export default function Modal({ onSubmit}: any) {
   const [openSubmit, setOpen] = useState(false)
   const router = useRouter()
   const cancelButtonRef = useRef(null)
@@ -65,7 +66,6 @@ export default function Modal({ onSubmit }: any) {
                       onClick={() => {
                         onSubmit()
                         setOpen(!openSubmit)
-                        router.push('/register/sum')
                       }}
                     >
                       ยืนยัน

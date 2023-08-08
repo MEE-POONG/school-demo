@@ -2,71 +2,85 @@
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import RootLayout from '@/components/layout'
-
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 
-import Modal from "./modal";
-
 const inter = Inter({ subsets: ['latin'] })
 
+
+interface UserData {
+    regIdpersonal: string;
+    regBirth: string;
+    regPrefix: string;
+    regSex: string;
+    regNation: string;
+    regName: string;
+    regLastname: string;
+    regEname: string;
+    regElastname: string;
+    regPhone: string;
+    regEmail: string;
+    regImg: string;
+    regSchool: string;
+    regDegree: string;
+    regGpa: string;
+    regProgram: string;
+    regFaculty: string;
+    regMajor: string;
+}
+    
+
+
 export default function Sum() {
+    const router = useRouter();
+    //router.replace(router.pathname);
+    const indata = router.query;
+    const [data, setData] = useState<UserData>({ // กำหนดชนิดข้อมูลให้กับ state
+        regIdpersonal: "",
+        regBirth: "",
+        regPrefix: "",
+        regSex: "",
+        regNation: "",
+        regName: "",
+        regLastname: "",
+        regEname: "",
+        regElastname: "",
+        regPhone: "",
+        regEmail: "",
+        regImg: "",
+        regSchool: "",
+        regDegree: "",
+        regGpa: "",
+        regProgram: "",
+        regFaculty: "",
+        regMajor: "",
+      });
 
-  const [users, setUsers] = useState([]);
-  const [user, setUser] = useState(null);
-  const router = useRouter();
 
-  const [regFaculty, setRegFaculty] = useState<string>("");
-  const [regMajor, setRegMajor] = useState<string>("");
+    
 
-  const [regImg, setRegImg] = useState<string>("");
+    useEffect(() => {
+        console.log(indata.id);
+    }, []);
 
-
-  // ส่วนนี้อัพโหลดรูปและแปลงเป็น base64
-  //  โค้ดนี้ใช้วัตถุ image เพื่อดึงขนาดของรูปภาพ หากขนาดของรูปภาพมากกว่า 1000 พิกเซล ฟังก์ชันจะลดขนาดของรูปภาพโดยอัตราส่วนสูงสุดระหว่างความกว้างและความยาวของรูปภาพ จากนั้นฟังก์ชันจะวาดรูปภาพขนาดใหม่ลงบนผืนผ้าใบ และแปลงผืนผ้าใบกลับเป็นสตริงฐาน 64
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files && event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64String = reader.result as string;
-        const splittedString = base64String.split(",")[1]; // ตัดส่วน "data:image/png;base64," ออก
-        if (event.target.id === "regImg") {
-          const image = new Image();
-          image.src = `data:image/png;base64,${splittedString}`;
-          image.onload = () => {
-            const width = image.width;
-            const height = image.height;
-            const maxSize = 400; //กำหนดขนาดตรงนี้ หมายถึงไซส์
-            if (width > maxSize || height > maxSize) {
-              const ratio = Math.max(width / maxSize, height / maxSize);
-              const newWidth = width / ratio;
-              const newHeight = height / ratio;
-              const canvas = document.createElement("canvas");
-              canvas.width = newWidth;
-              canvas.height = newHeight;
-              const ctx = canvas.getContext("2d");
-              if (ctx === null) {
-                console.log("Context is null");
-              } else {
-                ctx.drawImage(image, 0, 0, newWidth, newHeight);
-                // ตัดส่วน "data:image/png;base64," ออก และเซฟเป็น png
-                const base64String = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
-                setRegImg(base64String);
-              }
-            } else {
-              setRegImg(splittedString);
-            }
-          };
-        } else {
-          event.target.value = '';
-        }
-      };
-      reader.readAsDataURL(file);
+    // เรียกใช้การร้องขอ GET ไปยัง API
+axios.get("/api/registerForm/"+indata.id).then(response => {
+    // ตรวจสอบสถานะการตอบกลับ
+    if (response.status === 200) {
+      // ข้อมูล API ได้รับสำเร็จ
+      const data = response.data;
+      setData(data); // กำหนดค่า data ที่ได้จาก API ให้กับ state
+      
+      // ทำงานกับข้อมูล
+    } else {
+      // ข้อมูล API ไม่สำเร็จ
+      throw new Error("API request failed with status code " + response.status);
     }
-  };
+  });
 
+    
+    
 
   return (
     <RootLayout>
@@ -104,13 +118,13 @@ export default function Sum() {
                   <label className=''>บัตรประจำตัวประชาชน:</label>
                 </div>
                 <div className=' col-span-2 my-2'>
-                  <input name='regIdpersonal' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regIdpersonal} name='regIdpersonal' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
                 <div className='col-start-6 col-end-8 md:md:text-right p-3 my-2 '>
                   <label className=''>วัน/เดือน/ปีเกิด:</label>
                 </div>
                 <div className='col-span-2 my-2'>
-                  <input name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regBirth} name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white" />
                 </div>
 
 
@@ -120,14 +134,14 @@ export default function Sum() {
                   <label className=''>คำนำหน้าชื่อ:</label>
                 </div>
                 <div className=' col-span-1 md:col-span-2  md:my-2'>
-                  <input name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
+                  <input readOnly defaultValue={data.regPrefix} name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
                   </input>
                 </div>
                 <div className='col-start-5 md:col-start-6 md:text-right p-3 my-2 '>
                   <label className=''>เพศ:</label>
                 </div>
                 <div className='col-span-1 md:col-span-2 my-2'>
-                  <input name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  <input readOnly defaultValue={data.regSex} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   </input>
                 </div>
 
@@ -135,7 +149,7 @@ export default function Sum() {
                   <label className=''>สัญชาติ: </label>
                 </div>
                 <div className='col-span-2 my-2 md:ml-2'>
-                  <input name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regNation} name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
 
 
@@ -145,13 +159,13 @@ export default function Sum() {
                   <label className=''>ชื่อ:</label>
                 </div>
                 <div className=' col-span-2 my-2'>
-                  <input name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regName} name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
                 <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                   <label className=''>นามสกุล:</label>
                 </div>
                 <div className='col-span-2 my-2'>
-                  <input name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regLastname}  name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
 
 
@@ -161,13 +175,13 @@ export default function Sum() {
                   <label className=''>Name:</label>
                 </div>
                 <div className=' col-span-2 my-2'>
-                  <input name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regEname} name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
                 <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                   <label className=''>Surname:</label>
                 </div>
                 <div className='col-span-2 my-2'>
-                  <input name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regElastname} name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
 
                 {/* เบอร์โทร อีเมลล์ */}
@@ -176,21 +190,21 @@ export default function Sum() {
                   <label className=''>เบอร์โทรศัพท์ติดต่อ:</label>
                 </div>
                 <div className=' col-span-2 my-2'>
-                  <input name='regPhone' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regPhone} name='regPhone' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
                 <div className='col-start-7 col-end-8 md:text-right p-3 my-2 '>
                   <label className=''>Email:</label>
                 </div>
                 <div className='col-span-2 my-2 '>
-                  <input name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regEmail} name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
 
                 {/* รูป */}
                 <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                   <label className=''>อัพโหลดรูปภาพ :</label>
                 </div>
-                <div className='md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 '>
-                  <input type="file" id='regImg' name="regImg" className='' onChange={handleFileUpload} />
+                <div className='md:col-span-4 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 '>
+                  <img src={data.regImg} alt="Profile Image" />
                 </div>
 
 
@@ -217,7 +231,7 @@ export default function Sum() {
                   <label className=''>สถาบันการศึกษา:</label>
                 </div>
                 <div className=' col-span-6 my-2'>
-                  <input name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regSchool}  name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
 
 
@@ -228,14 +242,14 @@ export default function Sum() {
                   <label className=''>สำเร็จการศึกษาระดับ:</label>
                 </div>
                 <div className=' col-span-2 my-2'>
-                  <input name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  <input readOnly defaultValue={data.regDegree} name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   </input>
                 </div>
                 <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                   <label className=''>เกรดเฉลี่ย</label>
                 </div>
                 <div className='col-span-2 my-2'>
-                  <input name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                  <input readOnly defaultValue={data.regGpa} name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
               </div>
 
@@ -260,15 +274,10 @@ export default function Sum() {
                 <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                   <label className=''>หลักสูตร:</label>
                 </div>
-                <div className='md:col-span-1 md:my-2 md:self-center md:flex md:justify-center ml-5 flex items-center'>
-                  <input name='regProgram' value="4ปี" type="radio" className="w-5 h-5" />
-                  <label className='ml-4 md:ml-1 md:text-sm '>4 ปี</label>
+                <div className=' col-span-1 my-2'>
+                <input readOnly defaultValue={data.regProgram}  name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
                 </div>
 
-                <div className='md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center '>
-                  <input name='regProgram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-5 h-5 " />
-                  <label className='ml-4 md:ml-1 md:text-sm'>2 ปี (ต่อเนื่อง)</label>
-                </div>
 
 
 
@@ -279,14 +288,14 @@ export default function Sum() {
                   <label className=''>คณะ:</label>
                 </div>
                 <div className=' col-span-2 my-2'>
-                  <input name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  <input readOnly defaultValue={data.regFaculty} name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   </input>
                 </div>
                 <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                   <label className=''>สาขา:</label>
                 </div>
                 <div className='col-span-2 my-2'>
-                  <input name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  <input readOnly defaultValue={data.regMajor} name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   </input>
                 </div>
 
