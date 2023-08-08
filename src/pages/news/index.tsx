@@ -36,6 +36,7 @@ export default function Welfare() {
 
             <div className="p-3">
               <div className="box-content shadow-xl rounded-lg ">
+              <Link href="/news/news1">
                 <img
                   className="rounded-lg"
                   src="../img/banner/banner4.png"
@@ -44,11 +45,13 @@ export default function Welfare() {
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
                   เปิดรับสมัครนักศึกษาใหม่ 2566
                 </h1>
+               </Link>
               </div>
             </div>
 
             <div className="p-3">
               <div className="box-content shadow-xl rounded-lg ">
+              <Link href="/news/news2">
                 <img
                   className="rounded-lg"
                   src="../img/banner/banner2.png"
@@ -57,11 +60,13 @@ export default function Welfare() {
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
                   กู้ กยศ. 100% สำหรับนักเรียน นักศึกษา
                 </h1>
+                </Link>
               </div>
             </div>
 
             <div className="p-3">
               <div className="box-content shadow-xl rounded-lg ">
+              <Link href="/news/news3">
                 <img
                   className="rounded-lg"
                   src="../img/banner/banner1.png"
@@ -70,11 +75,13 @@ export default function Welfare() {
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
                   ให้คำปรึกษาโดยอาจารย์ผู้เชี่ยวชาญ
                 </h1>
+                </Link>
               </div>
             </div>
 
             <div className="p-3">
               <div className="box-content shadow-xl rounded-lg ">
+              <Link href="/news/news4">
                 <img
                   className="rounded-lg"
                   src="../img/banner/bannerwts.png"
@@ -83,6 +90,7 @@ export default function Welfare() {
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
                   หลักสูตร เสาร์-อาทิตย์ เรียนออนไลน์ 100%
                 </h1>
+                </Link>
               </div>
             </div>
 
@@ -118,7 +126,7 @@ export default function Welfare() {
 
             <div className="p-5">
               <div className="box-content shadow-xl rounded-lg ">
-               <Link href="/news/news1">
+               <Link href="/news/news5">
                 <img
                   className="rounded-lg"
                   src="/img/activity/activity3.jpg"
@@ -133,6 +141,7 @@ export default function Welfare() {
 
             <div className="p-5">
               <div className="box-content shadow-xl rounded-lg ">
+              <Link href="/news/news6">
                 <img
                   className="rounded-lg"
                   src="/img/activity/activity2.jpg"
@@ -141,11 +150,13 @@ export default function Welfare() {
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
                 กีฬาสัมพันธ์ 2565
                 </h1>
+                </Link>
               </div>
             </div>
 
             <div className="p-5">
               <div className="box-content shadow-xl rounded-lg ">
+              <Link href="/news/news7">
                 <img
                   className="rounded-lg"
                   src="/img/activity/activity1.jpg"
@@ -154,11 +165,13 @@ export default function Welfare() {
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
                 พิธีปัจฉิมนิเทศนักศึกษา 2565
                 </h1>
+                </Link>
               </div>
             </div>
 
             <div className="p-5">
               <div className="box-content shadow-xl rounded-lg ">
+              <Link href="/news/news8">
                 <img
                   className="rounded-lg"
                   src="/img/activity/activity4.jpg"
@@ -167,6 +180,7 @@ export default function Welfare() {
                 <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
                 พิธีไหว้ครู และ ปฐมนิเทศนักศึกษา 2566 
                 </h1>
+                </Link>
               </div>
             </div>
 
