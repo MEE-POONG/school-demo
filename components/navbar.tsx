@@ -15,7 +15,7 @@ const ComponentsNavbar: React.FC = () => {
 
   return (
     <nav className=" bg-[#1F306A] sm/h-[130px] font-fontTH ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-wrap  h-[100%] justify-between ">
+      <div className="flex justify-around mx-auto px-4 sm:px-6 lg:px-8 py-8  flex-wrap  h-[100%] ">
         <a href="./" className="flex">
           {/* <div className="flex-shrink-0"> */}
           {/* Your logo or brand */}
@@ -102,11 +102,18 @@ const ComponentsNavbar: React.FC = () => {
             >
               สวัสดิการ
             </a>
+            {/* <a
+              href="/advisor"
+              className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
+            >
+              ทีมที่ปรึกษา
+            </a> */}
+
             <a>
               <Menu as="div" className="relative inline-block z-50 ">
                 <div>
                   <Menu.Button className="inline-flex w-full gap-x-1.5 text-20  text-white text-lg hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium  shadow-sm ">
-                    สนใจสมัครเรียน
+                    ข้อมูลเพิ่มเติม
                     <ChevronDownIcon
                       className="mr-1h-6 w-6 item-center mt-[] text-white "
                       aria-hidden="true"
@@ -165,6 +172,12 @@ const ComponentsNavbar: React.FC = () => {
                   </Menu.Items>
                 </Transition>
               </Menu>
+            </a>
+            <a
+              href="/register/form"
+              className="text-white bg-[#FFBF00] hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
+            >
+              สมัครเรียน
             </a>
           </ul>
         </div>
