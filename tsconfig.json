@@ -22,6 +22,6 @@
 
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/singin"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/formlogin"],
   "exclude": ["node_modules"]
 }
