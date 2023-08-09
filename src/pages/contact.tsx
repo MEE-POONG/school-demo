@@ -11,6 +11,13 @@ export default function Contact() {
     return (
         
         <RootLayout>
+              <title>PhanomwanCollege</title>
+       <meta
+          name="description"
+          content="T ACTIVE"
+          
+        />
+         <link rel="icon" href="/panomwan.ico"/>
            
           
      

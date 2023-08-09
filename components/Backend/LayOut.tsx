@@ -1,7 +1,8 @@
 // Layout.tsx
 import React, { useState } from 'react';
 import TheNavBar from './TheNavBar';
-import Dashborad from './dashborad';
+import Testdb from './text';
+import TheOffcanvas from './TheOffcanvas';
 
 
 interface LayoutProps {
@@ -20,11 +21,13 @@ const Backendlayout: React.FC<LayoutProps> = ({ children }) => {
   return (
 
     <main >
-      <TheNavBar/>
-      <Dashborad/>
-      
-      {/* <TheOffcanvas show={show} onToggleShow={handleToggleShow} />
-      <TheNavBar onToggleShow={handleToggleShow} show={show} /> */}
+    <TheNavBar show={false} onToggleShow={function (): void {
+        throw new Error('Function not implemented.');
+      } }/>
+     
+      {/* <Testdb/> */}
+      <TheOffcanvas show={show} onToggleShow={handleToggleShow} />
+      {/* <TheNavBar onToggleShow={handleToggleShow} show={show} /> */}
       <div className='bg-whilt paper' style={mainStyle} >
         {children}
         {/* <Footer /> */}
