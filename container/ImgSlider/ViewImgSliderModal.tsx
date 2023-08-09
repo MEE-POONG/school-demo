@@ -29,7 +29,7 @@ const ImgSliderViewImgSliderModal: React.FC<ImgSliderViewImgSliderModalProps> = 
                 <Modal.Body>
                     <Row>
                         <Col lg="4">
-                            ชื่อ : {data?.img1}
+                        img : {data?.img1}
                         </Col>
                         <Col lg="4">
                         img : {data?.img2}

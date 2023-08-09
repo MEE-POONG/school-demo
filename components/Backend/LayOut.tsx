@@ -1,7 +1,7 @@
 // Layout.tsx
 import React, { useState } from 'react';
 import TheNavBar from './TheNavBar';
-import Testdb from './text';
+// import Testdb from './text';
 import TheOffcanvas from './TheOffcanvas';
 
 
@@ -21,10 +21,12 @@ const Backendlayout: React.FC<LayoutProps> = ({ children }) => {
   return (
 
     <main >
-    <TheNavBar show={false} onToggleShow={function (): void {
+    {/* <TheNavBar show={false} onToggleShow={function (): void {
+        throw new Error('Function not implemented.');
+      } }/> */}
+     <TheNavBar show={false} onToggleShow={function (): void {
         throw new Error('Function not implemented.');
       } }/>
-     
       {/* <Testdb/> */}
       <TheOffcanvas show={show} onToggleShow={handleToggleShow} />
       {/* <TheNavBar onToggleShow={handleToggleShow} show={show} /> */}
