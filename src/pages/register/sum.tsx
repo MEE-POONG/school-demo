@@ -60,9 +60,9 @@ export default function Sum() {
 
     
 
-    useEffect(() => {
-        console.log(indata.id);
-    }, []);
+    // useEffect(() => {
+    //     console.log(indata.id);
+    // }, []);
 
     // เรียกใช้การร้องขอ GET ไปยัง API
 axios.get("/api/registerForm/"+indata.id).then(response => {
@@ -71,6 +71,7 @@ axios.get("/api/registerForm/"+indata.id).then(response => {
       // ข้อมูล API ได้รับสำเร็จ
       const data = response.data;
       setData(data); // กำหนดค่า data ที่ได้จาก API ให้กับ state
+      console.log(data)
       
       // ทำงานกับข้อมูล
     } else {
@@ -204,7 +205,7 @@ axios.get("/api/registerForm/"+indata.id).then(response => {
                   <label className=''>อัพโหลดรูปภาพ :</label>
                 </div>
                 <div className='md:col-span-4 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 '>
-                  <img src={data.regImg} alt="Profile Image" />
+                    <img src={data.regImg} alt="Profile Image" />
                 </div>
 
 
