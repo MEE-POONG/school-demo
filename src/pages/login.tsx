@@ -80,6 +80,8 @@ export default function FormLogin() {
           >
             ล็อคอิน
           </button>
+
+          <a href="/backend/HOME">text BACKEND</a>
           {/* <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">Forgot Password ?</span> */}
         </form>
       </div>
