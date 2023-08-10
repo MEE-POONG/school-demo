@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -16,7 +17,7 @@ const ComponentsNavbar: React.FC = () => {
   return (
     <nav className=" bg-[#1F306A] sm/h-[130px] font-fontTH ">
       <div className="flex justify-around mx-auto px-4 sm:px-6 lg:px-8 py-8  flex-wrap  h-[100%] ">
-        <a href="./" className="flex">
+        <Link href="./" className="flex">
           {/* <div className="flex-shrink-0"> */}
           {/* Your logo or brand */}
           <img
@@ -30,7 +31,7 @@ const ComponentsNavbar: React.FC = () => {
             <div className=" bg-white h-[2px] sm/w-[300px]" />
             <p>Phanomwan College of Technology</p>
           </div>
-        </a>
+        </Link>
 
         {/*------------------------ mobile -----------------*/}
         <button
@@ -69,47 +70,41 @@ const ComponentsNavbar: React.FC = () => {
           </svg>
         </button>
         <div
-          className={`md:flex justify-between items-center w-full md:w-auto md:order-1 ${
-            isOpen ? "" : "hidden"
-          }`}
+          className={`md:flex justify-between items-center w-full md:w-auto md:order-1 ${isOpen ? "" : "hidden"
+            }`}
           id="mobile-menu-3"
         >
           <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-lg  md:font-medium  ">
-            <a
+            <Link
               href="./"
               className=" text-white hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md font-medium"
             >
               หน้าแรก
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/about"
               className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
             >
               รู้จัก &quot;พนมวันท์&quot;
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/faculty"
               className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
             >
               คณะ/หลักสูตร
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/welfare"
               className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
             >
               สวัสดิการ
-            </a>
-            {/* <a
-              href="/advisor"
-              className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
-            >
-              ทีมที่ปรึกษา
-            </a> */}
+            </Link>
 
-            <a>
+
+            
               <Menu as="div" className="relative inline-block z-50 ">
                 <div>
                   <Menu.Button className="inline-flex w-full gap-x-1.5 text-20  text-white text-lg hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium  shadow-sm ">
@@ -138,7 +133,7 @@ const ComponentsNavbar: React.FC = () => {
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
+                          <Link
                             href="/register"
                             className={classNames(
                               active
@@ -148,12 +143,12 @@ const ComponentsNavbar: React.FC = () => {
                             )}
                           >
                             วิธีการสมัคร
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
+                          <Link
                             href="/advisor"
                             className={classNames(
                               active
@@ -163,7 +158,7 @@ const ComponentsNavbar: React.FC = () => {
                             )}
                           >
                             ทีมที่ปรึกษา
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
 
@@ -172,13 +167,13 @@ const ComponentsNavbar: React.FC = () => {
                   </Menu.Items>
                 </Transition>
               </Menu>
-            </a>
-            <a
+           
+            <Link
               href="/register/form"
               className="text-white bg-[#FFBF00] hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
             >
               สมัครเรียน
-            </a>
+            </Link>
           </ul>
         </div>
       </div>

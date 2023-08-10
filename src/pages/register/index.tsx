@@ -14,7 +14,7 @@ export default function Home() {
             <div className='absolute inset-x-0 top-[35%]  md:h-40 text-center'>
             <h1 className=' text-xl md:text-6xl text-yellow-400 drop-shadow-md'>สมัครเข้าศึกษา</h1>
             <h2 className=' text-xl text-white md:text-6xl'>วิทยาลัยเทคโนโลยีพนมวันท์</h2>
-            </div>
+            </div> 
             </div>
           
             <img className='' src="/img/register/b1.png" alt=""/>
