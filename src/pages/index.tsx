@@ -1,10 +1,11 @@
-import { Inter } from "next/font/google";
-import RootLayout from "../../components/layout";
-import Menu from "@/container/menu";
-import Activity from "@/components/activity";
-import Slider from "@/components/slider";
 import Thesliderbar from "@/components/Thesliderbar";
+import Activity from "@/components/activity";
+import RootLayout from "@/components/layout";
+import Menu from "@/container/menu";
+import { Inter } from "next/font/google";
+
 import Link from "next/link";
+import Slider from "react-slick";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,7 +25,7 @@ export default function About() {
           </Link>
     </div>
       
-      <Menu />
+      <Menu/>
       <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
       <div className="container mx-auto  md:py-10 py-2 text-center">
         <span className=" text-2xl md:text-4xl">
@@ -33,7 +34,7 @@ export default function About() {
         </span>
         <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
         <div className=" mx-auto py-2 items-center justify-center">
-          <Slider />
+          <Slider/>
         </div>
       </div>
       <Activity />
