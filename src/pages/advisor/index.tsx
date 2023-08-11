@@ -87,7 +87,7 @@ export default function Welfare() {
                                 <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นาย วรรธนัย บุตรมั้น</h1>
                                 <h2 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>สื่อและประชาสัมพันธ์</h2>
                                 <h2 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-019-8815</h2>
-                                <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ทุกระบ  บจบที่เรา”</h2>
+                                <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ทุกระบบจบที่เรา”</h2>
                             </div>
                         </div>
                     </div>
