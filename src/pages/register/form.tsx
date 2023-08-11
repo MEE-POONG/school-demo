@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import RootLayout from '@/components/layout'
 
+
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -15,6 +16,7 @@ export default function Home() {
 
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [id, setId] = useState<string>("")
 
   const [regIdpersonal, setRegIdpersonal] = useState<string>(""); // Example for an input field
   const [regBirth, setRegBirth] = useState<string>("");
@@ -60,7 +62,7 @@ export default function Home() {
             // Update regImg value immediately
             setRegImg(responseData.result.id);
             console.log("id ของ รูป : " + responseData.result.id);
-            console.log("ตัวแปร regImg : " + responseData.result.id);
+            console.log("ตัวแปร regImg : " + regImg);
           }
 
         } catch (error) {
@@ -109,7 +111,7 @@ export default function Home() {
     try {
       const response = await axios.post("/api/registerForm", formData);
       console.log("สำเร็จ"+response);
-      router.push(`/register/sum?id=${response.data.id}`);
+      //router.replace(`/register/sum?id=${response.data.id}`);
       // Handle the response here if needed...
     } catch (error) {
       console.error(error);
