@@ -1,47 +1,43 @@
-import { useState } from 'react';
-import axios from 'axios';
+import React, { useRef, useState } from 'react';
 
-const Upload = () => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+const UploadPage = () => {
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
+    const [imageUrl, setImageUrl] = useState<string | null>(null);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files.length > 0) {
-      setSelectedFile(event.target.files[0]);
-    }
-  };
+    const handleUpload = async () => {
+        if (fileInputRef.current) {
+            const file = fileInputRef.current.files?.[0];
+            if (file) {
+                const formData = new FormData();
+                formData.append('file', file);
 
-  const handleUpload = async () => {
-    if (!selectedFile) {
-      return;
-    }
+                try {
+                    const response = await fetch('https://upload-image.me-prompt-technology.com/', {
+                        method: 'POST',
+                        body: formData,
+                    });
 
-    const apiUrl = 'https://api.cloudflare.com/client/v4/accounts/39aa4ea3c7a7d766adc4428933324787/images/v1';
-    const authToken = 'Bearer LpMNSFUw7gmxpn4ZZ7P2ZAcReF6Q-HlbIWqthbO0';
+                    const responseData = await response.json();
+                    console.log(responseData);
 
-    const formData = new FormData();
-    formData.append('file', selectedFile);
+                    // สร้าง URL ของรูปภาพจาก responseData
+                    if (responseData.result?.variants[0]) {
+                        setImageUrl(responseData.result.variants[11]);
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+        }
+    };
 
-    try {
-      const response = await axios.post(apiUrl, formData, {
-        headers: {
-          Authorization: authToken,
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-
-      console.log('File uploaded successfully:', response.data);
-    } catch (error) {
-      console.error('Error uploading file:', error);
-    }
-  };
-
-  return (
-    <div>
-      <h1>Upload Image</h1>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
-    </div>
-  );
+    return (
+        <div>
+            <input ref={fileInputRef} type="file" name="image" />
+            <button onClick={handleUpload}>Upload</button>
+            {imageUrl && <img src={imageUrl} alt="Uploaded" />}
+        </div>
+    );
 };
 
-export default Upload;
+export default UploadPage;
