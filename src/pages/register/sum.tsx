@@ -9,10 +9,16 @@ import axios from "axios";
 const inter = Inter({ subsets: ['latin'] })
 
 
+interface FormData {
+  regIdpersonal: string;
+  regImg: string;
+  // ... other properties ...
+}
+
 export default function Sum() {
     const router = useRouter();
     const [inid, setInid] = useState<String>("");
-    const [formData, setFormData] = useState({});
+    const [formData, setFormData] = useState<FormData>({ regIdpersonal: "", regImg: "" });
 
     useEffect(() => {
       const idFromQuery = router.query.id;

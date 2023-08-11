@@ -42,6 +42,21 @@ export default function Home() {
   const [regFaculty, setRegFaculty] = useState<string>("");
   const [regMajor, setRegMajor] = useState<string>("");
 
+  const [success, setSuccess] = useState(false);
+  const [dataOut, setDataOut] = useState({});
+  
+
+  // ฟังก์ชันสำหรับส่งข้อมูลไปยัง API
+  const submitDataToAPI = async (combinedData:any) => {
+    try {
+      const response = await axios.post("/api/registerForm", combinedData);
+      console.log(response.data);
+      // ทำสิ่งที่คุณต้องการกับข้อมูล response ได้ที่นี่
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 
   const handleUpload = async () => {
     if (fileInputRef.current) {
@@ -63,6 +78,7 @@ export default function Home() {
             setRegImg(responseData.result.id);
             console.log("id ของ รูป : " + responseData.result.id);
             console.log("ตัวแปร regImg : " + regImg);
+            setSuccess(true); 
           }
 
         } catch (error) {
@@ -71,9 +87,7 @@ export default function Home() {
       }
     }
   };
-
-
-
+   
 
   // สร้างฟังก์ชัน handleSubmit เพื่อทำการส่งข้อมูลไปยัง API ผ่านเมธอด POST
   const handleSubmit = async () => {
@@ -81,7 +95,6 @@ export default function Home() {
     await handleUpload();
 
     // Other code for handling form submission...
-
     const formData = {
       regIdpersonal: regIdpersonal,
       regBirth: regBirth,
@@ -95,7 +108,7 @@ export default function Home() {
       regPhone: regPhone,
       regEmail: regEmail,
 
-      regImg: regImg,
+      //regImg: regImg,
 
       regSchool: regSchool,
       regDegree: regDegree,
@@ -108,18 +121,33 @@ export default function Home() {
       // ... other form data ...
     };
 
-    try {
-      const response = await axios.post("/api/registerForm", formData);
-      console.log("สำเร็จ"+response);
-      //router.replace(`/register/sum?id=${response.data.id}`);
-      // Handle the response here if needed...
-    } catch (error) {
-      console.error(error);
-    }
-
+    // try {
+    //   const response = await axios.post("/api/registerForm", formData);
+    //   console.log(response.data);
+    //   //router.replace(`/register/sum?id=${response.data.id}`);
+    //   // Handle the response here if needed...
+    // } catch (error) {
+    //   console.error(error);
+    // }
+    setSuccess(true); 
+    setDataOut(formData);
 
   };
 
+
+  useEffect(() => {
+    // This effect will run whenever the 'success' value changes
+    if (success) {
+      // สร้าง combinedData โดยรวม dataOut และ regImg ที่ได้จากการอัพโหลดรูป
+      const combinedData = {
+        ...dataOut,
+        regImg: regImg
+      };
+
+      // ส่งข้อมูลไปยัง API
+      submitDataToAPI(combinedData);
+    }
+  }, [success, regImg]);
 
 
 
@@ -322,8 +350,9 @@ export default function Home() {
               </div>
               <div className=' col-span-2 my-2'>
                 <select value={regDegree} onChange={(e) => setRegDegree(e.target.value)} name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
-                  <option>มัธยมศึกษาปีที่ 6</option>
-                  <option>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
+                  <option value="">-- เลือกระดับ --</option>
+                  <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+                  <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
                 </select>
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
