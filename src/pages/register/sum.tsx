@@ -288,7 +288,7 @@ export default function Sum() {
                   <label className=''>สาขา:</label>
                 </div>
                 <div className='col-span-2 my-2'>
-                  <input readOnly defaultValue={formData.regMajorf} name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                  <input readOnly defaultValue={formData.regMajor} name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   </input>
                 </div>
 

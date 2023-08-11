@@ -51,7 +51,9 @@ export default function Home() {
     try {
       const response = await axios.post("/api/registerForm", combinedData);
       console.log(response.data);
+      console.log(response.data.id);
       // ทำสิ่งที่คุณต้องการกับข้อมูล response ได้ที่นี่
+      router.push(`/register/sum?id=${response.data.id}`);
     } catch (error) {
       console.error(error);
     }
@@ -237,9 +239,10 @@ export default function Home() {
               </div>
               <div className=' col-span-1 md:col-span-2  md:my-2'>
                 <select value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
-                  <option>นาย</option>
-                  <option>นาง</option>
-                  <option>นางสาว</option>
+                  <option value="">-- เลือกคำนำหน้า --</option>
+                  <option value="นาย">นาย</option>
+                  <option value="นาง">นาง</option>
+                  <option value="นางสาว">นางสาว</option>
                 </select>
               </div>
               <div className='col-start-5 md:col-start-6 md:text-right p-3 my-2 '>
@@ -247,8 +250,9 @@ export default function Home() {
               </div>
               <div className='col-span-1 md:col-span-2 my-2'>
                 <select value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
-                  <option>ชาย</option>
-                  <option>หญิง</option>
+                  <option value="">-- เลือกคำนำหน้า --</option>
+                  <option value="ชาย">ชาย</option>
+                  <option value="หญิง">หญิง</option>
                 </select>
               </div>
 
