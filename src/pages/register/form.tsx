@@ -14,12 +14,31 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
 
   const router = useRouter();
-  const [regFaculty, setRegFaculty] = useState<string>("");
-  const [regMajor, setRegMajor] = useState<string>("");
-  const [regImg, setRegImg] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const [regIdpersonal, setRegIdpersonal] = useState(""); // Example for an input field
+  const [regIdpersonal, setRegIdpersonal] = useState<string>(""); // Example for an input field
+  const [regBirth, setRegBirth] = useState<string>("");
+  const [regPrefix, setRegPrefix] = useState<string>("");
+
+
+  const [regSex, setRegSex] = useState<string>("");
+  const [regNation, setRegNation] = useState<string>("");
+  const [regName, setRegName] = useState<string>("");
+  const [regLastname, setRegLastname] = useState<string>("");
+  const [regEname, setRegEname] = useState<string>("");
+  const [regElastname, setRegElastname] = useState<string>("");
+  const [regPhone, setRegPhone] = useState<string>("");
+  const [regEmail, setRegEmail] = useState<string>("");
+
+  const [regImg, setRegImg] = useState<string>("");
+
+  const [regSchool, setRegSchool] = useState<string>("");
+  const [regDegree, setRegDegree] = useState<string>("");
+  const [regGpa, setRegGpa] = useState<string>("");
+  const [regProgram, setRegProgram] = useState<string>("");
+
+  const [regFaculty, setRegFaculty] = useState<string>("");
+  const [regMajor, setRegMajor] = useState<string>("");
 
 
   const handleUpload = async () => {
@@ -38,7 +57,10 @@ export default function Home() {
           const responseData = await response.json();
           console.log(responseData);
           if (responseData.result && responseData.result.id) {
+            // Update regImg value immediately
             setRegImg(responseData.result.id);
+            console.log("id ของ รูป : " + responseData.result.id);
+            console.log("ตัวแปร regImg : " + responseData.result.id);
           }
 
         } catch (error) {
@@ -49,6 +71,8 @@ export default function Home() {
   };
 
 
+
+
   // สร้างฟังก์ชัน handleSubmit เพื่อทำการส่งข้อมูลไปยัง API ผ่านเมธอด POST
   const handleSubmit = async () => {
     // Upload image first
@@ -56,23 +80,41 @@ export default function Home() {
 
     // Other code for handling form submission...
 
-    const response = await axios.post(`/api/registerForm`, {
-      regIdpersonal,
-      regImg
-    });
-  
-    // Check the response status code
-    if (response.status === 200) {
-      // The registration was successful
-      alert("Your registration was successful.");
-      console.log(response);
-      console.log(response.data.id);
-      console.log(response.data.regImg);
-    } else {
-      // The registration was unsuccessful
-      alert("Your registration was unsuccessful. Please try again.");
+    const formData = {
+      regIdpersonal: regIdpersonal,
+      regBirth: regBirth,
+      regPrefix: regPrefix,
+      regSex: regSex,
+      regNation: regNation,
+      regName: regName,
+      regLastname: regLastname,
+      regEname: regEname,
+      regElastname: regElastname,
+      regPhone: regPhone,
+      regEmail: regEmail,
+
+      regImg: regImg,
+
+      regSchool: regSchool,
+      regDegree: regDegree,
+      regGpa: regGpa,
+      regProgram: regProgram,
+
+      regFaculty: regFaculty,
+      regMajor: regMajor,
+
+      // ... other form data ...
+    };
+
+    try {
+      const response = await axios.post("/api/registerForm", formData);
+      console.log("สำเร็จ"+response);
+      router.push(`/register/sum?id=${response.data.id}`);
+      // Handle the response here if needed...
+    } catch (error) {
+      console.error(error);
     }
-    
+
 
   };
 
@@ -154,7 +196,7 @@ export default function Home() {
                 <label className=''>วัน/เดือน/ปีเกิด:</label>
               </div>
               <div className='col-span-2 my-2'>
-                <input name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regBirth} onChange={(e) => setRegBirth(e.target.value)} name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
 
@@ -164,7 +206,7 @@ export default function Home() {
                 <label className=''>คำนำหน้าชื่อ:</label>
               </div>
               <div className=' col-span-1 md:col-span-2  md:my-2'>
-                <select name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
+                <select value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
                   <option>นาย</option>
                   <option>นาง</option>
                   <option>นางสาว</option>
@@ -174,7 +216,7 @@ export default function Home() {
                 <label className=''>เพศ:</label>
               </div>
               <div className='col-span-1 md:col-span-2 my-2'>
-                <select name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                <select value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   <option>ชาย</option>
                   <option>หญิง</option>
                 </select>
@@ -184,7 +226,7 @@ export default function Home() {
                 <label className=''>สัญชาติ: </label>
               </div>
               <div className='col-span-2 my-2 md:ml-2'>
-                <input name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regNation} onChange={(e) => setRegNation(e.target.value)} name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
 
@@ -194,13 +236,13 @@ export default function Home() {
                 <label className=''>ชื่อ:</label>
               </div>
               <div className=' col-span-2 my-2'>
-                <input name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regName} onChange={(e) => setRegName(e.target.value)} name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>นามสกุล:</label>
               </div>
               <div className='col-span-2 my-2'>
-                <input name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regLastname} onChange={(e) => setRegLastname(e.target.value)} name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
 
@@ -210,13 +252,13 @@ export default function Home() {
                 <label className=''>Name:</label>
               </div>
               <div className=' col-span-2 my-2'>
-                <input name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regEname} onChange={(e) => setRegEname(e.target.value)} name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>Surname:</label>
               </div>
               <div className='col-span-2 my-2'>
-                <input name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regElastname} onChange={(e) => setRegElastname(e.target.value)} name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
               {/* เบอร์โทร อีเมลล์ */}
@@ -225,13 +267,13 @@ export default function Home() {
                 <label className=''>เบอร์โทรศัพท์ติดต่อ:</label>
               </div>
               <div className=' col-span-2 my-2'>
-                <input name='regPhone' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regPhone} onChange={(e) => setRegPhone(e.target.value)} name='regPhone' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-7 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>Email:</label>
               </div>
               <div className='col-span-2 my-2 '>
-                <input name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regEmail} onChange={(e) => setRegEmail(e.target.value)} name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
               {/* รูป */}
@@ -266,7 +308,7 @@ export default function Home() {
                 <label className=''>สถาบันการศึกษา:</label>
               </div>
               <div className=' col-span-6 my-2'>
-                <input name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regSchool} onChange={(e) => setRegSchool(e.target.value)} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
 
@@ -277,7 +319,7 @@ export default function Home() {
                 <label className=''>สำเร็จการศึกษาระดับ:</label>
               </div>
               <div className=' col-span-2 my-2'>
-                <select name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                <select value={regDegree} onChange={(e) => setRegDegree(e.target.value)} name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   <option>มัธยมศึกษาปีที่ 6</option>
                   <option>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
                 </select>
@@ -286,7 +328,7 @@ export default function Home() {
                 <label className=''>เกรดเฉลี่ย</label>
               </div>
               <div className='col-span-2 my-2'>
-                <input name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regGpa} onChange={(e) => setRegGpa(e.target.value)} name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
             </div>
 
@@ -312,12 +354,12 @@ export default function Home() {
                 <label className=''>หลักสูตร:</label>
               </div>
               <div className='md:col-span-1 md:my-2 md:self-center md:flex md:justify-center ml-5 flex items-center'>
-                <input name='regProgram' value="4ปี" type="radio" className="w-5 h-5" />
+                <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="4ปี" type="radio" className="w-5 h-5" />
                 <label className='ml-4 md:ml-1 md:text-sm '>4 ปี</label>
               </div>
 
               <div className='md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center '>
-                <input name='regProgram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-5 h-5 " />
+                <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-5 h-5 " />
                 <label className='ml-4 md:ml-1 md:text-sm'>2 ปี (ต่อเนื่อง)</label>
               </div>
 
@@ -347,6 +389,7 @@ export default function Home() {
                   value={regMajor}
                   onChange={(e) => setRegMajor(e.target.value)}
                 >
+                  <option value="" disabled>-- เลือกสาขา --</option>
                   {majorOptionsByFaculty[regFaculty]?.map((major) => (
                     <option key={major} value={major}>
                       {major}
