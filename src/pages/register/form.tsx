@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import RootLayout from '@/components/layout'
 
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 
@@ -16,31 +16,64 @@ export default function Home() {
   const router = useRouter();
   const [regFaculty, setRegFaculty] = useState<string>("");
   const [regMajor, setRegMajor] = useState<string>("");
-  const [regImg, setRegImg] = useState<File | null>(null);
+  const [regImg, setRegImg] = useState<string>("");
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const [regIdpersonal, setRegIdpersonal] = useState(""); // Example for an input field
+
+
+  const handleUpload = async () => {
+    if (fileInputRef.current) {
+      const file = fileInputRef.current.files?.[0];
+      if (file) {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+          const response = await fetch('https://upload-image.me-prompt-technology.com/', {
+            method: 'POST',
+            body: formData,
+          });
+
+          const responseData = await response.json();
+          console.log(responseData);
+          if (responseData.result && responseData.result.id) {
+            setRegImg(responseData.result.id);
+          }
+
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    }
+  };
+
 
   // สร้างฟังก์ชัน handleSubmit เพื่อทำการส่งข้อมูลไปยัง API ผ่านเมธอด POST
   const handleSubmit = async () => {
-    if (!regImg) {
-      console.error("No file selected.");
-      return;
+    // Upload image first
+    await handleUpload();
+
+    // Other code for handling form submission...
+
+    const response = await axios.post(`/api/registerForm`, {
+      regIdpersonal,
+      regImg
+    });
+  
+    // Check the response status code
+    if (response.status === 200) {
+      // The registration was successful
+      alert("Your registration was successful.");
+      console.log(response);
+      console.log(response.data.id);
+      console.log(response.data.regImg);
+    } else {
+      // The registration was unsuccessful
+      alert("Your registration was unsuccessful. Please try again.");
     }
+    
 
-    try {
-      const formData = new FormData();
-      formData.append("file", regImg, regImg.name); // Pass the file and its name
-
-      const response = await axios.post("/api/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      console.log("Upload successful:", response.data);
-
-      // Additional logic or state updates after successful upload
-    } catch (error) {
-      console.error("Upload failed:", error);
-    }
   };
 
 
@@ -115,7 +148,7 @@ export default function Home() {
                 <label className=''>บัตรประจำตัวประชาชน:</label>
               </div>
               <div className=' col-span-2 my-2'>
-                <input name='regIdpersonal' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regIdpersonal} onChange={(e) => setRegIdpersonal(e.target.value)} name='regIdpersonal' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-6 col-end-8 md:md:text-right p-3 my-2 '>
                 <label className=''>วัน/เดือน/ปีเกิด:</label>
@@ -206,10 +239,7 @@ export default function Home() {
                 <label className=''>อัพโหลดรูปภาพ :</label>
               </div>
               <div className='md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 '>
-                <input type="file" id='regImg' name="regImg" className='' onChange={(e) => {
-                  const selectedFile = e.target.files?.[0];
-                  setRegImg(selectedFile || null);
-                }} />
+                <input type="file" id='regImg' name="regImg" className='' ref={fileInputRef} />
               </div>
 
 
