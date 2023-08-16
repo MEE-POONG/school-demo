@@ -44,6 +44,22 @@ export default function Home() {
 
   const [success, setSuccess] = useState(false);
   const [dataOut, setDataOut] = useState({});
+
+  //เช็คว่า 2 ฟังก์ชั่น ทำงานเส็รจหรือยัง
+  useEffect(() => {
+    // This effect will run whenever the 'success' value changes
+    if (success) {
+      // สร้าง combinedData โดยรวม dataOut และ regImg ที่ได้จากการอัพโหลดรูป
+      const combinedData = {
+        ...dataOut,
+        regImg: regImg
+      };
+
+      // ส่งข้อมูลไปยัง API
+      submitDataToAPI(combinedData);
+    }
+  }, [success, regImg]);
+
   
 
   // ฟังก์ชันสำหรับส่งข้อมูลไปยัง API
@@ -137,20 +153,7 @@ export default function Home() {
   };
 
 
-  useEffect(() => {
-    // This effect will run whenever the 'success' value changes
-    if (success) {
-      // สร้าง combinedData โดยรวม dataOut และ regImg ที่ได้จากการอัพโหลดรูป
-      const combinedData = {
-        ...dataOut,
-        regImg: regImg
-      };
-
-      // ส่งข้อมูลไปยัง API
-      submitDataToAPI(combinedData);
-    }
-  }, [success, regImg]);
-
+ 
 
 
   // ตรงนี้ทำให้ถ้าเลือก คณะ สาขาจะแตกต่างกันไปตามคณะ
