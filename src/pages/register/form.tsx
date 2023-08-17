@@ -154,7 +154,7 @@ export default function Home() {
               setTimeout(() => {
                 // clear();
                 router.push(`/register/sum?id=${response.data.id}`);
-              }, 3000);
+              }, 1000);
             } else {
               // setAlertForm("danger");
               throw new Error('Failed to send data');
