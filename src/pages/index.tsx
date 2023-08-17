@@ -1,4 +1,5 @@
 import Thesliderbar from "@/components/Thesliderbar";
+import UserIPDisplay from "@/components/UserIPDisplay";
 import Activity from "@/components/activity";
 import RootLayout from "@/components/layout";
 import Menu from "@/container/menu";
@@ -14,7 +15,6 @@ export default function About() {
   return (
     
     <RootLayout>
-      
       <Thesliderbar />
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
       <Link href="https://www.facebook.com/PhanomwanCollege/">
@@ -46,7 +46,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className=" bg-slate-800 w-full sm:h-48 md:h-full   ">
+      <div className=" bg-slate-800 w-full sm:h-52 md:h-full   ">
         <div className="md:grid md:grid-flow-col md:auto-cols-max md:gap-2 md:justify-center h-36 text-center">
           <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500  text-2xl">
             4<span className="my-auto px-5 text-white   text-2xl">คณะ</span>
@@ -63,15 +63,15 @@ export default function About() {
               กำลังศึกษา
             </span>
           </p>
-          <p className=" my-auto px-5 text-yellow-400  text-2xl">
-            {" "}
-            1000
-            <span className="my-auto px-5 text-white  text-2xl">
+          <h1 className=" my-auto px-5 text-yellow-400  text-2xl" >
+          <UserIPDisplay/>
+          </h1>
+          <span className="my-auto px- text-white  text-2xl">
               ผู้เข้าชมเว็บไซต์
             </span>
-          </p>
         </div>
       </div>
+
     </RootLayout>
   );
 }
