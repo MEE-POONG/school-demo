@@ -7,13 +7,18 @@ import RootLayout from '@/components/layout'
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
-
+import useAxios from "axios-hooks";
 import Modal from "./modal";
+import Loading from './loading';
+import Missing from './modalmissing';
+import Link from 'next/link'
+import Success from './modalsuccess';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-
+  const [{ error: errorMessage, loading: IndexActivityLoading }, executeIndexActivity] = useAxios({ url: '/api/registerForm', method: 'POST' }, { manual: true });
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [id, setId] = useState<string>("")
@@ -32,7 +37,7 @@ export default function Home() {
   const [regPhone, setRegPhone] = useState<string>("");
   const [regEmail, setRegEmail] = useState<string>("");
 
-  const [regImg, setRegImg] = useState<string>("");
+  const [regImg, setRegImg] = useState<File | null>(null);
 
   const [regSchool, setRegSchool] = useState<string>("");
   const [regDegree, setRegDegree] = useState<string>("");
@@ -45,115 +50,127 @@ export default function Home() {
   const [success, setSuccess] = useState(false);
   const [dataOut, setDataOut] = useState({});
 
-  //เช็คว่า 2 ฟังก์ชั่น ทำงานเส็รจหรือยัง
-  useEffect(() => {
-    // This effect will run whenever the 'success' value changes
-    if (success) {
-      // สร้าง combinedData โดยรวม dataOut และ regImg ที่ได้จากการอัพโหลดรูป
-      const combinedData = {
-        ...dataOut,
-        regImg: regImg
-      };
+  const [isLoading, setIsLoading] = useState(false);
+  const [isMissingModalOpen, setIsMissingModalOpen] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [missingFields, setMissingFields] = useState<string[]>([]);
 
-      // ส่งข้อมูลไปยัง API
-      submitDataToAPI(combinedData);
-    }
-  }, [success, regImg]);
-
-  
-
-  // ฟังก์ชันสำหรับส่งข้อมูลไปยัง API
-  const submitDataToAPI = async (combinedData:any) => {
-    try {
-      const response = await axios.post("/api/registerForm", combinedData);
-      console.log(response.data);
-      console.log(response.data.id);
-      // ทำสิ่งที่คุณต้องการกับข้อมูล response ได้ที่นี่
-      router.push(`/register/sum?id=${response.data.id}`);
-    } catch (error) {
-      console.error(error);
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files && event.target.files[0];
+    if (file) {
+      setRegImg(file); // Store the File object
     }
   };
 
 
-  const handleUpload = async () => {
-    if (fileInputRef.current) {
-      const file = fileInputRef.current.files?.[0];
-      if (file) {
-        const formData = new FormData();
-        formData.append('file', file);
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    //event.preventDefault();
+    //event.stopPropagation();
+    let missingFields = [];
+    // Check for missing fields here...
+    if (!regIdpersonal) missingFields.push("บัตรประจำตัวประชาชน");
+    if (!regBirth) missingFields.push("วันเดือนปีเกิด");
+    if (!regPrefix) missingFields.push("คำนำหน้าชื่อ");
+    if (!regSex) missingFields.push("เพศ");
+    if (!regNation) missingFields.push("สัญชาติ");
+    if (!regName) missingFields.push("ชื่อ");
+    if (!regLastname) missingFields.push("นามสกุล");
+    if (!regEname) missingFields.push("ชื่อภาษาอังกฤษ");
+    if (!regElastname) missingFields.push("นามสกุลภาษาอังกฤษ");
+    if (!regPhone) missingFields.push("เบอร์โทรศัพท์");
+    if (!regEmail) missingFields.push("อีเมล");
+    if (!regImg) missingFields.push("รูปภาพ");
 
-        try {
-          const response = await fetch('https://upload-image.me-prompt-technology.com/', {
-            method: 'POST',
-            body: formData,
-          });
+    if (!regSchool) missingFields.push("สถาบันการศึกษา");
+    if (!regDegree) missingFields.push("ระดับกาสำเร็จการศึกษาระดับ");
+    if (!regGpa) missingFields.push("เกรดเฉลี่ย");
+    if (!regProgram) missingFields.push("หลักสูตร");
 
-          const responseData = await response.json();
-          console.log(responseData);
-          if (responseData.result && responseData.result.id) {
-            // Update regImg value immediately
-            setRegImg(responseData.result.id);
-            console.log("id ของ รูป : " + responseData.result.id);
-            console.log("ตัวแปร regImg : " + regImg);
-            setSuccess(true); 
+    if (!regFaculty) missingFields.push("คณะ");
+    if (!regMajor) missingFields.push("สาขา");
+
+
+    if (missingFields.length > 0) {
+      // Handle missing fields...
+      setMissingFields(missingFields);
+      setIsMissingModalOpen(true);
+      console.log("กรุณากรอกข้อมูลดังต่อไปนี้ให้ครบ :", missingFields.join(', '));
+      return; // Exit the function here
+
+
+      // setAlertForm("warning");
+      // setInputForm(true);
+      // setCheckBody(`กรอกข้อมูลไม่ครบ: ${missingFields.join(', ')}`);
+    } else {
+      try {
+        //setAlertForm("primary"); // set to loading
+        console.log("กำลังอัพ");
+        setIsLoading(true);
+        // Upload the image
+        if (regImg) {
+          const formData = new FormData();
+          formData.append("file", regImg); // Assuming 'activityImg' is a File object
+          const uploadResponse = await axios.post(
+            "https://upload-image.me-prompt-technology.com/",
+            formData
+          );
+
+          if (uploadResponse.status === 200) {
+            const responseData = uploadResponse.data;
+            const imageId = responseData.result.id;
+
+            // Prepare the data to send
+            const data = {
+
+
+              regImg: imageId, // Use the uploaded image ID
+
+
+              regIdpersonal: regIdpersonal,
+              regBirth: regBirth,
+              regPrefix: regPrefix,
+              regSex: regSex,
+              regNation: regNation,
+              regName: regName,
+              regLastname: regLastname,
+              regEname: regEname,
+              regElastname: regElastname,
+              regPhone: regPhone,
+              regEmail: regEmail,
+
+              regSchool: regSchool,
+              regDegree: regDegree,
+              regGpa: regGpa,
+              regProgram: regProgram,
+
+              regFaculty: regFaculty,
+              regMajor: regMajor,
+            };
+
+            const response = await executeIndexActivity({ data });
+            if (response && response.status === 201) {
+              setIsLoading(false);
+              setIsSuccess(true);
+              setTimeout(() => {
+                // clear();
+                router.push(`/register/sum?id=${response.data.id}`);
+              }, 3000);
+            } else {
+              // setAlertForm("danger");
+              throw new Error('Failed to send data');
+            }
+          } else {
+            // setAlertForm("danger");
+            throw new Error('Image upload failed');
           }
-
-        } catch (error) {
-          console.error(error);
         }
+      } catch (error) {
+        //setAlertForm("danger");
       }
     }
   };
-   
-
-  // สร้างฟังก์ชัน handleSubmit เพื่อทำการส่งข้อมูลไปยัง API ผ่านเมธอด POST
-  const handleSubmit = async () => {
-    // Upload image first
-    await handleUpload();
-
-    // Other code for handling form submission...
-    const formData = {
-      regIdpersonal: regIdpersonal,
-      regBirth: regBirth,
-      regPrefix: regPrefix,
-      regSex: regSex,
-      regNation: regNation,
-      regName: regName,
-      regLastname: regLastname,
-      regEname: regEname,
-      regElastname: regElastname,
-      regPhone: regPhone,
-      regEmail: regEmail,
-
-      //regImg: regImg,
-
-      regSchool: regSchool,
-      regDegree: regDegree,
-      regGpa: regGpa,
-      regProgram: regProgram,
-
-      regFaculty: regFaculty,
-      regMajor: regMajor,
-
-      // ... other form data ...
-    };
-
-    // try {
-    //   const response = await axios.post("/api/registerForm", formData);
-    //   console.log(response.data);
-    //   //router.replace(`/register/sum?id=${response.data.id}`);
-    //   // Handle the response here if needed...
-    // } catch (error) {
-    //   console.error(error);
-    // }
-    setSuccess(true); 
-    setDataOut(formData);
-
-  };
 
 
- 
 
 
   // ตรงนี้ทำให้ถ้าเลือก คณะ สาขาจะแตกต่างกันไปตามคณะ
@@ -202,7 +219,7 @@ export default function Home() {
           </div>
 
           <div className='self-end'>
-            <h1 className='text-2xl  md:text-3xl  text-[#1F306A]'>กลับ</h1>
+            <Link href="/register"> <h1 className='text-2xl  md:text-3xl  text-[#1F306A]'>กลับ</h1> </Link>
           </div>
         </div>
 
@@ -242,7 +259,7 @@ export default function Home() {
               </div>
               <div className=' col-span-1 md:col-span-2  md:my-2'>
                 <select value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
-                  <option value="">-- เลือกคำนำหน้า --</option>
+                  <option value="">- เลือก -</option>
                   <option value="นาย">นาย</option>
                   <option value="นาง">นาง</option>
                   <option value="นางสาว">นางสาว</option>
@@ -253,7 +270,7 @@ export default function Home() {
               </div>
               <div className='col-span-1 md:col-span-2 my-2'>
                 <select value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
-                  <option value="">-- เลือกคำนำหน้า --</option>
+                  <option value="">- เลือก -</option>
                   <option value="ชาย">ชาย</option>
                   <option value="หญิง">หญิง</option>
                 </select>
@@ -318,7 +335,7 @@ export default function Home() {
                 <label className=''>อัพโหลดรูปภาพ :</label>
               </div>
               <div className='md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 '>
-                <input type="file" id='regImg' name="regImg" className='' ref={fileInputRef} />
+                <input type="file" id='regImg' name="regImg" className='' onChange={handleFileUpload} />
               </div>
 
 
@@ -461,6 +478,24 @@ export default function Home() {
 
 
       </div>
+
+      {isLoading ? (
+        <Loading />
+      ) : (
+        null
+      )}
+
+      {isMissingModalOpen && (
+        <Missing onClose={() => setIsMissingModalOpen(false)} missingFields={missingFields} />
+      )}
+
+      {isSuccess ? (
+        <Success onClose={() => {
+          setIsSuccess(false);
+        }} />
+      ) : (
+        null
+      )}
 
 
     </RootLayout>
