@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const UserIPDisplay: React.FC = () => {
   const [userIP, setUserIP] = useState<string | null>(null);
-  const [totalIPs, setTotalIPs] = useState<number>(0);
+  const [uniqueLastTwoDigits, setUniqueLastTwoDigits] = useState<number>(0);
 
   useEffect(() => {
     const fetchAndStoreUserIP = async () => {
@@ -11,12 +11,10 @@ const UserIPDisplay: React.FC = () => {
         const data = await response.json();
         setUserIP(data.ip);
 
-        const storedTotalIPs = localStorage.getItem('totalIPs');
-        const updatedTotalIPs = storedTotalIPs
-          ? parseInt(storedTotalIPs) +1
-          : 0;
-        setTotalIPs(updatedTotalIPs);
-        localStorage.setItem('totalIPs', String(updatedTotalIPs));
+        const lastTwoDigits = Number(data.ip.split('.').slice(-1)[0]);
+        if (lastTwoDigits !== uniqueLastTwoDigits) {
+          setUniqueLastTwoDigits(lastTwoDigits);
+        }
 
         // ส่งข้อมูลไปยัง API Endpoint สำหรับเก็บในฐานข้อมูล
         await fetch('/api/IPAddress', {
@@ -24,7 +22,7 @@ const UserIPDisplay: React.FC = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ userIP: data.ip, totalIPs: updatedTotalIPs }),
+          body: JSON.stringify({ userIP: data.ip, lastTwoDigits }),
         });
       } catch (error) {
         console.error('Error fetching IP:', error);
@@ -32,12 +30,12 @@ const UserIPDisplay: React.FC = () => {
     };
 
     fetchAndStoreUserIP();
-  }, []);
+  }, [uniqueLastTwoDigits]);
 
   return (
     <div>
-      {/* <p className=''>IP ผู้ใช้: {userIP || 'ยังไม่มี IP'}</p> */}
-      <h3 className=''>{totalIPs}</h3>
+      <p className=''>IP ผู้ใช้: {userIP || 'ยังไม่มี IP'}</p>
+      <h3 className=''>{uniqueLastTwoDigits}</h3>
     </div>
   );
 };
