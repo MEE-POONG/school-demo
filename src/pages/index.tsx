@@ -2,6 +2,7 @@ import Thesliderbar from "@/components/Thesliderbar";
 import VisitorCounter from "@/components/UserIPDisplay";
 import Activity from "@/components/activity";
 import RootLayout from "@/components/layout";
+import SliderNews from "@/components/sliderNew";
 import Menu from "@/container/menu";
 import { Inter } from "next/font/google";
 
@@ -32,10 +33,11 @@ export default function About() {
           <span className=" text-blue-800 ">ข่าว</span>
           <span className=" text-yellow-500">“พนมวันท์”</span>
         </span>
+        
         <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
 
-        <div className=" mx-auto py-2 items-center justify-center">
-          <Slider/> img
+        <div className=" mx-auto py-2 items-center justify-center w-full">
+          <SliderNews/>
         </div>
 
       </div>
