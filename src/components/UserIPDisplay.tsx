@@ -1,43 +1,98 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const UserIPDisplay: React.FC = () => {
-  const [userIP, setUserIP] = useState<string | null>(null);
-  const [uniqueLastTwoDigits, setUniqueLastTwoDigits] = useState<number>(0);
+const VisitorCounter: React.FC = () => {
+  const [visitorCount, setVisitorCount] = useState<number>(0);
 
   useEffect(() => {
-    const fetchAndStoreUserIP = async () => {
-      try {
-        const response = await fetch('https://api64.ipify.org?format=json');
-        const data = await response.json();
-        setUserIP(data.ip);
-
-        const lastTwoDigits = Number(data.ip.split('.').slice(-1)[0]);
-        if (lastTwoDigits !== uniqueLastTwoDigits) {
-          setUniqueLastTwoDigits(lastTwoDigits);
-        }
-
-        // ส่งข้อมูลไปยัง API Endpoint สำหรับเก็บในฐานข้อมูล
-        await fetch('/api/IPAddress', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ userIP: data.ip, lastTwoDigits }),
-        });
-      } catch (error) {
-        console.error('Error fetching IP:', error);
-      }
-    };
-
-    fetchAndStoreUserIP();
-  }, [uniqueLastTwoDigits]);
+    // อ่านค่าจำนวนผู้เข้าชมจาก localStorage เมื่อโหลดครั้งแรก
+    const storedVisitorCount = localStorage.getItem('visitorCount');
+    if (storedVisitorCount) {
+      setVisitorCount(parseInt(storedVisitorCount));
+    }
+    
+    // เพิ่มจำนวนผู้เข้าชม
+    const newVisitorCount = visitorCount + 1;
+    
+    // อัปเดตค่าใน localStorage และ state
+    localStorage.setItem('visitorCount', newVisitorCount.toString());
+    setVisitorCount(newVisitorCount);
+  }, []);
 
   return (
     <div>
-      <p className=''>IP ผู้ใช้: {userIP || 'ยังไม่มี IP'}</p>
-      <h3 className=''>{uniqueLastTwoDigits}</h3>
+      <p>{visitorCount}</p>
     </div>
   );
 };
 
-export default UserIPDisplay;
+export default VisitorCounter;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// const UserIPDisplay: React.FC = () => {
+//   const [userIP, setUserIP] = useState<string | null>(null);
+//   const [totalIPs, setTotalIPs] = useState<number>(0);
+
+//   useEffect(() => {
+//     const fetchAndStoreUserIP = async () => {
+//       try {
+//         const response = await fetch('https://api64.ipify.org?format=json');
+//         const data = await response.json();
+//         setUserIP(data.ip);
+
+//         const storedTotalIPs = localStorage.getItem('totalIPs');
+//         const updatedTotalIPs = storedTotalIPs
+//           ? parseInt(storedTotalIPs) +1
+//           : +1;
+//         setTotalIPs(updatedTotalIPs);
+//         localStorage.setItem('totalIPs', String(updatedTotalIPs));
+
+//         // ส่งข้อมูลไปยัง API Endpoint สำหรับเก็บในฐานข้อมูล
+//         await fetch('/api/IPAddress', {
+//           method: 'POST',
+//           headers: {
+//             'Content-Type': 'application/json',
+//           },
+//           body: JSON.stringify({ userIP: data.ip, totalIPs: updatedTotalIPs }),
+//         });
+//       } catch (error) {
+//         console.error('Error fetching IP:', error);
+//       }
+//     };
+
+//     fetchAndStoreUserIP();
+//   }, []);
+
+//   return (
+//     <div>
+//       {/* <p className=''>IP ผู้ใช้: {userIP || 'ยังไม่มี IP'}</p> */}
+//       <h3 className=''>{totalIPs}</h3>
+//     </div>
+//   );
+// };
+
+// export default UserIPDisplay;

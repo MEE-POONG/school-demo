@@ -1,5 +1,5 @@
 import Thesliderbar from "@/components/Thesliderbar";
-import UserIPDisplay from "@/components/UserIPDisplay";
+import VisitorCounter from "@/components/UserIPDisplay";
 import Activity from "@/components/activity";
 import RootLayout from "@/components/layout";
 import Menu from "@/container/menu";
@@ -64,7 +64,7 @@ export default function About() {
             </span>
           </p>
           <h1 className=" my-auto px-5 text-yellow-400  text-2xl" >
-          <UserIPDisplay/>
+          <VisitorCounter/>
           </h1>
           <span className="my-auto px- text-white  text-2xl">
               ผู้เข้าชมเว็บไซต์
