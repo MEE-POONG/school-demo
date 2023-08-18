@@ -33,6 +33,20 @@ model IndexSlder {
   img1 String?
 }
 
+model IndexNews {
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
+  newName      String? // ชื่อกิจกรรม
+  newTitle     String? // // หัวข้อหลัก
+  newSubTitle  String? // หัวข้อย่่อ 
+  newSubDetail String? // รายละเอียด
+  newImg       String? // รูปกิจกรรม
+  newDate      String? // วันที่
+
+}
+
+
+
+
 // รูปสไลด์ข่าวว
 model ImgNewSlider{
  id  String  @id @default(auto()) @map("_id") @db.ObjectId
