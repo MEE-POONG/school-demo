@@ -33,9 +33,11 @@ export default function About() {
           <span className=" text-yellow-500">“พนมวันท์”</span>
         </span>
         <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+
         <div className=" mx-auto py-2 items-center justify-center">
-          <Slider/>
+          <Slider/> img
         </div>
+
       </div>
       <Activity />
       <div className="container mx-auto  md:py-10 py-2  ">
