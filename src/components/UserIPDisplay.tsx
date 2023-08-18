@@ -34,7 +34,7 @@ const UserIPDisplay: React.FC = () => {
 
   return (
     <div>
-      {/* <p className=''>IP ผู้ใช้: {userIP || 'ยังไม่มี IP'}</p> */}
+      <p className=''>IP ผู้ใช้: {userIP || 'ยังไม่มี IP'}</p>
       <h3 className=''>{uniqueLastTwoDigits}</h3>
     </div>
   );
