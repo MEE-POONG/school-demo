@@ -1,31 +1,49 @@
 import React, { useEffect, useState } from 'react';
 
+interface VisitorData {
+  count: number;
+  lastVisit: string;
+}
+
 const VisitorCounter: React.FC = () => {
-  const [visitorCount, setVisitorCount] = useState<number>(0);
+  const [visitorData, setVisitorData] = useState<VisitorData | null>(null);
 
   useEffect(() => {
-    // อ่านค่าจำนวนผู้เข้าชมจาก localStorage เมื่อโหลดครั้งแรก
-    const storedVisitorCount = localStorage.getItem('visitorCount');
-    if (storedVisitorCount) {
-      setVisitorCount(parseInt(storedVisitorCount));
+    // อ่านข้อมูลผู้เข้าชมจาก localStorage เมื่อโหลดครั้งแรก
+    const storedVisitorData = localStorage.getItem('visitorData');
+    if (storedVisitorData) {
+      setVisitorData(JSON.parse(storedVisitorData));
+    } else {
+      setVisitorData({
+        count: 0,
+        lastVisit: '',
+      });
     }
-    
-    // เพิ่มจำนวนผู้เข้าชม
-    const newVisitorCount = visitorCount + 1;
-    
-    // อัปเดตค่าใน localStorage และ state
-    localStorage.setItem('visitorCount', newVisitorCount.toString());
-    setVisitorCount(newVisitorCount);
-  }, []);
+
+    // เพิ่มจำนวนผู้เข้าชมและอัปเดตข้อมูลใน localStorage
+    const now = new Date();
+    const newVisitorData = {
+      count: visitorData ? visitorData.count + 1 : 1,
+      lastVisit: now.toLocaleString(),
+    };
+    localStorage.setItem('visitorData', JSON.stringify(newVisitorData));
+    setVisitorData(newVisitorData);
+  }, []); // ไม่ต้องกำหนด dependency เพื่อให้ทำเพียงครั้งเดียวเมื่อโหลดครั้งแรก
 
   return (
     <div>
-      <p>{visitorCount}</p>
+      {visitorData && (
+        <div>
+          <p>{visitorData.count}</p>
+          {/* <p>เข้าชมล่าสุดเมื่อ: {visitorData.lastVisit}</p> */}
+        </div>
+      )}
     </div>
   );
 };
 
 export default VisitorCounter;
+
 
 
 
