@@ -1,62 +1,58 @@
-import RootLayout from "@/components/layout";
-import { BsFill1CircleFill } from "react-icons/bs";
-export default function Test() {
-    return (
-        <RootLayout>
-            <div className="container mx-auto text-xl font-fontTH font-bold py-24">
-                <div className="flex flex-row justify-center gap-10 mb-8">
-                    <div className="flex items-center text-emerald-600 gap-5 bg-gray-600/5 p-6 rounded-md shadow-md hover:scale-105">
-                        <BsFill1CircleFill size={50} />
-                        <div className="w-72 h-40">
-                            <h3>หัวข้อ 1</h3>
-                            <p className="text-[16px]">รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center text-emerald-600 gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
-                        <BsFill1CircleFill size={50} />
-                        <div className="w-72 h-40">
-                            <h3>หัวข้อ 1</h3>
-                            <p className="text-[16px]">รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1</p>
-                        </div>
-                    </div>
-                </div>
+import React, { useState } from 'react';
+import Link from 'next/link';
 
-                <div className="flex flex-row justify-center gap-10 mb-8">
-                    <div className="flex items-center text-emerald-600 gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
-                        <BsFill1CircleFill size={50} />
-                        <div className="w-72 h-40">
-                            <h3>หัวข้อ 1</h3>
-                            <p className="text-[16px]">รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center text-emerald-600 gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
-                        <BsFill1CircleFill size={50} />
-                        <div className="w-72 h-40">
-                            <h3>หัวข้อ 1</h3>
-                            <p className="text-[16px]">รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1</p>
-                        </div>
-                    </div>
-                </div>
+export default function Welfare() {
+  const [showAdditionalNews, setShowAdditionalNews] = useState(false);
 
-                <div className="flex flex-row justify-center gap-10 mb-8">
-                    <div className="flex items-center text-emerald-600 gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
-                        <BsFill1CircleFill size={50} />
-                        <div className="w-72 h-40">
-                            <h3>หัวข้อ 1</h3>
-                            <p className="text-[16px]">รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center text-emerald-600 gap-5 bg-gray-600/5 p-6 rounded-md shadow-md">
-                        <BsFill1CircleFill size={50} />
-                        <div className="w-72 h-40">
-                            <h3>หัวข้อ 1</h3>
-                            <p className="text-[16px]">รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1รายละเอียดของหัวข้อ 1</p>
-                        </div>
-                    </div>
-                </div>
+  const handleLoadMoreClick = () => {
+    setShowAdditionalNews(true);
+  };
 
-                
+  return (
+    <div>
+    {/* ส่วนอื่น ๆ ของโค้ดที่คุณมีอยู่ */}
+    
+    {/* แสดงข่าวเพิ่มเติมเมื่อปุ่มถูกคลิก */}
+    {showAdditionalNews && (
+      <div className="bg-[#E5E4E2]">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {/* ข้อมูลในคอลั่มเพิ่มเติม */}
+            <div className="p-5">
+              <div className="box-content shadow-xl rounded-lg ">
+                <Link href="/news/news8">
+                  <img
+                    className="rounded-lg"
+                    src="/img/activity/activity4.jpg"
+                    alt=""
+                  />
+                  <h1 className="text-[#1F306A] px-2 pt-2 h-14 text-sm truncate ">
+                    พิธีไหว้ครู และ ปฐมนิเทศนักศึกษา 2566 
+                  </h1>
+                </Link>
+              </div>
             </div>
-        </RootLayout>
-    )
+
+            {/* ข้อมูลอื่น ๆ ในคอลั่มเพิ่มเติม... */}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* ปุ่มโหลดเพิ่มเติม */}
+    {!showAdditionalNews && (
+      <div className="py-8 flex justify-center items-center">
+        <button
+          onClick={handleLoadMoreClick}
+          className="group relative h-12 w-40 overflow-hidden rounded-2xl bg-black bg-opacity-80 text-lg font-bold text-white"
+        >
+          โหลดเพิ่มเติม
+          <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30" />
+        </button>
+      </div>
+    )}
+    </div>
+
+    
+  );
 }
