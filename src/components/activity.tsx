@@ -1,21 +1,65 @@
 import Link from "next/link";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import React, { useState, useEffect } from 'react';
+
+
+
+
+interface IndexNews {
+  id: number;
+  activityImg: string;
+  activityTitle: string;
+  activitySubDetail: string;
+  // Add other properties if there are more
+}
+
+
 export default function Activity() {
+  const initialVisibleItems = 3;
+  const [visibleItems, setVisibleItems] = useState(initialVisibleItems);
+  const [indexActivityData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
+  const handleLoadMore = () => {
+    setVisibleItems(visibleItems + 3);
+  };
+
+  useEffect(() => {
+    fetch('/api/indexActivity')
+      .then((response) => response.json())
+      .then((data) => {
+        setIndexNewsData(data.indexActivity);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }, []);
+
+
   return (
     <div className="py-5 mb-5">
       <div className=" bg-[#1F306A] p-8 md:h-150 lg:h-190 container mx-auto items-center justify-center mb-5">
         <h1 className=" text-lg md:text-3xl  md:ml-0 py-5 text-center text-yellow-400">
           กิจกรรมที่ผ่านมา
         </h1>
-        <div className="grid grid-cols-3 gap-3 container mx-auto">
-          <Link href="" className="p-4">
-            <img className="" src="/img/event/event1.png" />
-          </Link>
-          <Link href="" className="p-4">
-            <img src="/img/event/event6.png" />
-          </Link>
-          <Link href="" className="p-4">
-            <img src="/img/event/event3.png" />
-          </Link>
+        <div className='flex justify-center'>
+          <div className="grid grid-cols-3 gap-20">
+            {indexActivityData.slice(0, visibleItems).map((indexActivity) => (
+              <Link key={indexActivity.id} href={`/activity/${indexActivity.id}`} passHref>
+                <div key={indexActivity.id} className='max-w-sm rounded overflow-hidden shadow-lg bg-[#E5E4E2]'>
+                  <img
+                    className='w-full'
+                    src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexActivity.activityImg}/public`}
+                    alt='indexActivity image'
+                  />
+                  <div className='px-6 py-4'>
+                    <div className='font-bold text-xl mb-2'>{indexActivity.activityTitle}</div>
+                    <p className='text-gray-700 text-base'>{indexActivity.activitySubDetail}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
       <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900  md:h-150 lg:h-190 container mx-auto items-center justify-center mb-5"></div>
