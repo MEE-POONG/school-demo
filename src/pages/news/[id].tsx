@@ -28,7 +28,7 @@ const NewsArticle: React.FC = () => {
       <div className="relative p-7 md:p-3">
         <div className="w-full md:w-3/5 mx-auto">
           <div className="mx-5 my-3 text-sm">
-            <Link href="/" className=" font-bold tracking-widest underline">
+            <Link href="/news" className=" font-bold tracking-widest underline">
               กลับ
             </Link>
           </div>
