@@ -29,7 +29,7 @@ function Activityloader() {
       .then((response) => response.json())
       .then((data) => {
         setIndexNewsData(data.indexActivity);
-        console.log(data.indexActivity);
+        //console.log(data.indexActivity);
       })
       .catch((error) => {
         console.error('Error:', error);
