@@ -4,6 +4,7 @@ import Footer from "./footer";
 import ComponentsNavbar from "./navbar";
 import Link from "next/link";
 import Head from "next/head";
+import VisiterCounter from "@/components/visiterCounter";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +17,7 @@ export default function RootLayout({
   return (
     <>
   
-    
+      <VisiterCounter/>
       <ComponentsNavbar/>
       <Head>
        <title>PhanomwanCollege</title>

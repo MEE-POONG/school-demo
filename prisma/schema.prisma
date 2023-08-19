@@ -114,8 +114,7 @@ model RegisterForm  {
 
 model IPAddress {
   id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  ipAddress String
-  count     Int
+  ipAddress String?
 }
 
 
