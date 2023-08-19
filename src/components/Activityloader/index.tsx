@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Link from 'next/link';
 // ...
 
 interface IndexNews {
@@ -40,7 +39,7 @@ function Activityloader() {
       <div className='flex justify-center'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
           {indexNewsData.slice(0, visibleItems).map((indexNews) => (
-            <Link key={indexNews.id} href={`/news/${indexNews.id}`} passHref>
+            
             <div key={indexNews.id} className='max-w-sm rounded overflow-hidden shadow-lg bg-[#E5E4E2]'>
               <img
                 className='w-full'
@@ -52,7 +51,6 @@ function Activityloader() {
                 <p className='text-gray-700 text-base'>{indexNews.newSubDetail}</p>
               </div>
             </div>
-          </Link>
           ))}
         </div>
       </div>

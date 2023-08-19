@@ -11,7 +11,7 @@ const NewsArticle: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      fetch(`/api/indexActivity/${id}`)
+      fetch(`/api/indexNews/${id}`)
         .then((response) => response.json())
         .then((data) => {
           setArticleData(data); // กำหนดข้อมูลบทความข่าวที่ดึงมา
@@ -35,14 +35,11 @@ const NewsArticle: React.FC = () => {
           <div className="w-full text-blue-900 text-2xl md:text-4xl px-5 font-bold leading-none py-2">
             {articleData.newTitle}
           </div>
-          <p className="text-end">{articleData.publishedDate}</p>
-          <img className="" src={articleData.imageUrl} alt={articleData.imageAlt} />
-          <p className="text-lg md:text-2xl text-blue-900 py-2">{articleData.content}</p>
+          <p className="text-end">{articleData.newDate}</p>
+          <img className="" src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${articleData.newImg}/public`} alt={articleData.newImg} />
+          <p className="text-lg md:text-2xl text-blue-900 py-2">{articleData.newSubTitle}</p>
           <p>
-            ด่วน!!! ทำงานอยู่ก็เรียนได้ กู้ กยศ.100% มีทีมที่ปรึกษามืออาชีพตลอดหลักสูตร สนใจสมัครเรียน{' '}
-            <Link className="text-yellow-400" href="">
-              คลิก
-            </Link>
+            {articleData.newSubDetail}
           </p>
         </div>
       </div>
