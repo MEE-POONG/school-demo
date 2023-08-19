@@ -13,8 +13,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 const pageSize: number = Number(req.query.pageSize) || 10;
 
                 const indexActivity = await prisma.indexActivity.findMany({
-                    skip: (page - 1) * pageSize,
-                    take: pageSize,
+                    // skip: (page - 1) * pageSize,
+                    // take: pageSize,
                 });
 
                 const totalindexActivity = await prisma.indexActivity.count();
