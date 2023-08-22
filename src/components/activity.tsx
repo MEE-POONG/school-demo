@@ -46,7 +46,7 @@ export default function Activity() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
           {indexActivityData.slice(0, visibleItems).map((indexActivity) => (
             <Link key={indexActivity.id} href={`/activity/${indexActivity.id}`} passHref>
-            <div key={indexActivity.id} className='block max-w-sm p-1 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'>
+            <div key={indexActivity.id} className='block max-w-sm p-1 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 '>
               <img
                 className='w-full h-24 object-cover'
                 src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexActivity.activityImg ? indexActivity.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
