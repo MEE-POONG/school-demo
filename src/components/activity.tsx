@@ -44,21 +44,21 @@ export default function Activity() {
         </h1>
         <div className='flex justify-center'>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
-            {indexActivityData.slice(0, visibleItems).map((indexActivity) => (
-              <Link key={indexActivity.id} href={`/activity/${indexActivity.id}`} passHref>
-                <div key={indexActivity.id} className='block max-w-sm p-1 bg-gray-50 border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'>
-                  <img
-                    className='w-full h-24 object-cover'
-                    src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexActivity.activityImg ? indexActivity.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
-                    alt='indexActivity image'
-                  />
-                  <div className='px-6 py-4 h-24'>
-                    <div className='font-bold text-xl mb-2'>{indexActivity.activityTitle}</div>
-                    <p className='text-gray-700 text-base'>{indexActivity.activitySubDetail}</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          {indexActivityData.slice(0, visibleItems).map((indexActivity) => (
+            <Link key={indexActivity.id} href={`/activity/${indexActivity.id}`} passHref>
+            <div key={indexActivity.id} className='max-w-sm rounded overflow-hidden shadow-lg bg-[#E5E4E2]'>
+              <img
+                className='w-full h-24 object-cover'
+                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexActivity.activityImg ? indexActivity.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
+                alt='indexActivity image'
+              />
+              <div className='px-6 py-4 h-24'>
+                <div className='font-bold text-xl mb-2'>{indexActivity.activityTitle}</div>
+                <p className='text-gray-700 text-base'>{indexActivity.activitySubDetail}</p>
+              </div>
+            </div>
+          </Link>
+          ))}
           </div>
         </div>
       </div>
