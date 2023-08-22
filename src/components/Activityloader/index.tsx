@@ -44,11 +44,11 @@ function Activityloader() {
             <Link key={indexActivity.id} href={`/activity/${indexActivity.id}`} passHref>
             <div key={indexActivity.id} className='max-w-sm rounded overflow-hidden shadow-lg bg-[#E5E4E2]'>
               <img
-                className='w-full'
-                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexActivity.activityImg}/public`}
+                className='w-full h-24 object-cover'
+                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexActivity.activityImg ? indexActivity.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
                 alt='indexActivity image'
               />
-              <div className='px-6 py-4'>
+              <div className='px-6 py-4 h-24'>
                 <div className='font-bold text-xl mb-2'>{indexActivity.activityTitle}</div>
                 <p className='text-gray-700 text-base'>{indexActivity.activitySubDetail}</p>
               </div>
