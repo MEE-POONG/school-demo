@@ -9,6 +9,10 @@
     font-family: 'Prompt';
 }
 
+.slick-next {
+    display: none !important;
+  }
+
 @import "iconstyles.css";
 @import "loading.css";
 
