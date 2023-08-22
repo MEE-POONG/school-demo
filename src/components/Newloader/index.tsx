@@ -43,11 +43,11 @@ function Activityloader() {
             <Link key={indexNews.id} href={`/news/${indexNews.id}`} passHref>
             <div key={indexNews.id} className='max-w-sm rounded overflow-hidden shadow-lg bg-[#E5E4E2]'>
               <img
-                className='w-full'
-                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexNews.newImg}/public`}
+                className=' w-full h-24 object-cover'
+                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexNews.newImg? indexNews.newImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
                 alt='indexActivity image'
               />
-              <div className='px-6 py-4'>
+              <div className='px-6 py-4 h-24'>
                 <div className='font-bold text-xl mb-2'>{indexNews.newTitle}</div>
                 <p className='text-gray-700 text-base'>{indexNews.newSubDetail}</p>
               </div>
