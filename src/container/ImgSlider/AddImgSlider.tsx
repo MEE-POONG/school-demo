@@ -1,11 +1,11 @@
-import { ImgSlider } from '@prisma/client';
+import { ImgNewSlider } from '@prisma/client';
 import React, { useState } from 'react';
 import { Badge, Col, Form, InputGroup, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FaRegEye, FaSearch, FaUserNinja } from 'react-icons/fa';
 interface ImgSliderAddImgSliderModalProps {
-    data: ImgSlider ; // replace this with the actual type of your data
+    data: ImgNewSlider ; // replace this with the actual type of your data
 }
 const ImgSliderAddImgSliderModal: React.FC<ImgSliderAddImgSliderModalProps> = ({ data }) => {
     const [show, setShow] = useState<boolean>(false);

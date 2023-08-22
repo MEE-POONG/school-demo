@@ -1,4 +1,4 @@
-import { ImgSlider } from '@prisma/client';
+import { ImgNewSlider } from '@prisma/client';
 import React, { useState } from 'react';
 import { Badge, Col, Image, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -7,7 +7,7 @@ import { FaRegEye } from 'react-icons/fa';
 // import { bankMap } from "@/test";
 
 interface ImgSliderViewImgSliderModalProps {
-    data: ImgSlider;
+    data: ImgNewSlider;
 }
 const ImgSliderViewImgSliderModal: React.FC<ImgSliderViewImgSliderModalProps> = ({ data }) => {
     const [show, setShow] = useState<boolean>(false);

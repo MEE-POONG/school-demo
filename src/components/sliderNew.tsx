@@ -109,8 +109,14 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+interface IndexNews {
+  id: number; // You can change the type accordingly
+  newImg: string;
+  // Add more properties here based on your data structure
+}
+
 const IndexPage: React.FC = () => {
-  const [indexNewsData, setindexNewsData] = useState([]);
+  const [indexNewsData, setindexNewsData] = useState<IndexNews[]>([]);
   const [sliderRef, setSliderRef] = useState<Slider | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 

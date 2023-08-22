@@ -1,11 +1,11 @@
-import { ImgSlider } from '@prisma/client';
+import { ImgNewSlider } from '@prisma/client';
 import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
 interface EditImgSliderModalProps {
-    data: ImgSlider;
+    data: ImgNewSlider;
     apiEdit: () => Promise<any>; // add this line
 }
 const EditImgSliderModal: React.FC<EditImgSliderModalProps> = ({ data, apiEdit }) => {
