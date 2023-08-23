@@ -12,28 +12,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 const page: number = Number(req.query.page) || 1;
                 const pageSize: number = Number(req.query.pageSize) || 10;
 
-                const newSlider = await prisma.newSlider.findMany({
-                    skip: (page - 1) * pageSize,
-                    take: pageSize,
+                const newsSchool = await prisma.newsSchool.findMany({
+                    // skip: (page - 1) * pageSize,
+                    // take: pageSize,
                 });
 
-                const totalnewSlider = await prisma.newSlider.count();
-                const totalPage: number = Math.ceil(totalnewSlider / pageSize);
-                res.status(200).json({ newSlider });
+                const totalnewsSchool = await prisma.newsSchool.count();
+                const totalPage: number = Math.ceil(totalnewsSchool / pageSize);
+                res.status(200).json({ newsSchool });
             } catch (error) {
-                res.status(500).json({ error: "An error occurred while fetching the newSlider" });
+                res.status(500).json({ error: "An error occurred while fetching the newsSchool" });
             }
             break;
 
         case 'POST':
             try {
-                const newnewSlider = await prisma.newSlider.create({
+                const newnewsSchool = await prisma.newsSchool.create({
                     data: req.body,
                 });
 
-                res.status(201).json(newnewSlider);
+                res.status(201).json(newnewsSchool);
             } catch (error) {
-                res.status(500).json({ error: "An error occurred while creating the newSlider" });
+                res.status(500).json({ error: "An error occurred while creating the newsSchool" });
             }
             break;
 
