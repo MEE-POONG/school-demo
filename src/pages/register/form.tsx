@@ -377,6 +377,7 @@ export default function Home() {
                   <option value="">-- เลือกระดับ --</option>
                   <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
                   <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
+                  <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">ประกาศนียบัตรวิชาชีพ (ปวช.)</option> 
                 </select>
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
