@@ -11,7 +11,7 @@ const NewsArticle: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      fetch(`/api/ActivitySchool/${id}`)
+      fetch(`/api/activitySchool/${id}`)
         .then((response) => response.json())
         .then((data) => {
           setArticleData(data); // กำหนดข้อมูลบทความข่าวที่ดึงมา
