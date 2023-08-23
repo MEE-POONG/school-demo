@@ -19,16 +19,16 @@ interface IndexNews {
 export default function Activity() {
   const initialVisibleItems = 3;
   const [visibleItems, setVisibleItems] = useState(initialVisibleItems);
-  const [indexActivityData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
+  const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
   const handleLoadMore = () => {
     setVisibleItems(visibleItems + 3);
   };
 
   useEffect(() => {
-    fetch('/api/indexActivity')
+    fetch('/api/activitySchool')
       .then((response) => response.json())
       .then((data) => {
-        setIndexNewsData(data.indexActivity);
+        setIndexNewsData(data.activitySchool);
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -44,17 +44,17 @@ export default function Activity() {
         </h1>
         <div className='flex justify-center'>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
-          {indexActivityData.slice(0, visibleItems).map((indexActivity) => (
-            <Link key={indexActivity.id} href={`/activity/${indexActivity.id}`} passHref>
-            <div key={indexActivity.id} className='block max-w-sm p-1 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 '>
+          {activitySchoolData.slice(0, visibleItems).map((activitySchool) => (
+            <Link key={activitySchool.id} href={`/activity/${activitySchool.id}`} passHref>
+            <div key={activitySchool.id} className='block max-w-sm p-1 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 '>
               <img
                 className='w-full h-24 object-cover'
-                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexActivity.activityImg ? indexActivity.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
-                alt='indexActivity image'
+                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${activitySchool.activityImg ? activitySchool.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
+                alt='activitySchool image'
               />
               <div className='px-6 py-4 h-24'>
-                <div className='font-bold text-xl mb-2'>{indexActivity.activityTitle}</div>
-                {/* <p className='text-gray-700 text-base'>{indexActivity.activitySubDetail}</p> */}
+                <div className='font-bold text-xl mb-2'>{activitySchool.activityTitle}</div>
+                {/* <p className='text-gray-700 text-base'>{activitySchool.activitySubDetail}</p> */}
               </div>
             </div>
           </Link>

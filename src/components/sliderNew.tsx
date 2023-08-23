@@ -4,16 +4,16 @@
 // import 'slick-carousel/slick/slick-theme.css';
 
 // const IndexPage: React.FC = () => {
-//   const [newsData, setnewsData] = useState([]);
+//   const [newsSchoolData, setnewsSchoolData] = useState([]);
 //   const [sliderRef, setSliderRef] = useState<Slider | null>(null);
   
 
 //   useEffect(() => {
 //     // ส่งคำขอเมื่อคอมโพเนนต์ถูกโหลด
-//     fetch('/api/news')
+//     fetch('/api/newsSchool')
 //       .then((response) => response.json())
 //       .then((data) => {
-//         setnewsData(data.news);
+//         setnewsSchoolData(data.newsSchool);
 //       })
 //       .catch((error) => {
 //         console.error('Error:', error);
@@ -43,11 +43,11 @@
 //   return (
 //     <div style={{ position: 'relative' }}>
 //   <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
-//     {newsData.map((news) => (
-//       <div key={news.id} className=' '>
+//     {newsSchoolData.map((newsSchool) => (
+//       <div key={newsSchool.id} className=' '>
 //         <img
 //           className='w-full'
-//           src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news.img1}/public`}
+//           src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${newsSchool.img1}/public`}
 //           alt="indexActivity image"
 //         />
 //       </div>
@@ -109,22 +109,22 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-interface news {
+interface newsSchool {
   id: number; // You can change the type accordingly
   newImg: string;
   // Add more properties here based on your data structure
 }
 
 const IndexPage: React.FC = () => {
-  const [newsData, setnewsData] = useState<news[]>([]);
+  const [newsSchoolData, setnewsSchoolData] = useState<newsSchool[]>([]);
   const [sliderRef, setSliderRef] = useState<Slider | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
-    fetch('/api/news')
+    fetch('/api/newsSchool')
       .then((response) => response.json())
       .then((data) => {
-        setnewsData(data.news);
+        setnewsSchoolData(data.newsSchool);
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -156,11 +156,11 @@ const IndexPage: React.FC = () => {
   return (
     <div style={{ position: 'relative' }}>
       <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
-        {newsData.map((news) => (
-          <div key={news.id}>
+        {newsSchoolData.map((newsSchool) => (
+          <div key={newsSchool.id}>
             <img
               className=' w-full'
-              src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news.newImg}/public`}
+              src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${newsSchool.newImg}/public`}
               alt="indexActivity image"
             />
           </div>
@@ -170,7 +170,7 @@ const IndexPage: React.FC = () => {
         className='absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2'
         style={{ transform: 'translateX(-50%)' }}
       >
-        {newsData.map((_, index) => (
+        {newsSchoolData.map((_, index) => (
           <button
             key={index}
             type='button'

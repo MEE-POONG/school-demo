@@ -16,7 +16,7 @@ interface IndexNews {
 function Activityloader() {
   const initialVisibleItems = 4;
   const [visibleItems, setVisibleItems] = useState(initialVisibleItems);
-  const [indexActivityData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
+  const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
   const [sliderRef, setSliderRef] = useState<Slider | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -25,11 +25,11 @@ function Activityloader() {
   };
 
   useEffect(() => {
-    fetch('/api/indexActivity')
+    fetch('/api/activitySchool')
       .then((response) => response.json())
       .then((data) => {
-        setIndexNewsData(data.indexActivity);
-        //console.log(data.indexActivity);
+        setIndexNewsData(data.activitySchool);
+        //console.log(data.activitySchool);
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -40,17 +40,17 @@ function Activityloader() {
     <>
       <div className='flex justify-center'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-          {indexActivityData.slice(0, visibleItems).map((indexActivity) => (
-            <Link key={indexActivity.id} href={`/activity/${indexActivity.id}`} passHref>
-            <div key={indexActivity.id} className='max-w-sm rounded overflow-hidden shadow-lg bg-[#E5E4E2]'>
+          {activitySchoolData.slice(0, visibleItems).map((activitySchool) => (
+            <Link key={activitySchool.id} href={`/activity/${activitySchool.id}`} passHref>
+            <div key={activitySchool.id} className='max-w-sm rounded overflow-hidden shadow-lg bg-[#E5E4E2]'>
               <img
                 className='w-full h-24 object-cover'
-                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${indexActivity.activityImg ? indexActivity.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
-                alt='indexActivity image'
+                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${activitySchool.activityImg ? activitySchool.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
+                alt='activitySchool image'
               />
               <div className='px-6 py-4 h-24'>
-                <div className='font-bold text-xl mb-2'>{indexActivity.activityTitle}</div>
-                {/* <p className='text-gray-700 text-base'>{indexActivity.activitySubDetail}</p> */}
+                <div className='font-bold text-xl mb-2'>{activitySchool.activityTitle}</div>
+                {/* <p className='text-gray-700 text-base'>{activitySchool.activitySubDetail}</p> */}
               </div>
             </div>
           </Link>
@@ -59,7 +59,7 @@ function Activityloader() {
       </div>
 
       <div className='flex justify-center'>
-        {visibleItems < indexActivityData.length && (
+        {visibleItems < activitySchoolData.length && (
           <button onClick={handleLoadMore} className=" mt-6 group relative h-12 w-40 overflow-hidden rounded-2xl bg-black bg-opacity-80 text-lg font-bold text-white">
             โหลดเพิ่มเติม
             <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30" />

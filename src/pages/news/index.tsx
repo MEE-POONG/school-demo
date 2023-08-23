@@ -38,22 +38,6 @@ export default function Welfare() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* แทบ ข่าวกิจกรรม */}
       <div className="">
         <div className="bg-black bg-opacity-80">

@@ -28,7 +28,7 @@ model AdminUser {
 
 // หมวดหมู่หน้า INDEX
 // รูปสไลด์แรก
-model NewSliderSchool {
+model SliderSchool {
   id   String  @id @default(auto()) @map("_id") @db.ObjectId
   img1 String?
 }
