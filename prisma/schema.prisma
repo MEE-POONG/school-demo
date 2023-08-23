@@ -28,12 +28,12 @@ model AdminUser {
 
 // หมวดหมู่หน้า INDEX
 // รูปสไลด์แรก
-model IndexSlder {
+model NewSlder {
   id   String  @id @default(auto()) @map("_id") @db.ObjectId
   img1 String?
 }
 
-model IndexNews {
+model News {
   id                String    @id @default(auto()) @map("_id") @db.ObjectId
   newName      String? // ชื่อกิจกรรม
   newTitle     String? // // หัวข้อหลัก
@@ -60,7 +60,7 @@ model ImgNewSlider{
 
 
 //หน้า สมัครเรียน  (แต่ไม่ใช่แบบฟอร์มสมัคร)
-model IndexReg  {
+model Reg  {
   id  String  @id @default(auto()) @map("_id") @db.ObjectId
   irImg String?
   irDescription String? 
@@ -68,7 +68,7 @@ model IndexReg  {
 
 
 //กิจกรรมในหน้า index
-model IndexActivity  { 
+model Activity  { 
   id  String  @id @default(auto()) @map("_id") @db.ObjectId
   activityName String? // ชื่อกิจกรรม
   activityTitle String? // // หัวข้อหลัก
