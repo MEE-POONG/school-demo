@@ -49,7 +49,7 @@ function Activityloader() {
               />
               <div className='px-6 py-4 h-24'>
                 <div className='font-bold text-xl mb-2'>{indexNews.newTitle}</div>
-                <p className='text-gray-700 text-base'>{indexNews.newSubDetail}</p>
+                {/* <p className='text-gray-700 text-base'>{indexNews.newSubDetail}</p> */}
               </div>
             </div>
           </Link>

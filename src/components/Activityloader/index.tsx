@@ -50,7 +50,7 @@ function Activityloader() {
               />
               <div className='px-6 py-4 h-24'>
                 <div className='font-bold text-xl mb-2'>{indexActivity.activityTitle}</div>
-                <p className='text-gray-700 text-base'>{indexActivity.activitySubDetail}</p>
+                {/* <p className='text-gray-700 text-base'>{indexActivity.activitySubDetail}</p> */}
               </div>
             </div>
           </Link>
