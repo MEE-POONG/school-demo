@@ -52,7 +52,7 @@ const IndexPage: React.FC = () => {
         {sliderSchoolData?.map((sliderSchool) => (
           <div key={sliderSchool.id}>
             <img
-              className=' w-full'
+              className=' w-full h-[500px]'
               src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${sliderSchool.img1}/public`}
               alt="indexActivity image"
             />
