@@ -65,7 +65,7 @@ export default function Sum() {
       axios.get(`/api/registerForm/${idFromQuery}`)
         .then(response => {
           // Handle the response data
-          console.log(response);
+          // console.log(response);
           setFormData(response.data);
         })
         .catch(error => {
