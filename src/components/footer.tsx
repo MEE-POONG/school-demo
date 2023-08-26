@@ -17,24 +17,24 @@ const Footer = () => {
               </h2>
               <ul className="text-gray-500">
                 <li className="mb-4">
-                  <Link href="" className="hover:underline text-white">
+                  <p className=" text-white">
                     คณะบริหารธรุกิจ
-                  </Link>
+                  </p>
                 </li>
                 <li className="mb-4">
-                  <Link href="" className="hover:underline text-white">
+                  <p className=" text-white">
                     คณะวิทยาศาสตร์และเทคโนโลยี
-                  </Link>
+                  </p>
                 </li>
                 <li className="mb-4">
-                  <Link href="" className="hover:underline text-white">
+                  <p className=" text-white">
                     คณะวิทยาศาสตร์
-                  </Link>
+                  </p>
                 </li>
                 <li>
-                  <Link href="" className="hover:underline text-white">
+                  <p className=" text-white">
                     คณะศิลปศาสตร์
-                  </Link>
+                  </p>
                 </li>
               </ul>
             </div>
@@ -43,17 +43,17 @@ const Footer = () => {
               <h2 className="mb-6 text-md font-semibold text-white">รายการ</h2>
               <ul className="text-white">
                 <li className="mb-4">
-                  <Link href="" className="hover:underline ">
+                  <Link href="/register" className="hover:underline ">
                     สมัครเรียน
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="" className="hover:underline ">
+                  <Link href="/advisor" className="hover:underline ">
                     ปรึกษาเรื่องทุน
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="" className="hover:underline ">
+                  <Link href="/advisor" className="hover:underline ">
                     ปรึกษาเรื่องสมัครเรียน
                   </Link>
                 </li>
