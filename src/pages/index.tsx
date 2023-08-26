@@ -52,7 +52,7 @@ export default function About() {
 
       <div className=" bg-slate-800 w-full sm:h-52 md:h-full   ">
         <div className="md:grid md:grid-flow-col md:auto-cols-max md:gap-2 md:justify-center h-36 text-center">
-          <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500  text-2xl">
+          <p className=" pt-3 md:pt-0 my-auto px-5 text-yellow-400 border-r-2 border-gray-500  text-2xl">
             4<span className="my-auto px-5 text-white   text-xl md:text-2xl">คณะ</span>
           </p>
           <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-xl md:text-2xl">
