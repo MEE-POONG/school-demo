@@ -53,23 +53,23 @@ export default function About() {
       <div className=" bg-slate-800 w-full sm:h-52 md:h-full   ">
         <div className="md:grid md:grid-flow-col md:auto-cols-max md:gap-2 md:justify-center h-36 text-center">
           <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500  text-2xl">
-            4<span className="my-auto px-5 text-white   text-2xl">คณะ</span>
+            4<span className="my-auto px-5 text-white   text-xl md:text-2xl">คณะ</span>
           </p>
-          <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-2xl">
+          <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-xl md:text-2xl">
             {" "}
             20
-            <span className="my-auto px-5 text-white  text-2xl">หลักสูตร</span>
+            <span className="my-auto px-5 text-white  text-xl md:text-2xl">หลักสูตร</span>
           </p>
-          <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-2xl">
+          <p className=" my-auto px-5 text-yellow-400 border-r-2 border-gray-500 text-xl md:text-2xl">
             {" "}
             500
-            <span className="my-auto px-5 text-white  text-2xl">
+            <span className="my-auto px-5 text-white  text-xl md:text-2xl">
               กำลังศึกษา
             </span>
           </p>
-          <h1 className=" my-auto px-5 text-yellow-400  text-2xl" >
+          <div className=" my-auto px-5 text-yellow-400  text-xl md:text-2xl" >
             <Visiter />
-          </h1>
+          </div>
           {/* <span className="my-auto px- text-white  text-2xl">
             ผู้เข้าชมเว็บไซต์
           </span> */}
