@@ -14,30 +14,30 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
   return (
-    
+
     <RootLayout>
       <Thesliderbar />
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
-      <Link href="https://www.facebook.com/PhanomwanCollege/">
-      <p className="text-gray-400 underline"> <img
+        <Link href="https://www.facebook.com/PhanomwanCollege/">
+          <p className="text-gray-400 underline"> <img
             className=" absolute inset-y-0 right-0 w-16"
             src="/img/messenger-Logo.png"
           /></p>
-          </Link>
-    </div>
-      
-      <Menu/>
+        </Link>
+      </div>
+
+      <Menu />
       <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
       <div className="container mx-auto  md:py-10 py-2 text-center">
         <span className=" text-2xl md:text-4xl">
           <span className=" text-blue-800 ">ข่าว</span>
           <span className=" text-yellow-500">“พนมวันท์”</span>
         </span>
-        
+
         <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
 
         <div className=" mx-auto py-2 items-center justify-center w-full">
-          <SliderNews/>
+          <SliderNews />
         </div>
 
       </div>
@@ -68,11 +68,11 @@ export default function About() {
             </span>
           </p>
           <h1 className=" my-auto px-5 text-yellow-400  text-2xl" >
-          <Visiter/>
+            <Visiter />
           </h1>
-          <span className="my-auto px- text-white  text-2xl">
-              ผู้เข้าชมเว็บไซต์
-            </span>
+          {/* <span className="my-auto px- text-white  text-2xl">
+            ผู้เข้าชมเว็บไซต์
+          </span> */}
         </div>
       </div>
 
