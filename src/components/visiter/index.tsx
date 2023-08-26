@@ -63,10 +63,10 @@ function Visiter() {
   return (
     <>
 
-      <h1 className=" my-auto px-5 text-yellow-400  text-2xl" >
+      <h1 className=" my-auto px-5 text-yellow-400  text-xl md:text-2xl" >
         {ipDb.length}
 
-        <span className="my-auto px-5 text-white  text-2xl">
+        <span className="my-auto px-5 text-white  text-xl md:text-2xl">
           ผู้เข้าชมเว็บไซต์
         </span>
       </h1>
