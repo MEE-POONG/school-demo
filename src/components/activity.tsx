@@ -53,7 +53,7 @@ export default function Activity() {
                 alt='activitySchool image'
               />
               <div className='px-6 py-4 h-24'>
-                <div className=' text-lg font-bold mb-2'>{activitySchool.activityTitle}</div>
+                <div className=' text-base md:text-base lg:text-lg font-bold mb-2'>{activitySchool.activityTitle}</div>
                 {/* <p className='text-gray-700 text-base'>{activitySchool.activitySubDetail}</p> */}
               </div>
             </div>
