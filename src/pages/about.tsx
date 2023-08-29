@@ -1,12 +1,45 @@
 import { Inter } from "next/font/google";
 import RootLayout from "@/components/layout";
 import Link from "next/link";
+import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
+import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
+    const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+    // useEffect สำหรับจำลองการโหลดรูปภาพทุกตัวในหน้า
+    useEffect(() => {
+        const images = document.querySelectorAll('img'); // เลือกทุก <img> ในหน้า
+        let loadedImages = 0;
+
+        function handleImageLoad() {
+            loadedImages++;
+            if (loadedImages === images.length) {
+                setIsLoading(false);
+            }
+        }
+
+        images.forEach((img) => {
+            if (img.complete) {
+                handleImageLoad();
+            } else {
+                img.addEventListener('load', handleImageLoad);
+            }
+        });
+
+        return () => {
+            images.forEach((img) => {
+                img.removeEventListener('load', handleImageLoad);
+            });
+        };
+    }, []);
+
+
     return (
         <RootLayout>
+             {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
                  <title>about</title>
             {/* banner คณะและหลักสูตร */}
             <div className="relative">
