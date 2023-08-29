@@ -13,7 +13,7 @@ export default function LogoPanomwan2() {
 
         <span className="self-center text-sm md:text-base font-semibold text-gray-300">
           <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
-          <hr className="w-[220px] h-[2px] bg-white" />
+          <hr className="w-[200px] md:w-[440px] h-[2px] bg-white"/>
           <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
           <p>TEL : 044-955121-122 FAX : 044-955120</p>
         </span>
