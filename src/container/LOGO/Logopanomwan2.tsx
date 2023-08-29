@@ -7,11 +7,11 @@ export default function LogoPanomwan2() {
       <Link href="./" className="mb-4 flex">
         <img
           src="/img/Logo_panomwan.png"
-          className="h-[70px] mr-3"
+          className="h-[70px]  md:h-[100px] mr-3"
           alt="Flowbite Logo"
         />
 
-        <span className="self-center text-sm md:text-base font-semibold text-gray-300">
+        <span className="self-center text-sm md:text-base font-semibold text-white">
           <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
           <hr className="w-[200px] md:w-[440px] h-[2px] bg-white"/>
           <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
