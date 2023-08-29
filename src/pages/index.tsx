@@ -72,7 +72,7 @@ export default function About() {
 
 
             <span className="my-auto px-5 text-white  text-lg md:text-xl lg:text-2xl">
-              กำลังศึกษา
+              ผู้เข้าชม
             </span>
 
           </div>
