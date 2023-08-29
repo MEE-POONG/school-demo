@@ -8,6 +8,8 @@ import { GoBook } from "react-icons/go";
 import { MdSupportAgent } from "react-icons/md";
 import { TbStars } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
+import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
+import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 
 
 
@@ -15,10 +17,36 @@ import { FaLocationDot } from "react-icons/fa6";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Welfare() {
+    const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+    useEffect(() => {
+        const images = document.querySelectorAll('img'); // เลือกทุก <img> ในหน้า
+        let loadedImages = 0;
+    
+        function handleImageLoad() {
+          loadedImages++;
+          if (loadedImages === images.length) {
+            setIsLoading(false);
+          }
+        }
+    
+        images.forEach((img) => {
+          if (img.complete) {
+            handleImageLoad();
+          } else {
+            img.addEventListener('load', handleImageLoad);
+          }
+        });
+    
+        return () => {
+          images.forEach((img) => {
+            img.removeEventListener('load', handleImageLoad);
+          });
+        };
+      }, []);
     return (
         <RootLayout>
-
-            {/* banner คณะและหลักสูตร */}
+            {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
             <div className="relative">
                 <img src="/img/advisor/contactban.png" alt="" />
                 <div className="absolute inset-0  mb-2 md:mb-24  flex justify-center items-center">

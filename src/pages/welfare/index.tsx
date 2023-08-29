@@ -7,6 +7,9 @@ import { PiHandCoinsBold } from "react-icons/pi";
 import { GoBook } from "react-icons/go";
 import { MdSupportAgent } from "react-icons/md";
 import { TbStars } from "react-icons/tb";
+import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
+import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
+
 
 
 
@@ -14,10 +17,40 @@ import { TbStars } from "react-icons/tb";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Welfare() {
+    const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+    useEffect(() => {
+        const images = document.querySelectorAll('img'); // เลือกทุก <img> ในหน้า
+        let loadedImages = 0;
+    
+        function handleImageLoad() {
+          loadedImages++;
+          if (loadedImages === images.length) {
+            setIsLoading(false);
+          }
+        }
+    
+        images.forEach((img) => {
+          if (img.complete) {
+            handleImageLoad();
+          } else {
+            img.addEventListener('load', handleImageLoad);
+          }
+        });
+    
+        return () => {
+          images.forEach((img) => {
+            img.removeEventListener('load', handleImageLoad);
+          });
+        };
+      }, []);
+
   return (
     <RootLayout>
+              {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
         {/* banner คณะและหลักสูตร */}
         <div className="relative">
+            
                 <img src="/img/welfare/welfarebanner.png" alt="" />
                 <div className="absolute inset-0   flex justify-center items-center">
                 <h1 className='text-[#FFBF00] text-2xl md:text-6xl lg:text-7xl '>สวัสดิการนักศึกษา</h1>
