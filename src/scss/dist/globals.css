@@ -6,10 +6,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* {
-  font-family: Prompt;
+@layer base {
+  * {
+    font-family: Prompt;
+  }
 }
-
 .slick-next {
   display: none !important;
 }
