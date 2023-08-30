@@ -241,13 +241,13 @@ export default function Home() {
               <div className='col-start-1 col-end-4 md:md:text-right p-3 my-2'>
                 <label className=''>บัตรประจำตัวประชาชน:</label>
               </div>
-              <div className=' col-span-2 my-2'>
+              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regIdpersonal} onChange={(e) => setRegIdpersonal(e.target.value)} name='regIdpersonal' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-6 col-end-8 md:md:text-right p-3 my-2 '>
                 <label className=''>วัน/เดือน/ปีเกิด:</label>
               </div>
-              <div className='col-span-2 my-2'>
+              <div className='col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regBirth} onChange={(e) => setRegBirth(e.target.value)} name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
@@ -257,7 +257,7 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:md:text-right p-3 my-2'>
                 <label className=''>คำนำหน้าชื่อ:</label>
               </div>
-              <div className=' col-span-1 md:col-span-2  md:my-2'>
+              <div className=' col-span-1 md:col-span-2  md:my-2 mx-2 md:mx-0'>
                 <select value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
                   <option value="">- เลือก -</option>
                   <option value="นาย">นาย</option>
@@ -268,7 +268,7 @@ export default function Home() {
               <div className='col-start-5 md:col-start-6 md:text-right p-3 my-2 '>
                 <label className=''>เพศ:</label>
               </div>
-              <div className='col-span-1 md:col-span-2 my-2'>
+              <div className='col-span-1 md:col-span-2 my-2 mx-2 md:mx-0'>
                 <select value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   <option value="">- เลือก -</option>
                   <option value="ชาย">ชาย</option>
@@ -279,7 +279,7 @@ export default function Home() {
               <div className='col-start-7 md:col-start-9 md:text-right p-3 my-2 '>
                 <label className=''>สัญชาติ: </label>
               </div>
-              <div className='col-span-2 my-2 md:ml-2'>
+              <div className='col-span-2 my-2 md:ml-2 mx-2 md:mx-0'>
                 <input value={regNation} onChange={(e) => setRegNation(e.target.value)} name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
@@ -289,13 +289,13 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>ชื่อ:</label>
               </div>
-              <div className=' col-span-2 my-2'>
+              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regName} onChange={(e) => setRegName(e.target.value)} name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>นามสกุล:</label>
               </div>
-              <div className='col-span-2 my-2'>
+              <div className='col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regLastname} onChange={(e) => setRegLastname(e.target.value)} name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
@@ -305,13 +305,13 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>Name:</label>
               </div>
-              <div className=' col-span-2 my-2'>
+              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regEname} onChange={(e) => setRegEname(e.target.value)} name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>Surname:</label>
               </div>
-              <div className='col-span-2 my-2'>
+              <div className='col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regElastname} onChange={(e) => setRegElastname(e.target.value)} name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
@@ -320,13 +320,13 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>เบอร์โทรศัพท์ติดต่อ:</label>
               </div>
-              <div className=' col-span-2 my-2'>
+              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regPhone} onChange={(e) => setRegPhone(e.target.value)} name='regPhone' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-7 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>Email:</label>
               </div>
-              <div className='col-span-2 my-2 '>
+              <div className='col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regEmail} onChange={(e) => setRegEmail(e.target.value)} name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
@@ -334,7 +334,7 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>อัพโหลดรูปภาพ :</label>
               </div>
-              <div className='md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 '>
+              <div className='mx-2 md:mx-0md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 mx-2 md:mx-0'>
                 <input type="file" id='regImg' name="regImg" className='' onChange={handleFileUpload} />
               </div>
 
@@ -361,7 +361,7 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>สถาบันการศึกษา:</label>
               </div>
-              <div className=' col-span-6 my-2'>
+              <div className=' col-span-6 my-2 mx-2 md:mx-0'>
                 <input value={regSchool} onChange={(e) => setRegSchool(e.target.value)} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
@@ -372,7 +372,7 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>สำเร็จการศึกษาระดับ:</label>
               </div>
-              <div className=' col-span-2 my-2'>
+              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
                 <select value={regDegree} onChange={(e) => setRegDegree(e.target.value)} name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                   <option value="">-- เลือกระดับ --</option>
                   <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
@@ -383,7 +383,7 @@ export default function Home() {
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>เกรดเฉลี่ย</label>
               </div>
-              <div className='col-span-2 my-2'>
+              <div className='col-span-2 my-2 mx-2 md:mx-0'>
                 <input value={regGpa} onChange={(e) => setRegGpa(e.target.value)} name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
             </div>
@@ -427,7 +427,7 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>คณะ:</label>
               </div>
-              <div className=' col-span-2 my-2'>
+              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
                 <select name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white' onChange={handleFacultyChange}>
                   <option value="">-- เลือกคณะ --</option>
                   <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
@@ -439,7 +439,7 @@ export default function Home() {
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>สาขา:</label>
               </div>
-              <div className='col-span-2 my-2'>
+              <div className='col-span-2 my-2 mx-2 md:mx-0'>
                 <select name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'
                   disabled={!regFaculty} // Disable the select if faculty is not selected
                   value={regMajor}
