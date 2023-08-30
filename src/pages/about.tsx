@@ -39,8 +39,8 @@ export default function About() {
 
     return (
         <RootLayout>
-             {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
-                 <title>about</title>
+            {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
+            <title>about</title>
             {/* banner คณะและหลักสูตร */}
             <div className="relative">
                 <img src="/img/about/build1.png" alt="" />
@@ -69,15 +69,15 @@ export default function About() {
 
                     {/* วิทยาลัยเทคโนโลยีพนมวันท์ และรูป  */}
                     <div>
-                        <h1 className="text-[#6CB4EE] font-bold text-2xl md:text-4xl">วิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                        {/* <h1 className="text-[#6CB4EE] font-bold text-2xl md:text-4xl">วิทยาลัยเทคโนโลยีพนมวันท์</h1> */}
                         <img className='py-4' src="/img/school/panomtext.png" alt="" />
                     </div>
 
                     {/* ข้อมูลสถาบัน  */}
 
-                    <h1 className="text-[#2797FF] text-2xl md:text-3xl py-5">ข้อมูลสถาบัน</h1>
+                    <h1 className="text-[#2797FF] text-2xl md:text-3xl py-5 px-4">ข้อมูลสถาบัน</h1>
 
-                    <div className="text-white">
+                    <div className="text-white px-4">
                         <p className="mb-4">
                             {'\u00A0\u00A0\u00A0\u00A0'}วิทยาลัยเทคโนโลยีพนมวันท์ ก่อตั้งขึ้นเมื่อวันที่ 21 พฤศจิกายน 2550 ด้วยเจตนารมณ์ที่ตระหนักถึงความสำคัญของการศึกษา
                             ในระดับปริญญาตรีอันจะนำไปสู่การพัฒนาทางด้านความคิดทักษะเชิงวิชาชีพมนุษยสัมพันธ์และคุณธรรม
@@ -97,51 +97,57 @@ export default function About() {
                     </div>
 
                     {/* ตราสัญลักษณ์ของวิทยาลัยเทคโนโลยีพนมวันท์  */}
-                    <h1 className="text-[#2797FF] text-xl md:text-3xl py-5">ตราสัญลักษณ์ของวิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                    <h1 className="text-[#2797FF] text-xl md:text-3xl pt-5 pb-1 px-4">ตราสัญลักษณ์</h1>
+                    <h1 className="text-[#2797FF] text-xl md:text-3xl pb-5 px-4">วิทยาลัยเทคโนโลยีพนมวันท์</h1>
                     <div>
                         <img className='w-80 h-80 p-12' src="/img/school/logo panomwan.png" alt="" />
-                        <p className="mb-10 text-white">
+                        <p className="mb-10 text-white px-4">
                             {'\u00A0\u00A0\u00A0\u00A0'}สัญลักษณ์ของวิทยาลัยเทคโนโลยีพนมวันท์มีเครื่องหมายเป็นรูปตรา
                             วงกลม ภานในวงกลม เป็นรูปดอกบัวบาน 8  กลีบล้อมรอบ
                             ปราสาทหิน
                         </p>
 
-                        <div className="md:flex">
+                        <div className="md:flex px-4">
                             <div className="text-[#6CB4EE] mr-2">ดอกบัวบาน 8 กลีบ </div><div className="text-white">หมายถึง ทางแห่งความสำเร็จมรรค 8 </div>
                         </div>
-                        <div className="md:flex">
+                        <div className="md:flex px-4">
                             <div className="text-[#6CB4EE] mr-2">กลีบบัวทั้ง 8 </div><div className="text-white">หมายถึง ปรัชญาและปณิธานของวิทยาลัย </div>
                         </div>
-                        <div className="md:flex">
+                        <div className="md:flex px-4">
                             <div className="text-[#6CB4EE] mr-2">ยอดปราสาทหิน </div><div className="text-white"> หมายถึง ความสูงสุด ความแข็งแกร่งอุตสาหะ พากเพียร ศิลปและวัฒนธรรมท้องถิ่น </div>
                         </div>
-                        <div className="md:flex">
+                        <div className="md:flex px-4">
                             <div className="text-[#6CB4EE] mr-2">ปรัชญาและปณิธานของวิทยาลัย </div><div className="text-white"> ฝีมือ เทคโนโลยี วิจัย วัฒนธรรม คุณธรรม ความก้าวหน้า ความสำเร็จและสนองสังคม </div>
                         </div>
                     </div>
 
                     {/* สีของวิทยาลัยเทคโนโลยีพนมวันท์  */}
-                    <h1 className="text-[#2797FF] text-xl md:text-3xl py-5">สีของวิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                    <h1 className="text-[#2797FF] text-xl md:text-3xl py-5 px-4">สีของวิทยาลัยเทคโนโลยีพนมวันท์</h1>
                     <div className="p-10">
                         <div className="bg-[#1F306A] w-60 h-20"></div>
                         <div className="bg-[#FFBF00] w-60 h-20"></div>
                     </div>
 
 
-                    <div className="md:flex">
+                    <div className="md:flex px-4">
                         <div className="text-white">สีของวิทยาลัยเทคโนโลยีพนมวันท์ คือ น้ำเงินและเหลืองทอง</div>
                     </div>
-                    <div className="md:flex">
+                    <div className="md:flex px-4">
                         <div className="text-[#80bfff] mr-2">น้ำเงิน</div><div className="text-white">หมายถึง ความลุ่มลึก ความหนักแน่น มั่นคงในเชิง วิชาการ เปรียบ เสมือนน้ำทะเลสีน้ำเงิน  </div>
                     </div>
-                    <div className="md:flex">
+                    <div className="md:flex px-4">
                         <div className="text-[#FFBF00] mr-2 ">เหลืองทอง </div><div className="mb-10 text-white"> หมายถึง ความมีชื่อเสียง คุณธรรม คุณภาพ และเป็นเอกลักษณ์ ของความยิ่งใหญ่ </div>
                     </div>
 
 
                     {/* ท่อนคณะกรรมการ */}
-                    <div className="flex justify-center">
-                        <img src="/img/advisor/borad285.png" alt="" />
+                    <div className="bg-black/25">
+                        <div className="flex justify-center border-[12px] border-black shadow-[inset_5px_5px_50px_rgba(0,0,0,100)] ">
+                            <img src="/img/advisor/borad285.png" alt="" style={{
+                                WebkitFilter: 'drop-shadow(5px 5px 5px #000000)',
+                                filter: 'drop-shadow(5px 5px 5px #000000)'
+                            }} />
+                        </div>
                     </div>
 
                     {/* div container */}
@@ -149,7 +155,7 @@ export default function About() {
                 {/* ปิด div พื้นหลังใหญ่ */}
             </div>
             {/* แทบ รู้จักพนมวันท์ */}
-           
+
         </RootLayout>
     );
 }

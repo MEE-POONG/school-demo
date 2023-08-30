@@ -62,12 +62,12 @@ export default function Faculty() {
 
 
         {/* คณะบริหารธุรกิจ*/}
-        <div className='bg-neutral-800 rounded-md flex mb-5 '>
+        <div className='bg-neutral-800 rounded-md flex mb-5 mx-2'>
           <img className='rounded-l-md hidden md:flex md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFbus.png" alt="" />
           <div className='pl-4 pt-4'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะบริหารธุรกิจ </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'> Faculty of Business Administration</h1>
-            <ul className="list-disc list-inside text-white ml-3 text-xs md:text-base  ">
+            <ul className="list-disc list-inside text-white ml-3 text-sm md:text-base  ">
               <li className='py-1 md:py-0.5 lg:py-2 '>สาขาวิชาการบัญชี (บช.บ.) +</li>
               <li className='py-1 md:py-0.5 lg:py-2'>สาขาวิชาการจัดการ (บธ.บ.) +</li>
               <li className='py-1 md:py-0.5 lg:py-2'>สาขาวิชาระบบสารสนเทศ (บธ.บ.) +</li>
@@ -80,12 +80,12 @@ export default function Faculty() {
 
 
         {/* คณะวิทยาศาสตร์และเทคโนโลยี */}
-        <div className='bg-[#536878] rounded-md flex justify-between '>
+        <div className='bg-[#536878] rounded-md flex justify-between mx-2'>
 
           <div className='pl-4 pt-4 mr-5'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะวิทยาศาสตร์และเทคโนโลยี  </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'> Faculty of Science and Technology</h1>
-            <ul className="list-disc list-inside text-white ml-3 text-xs md:text-base  ">
+            <ul className="list-disc list-inside text-white ml-3 text-sm md:text-base  ">
               <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชาสาธารณสุขศาสตร์ (สบ.) +</li>
             </ul>
           </div>
@@ -93,12 +93,12 @@ export default function Faculty() {
         </div>
 
         {/* คณะศิลปศาสตร์*/}
-        <div className='bg-neutral-800 rounded-md flex mt-5 '>
+        <div className='bg-neutral-800 rounded-md flex mt-5 mx-2'>
           <img className='rounded-l-md hidden md:flex md:object-fill md:w-[350px] md:h-[250px]  lg:w-[350px] lg:h-[300px]   lg:object-cover' src="/img/faculty/sFlib.png" alt="" />
           <div className='pl-4 pt-4'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะศิลปศาสตร์ </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'>Faculty of Liberal arts</h1>
-            <ul className="list-disc list-inside text-white ml-3 text-xs md:text-base  ">
+            <ul className="list-disc list-inside text-white ml-3 text-sm md:text-base  ">
               <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชารัฐประศาสนศาสตร์ (รป.บ) +</li>
             </ul>
           </div>
@@ -106,12 +106,12 @@ export default function Faculty() {
 
 
         {/* คณะวิศวกรรมศาสตร์ */}
-        <div className='bg-[#536878] rounded-md flex justify-between mt-5 '>
+        <div className='bg-[#536878] rounded-md flex justify-between mt-5 mx-2'>
 
           <div className='pl-4 pt-4 mr-5'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะวิศวกรรมศาสตร์  </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'> Faculty of Engineering</h1>
-            <ul className="list-disc list-inside text-white ml-3 text-xs md:text-base  ">
+            <ul className="list-disc list-inside text-white ml-3 text-sm md:text-base  ">
               <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.) +</li>
             </ul>
           </div>
@@ -120,8 +120,21 @@ export default function Faculty() {
 
         {/* ขีด */}
         <div className='bg-gradient-to-r from-black via-[#FFBF00] to-black w-full h-1  mt-10 mb-4'></div>
-        <h1 className='text-[#1F306A] text-xs md:text-2xl'># หมายเหตุ : เสาร์-อาทิตย์ เรียนออนไลน์  </h1>
-        <h1 className='text-[#1F306A] text-xs md:text-2xl'># เครื่องหมาย + แทนสาขาที่เปิดหลักสูตร วันเสาร์-อาทิตย์</h1>
+        <div className='flex mx-2'>
+          <div className='grid grid-cols-6 md:grid md:grid-cols-11 lg:grid lg:grid-cols-12 '>
+            <div className=''>
+              <h1 className='text-[#1F306A] text-xs md:text-[14px] lg:text-[18px] mr-1'>หมายเหตุ :</h1>
+            </div>
+
+            <div className='col-span-5 md:col-span-10 lg:col-span-11'>
+              <h1 className='text-[#1F306A] text-xs md:text-[14px] lg:text-[18px]'>เสาร์-อาทิตย์ เรียนออนไลน์  </h1>
+              <h1 className='text-[#1F306A] text-xs md:text-[14px] lg:text-[18px] mt-2'>เครื่องหมาย + แทนสาขาที่เปิดหลักสูตร วันเสาร์-อาทิตย์</h1>
+            </div>
+
+
+          </div>
+        </div>
+
 
         {/* divใหญ่ที่มี container */}
       </div>
