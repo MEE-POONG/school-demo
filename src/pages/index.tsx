@@ -31,7 +31,7 @@ export default function About() {
       <div className="md:w-full h-1  mb-7 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
       <div className="container mx-auto  md:py-10 py-2 text-center">
         <Link href="/news">
-      <button type="button" className="px-5 py-3 text-base  shadow-md font-medium text-center bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      <button type="button" className="px-5 py-3 text-base  shadow-md font-medium text-center bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
       <span className=" text-2xl md:text-4x">
           <span className=" text-white ">ข่าว</span>
           <span className=" text-yellow-400">“พนมวันท์”</span>
