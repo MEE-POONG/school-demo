@@ -1,6 +1,4 @@
-// @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +8,7 @@
 
 @layer base {
   *{
-    font-family: Itim;
+    font-family:Prompt;
   }
 }
 .slick-next {
