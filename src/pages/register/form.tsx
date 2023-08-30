@@ -334,7 +334,7 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>อัพโหลดรูปภาพ :</label>
               </div>
-              <div className='mx-2 md:mx-0md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 mx-2 md:mx-0'>
+              <div className='md:mx-0md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 mx-2 md:mx-0'>
                 <input type="file" id='regImg' name="regImg" className='' onChange={handleFileUpload} />
               </div>
 
