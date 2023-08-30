@@ -62,7 +62,7 @@ const IndexPage: React.FC = () => {
         {newsSchoolData.map((newsSchool) => (
           <div key={newsSchool.id}>
             <img
-              className=' w-full h-[150px] md:h-[250px] lg:h-[450px] xl:h-[550px] object-fill'
+              className=' w-full h-[150px] md:h-[250px] lg:h-[450px] xl:h-[550px]  object-fill'
               src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${newsSchool.newImg}/public`}
               alt="indexActivity image"
             />
