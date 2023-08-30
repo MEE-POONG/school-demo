@@ -120,8 +120,21 @@ export default function Faculty() {
 
         {/* ขีด */}
         <div className='bg-gradient-to-r from-black via-[#FFBF00] to-black w-full h-1  mt-10 mb-4'></div>
-        <h1 className='text-[#1F306A] text-xs md:text-2xl'># หมายเหตุ : เสาร์-อาทิตย์ เรียนออนไลน์  </h1>
-        <h1 className='text-[#1F306A] text-xs md:text-2xl'># เครื่องหมาย + แทนสาขาที่เปิดหลักสูตร วันเสาร์-อาทิตย์</h1>
+        <div className='flex'>
+          <div className='grid grid-cols-6 md:grid md:grid-cols-11 lg:grid lg:grid-cols-12 '>
+            <div className=''>
+              <h1 className='text-[#1F306A] text-xs md:text-[14px] lg:text-[18px] mr-1'>หมายเหตุ :</h1>
+            </div>
+
+            <div className='col-span-5 md:col-span-10 lg:col-span-11'>
+              <h1 className='text-[#1F306A] text-xs md:text-[14px] lg:text-[18px]'>เสาร์-อาทิตย์ เรียนออนไลน์  </h1>
+              <h1 className='text-[#1F306A] text-xs md:text-[14px] lg:text-[18px] mt-2'>เครื่องหมาย + แทนสาขาที่เปิดหลักสูตร วันเสาร์-อาทิตย์</h1>
+            </div>
+
+
+          </div>
+        </div>
+
 
         {/* divใหญ่ที่มี container */}
       </div>

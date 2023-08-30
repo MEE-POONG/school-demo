@@ -39,8 +39,8 @@ export default function About() {
 
     return (
         <RootLayout>
-             {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
-                 <title>about</title>
+            {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
+            <title>about</title>
             {/* banner คณะและหลักสูตร */}
             <div className="relative">
                 <img src="/img/about/build1.png" alt="" />
@@ -69,7 +69,7 @@ export default function About() {
 
                     {/* วิทยาลัยเทคโนโลยีพนมวันท์ และรูป  */}
                     <div>
-                        <h1 className="text-[#6CB4EE] font-bold text-2xl md:text-4xl">วิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                        {/* <h1 className="text-[#6CB4EE] font-bold text-2xl md:text-4xl">วิทยาลัยเทคโนโลยีพนมวันท์</h1> */}
                         <img className='py-4' src="/img/school/panomtext.png" alt="" />
                     </div>
 
@@ -140,8 +140,10 @@ export default function About() {
 
 
                     {/* ท่อนคณะกรรมการ */}
-                    <div className="flex justify-center">
-                        <img src="/img/advisor/borad285.png" alt="" />
+                    <div className="bg-black/25">
+                        <div className="flex justify-center border-[12px] border-black shadow-[inset_5px_5px_50px_rgba(0,0,0,100)]">
+                            <img src="/img/advisor/borad285.png" alt="" />
+                        </div>
                     </div>
 
                     {/* div container */}
@@ -149,7 +151,7 @@ export default function About() {
                 {/* ปิด div พื้นหลังใหญ่ */}
             </div>
             {/* แทบ รู้จักพนมวันท์ */}
-           
+
         </RootLayout>
     );
 }
