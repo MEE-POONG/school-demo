@@ -141,8 +141,11 @@ export default function About() {
 
                     {/* ท่อนคณะกรรมการ */}
                     <div className="bg-black/25">
-                        <div className="flex justify-center border-[12px] border-black shadow-[inset_5px_5px_50px_rgba(0,0,0,100)]">
-                            <img src="/img/advisor/borad285.png" alt="" />
+                        <div className="flex justify-center border-[12px] border-black shadow-[inset_5px_5px_50px_rgba(0,0,0,100)] ">
+                            <img src="/img/advisor/borad285.png" alt="" style={{
+                                WebkitFilter: 'drop-shadow(5px 5px 5px #000000)',
+                                filter: 'drop-shadow(5px 5px 5px #000000)'
+                            }} />
                         </div>
                     </div>
 
