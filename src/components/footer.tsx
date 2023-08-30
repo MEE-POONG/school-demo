@@ -49,11 +49,6 @@ const Footer = () => {
                 </li>
                 <li className="mb-4">
                   <Link href="/advisor" className="hover:underline ">
-                    ปรึกษาเรื่องทุน
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link href="/advisor" className="hover:underline ">
                     ปรึกษาเรื่องสมัครเรียน
                   </Link>
                 </li>
