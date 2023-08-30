@@ -67,7 +67,7 @@ export default function Faculty() {
           <div className='pl-4 pt-4'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะบริหารธุรกิจ </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'> Faculty of Business Administration</h1>
-            <ul className="list-disc list-inside text-white ml-3 text-xs md:text-base  ">
+            <ul className="list-disc list-inside text-white ml-3 text-sm md:text-base  ">
               <li className='py-1 md:py-0.5 lg:py-2 '>สาขาวิชาการบัญชี (บช.บ.) +</li>
               <li className='py-1 md:py-0.5 lg:py-2'>สาขาวิชาการจัดการ (บธ.บ.) +</li>
               <li className='py-1 md:py-0.5 lg:py-2'>สาขาวิชาระบบสารสนเทศ (บธ.บ.) +</li>
@@ -85,7 +85,7 @@ export default function Faculty() {
           <div className='pl-4 pt-4 mr-5'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะวิทยาศาสตร์และเทคโนโลยี  </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'> Faculty of Science and Technology</h1>
-            <ul className="list-disc list-inside text-white ml-3 text-xs md:text-base  ">
+            <ul className="list-disc list-inside text-white ml-3 text-sm md:text-base  ">
               <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชาสาธารณสุขศาสตร์ (สบ.) +</li>
             </ul>
           </div>
@@ -98,7 +98,7 @@ export default function Faculty() {
           <div className='pl-4 pt-4'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะศิลปศาสตร์ </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'>Faculty of Liberal arts</h1>
-            <ul className="list-disc list-inside text-white ml-3 text-xs md:text-base  ">
+            <ul className="list-disc list-inside text-white ml-3 text-sm md:text-base  ">
               <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชารัฐประศาสนศาสตร์ (รป.บ) +</li>
             </ul>
           </div>
@@ -111,7 +111,7 @@ export default function Faculty() {
           <div className='pl-4 pt-4 mr-5'>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl '> คณะวิศวกรรมศาสตร์  </h1>
             <h1 className='text-[#6CB4EE] text-xl md:text-2xl lg:text-3xl mb-2'> Faculty of Engineering</h1>
-            <ul className="list-disc list-inside text-white ml-3 text-xs md:text-base  ">
+            <ul className="list-disc list-inside text-white ml-3 text-sm md:text-base  ">
               <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.) +</li>
             </ul>
           </div>
