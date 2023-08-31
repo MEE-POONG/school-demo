@@ -48,7 +48,7 @@ const NewsArticle: React.FC = () => {
           <img className="" src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${articleData.activityImg}/public`} alt={articleData.newImg} />
           <p className="text-lg md:text-2xl text-blue-900 py-2">{articleData.activitySubTitle}</p>
           <p>
-            {articleData.activityDescription}
+            {articleData.activitySubDetail}
           </p>
         </div>
       </div>
