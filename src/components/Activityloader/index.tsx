@@ -9,6 +9,7 @@ import Loading from '@/components/loading';
 interface IndexNews {
   id: number;
   activityImg: string;
+  activityName: string
   activityTitle: string;
   activitySubDetail: string;
   // Add other properties if there are more
@@ -57,7 +58,7 @@ function Activityloader() {
                 alt='activitySchool image'
               />
               <div className='px-6 py-4 h-24'>
-                <div className='font-bold text-xl mb-2'>{activitySchool.activityTitle}</div>
+                <div className='font-bold text-xl mb-2'>{activitySchool.activityName}</div>
                 {/* <p className='text-gray-700 text-base'>{activitySchool.activitySubDetail}</p> */}
               </div>
             </div>
