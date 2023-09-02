@@ -12,13 +12,17 @@ function Visiter() {
   const [ipDb, setIpDb] = useState<IpDbItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+
   const fetchIpAddress = async () => {
     try {
       const response = await fetch('https://api.ipify.org?format=json');
       const data = await response.json();
       setIpAddress(data.ip);
+      setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
     } catch (error) {
       console.error(error);
+      setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
     }
   };
 
@@ -26,10 +30,13 @@ function Visiter() {
     try {
       const response = await axios.get("/api/IPAddress");
       if (response.status === 200) {
-        const data = response.data.iPAddress;
-        setIpDb(data);
+        const data = response;
+        setIpDb(data.data.iPAddress);
+        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
       } else {
         throw new Error("API request failed with status code " + response.status);
+        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
       }
     } catch (error) {
       console.error(error);
@@ -43,39 +50,36 @@ function Visiter() {
 
   useEffect(() => {
     if (ipAddress && ipDb) {
-      const isIpInDb = ipDb.some(dbIp => dbIp.ipAddress === ipAddress);
-      if (!isIpInDb) {
-        // ตรวจสอบ Local Storage ว่า IP Address นี้เคยถูกบันทึกไว้หรือไม่
-        const localStorageIp = localStorage.getItem('ipAddress');
-        if (localStorageIp !== ipAddress) {
-          axios.post("/api/IPAddress", { ipAddress: ipAddress })
-            .then(response => {
-              if (response.status === 201) {
-                // บันทึก IP Address ลงในฐานข้อมูล
-                setIpDb([...ipDb, { id: Date.now().toString(), ipAddress }]);
-                // บันทึก IP Address ลง Local Storage เพื่อเลี่ยงการบันทึก IP ที่ซ้ำ
-                localStorage.setItem('ipAddress', ipAddress);
-              } else {
-                throw new Error("API request failed with status code " + response.status);
-              }
-            })
-            .catch(error => {
-              console.error(error);
-            });
-        }
+      if (ipDb.some(dbIp => dbIp.ipAddress === ipAddress)) {
+        // console.log("ใช่");
+      } else {
+        // console.log("ไม่");
+        axios.post("/api/IPAddress", { ipAddress: ipAddress })
+          .then(response => {
+            if (response.status === 201) {
+              //console.log("Added IP address to the database:", ipAddress);
+              setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
+            } else {
+              throw new Error("API request failed with status code " + response.status);
+              setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
+            }
+          })
+          .catch(error => {
+            console.error(error);
+          });
       }
     }
-  }, [ipAddress, ipDb]);
-
-  useEffect(() => {
-    setIsLoading(false);
   }, [ipAddress, ipDb]);
 
   return (
     <>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
+
       {ipDb.length}
     </>
+
   );
 }
 
