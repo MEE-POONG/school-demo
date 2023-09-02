@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <>
   
-      <VisiterCounter/>
+      {/* <VisiterCounter/> */}
       <ComponentsNavbar/>
       <Head>
        <title>PhanomwanCollege</title>
