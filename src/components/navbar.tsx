@@ -1,182 +1,182 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import { HiBars4, HiOutlineXMark, HiChevronDown, HiChevronUp } from "react-icons/hi2";
+import Image from "next/image";
+
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 const ComponentsNavbar: React.FC = () => {
+  const Links = [
+    { name: 'หน้าแรก', link: '/' },
+    { name: 'รู้จัก "พนมวันท์"', link: '/about' },
+    { name: 'คณะ/หลักสูตร', link: '/faculty' },
+    { name: 'สวัสดิการ', link: '/welfare' },
+    {
+      name: 'ข้อมูลเพิ่มเติม',
+      link: '',
+      children: [
+        { name: 'วิธีการสมัคร', link: '/register' },
+        { name: 'ทีมที่ปรึกษา', link: '/advisor' },
+      ],
+    },
+  ];
+
   const [isOpen, setIsOpen] = useState(false);
 
+  const [open, setOpen] = useState(false);
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+    setOpen(!open);
   };
 
+
+
   return (
-    <nav className=" bg-[#1F306A] sm/h-[130px] font-fontTH ">
-      <div className="flex justify-around mx-auto px-4 sm:px-6 lg:px-8 py-8  flex-wrap  h-[100%] ">
-        <Link href="./" className="flex">
-          {/* <div className="flex-shrink-0"> */}
-          {/* Your logo or brand */}
-          <img
-            className="h-[70px] mr-3"
-            src="/img/Logo_panomwan.png"
-            alt="Logo"
-          />
-          {/* </div> */}
-          <div className="text-white sm/text-lg">
-            <p className="text-lg ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
-            <div className=" bg-white h-[2px] sm/w-[300px]" />
-            <p>Phanomwan College of Technology</p>
+    <nav className="bg-[#1F306A] sm/h-[130px] font-fontTH ">
+      <div className="flex justify-around mx-auto px-2 sm:px-6 lg:px-8 py-3 flex-wrap  h-[100%] drop-shadow-lg" >
+        <div className="flex items-center gap-3 justify-between" >
+          <div >
+            <Link href='/' className="flex items-center gap-2">
+              <Image
+                src="/img/Logo_panomwan.png"
+                width={100}
+                height={100}
+                className="w-[65px] md:w-[100px]" alt="" />
+
+
+              <div className="text-white">
+                <p className="text:sm md:text-lg ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
+                <div className=" bg-white h-[2px] sm/w-[300px]" />
+                <p className="text-[11px] mt-0.5 md:text-sm" >Phanomwan College of Technology</p>
+              </div>
+            </Link>
           </div>
-        </Link>
 
-        {/*------------------------ mobile -----------------*/}
-        <button
-          onClick={toggleDropdown}
-          data-collapse-toggle="mobile-menu-3"
-          type="button"
-          // className="md:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
-          className="md:hidden text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex justify-between items-center "
-          aria-controls="mobile-menu-3"
-          aria-expanded={isOpen ? "true" : "false"}
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+          {/* Button Bar */}
+          <div onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white"
           >
-            <path
-              fillRule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-          <svg
-            className="hidden w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </button>
-        <div
-          className={`md:flex justify-between items-center w-full md:w-auto md:order-1 ${isOpen ? "" : "hidden"
-            }`}
-          id="mobile-menu-3"
-        >
-          <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-lg  md:font-medium  ">
-            <Link
-              href="../"
-              className=" text-white hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md font-medium"
+            {
+              isOpen ? <HiOutlineXMark size={30} /> : <HiBars4 size={30} />
+            }
+
+          </div>
+        </div>
+
+        {/* nav link here */}
+        <ul className="md:flex gap-5 hidden font-medium lg:text-lg items-center">
+          {Links.map((link) => (
+            <li key={link.name} className="text-white hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md font-medium"
             >
-              หน้าแรก
-            </Link>
-
-            <Link
-              href="/about"
-              className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
-            >
-              รู้จัก &quot;พนมวันท์&quot;
-            </Link>
-
-            <Link
-              href="/faculty"
-              className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
-            >
-              คณะ/หลักสูตร
-            </Link>
-
-            <Link
-              href="/welfare"
-              className="text-white  hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
-            >
-              สวัสดิการ
-            </Link>
-
-
-            
-              <Menu as="div" className="relative inline-block z-50 ">
-                <div>
-                  <Menu.Button className="inline-flex w-full gap-x-1.5 text-20  text-white text-lg hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium  shadow-sm ">
-                    ข้อมูลเพิ่มเติม
-                    <ChevronDownIcon
-                      className="mr-1h-6 w-6 item-center mt-[] text-white "
-                      aria-hidden="true"
-                    />
-                    {/* <ChevronDownIcon
-                      className=" mr-1 h-5 w-5 text-gray-400 "
-                      aria-hidden="true"
-                    /> */}
-                  </Menu.Button>
-                </div>
-
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
+              {link.children ? (
+                <div
+                  className="dropdown"
+                  onClick={toggleDropdown}
                 >
-                  <Menu.Items className=" text-center absolute left-0 z-10 mt-2 w-[170px] origin-top-right rounded-md bg-gray-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="/register"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900 hover:bg-[#BEBEBE] hover:text-black "
-                                : "text-gray-700 ",
-                              "block px-4 py-2 text-lg"
-                            )}
-                          >
-                            วิธีการสมัคร
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="/advisor"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900 hover:bg-[#BEBEBE] hover:text-black"
-                                : "text-gray-700",
-                              "block px-4 py-2 text-lg"
-                            )}
-                          >
-                            ทีมที่ปรึกษา
-                          </Link>
-                        )}
-                      </Menu.Item>
+                  <button
+                    className="btn btn-link flex items-center"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : 'false'}
+                  >
+                    {link.name}
 
-                      <form method="POST" action="#"></form>
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
-           
+                    <span
+                      className="">
+                      {
+                        open ? <HiChevronUp size={20} /> : <HiChevronDown size={20} />
+                      }
+                    </span>
+                  </button>
+
+                  <ul
+                    className="dropdown-menu mt-3 absolute bg-gray-100 text-gray-900 rounded-md"
+                    aria-labelledby="dropdownMenuButton"
+                    style={{ display: open ? 'block' : 'none' }}
+                  >
+                    {link.children.map((child) => (
+                      <li key={child.name} className="hover:bg-[#BEBEBE] hover:text-black px-4 py-2 rounded-md "
+                      >
+                        <a href={child.link}>{child.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <a href={link.link}>{link.name}</a>
+              )}
+            </li>
+          ))}
+          <Link
+            href="/register/form"
+            className="text-black bg-amber-400 hover:bg-white hover:text-[#1F306A] px-3 py-2 rounded-md  font-medium"
+          >
+            สมัครเรียน
+          </Link>
+        </ul>
+      </div>
+
+
+      {/* nav link for mobile here */}
+      <div className={`px-10 pt-5 absolute z-[-1] w-full h-screen bg-[#1F306A] transition-all animate-flip-down text-[14px]
+         ${isOpen ? '' : 'hidden'}`}
+      >
+        <ul className="">
+          {Links.map((link) => (
+            <li key={link.name} className="text-white hover:border-b-2 px-3 py-2 font-medium">
+              {link.children ? (
+                <div
+                  className="dropdown "
+                  onClick={toggleDropdown}
+                >
+                  <button
+                    className="btn flex items-center "
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : 'false'}
+                  >
+                    {link.name}
+                    <span
+                      className="">
+                      {
+                        open ? <HiChevronUp size={15} /> : <HiChevronDown size={15} />
+                      }
+                    </span>
+                  </button>
+                  <ul
+                    className="mt-2 border-t-2 bg-[#172450] rounded-sm"
+                    aria-labelledby=""
+                    style={{ display: open ? 'block' : 'none' }}
+                  >
+                    {link.children.map((child) => (
+                      <li key={child.name} className="my-1 py-1 pl-3 hover:border-l-2 hover:border-neutral-700">
+                        <a href={child.link}>{child.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <a href={link.link}>{link.name}</a>
+              )}
+            </li>
+          ))}
+
+        </ul>
+        <ul className="mt-1.5 text-center ">
+          <button className="w-full bg-amber-400 hover:bg-white px-4 py-1.5 rounded-md  ">
             <Link
               href="/register/form"
-              className="text-white bg-[#FFBF00] hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md  font-medium"
-            >
+              className="text-black hover:text-[#1F306A]">
               สมัครเรียน
             </Link>
-          </ul>
-        </div>
+          </button>
+        </ul>
       </div>
+
     </nav>
   );
 };
