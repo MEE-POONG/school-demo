@@ -18,8 +18,6 @@ const ComponentsNavbar: React.FC = () => {
     <nav className=" bg-[#1F306A] sm/h-[130px] font-fontTH ">
       <div className="flex justify-around mx-auto px-4 sm:px-6 lg:px-8 py-8  flex-wrap  h-[100%] ">
         <Link href="./" className="flex">
-          {/* <div className="flex-shrink-0"> */}
-          {/* Your logo or brand */}
           <img
             className="h-[70px] mr-3"
             src="/img/Logo_panomwan.png"
@@ -28,7 +26,7 @@ const ComponentsNavbar: React.FC = () => {
           {/* </div> */}
           <div className="text-white sm/text-lg">
             <p className="text-lg ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
-            <div className=" bg-white h-[2px] sm/w-[300px]" />
+            <div className=" bg-white h-[2px] sm:w-full" />
             <p>Phanomwan College of Technology</p>
           </div>
         </Link>
@@ -38,8 +36,8 @@ const ComponentsNavbar: React.FC = () => {
           onClick={toggleDropdown}
           data-collapse-toggle="mobile-menu-3"
           type="button"
-          // className="md:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
-          className="md:hidden text-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex justify-between items-center "
+        
+          className="md:hidden mt-3 text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex justify-between items-center "
           aria-controls="mobile-menu-3"
           aria-expanded={isOpen ? "true" : "false"}
         >
