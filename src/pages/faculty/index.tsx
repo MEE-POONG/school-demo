@@ -70,11 +70,11 @@ export default function Faculty() {
             <p className='text-[#6CB4EE] text-[18px] md:text-xl lg:text-2xl '> คณะบริหารธุรกิจ </p>
             <p className='text-[#6CB4EE] text-[14px] md:text-md lg:text-xl mb-2'> Faculty of Business Administration</p>
             <ul className="list-disc list-inside text-white ml-3 text-[12px] md:text-sm ">
-              <li className='py-1 md:py-0.5 lg:py-2 '>สาขาวิชาการบัญชี (บช.บ.) +</li>
-              <li className='py-1 md:py-0.5 lg:py-2'>สาขาวิชาการจัดการ (บธ.บ.) +</li>
-              <li className='py-1 md:py-0.5 lg:py-2'>สาขาวิชาระบบสารสนเทศ (บธ.บ.) +</li>
-              <li className='py-1 md:py-0.5 lg:py-2'>สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)</li>
-              <li className='py-1 md:py-0.5 lg:py-2 mb-2 md:mb-0 lg:mb-0'>สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)</li>
+              <li className='py-1 md:py-0.5  '>สาขาวิชาการบัญชี (บช.บ.) +</li>
+              <li className='py-1 md:py-0.5 '>สาขาวิชาการจัดการ (บธ.บ.) +</li>
+              <li className='py-1 md:py-0.5 '>สาขาวิชาระบบสารสนเทศ (บธ.บ.) +</li>
+              <li className='py-1 md:py-0.5 '>สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)</li>
+              <li className='py-1 md:py-0.5  mb-2 md:mb-0 lg:mb-0'>สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)</li>
             </ul>
           </div>
         </div>
