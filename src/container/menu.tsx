@@ -42,29 +42,29 @@ export default function Menu() {
             <div>
 
                 <div className="relative">
-                    <img className="w-full mx-auto my-auto h-[150px] sm:h-[200px] md:h-[300px] lg:h-[300px] xl:h-[200px] mb-3 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900" src="/img/event/111.png" alt="Event" />
-
-                    <div className="absolute  inset-0 mb-8 flex flex-wrap place-content-evenly h-[100%] items-center">
+                    
+                    <img className="w-full h-[100px] sm:h-[200px] md:h-[300px] lg:h-[300px] xl:h-[200px] mb-3 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900" src="/img/event/111.png" alt="Event" />
+                    <div className="absolute inset-0 mb-8 flex flex-wrap place-content-evenly h-[100%] items-center">
                         <Link href="/register/form" className="contactIcon text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-                            <RiFilePaper2Line className="mx-auto mb-2 h-[80px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                            <RiFilePaper2Line className="mx-auto h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
                             สมัครเรียน
                         </Link>
                         <Link href="/welfare" className="contactIcon text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-                            <FaMoneyBill className="mx-auto mb-2 h-[80px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                            <FaMoneyBill className="mx-auto  h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
                             สวัสดิการ
                         </Link>
                         <Link href="/advisor" className="contactIcon text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-                            <RiGraduationCapLine className="mx-auto mb-2 h-[80px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                            <RiGraduationCapLine className="mx-auto  h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
                             ปรึกษาเพิ่มเติม
                         </Link>
                         <Link href="/faculty" className="contactIcon text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-                            <FaUserGraduate className="mx-auto mb-2 h-[80px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                            <FaUserGraduate className="mx-auto  h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
                             คณะที่เปิดสอน
                         </Link>
-
-
                     </div>
+                    
                 </div>
+                {/* <div className="md:w-full h-2  mb-3 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div> */}
 
             </div>
 

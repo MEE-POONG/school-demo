@@ -52,31 +52,11 @@ const ComponentsNavbar: React.FC = () => {
                 <p className="text-[11px] mt-0.5 md:text-sm" >Phanomwan College of Technology</p>
               </div>
             </Link>
->>>>>>> 8ddd4bcc13668048762114af31bf0f03571fd37e
           </div>
 
-<<<<<<< HEAD
-        {/*------------------------ mobile -----------------*/}
-        <button
-          onClick={toggleDropdown}
-          data-collapse-toggle="mobile-menu-3"
-          type="button"
-        
-          className="md:hidden mt-3 text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex justify-between items-center "
-          aria-controls="mobile-menu-3"
-          aria-expanded={isOpen ? "true" : "false"}
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-=======
           {/* Button Bar */}
           <div onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white"
->>>>>>> 8ddd4bcc13668048762114af31bf0f03571fd37e
           >
             {
               isOpen ? <HiOutlineXMark size={30} /> : <HiBars4 size={30} />
