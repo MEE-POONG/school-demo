@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className=" bg-[#1F306A] w-full font-fontTH">
-      <div className="container mx-auto p-5 lg:flex lg:justify-between items-start md:py-8 lg:my-16">
+      <div className="container mx-auto p-7 lg:flex lg:justify-between items-center md:py-8 lg:my-16">
         <div>
           <Link href="./" className="flex">
             <img
@@ -13,9 +13,9 @@ const Footer = () => {
               className="h-[50px]  md:h-[120px] mr-3"
               alt="Flowbite Logo"
             />
-            <span className="self-center text-[10px] md:text-base font-medium text-white">
+            <span className="self-center text-[10px] md:text-lg font-medium text-white">
               <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
-              <hr className="w-full h-[2px] bg-white my-0.5" />
+              <hr className="w-full h-[2px] bg-white my-1" />
               <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
               <p>TEL : 044-955121-122 &nbsp;FAX : 044-955120</p>
             </span>
@@ -28,7 +28,7 @@ const Footer = () => {
               คณะที่เปิดสอน
             </h4>
             <div className="bg-white w-full h-[0.25px] md:hidden mb-1"></div>
-            <ul className="text-white text-[10px] md:text-[15px]">
+            <ul className="text-white text-[10px] md:text-[16px]">
               <li className="mb-1">
                 คณะบริหารธรุกิจ
               </li>
@@ -47,7 +47,7 @@ const Footer = () => {
           <div className="mt-5 md:mt-0">
             <h4 className=" md:mb-3 text-[12px] md:text-[18px] md:font-semibold text-white">รายการ</h4>
             <div className="bg-white w-full h-[0.25px] md:hidden mb-1"></div>
-            <ul className="text-white text-[10px] md:text-[15px]">
+            <ul className="text-white text-[10px] md:text-[16px]">
               <li className="mb-1">
                 <Link href="/register" className="hover:underline ">
                   สมัครเรียน

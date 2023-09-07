@@ -5,6 +5,7 @@ import ComponentsNavbar from "./navbar";
 import Link from "next/link";
 import Head from "next/head";
 import VisiterCounter from "@/components/visiterCounter";
+import BackToTopButton from "./BackTotop";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -43,6 +44,7 @@ export default function RootLayout({
       <main className={inter.className}> 
       {children}
       
+      <BackToTopButton/>
       </main>
     
       <Footer />
