@@ -3,11 +3,13 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
+import Loading from '@/components/loading';
 // ...
 
 interface IndexNews {
   id: number;
   activityImg: string;
+  activityName: string
   activityTitle: string;
   activitySubDetail: string;
   // Add other properties if there are more
@@ -19,6 +21,8 @@ function Activityloader() {
   const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
   const [sliderRef, setSliderRef] = useState<Slider | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   const handleLoadMore = () => {
     setVisibleItems(visibleItems + 4);
@@ -30,15 +34,20 @@ function Activityloader() {
       .then((data) => {
         setIndexNewsData(data.activitySchool);
         //console.log(data.activitySchool);
+        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
       })
       .catch((error) => {
         console.error('Error:', error);
+        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
       });
   }, []);
 
   return (
     <>
       <div className='flex justify-center'>
+      {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
           {activitySchoolData.slice(0, visibleItems).map((activitySchool) => (
             <Link key={activitySchool.id} href={`/activity/${activitySchool.id}`} passHref>
@@ -49,7 +58,7 @@ function Activityloader() {
                 alt='activitySchool image'
               />
               <div className='px-6 py-4 h-24'>
-                <div className='font-bold text-xl mb-2'>{activitySchool.activityTitle}</div>
+                <div className='font-bold text-xl mb-2'>{activitySchool.activityName}</div>
                 {/* <p className='text-gray-700 text-base'>{activitySchool.activitySubDetail}</p> */}
               </div>
             </div>

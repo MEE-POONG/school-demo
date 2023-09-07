@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
+import Loading from '@/components/loading';
 
 interface IpDbItem {
   id: string;
@@ -9,14 +10,19 @@ interface IpDbItem {
 function Visiter() {
   const [ipAddress, setIpAddress] = useState('');
   const [ipDb, setIpDb] = useState<IpDbItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   const fetchIpAddress = async () => {
     try {
       const response = await fetch('https://api.ipify.org?format=json');
       const data = await response.json();
       setIpAddress(data.ip);
+      setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
     } catch (error) {
       console.error(error);
+      setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
     }
   };
 
@@ -26,8 +32,11 @@ function Visiter() {
       if (response.status === 200) {
         const data = response;
         setIpDb(data.data.iPAddress);
+        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
       } else {
         throw new Error("API request failed with status code " + response.status);
+        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
       }
     } catch (error) {
       console.error(error);
@@ -49,8 +58,12 @@ function Visiter() {
           .then(response => {
             if (response.status === 201) {
               //console.log("Added IP address to the database:", ipAddress);
+              setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
             } else {
               throw new Error("API request failed with status code " + response.status);
+              setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
             }
           })
           .catch(error => {
@@ -62,7 +75,9 @@ function Visiter() {
 
   return (
     <>
-        {ipDb.length}
+      {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
+
+      {ipDb.length}
     </>
 
   );

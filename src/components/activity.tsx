@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import React, { useState, useEffect } from 'react';
+import Loading from "@/components/loading";
 
 
 
@@ -20,6 +21,7 @@ export default function Activity() {
   const initialVisibleItems = 3;
   const [visibleItems, setVisibleItems] = useState(initialVisibleItems);
   const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
+  const [isLoading, setIsLoading] = useState(true);
   const handleLoadMore = () => {
     setVisibleItems(visibleItems + 3);
   };
@@ -29,15 +31,18 @@ export default function Activity() {
       .then((response) => response.json())
       .then((data) => {
         setIndexNewsData(data.activitySchool);
+        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
       })
       .catch((error) => {
         console.error('Error:', error);
+        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
       });
   }, []);
 
 
   return (
     <div className="py-5 mb-5">
+            {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
       <div className=" bg-[#1F306A] p-8 md:h-150 lg:h-190 container mx-auto items-center justify-center mb-5">
         <h1 className=" text-lg md:text-3xl  md:ml-0 py-5 text-center text-yellow-400">
           กิจกรรมที่ผ่านมา

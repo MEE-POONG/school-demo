@@ -12,7 +12,7 @@ const Footer = () => {
 
           <div className="md:flex  text-gray-500 my-8">
             <div className="md:mr-10">
-              <h2 className="mb-6 text-md font-semibold text-white">
+              <h2 className="mb-3 text-md font-semibold text-white">
                 คณะที่เปิดสอน
               </h2>
               <ul className="text-gray-500">
@@ -40,16 +40,11 @@ const Footer = () => {
             </div>
 
             <div className="">
-              <h2 className="mb-6 text-md font-semibold text-white">รายการ</h2>
+              <h2 className=" mt-3 md:mt-0 py-3 text-md font-semibold text-white">รายการ</h2>
               <ul className="text-white">
                 <li className="mb-4">
                   <Link href="/register" className="hover:underline ">
                     สมัครเรียน
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link href="/advisor" className="hover:underline ">
-                    ปรึกษาเรื่องทุน
                   </Link>
                 </li>
                 <li className="mb-4">

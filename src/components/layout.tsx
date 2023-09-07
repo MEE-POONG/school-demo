@@ -18,12 +18,15 @@ export default function RootLayout({
     <>
   
       <VisiterCounter/>
-      <ComponentsNavbar/>
+      <header className="top-0 z-50 sticky">
+        <ComponentsNavbar/>
+      </header>
+      
       <Head>
        <title>PhanomwanCollege</title>
        <meta
           name="description"
-          content="T ACTIVE"
+          content="PHANOMWAN COLLEGE"
         />
          <link rel="icon" href="/panomwan.ico" />
          </Head>

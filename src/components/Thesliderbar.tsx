@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
+<<<<<<< HEAD
+=======
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Loading from '@/components/loading';
+>>>>>>> 8ddd4bcc13668048762114af31bf0f03571fd37e
 
 interface sliderSchool {
     id: number;
@@ -41,6 +47,7 @@ const MyCarousel = () => {
         sliderRef?.slickGoTo(index);
     };
 
+<<<<<<< HEAD
     const sliderSettings = {
         dots: false,
         infinite: true,
@@ -49,6 +56,40 @@ const MyCarousel = () => {
         slidesToScroll: 1,
         beforeChange: (_current: any, next: React.SetStateAction<number>) => setActiveSlide(next),
     };
+=======
+  return (
+    <div style={{ position: 'relative' }}>
+      {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
+      <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
+        {sliderSchoolData?.map((sliderSchool) => (
+          <div key={sliderSchool.id}>
+            <img
+              className='w-full h-[150px] md:h-[250px] lg:h-[350px] xl:h-[450px] object-fill'
+              src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${sliderSchool.img1}/public`}
+              alt="indexActivity image"
+            />
+          </div>
+        ))}
+      </Slider>
+      <div
+        className='absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2'
+        style={{ transform: 'translateX(-50%)' }}
+      >
+        {sliderSchoolData?.map((_, index) => (
+          <button
+            key={index}
+            type='button'
+            className={`w-3 h-3 rounded-full ${activeSlide === index ? 'bg-blue-500' : 'bg-gray-300'
+              }`}
+            aria-current={activeSlide === index ? 'true' : 'false'}
+            aria-label={`Slide ${index + 1}`}
+            data-carousel-slide-to={index}
+            onClick={() => handleSlideTo(index)}
+          ></button>
+        ))}
+      </div>
+      <div className='flex justify-between mt-4' style={{ position: 'absolute', width: '100%', top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
+>>>>>>> 8ddd4bcc13668048762114af31bf0f03571fd37e
 
     return (
         <>

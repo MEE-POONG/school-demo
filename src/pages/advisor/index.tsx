@@ -8,6 +8,8 @@ import { GoBook } from "react-icons/go";
 import { MdSupportAgent } from "react-icons/md";
 import { TbStars } from "react-icons/tb";
 import { FaLocationDot } from "react-icons/fa6";
+import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
+import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 
 
 
@@ -15,10 +17,36 @@ import { FaLocationDot } from "react-icons/fa6";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Welfare() {
+    const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+    useEffect(() => {
+        const images = document.querySelectorAll('img'); // เลือกทุก <img> ในหน้า
+        let loadedImages = 0;
+    
+        function handleImageLoad() {
+          loadedImages++;
+          if (loadedImages === images.length) {
+            setIsLoading(false);
+          }
+        }
+    
+        images.forEach((img) => {
+          if (img.complete) {
+            handleImageLoad();
+          } else {
+            img.addEventListener('load', handleImageLoad);
+          }
+        });
+    
+        return () => {
+          images.forEach((img) => {
+            img.removeEventListener('load', handleImageLoad);
+          });
+        };
+      }, []);
     return (
         <RootLayout>
-
-            {/* banner คณะและหลักสูตร */}
+            {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
             <div className="relative">
                 <img src="/img/advisor/contactban.png" alt="" />
                 <div className="absolute inset-0  mb-2 md:mb-24  flex justify-center items-center">
@@ -55,26 +83,32 @@ export default function Welfare() {
                     {/* พรพิมล */}
                     <div className='bg-white'>
                         <div className='flex flex-col'>
-                            <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/pornpimol.png" alt="" />
-                            <div className=' text-center'>
+                            <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/pornpimol.png" alt="" style={{
+                                WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
+                                filter: 'drop-shadow(2px 2px 5px #444444)'
+                            }} />
+                            <div className=' text-center '>
                                 <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นาง พรพิมล ลักขษร</h1>
                                 <h2 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>ผู้ช่วยที่ปรึกษา</h2>
                                 <h2 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-519-6551</h2>
-                                <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ทุกระบบจบที่เรา”</h2>
+                                <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ทุกการศึกษามีความหมายกับเราเสมอ”</h2>
                             </div>
                         </div>
                     </div>
 
                     {/* พิชาภพ */}
-                    <div className='bg-white'>
-                        <div className='flex flex-col h-full'>
-                            <div className=' text-center bg-white my-auto'>
+                    <div className='bg-white' >
+                        <div className='flex flex-col h-full' >
+                            <div className=' text-center bg-white my-auto' >
                                 <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นายพิชาภพ ลักขษร</h1>
                                 <h5 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>หัวหน้าที่ปรึกษา</h5>
                                 <h6 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-519-6515</h6>
-                                <h5 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ทุกระบบจบที่เรา”</h5>
+                                <h5 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ประสบการณ์ที่เรามีพร้อมช่วยเหลือคุณ”</h5>
                             </div>
-                            <img className='border-x-8 border-b-8 border-[#FFBF00] mt-auto ' src="/img/advisor/pichapop.png" alt="" />
+                            <img className='border-x-8 border-b-8 border-[#FFBF00] mt-auto ' src="/img/advisor/pichapop.png" alt="" style={{
+                                WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
+                                filter: 'drop-shadow(2px 2px 5px #444444)'
+                            }} />
                         </div>
                     </div>
 
@@ -82,12 +116,15 @@ export default function Welfare() {
                     {/*  วรรธนัย  */}
                     <div className='bg-white'>
                         <div className='flex flex-col'>
-                            <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/wantanai.png" alt="" />
+                            <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/wantanai.png" alt="" style={{
+                                WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
+                                filter: 'drop-shadow(2px 2px 5px #444444)'
+                            }} />
                             <div className=' text-center'>
                                 <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นาย วรรธนัย บุตรมั้น</h1>
                                 <h2 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>สื่อและประชาสัมพันธ์</h2>
                                 <h2 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-019-8815</h2>
-                                <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ทุกระบบจบที่เรา”</h2>
+                                <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ต่อยอดความเป็นไปได้ ไปกับเรา”</h2>
                             </div>
                         </div>
                     </div>
@@ -112,7 +149,10 @@ export default function Welfare() {
                     {/* พิชาภพ */}
                     <div className='bg-white'>
                         <div className='flex flex-col h-full'>
-                            <img className='border-x-8 border-t-8 border-[#FFBF00] mt-auto ' src="/img/advisor/pichapop.png" alt="" />
+                            <img className='border-x-8 border-t-8 border-[#FFBF00] mt-auto ' src="/img/advisor/pichapop.png" alt="" style={{
+                                WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
+                                filter: 'drop-shadow(2px 2px 5px #444444)'
+                            }} />
                             <div className=' text-center bg-white my-auto'>
                                 <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นายพิชาภพ ลักขษร</h1>
                                 <h5 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>หัวหน้าที่ปรึกษา</h5>
@@ -126,7 +166,10 @@ export default function Welfare() {
 
                     {/* พรพิมล */}
                     <div className='bg-white'>
-                        <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/pornpimol.png" alt="" />
+                        <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/pornpimol.png" alt="" style={{
+                                WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
+                                filter: 'drop-shadow(2px 2px 5px #444444)'
+                            }}/>
 
                         <div className='text-center'>
                             <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นาง พรพิมล ลักขษร</h1>
@@ -141,7 +184,10 @@ export default function Welfare() {
 
                     {/* วรรธนัย */}
                     <div className='bg-white'>
-                        <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/wantanai.png" alt="" />
+                        <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/wantanai.png" alt="" style={{
+                                WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
+                                filter: 'drop-shadow(2px 2px 5px #444444)'
+                            }} />
 
                         <div className='text-center'>
                             <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นาย วรรธนัย บุตรมั้น</h1>
@@ -223,7 +269,7 @@ export default function Welfare() {
 
                 </div>
                 {/* map */}
-                <div className=''>
+                <div className='flex justify-center'>
                     <iframe className="  md:w-full h-72 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15410.825965346847!2d102.1841477!3d15.0643421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311949e7e29a02b3%3A0x8b0fbbc3758d561f!2z4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4LiZ4Lih4Lin4Lix4LiZ4LiX4LmMIFBoYW5vbXdhbiBDb2xsZWdlIG9mIFRlY2hub2xvZ3k!5e0!3m2!1sth!2sth!4v1689326551888!5m2!1sth!2sth" ></iframe>
                 </div>
 
