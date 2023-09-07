@@ -56,19 +56,23 @@ const IndexPage: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'relative' }}>
-      {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
-      <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
-        {newsSchoolData.map((newsSchool) => (
-          <div key={newsSchool.id}>
-            <img
-              className='w-full h-[150px] md:h-[250px] lg:h-[350px] xl:h-[450px] object-fill'
-              src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${newsSchool.newImg}/public`}
-              alt="indexActivity image"
-            />
-          </div>
-        ))}
-      </Slider>
+    <div id="default-carousel" className="relative" data-carousel="static">
+    <div className="slider-container">
+    <div className="md:w-full h-1 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+        <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
+            {newsSchoolData?.map((newsSchool) => (
+                <div key={newsSchool.id} className="slider-slide">
+                    <img
+                        src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${newsSchool.newImg}/public`}
+                        className=' top-1/2 left-1/2 w-full  h-[150px] md:h-[250px] lg:h-[350px] xl:h-[600px]'
+                        //   className="block top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                        alt="indexActivity image"
+                    />
+                </div>
+            ))}
+        </Slider>
+      
+
       <div
         className='absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2'
         style={{ transform: 'translateX(-50%)' }}
@@ -86,7 +90,7 @@ const IndexPage: React.FC = () => {
           ></button>
         ))}
       </div>
-      <div className='flex justify-between mt-4' style={{ position: 'absolute', width: '100%', top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
+      <div className='flex justify-between ' style={{ position: 'absolute', width: '100%', top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
 
 
 
@@ -132,6 +136,8 @@ const IndexPage: React.FC = () => {
         </button>
       </div>
     </div>
+    </div>
+
   );
 };
 
