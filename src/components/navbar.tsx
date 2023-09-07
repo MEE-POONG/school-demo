@@ -66,7 +66,7 @@ const ComponentsNavbar: React.FC = () => {
         </div>
 
         {/* nav link here */}
-        <ul className="md:flex gap-5 hidden font-medium lg:text-lg items-center">
+        <ul className="md:flex gap-5 hidden font-medium text-sm lg:text-lg items-center">
           {Links.map((link) => (
             <li key={link.name} className="text-white hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md font-medium"
             >
