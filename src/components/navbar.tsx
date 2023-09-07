@@ -34,21 +34,6 @@ const ComponentsNavbar: React.FC = () => {
 
 
   return (
-<<<<<<< HEAD
-    <nav className=" bg-[#1F306A] sm/h-[130px] font-fontTH ">
-      <div className="flex justify-around mx-auto px-4 sm:px-6 lg:px-8 py-8  flex-wrap  h-[100%] ">
-        <Link href="./" className="flex">
-          <img
-            className="h-[70px] mr-3"
-            src="/img/Logo_panomwan.png"
-            alt="Logo"
-          />
-          {/* </div> */}
-          <div className="text-white sm/text-lg">
-            <p className="text-lg ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
-            <div className=" bg-white h-[2px] sm:w-full" />
-            <p>Phanomwan College of Technology</p>
-=======
     <nav className="bg-[#1F306A] sm/h-[130px] font-fontTH ">
       <div className="flex justify-around mx-auto px-2 sm:px-6 lg:px-8 py-3 flex-wrap  h-[100%] drop-shadow-lg" >
         <div className="flex items-center gap-3 justify-between" >

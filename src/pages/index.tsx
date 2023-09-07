@@ -1,23 +1,13 @@
 import RootLayout from "@/components/layout";
 import Thesliderbar from '@/components/Thesliderbar';
-import MyCarousel from "./test";
 import Menu from "@/container/menu";
 import SliderNews from "@/components/sliderNew";
 
 
-export default function Index(){
-    return(
-<>
-<RootLayout>
-<Thesliderbar/>
-
-{/* <h1 className="text-3xl xl:text-6xl mx-10 mt-10 text-[#1F306A]/70">Menu</h1> */}
-<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl mx-5 mt-6 text-[#1F306A]/70">Menu</h1>
-
-<<<<<<< HEAD
-=======
-    <RootLayout>
-      <div className=" bg-slate-200">
+export default function Index() {
+  return (
+    <>
+      <RootLayout>
       <Thesliderbar />
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
         <Link href="https://www.facebook.com/PhanomwanCollege/">
@@ -53,24 +43,7 @@ export default function Index(){
       </div>
 
 
-<<<<<<< HEAD
 </RootLayout>
 </>
     )
 }
-=======
-            <span className="my-auto px-5 text-white  text-lg md:text-xl lg:text-2xl">
-              ผู้เข้าชม
-            </span>
-
-          </div>
-          {/* <span className="my-auto px- text-white  text-2xl">
-            ผู้เข้าชมเว็บไซต์
-          </span> */}
-        </div>
-      </div>
-      </div>
-    </RootLayout>
-  );
-}
->>>>>>> 8ddd4bcc13668048762114af31bf0f03571fd37e
