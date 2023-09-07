@@ -101,7 +101,7 @@ export default function Faculty() {
         <div className="mt-5 mx-2 lg:max-w-7xl lg:mx-auto md:flex md:items-center bg-neutral-800 overflow-hidden rounded-lg  drop-shadow-lg hover:scale-105">
           <div className="h-48 md:h-auto md:w-[450px] flex-none bg-cover rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden" >
             <img className=''
-              src="/img/faculty/Flibfaculty.png" alt="" />
+              src="/img/faculty/Flib.png" alt="" />
           </div>
           <div className="mx-5 my-4">
             <p className='text-[#6CB4EE] text-[18px] md:text-xl lg:text-2xl '> คณะศิลปศาสตร์ </p>
