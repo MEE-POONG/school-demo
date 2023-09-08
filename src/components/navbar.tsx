@@ -35,21 +35,21 @@ const ComponentsNavbar: React.FC = () => {
 
   return (
     <nav className="bg-[#1F306A] sm/h-[130px] font-fontTH ">
-      <div className="flex justify-around mx-auto px-2 sm:px-6 lg:px-8 py-3 flex-wrap  h-[100%] drop-shadow-lg" >
-        <div className="flex items-center gap-3 justify-between" >
+      <div className="flex justify-around gap-5 mx-auto px-2 sm:px-6 lg:px-8 py-3 flex-wrap  h-[100%] drop-shadow-lg" >
+        <div className="grid grid-flow-col items-center gap-5" >
           <div >
             <Link href='/' className="flex items-center gap-2">
               <Image
                 src="/img/Logo_panomwan.png"
                 width={100}
                 height={100}
-                className="w-[65px] md:w-[100px]" alt="" />
+                className="w-[65px] md:w-[90px]" alt="" />
 
 
               <div className="text-white">
-                <p className="text:sm md:text-lg ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
+                <p className="text-sm md:text-lg ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
                 <div className=" bg-white h-[2px] sm/w-[300px]" />
-                <p className="text-[11px] mt-0.5 md:text-sm" >Phanomwan College of Technology</p>
+                <p className="text-[10px] mt-0.5 md:text-sm" >Phanomwan College of Technology</p>
               </div>
             </Link>
           </div>
@@ -66,7 +66,7 @@ const ComponentsNavbar: React.FC = () => {
         </div>
 
         {/* nav link here */}
-        <ul className="md:flex gap-5 hidden font-medium lg:text-lg items-center">
+        <ul className="md:flex gap-5 hidden font-medium text-sm md:text-md lg:text-lg items-center">
           {Links.map((link) => (
             <li key={link.name} className="text-white hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md font-medium"
             >
