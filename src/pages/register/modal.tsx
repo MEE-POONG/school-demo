@@ -12,7 +12,7 @@ export default function Modal({ onSubmit}: any) {
 
   return (
     <>
-      <button onClick={() => setOpen(!openSubmit)} className='bg-black bg-opacity-80  text-[#FFBF00] rounded w-56 h-20 text-3xl'>
+      <button onClick={() => setOpen(!openSubmit)} className='bg-black bg-opacity-80  text-[#FFBF00] rounded w-28 h-14 md:w-40 md:h-15 md:text-xl'>
         ส่งใบสมัคร
       </button>
 
