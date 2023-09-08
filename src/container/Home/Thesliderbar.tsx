@@ -52,22 +52,20 @@ const Thesliderbar = () => {
 
     return (
         <>
-            <div id="default-carousel" className="relative" data-carousel="static">
+            <div className="md:w-full h-2 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+            <div id="default-carousel" className="relative bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900 " data-carousel="static">
                 <div className="slider-container">
-
                     <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
                         {sliderSchoolData?.map((sliderSchool) => (
-                            <div key={sliderSchool.id} className="slider-slide">
+                            <div key={sliderSchool.id}>
                                 <img
                                     src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${sliderSchool.img1}/public`}
-                                    className=' top-1/2 left-1/2 w-full'
-                                    //   className="block top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                                    className="block top-1/2 left-1/2 w-full"
                                     alt="indexActivity image"
                                 />
                             </div>
                         ))}
                     </Slider>
-                    
                     <div
                         className='absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2'
                         style={{ transform: 'translateX(-50%)' }}
@@ -85,7 +83,7 @@ const Thesliderbar = () => {
                             ></button>
                         ))}
                     </div>
-                    
+
                     <div className='flex justify-between ' style={{ position: 'absolute', width: '100%', top: '50%', transform: 'translateY(-50%)', zIndex: 1 }}>
                         <button onClick={handlePrevSlide} className='text-black mr-2'>
                             <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -127,11 +125,11 @@ const Thesliderbar = () => {
                                 <span className="sr-only">Next</span>
                             </span>
                         </button>
-                        
+
                     </div>
-                    
                 </div>
             </div>
+
         </>
     );
 };

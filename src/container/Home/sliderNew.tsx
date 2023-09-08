@@ -58,7 +58,7 @@ const IndexPage: React.FC = () => {
   return (
     <div id="default-carousel" className="relative" data-carousel="static">
     <div className="slider-container">
-    <div className="md:w-full h-1 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+  
         <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
             {newsSchoolData?.map((newsSchool) => (
                 <div key={newsSchool.id} className="slider-slide">
