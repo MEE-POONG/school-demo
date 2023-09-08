@@ -14,7 +14,7 @@ interface IndexNews {
 }
 
 
-export default function Activitytest() {
+export default function Activity() {
   const initialVisibleItems = 3;
   const [visibleItems, setVisibleItems] = useState(initialVisibleItems);
   const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
@@ -38,16 +38,14 @@ export default function Activitytest() {
 
 
   return (
-    <div className="py-5 mb-5">
+    <div>
       {isLoading && <Loading />}
-      {/* <div className="bg-[#1F306A]/80 w-full h-[600px]  "> */}
       <div className="bg-[#1F306A]/80 w-full h-[900px] sm:h-[1150px] md:h-[900px] lg:h-[550px] xl:h-[550px]">
         <div className="md:w-full h-2 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
-        <h1 className=" text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-6xl mx-5 mt-6 md:ml-0 py-5 text-center text-yellow-400">
+        <h1 className=" text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl mx-5 mt-6 md:ml-0 py-5 text-center text-yellow-400">
           กิจกรรมที่ผ่านมา
         </h1>
-
-
+        
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {activitySchoolData.slice(0, visibleItems).map((activitySchool) => (
@@ -66,23 +64,6 @@ export default function Activitytest() {
                   </div>
                 </div>
                
-                 
-                    {/* <div
-                      key={activitySchool.id}
-                      className="block p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
-                    >
-                      <img
-                        className="w-full h-32 sm:h-48 md:h-52 object-cover"
-                        src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${activitySchool.activityImg ? activitySchool.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
-                        alt="activitySchool image"
-                      />
-                      <div className="px-4 py-2 sm:py-3 md:py-4 h-16 sm:h-20 md:h-24">
-                        <div className="text-sm sm:text-base md:text-lg lg:text-lg font-bold mb-2">
-                          {activitySchool.activityTitle}
-                        </div>
-                      </div>
-                      </div> */}
-             
 
               </Link>
             ))}
@@ -101,15 +82,10 @@ export default function Activitytest() {
           </Link>
         </div>
       </div>
-      <div className="md:w-full h-2 mb-3 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+      <div className="md:w-full h-2  bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
     </div>
   );
 }
 
 
 
-
-
-{/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */ }
-{/* <div className=" bg-[#1F306A] p-8 md:h-150 lg:h-190 container mx-auto items-center justify-center mb-5"> */ }
-{/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl mx-10 mt-6 text-yellow-400">กิจกรรมที่ผ่านมา</h1> */ }

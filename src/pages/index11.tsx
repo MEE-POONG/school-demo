@@ -1,9 +1,9 @@
-import Thesliderbar from "@/components/Thesliderbar";
+import Thesliderbar from "@/container/Home/Thesliderbar";
 import Visiter from "@/components/visiter";
-import Activity from "@/components/activity";
+import Activity from "@/container/Home/activity";
 import RootLayout from "@/components/layout";
-import SliderNews from "@/components/sliderNew";
-import Menu from "@/container/menu";
+import SliderNews from "@/container/Home/sliderNew";
+import Menu from "@/container/Home/menu";
 import { Inter } from "next/font/google";
 
 import Link from "next/link";
