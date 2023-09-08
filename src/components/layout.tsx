@@ -40,13 +40,10 @@ export default function RootLayout({
           /></p>
           </Link>
     </div>
-
       <main className={inter.className}> 
       {children}
-      
       <BackToTopButton/>
       </main>
-    
       <Footer />
     </>
   );
