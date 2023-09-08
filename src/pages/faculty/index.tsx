@@ -44,7 +44,7 @@ export default function Faculty() {
     <RootLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
       {/* banner คณะและหลักสูตร */}
-      <div className="relative w-full h-[150px] md:h-[300px] lg:h-auto">
+      <div className="relative w-full h-[150px] md:h-[300px] lg:h-[450px]">
         <img src="/img/faculty/facuban.png" alt="" className='h-full brightness-50 object-cover' />
         <div className="absolute inset-0 top-10 mb-8 md:mb-24 flex justify-center items-center ">
           <h2 className='text-[#fbbf24] text-xl md:text-3xl lg:text-5xl drop-shadow-xl font-semibold'>คณะและหลักสูตร</h2>
@@ -54,7 +54,7 @@ export default function Faculty() {
 
 
       {/* container ใหญ่ */}
-      <div className='container mx-auto my-8 md:my-24 px-5 lg:px-0'>
+      <div className='container mx-auto my-8 md:my-24 px-5'>
         {/* ขีด */}
         <div className='bg-gradient-to-r from-black via-[#FFBF00] to-black w-full h-0.5 mb-7 md:mb-14'></div>
 

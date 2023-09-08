@@ -49,7 +49,7 @@ export default function Welfare() {
     <RootLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
       {/* banner คณะและหลักสูตร */}
-      <div className="relative w-full h-[150px] md:h-[300px] lg:h-auto">
+      <div className="relative w-full h-[150px] md:h-[300px] lg:h-[500px]">
         <img src="/img/welfare/welfarebanner.png" alt="" className='h-full brightness-50 object-cover' />
         <div className="absolute inset-0 top-10 mb-8 md:mb-24 flex justify-center items-center ">
           <h2 className='text-[#fbbf24] text-xl md:text-3xl lg:text-6xl drop-shadow-xl font-semibold'>สวัสดิการนักศึกษา</h2>
