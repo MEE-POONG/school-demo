@@ -50,28 +50,28 @@ export default function Welfare() {
             <div className="relative">
                 <img src="/img/advisor/contactban.png" alt="" />
                 <div className="absolute inset-0  mb-2 md:mb-24  flex justify-center items-center">
-                    <h1 className='text-white underline text-4xl md:text-6xl lg:text-7xl '>
+                    <p className='text-white underline text-4xl md:text-6xl lg:text-7xl '>
                         ติดต่อเรา
-                    </h1>
+                    </p>
                 </div>
             </div>
             {/* ทีมที่ปรึกษา กับ ขีด */}
             <div className=' px-2 md:px-14 py-5'>
-                <h1 className='text-2xl  md:text-5xl text-[#1F306A]'>
+                <p className='text-2xl  md:text-5xl text-[#1F306A]'>
                     ทีมที่ปรึกษา
-                </h1>
+                </p>
                 {/* ขีด */}
                 <div className='bg-gradient-to-r from-[#1F306A] via-[#FFBF00] to-black w-full h-1 '></div>
             </div>
 
 
             {/* เนื้อหาส่วนทีมที่ปรึกษา */}
-            <div className='bg-black bg-opacity-80 px-2 md:px-14 pb-10'>
+            <div className='bg-[#1F306A]/80  bg-opacity-80 px-2 md:px-14 pb-10'>
                 {/* คำอธิบายทีมที่ปรึกษา */}
 
                 <div className='container mx-auto'>
                     <div>
-                        <p className='text-white text-sm md:text-xl py-5'>
+                        <p className='text-white text-xs md:text-xl py-5'>
                             ทีมอาจารย์ที่ปรึกษาคอยดูแลตลอดหลักสูตรการเรียน  ด้วยประสบการณ์มากกว่า 20 ปี
                             ไม่ว่าจะติดปัญหาด้านการเงิน เวลา หรือระยะทางให้พวกเราทีมอาจารย์ที่ปรึกษาช่วยแก้ปัญหา
                             พร้อมแนะแนวแผนการเรียนให้ฟรี
@@ -88,7 +88,7 @@ export default function Welfare() {
                                     filter: 'drop-shadow(2px 2px 5px #444444)'
                                 }} />
                                 <div className=' text-center '>
-                                    <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-3xl xl:text-3xl mt-4'>นาง พรพิมล ลักขษร</h1>
+                                    <p className='text-[#1F306A] text-xl md:text-2xl lg:text-3xl xl:text-3xl mt-4'>นาง พรพิมล ลักขษร</p>
                                     <h2 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>ผู้ช่วยที่ปรึกษา</h2>
                                     <h2 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-519-6551</h2>
                                     <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4 p-2'>“ทุกการศึกษามีความหมายกับเราเสมอ”</h2>
@@ -100,10 +100,10 @@ export default function Welfare() {
                         <div className='bg-white' >
                             <div className='flex flex-col h-full' >
                                 <div className=' text-center bg-white my-auto' >
-                                    <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-3xl xl:text-3xl mt-4'>นายพิชาภพ ลักขษร</h1>
-                                    <h5 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>หัวหน้าที่ปรึกษา</h5>
-                                    <h6 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-519-6515</h6>
-                                    <h5 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4 p-2'>“ประสบการณ์ที่เรามีพร้อมช่วยเหลือคุณ”</h5>
+                                    <p className='text-[#1F306A] text-xl md:text-2xl lg:text-3xl xl:text-3xl mt-4'>นายพิชาภพ ลักขษร</p>
+                                    <p className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>หัวหน้าที่ปรึกษา</p>
+                                    <p className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-519-6515</p>
+                                    <p className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4 p-2'>“ประสบการณ์ที่เรามีพร้อมช่วยเหลือคุณ”</p>
                                 </div>
                                 <img className='border-x-8 border-b-8 border-[#FFBF00] mt-auto ' src="/img/advisor/pichapop.png" alt="" style={{
                                     WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
@@ -121,7 +121,7 @@ export default function Welfare() {
                                     filter: 'drop-shadow(2px 2px 5px #444444)'
                                 }} />
                                 <div className=' text-center'>
-                                    <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-3xl xl:text-3xl mt-4'>นาย วรรธนัย บุตรมั้น</h1>
+                                    <p className='text-[#1F306A] text-xl md:text-2xl lg:text-3xl xl:text-3xl mt-4'>นาย วรรธนัย บุตรมั้น</p>
                                     <h2 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>สื่อและประชาสัมพันธ์</h2>
                                     <h2 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-019-8815</h2>
                                     <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4 p-2'>“ต่อยอดความเป็นไปได้ ไปกับเรา”</h2>
@@ -148,16 +148,16 @@ export default function Welfare() {
 
                         {/* พิชาภพ */}
                         <div className='bg-white'>
-                            <div className='flex flex-col h-full'>
-                                <img className='border-x-8 border-t-8 border-[#FFBF00] mt-auto ' src="/img/advisor/pichapop.png" alt="" style={{
+                            <div className='flex flex-col h-full items-center mt-5 mb-10'>
+                                <img className='w-60 border-x-8 border-y-8 border-[#FFBF00] mt-auto ' src="/img/advisor/pichapop.png" alt="" style={{
                                     WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
                                     filter: 'drop-shadow(2px 2px 5px #444444)'
                                 }} />
                                 <div className=' text-center bg-white my-auto'>
-                                    <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นายพิชาภพ ลักขษร</h1>
-                                    <h5 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>หัวหน้าที่ปรึกษา</h5>
-                                    <h6 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-519-6515</h6>
-                                    <h5 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ประสบการณ์ที่เรามีพร้อมช่วยเหลือคุณ”</h5>
+                                    <p className='text-[#1F306A] text-sm md:text-2xl lg:text-4xl mt-4'>นายพิชาภพ ลักขษร</p>
+                                    <p className='text-[#8DB600] text-sm md:text-xl lg:text-2xl mt-2'>หัวหน้าที่ปรึกษา</p>
+                                    <p className='text-[#536878] text-sm md:text-xl lg:text-2xl mt-1'>061-519-6515</p>
+                                    <p className='text-[#1F306A] text-sm md:text-xl lg:text-2xl mt-2 mb-4'>“ประสบการณ์ที่เรามีพร้อมช่วยเหลือคุณ”</p>
                                 </div>
 
                             </div>
@@ -165,17 +165,17 @@ export default function Welfare() {
 
 
                         {/* พรพิมล */}
-                        <div className='bg-white'>
-                            <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/pornpimol.png" alt="" style={{
+                        <div className='bg-white flex flex-col h-full items-center '>
+                            <img className='w-60 border-x-8 border-y-8 border-[#FFBF00] ' src="/img/advisor/pornpimol.png" alt="" style={{
                                 WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
                                 filter: 'drop-shadow(2px 2px 5px #444444)'
                             }} />
 
                             <div className='text-center'>
-                                <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นาง พรพิมล ลักขษร</h1>
-                                <h2 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>ผู้ช่วยที่ปรึกษา</h2>
-                                <h2 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-519-6551</h2>
-                                <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ทุกการศึกษามีความหมายกับเราเสมอ”</h2>
+                                <p className='text-[#1F306A] text-sm md:text-2xl lg:text-4xl mt-4'>นาง พรพิมล ลักขษร</p>
+                                <h2 className='text-[#8DB600] text-sm md:text-xl lg:text-2xl mt-2'>ผู้ช่วยที่ปรึกษา</h2>
+                                <h2 className='text-[#536878] text-sm md:text-xl lg:text-2xl mt-1'>061-519-6551</h2>
+                                <h2 className='text-[#1F306A] text-sm md:text-xl lg:text-2xl mt-2 mb-4'>“ทุกการศึกษามีความหมายกับเราเสมอ”</h2>
                             </div>
 
                         </div>
@@ -183,17 +183,17 @@ export default function Welfare() {
 
 
                         {/* วรรธนัย */}
-                        <div className='bg-white'>
-                            <img className='border-x-8 border-t-8 border-[#FFBF00] ' src="/img/advisor/wantanai.png" alt="" style={{
+                        <div className='bg-white flex flex-col h-full items-center'>
+                            <img className='w-60 border-x-8 border-y-8 border-[#FFBF00] ' src="/img/advisor/wantanai.png" alt="" style={{
                                 WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
                                 filter: 'drop-shadow(2px 2px 5px #444444)'
                             }} />
 
                             <div className='text-center'>
-                                <h1 className='text-[#1F306A] text-xl md:text-2xl lg:text-4xl mt-4'>นาย วรรธนัย บุตรมั้น</h1>
-                                <h2 className='text-[#8DB600] text-lg md:text-xl lg:text-2xl mt-2'>สื่อและประชาสัมพันธ์</h2>
-                                <h2 className='text-[#536878] text-lg md:text-xl lg:text-2xl mt-1'>061-019-8815</h2>
-                                <h2 className='text-[#1F306A] text-lg md:text-xl lg:text-2xl mt-2 mb-4'>“ต่อยอดความเป็นไปได้ ไปกับเรา”</h2>
+                                <p className='text-[#1F306A] text-sm md:text-2xl lg:text-4xl mt-4'>นาย วรรธนัย บุตรมั้น</p>
+                                <h2 className='text-[#8DB600] text-sm md:text-xl lg:text-2xl mt-2'>สื่อและประชาสัมพันธ์</h2>
+                                <h2 className='text-[#536878] text-sm md:text-xl lg:text-2xl mt-1'>061-019-8815</h2>
+                                <h2 className='text-[#1F306A] text-sm md:text-xl lg:text-2xl mt-2 mb-4'>“ต่อยอดความเป็นไปได้ ไปกับเรา”</h2>
                             </div>
 
                         </div>
@@ -208,9 +208,9 @@ export default function Welfare() {
 
             {/* ช่องทางการติดต่อ กับ ขีด */}
             <div className=' px-2 md:px-14 py-5'>
-                <h1 className='text-2xl  md:text-5xl text-[#1F306A]'>
+                <p className='text-2xl  md:text-5xl text-[#1F306A]'>
                     ช่องทางการติดต่อ
-                </h1>
+                </p>
                 {/* ขีด */}
                 <div className='bg-gradient-to-r from-[#1F306A] via-[#FFBF00] to-black w-full h-1 '></div>
             </div>
@@ -218,7 +218,7 @@ export default function Welfare() {
             {/* เนื้อหาส่วนช่องทางการติดต่อ */}
             <div className='bg-black bg-opacity-80 px-2 md:px-14 pb-10'>
                 <div className='py-4'>
-                    <h1 className='text-[#FFBF00] text-xl mx-a'>วิทยาลัยเทคโนโลยีพนมวันท์</h1>
+                    <p className='text-[#FFBF00] text-lg mx-a'>วิทยาลัยเทคโนโลยีพนมวันท์</p>
                 </div>
                 {/* ที่อยู่วิทยาลัย */}
                 {/* <div className='grid grid-cols-12 text-white mb-5 lg:text-lg md:text-sm text-[7px]  '>
@@ -284,8 +284,8 @@ export default function Welfare() {
                 <div className='bg-[#536878] w-full h-0.5 '></div>
 
                 <div className='py-4 flex gap-2 '>
-                    <h1 className='text-[#FFBF00] text-xl'>พรพิมล ลักขษร</h1>
-                    <h2 className='text-white text-md my-auto   '>ผู้ช่วยที่ปรึกษา</h2>
+                    <p className='text-[#FFBF00] text-lg'>พรพิมล ลักขษร</p>
+                    <h2 className='text-white text-md my-auto ml-2'>ผู้ช่วยที่ปรึกษา</h2>
                 </div>
                 {/* ที่อยู่อาจารย์ */}
 
@@ -308,7 +308,7 @@ export default function Welfare() {
                     <div className='row-start-5 col-start-1'>
                         <p>Faecbook</p>
                     </div>
-                    <div className='row-start-5 col-start-3 md:col-start-2 md:pl-6 col-span-7'>
+                    <div className='row-start-5 col-start-3 md:col-start-2 md:pl-6 lg:pl-0 col-span-7'>
                         <p className='ml-2 md:ml-0'>teacher Pornpimol</p>
                     </div>
 
@@ -343,7 +343,7 @@ export default function Welfare() {
                 <div className='md:px-48'>
                     <div className='bg-black rounded-lg mt-2  flex justify-center items-center drop-shadow-lg'>
                         <FaLocationDot className='text-[#FFBF00] mr-2 text-center' />
-                        <h1 className='text-2xl text-[#FFBF00] text-center'>Main Campus</h1>
+                        <p className='text-2xl text-[#FFBF00] text-center'>Main Campus</p>
                     </div>
                 </div>
             </div>
