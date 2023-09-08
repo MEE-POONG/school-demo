@@ -215,11 +215,11 @@ export default function Home() {
 
         <div className='flex justify-between'>
           <div>
-            <h1 className='text-2xl  md:text-5xl text-[#1F306A]'>กรอกข้อมูล</h1>
+            <h1 className='text-2xl  md:text-5xl text-[#1F306A] ml-1 md:ml-0 '>กรอกข้อมูล</h1>
           </div>
 
           <div className='self-end'>
-            <Link href="/register"> <h1 className='text-2xl  md:text-3xl  text-[#1F306A]'>กลับ</h1> </Link>
+            <Link href="/register"> <h1 className=' text-xs  md:text-3xl text-white md:text-[#1F306A]'>กลับ</h1> </Link>
           </div>
         </div>
 
@@ -230,8 +230,8 @@ export default function Home() {
           {/* ข้อมูลผู้สมัคร  */}
           <div className=' outline outline-1  drop-shadow-xl shadow-xl'>
 
-            <div className='bg-black bg-opacity-80 w-full h-[50px] drop-shadow-md  shadow-md '>
-              <h1 className='text-3xl text-[#FFBF00] p-2'> ข้อมูลผู้สมัคร</h1>
+            <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
+              <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ข้อมูลผู้สมัคร</h1>
             </div>
 
 
@@ -350,9 +350,12 @@ export default function Home() {
           {/* ประวัติการศึกษา  */}
           <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
-            <div className='bg-black bg-opacity-80 w-full h-[50px] drop-shadow-md  shadow-md '>
-              <h1 className='text-3xl text-[#FFBF00] p-2'>ประวัติการศึกษา</h1>
+
+
+          <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
+              <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ประวัติการศึกษา</h1>
             </div>
+
 
 
             <div className='md:grid md:grid-cols-12 grid-cols-1 pt-4 '>
@@ -398,9 +401,11 @@ export default function Home() {
           {/* คณะ/สาขา  */}
           <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
-            <div className='bg-black bg-opacity-80 w-full h-[50px] drop-shadow-md  shadow-md '>
-              <h1 className='text-3xl text-[#FFBF00] p-2'>คณะ/สาขา</h1>
+
+          <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
+              <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> คณะ/สาขา</h1>
             </div>
+
 
 
             <div className='md:grid md:grid-cols-12 grid-cols-1 '>
