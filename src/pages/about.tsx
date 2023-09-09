@@ -39,12 +39,24 @@ export default function About() {
 
     return (
         <RootLayout>
-            {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
+            {isLoading && <Loading />} 
             <title>about</title>
             {/* banner คณะและหลักสูตร */}
-            <div className="">
-                <img src="/img/about/build1.png" alt="" />
-            </div>
+
+        
+                <img src="/img/about/bg-about.png" className="filter brightness-50 w-full h-[200px] sm:h-[200px] md:h-[300px] lg:h-[400px] xl:h-[600px] " alt="" />
+                <div className="absolute inset-x-0 top-[20%]  sm:top-[65%] md:top-[35%] lg:top-[40%] xl:top-[40%]  md:h-40 text-center">
+                    <h2 className='text-[#fbbf24] text-3xl md:text-4xl lg:text-5xl xl:text-6xl drop-shadow-xl font-semibold '>วิทยาลัยเทคโนโลยีพนมวันท์</h2>
+                </div>
+           
+
+            
+            {/* <div className="relative w-full  h-[150px] md:h-[300px] lg:h-[450px]">
+        <img src="/img/faculty/facuban.png" alt="" className=' brightness-30 object-cover' />
+        <div className="absolute inset-x-0 top-[15%]  sm:top-[65%] md:top-[20%] xl:top-[35%]  md:h-40 text-center">
+          <h2 className='text-[#fbbf24] text-3xl md:text-4xl lg:text-6xl drop-shadow-xl font-semibold'>คณะและหลักสูตร</h2>
+        </div>
+      </div> */}
 
             {/* พื้นหลังใหญ่นอก container */}
             <div className=" container mx-auto my-6 md:my-20 px-2">
