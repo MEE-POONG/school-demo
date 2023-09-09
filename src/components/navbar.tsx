@@ -167,13 +167,11 @@ const ComponentsNavbar: React.FC = () => {
 
         </ul>
         <ul className="mt-1.5 text-center ">
-          <button className="w-full bg-amber-400 hover:bg-white px-4 py-1.5 rounded-md  ">
-            <Link
-              href="/register/form"
-              className="text-black hover:text-[#1F306A]">
-              สมัครเรียน
+            <Link href="/register/form">
+            <button className="w-full bg-amber-400 hover:bg-white px-4 py-1.5 rounded-md  ">
+              <p className="text-black hover:text-[#1F306A]">สมัครเรียน</p>
+              </button>
             </Link>
-          </button>
         </ul>
       </div>
 
