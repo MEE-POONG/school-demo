@@ -36,19 +36,14 @@ const NewsArticle: React.FC = () => {
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
 
       <div className="relative p-7 md:p-3">
-        <div className="w-full md:w-3/5 mx-auto">
-          <div className="mx-5 my-3 text-sm">
-            <Link href="/news" className=" font-bold tracking-widest underline">
-              กลับ
-            </Link>
-          </div>
+        <div className="w-full md:w-3/5 mx-auto mt-5">
           <div className="w-full text-blue-900 text-2xl md:text-4xl px-5 font-bold leading-none py-2">
             {articleData.newTitle}
           </div>
-          <p className="text-end">{articleData.newDate}</p>
+          <p className="text-end text-sm md:text-md lg:text-md xl:text-lg ">{articleData.newDate}</p>
           <img className="" src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${articleData.newImg}/public`} alt={articleData.newImg} />
-          <p className="text-lg md:text-2xl text-blue-900 py-2">{articleData.newSubTitle}</p>
-          <p>
+          <p className=" mt-5 text-xl md:text-md lg:text-md xl:text-3xl text-blue-900 py-2">{articleData.newSubTitle}</p>
+          <p className=' mt-3 mb-10 text-sm md:text-md lg:text-lg xl:text-xl' >
             {articleData.newSubDetail}
           </p>
         </div>
