@@ -242,7 +242,7 @@ export default function Home() {
                 <label className=''>บัตรประจำตัวประชาชน:</label>
               </div>
               <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regIdpersonal} onChange={(e) => setRegIdpersonal(e.target.value)} name='regIdpersonal' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regIdpersonal} onChange={(e) => setRegIdpersonal(e.target.value)} name='regIdpersonal' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
               <div className='col-start-6 col-end-8 md:md:text-right p-3 my-2 '>
                 <label className=''>วัน/เดือน/ปีเกิด:</label>
@@ -258,7 +258,7 @@ export default function Home() {
                 <label className=''>คำนำหน้าชื่อ:</label>
               </div>
               <div className=' col-span-1 md:col-span-2  md:my-2 mx-2 md:mx-0'>
-                <select value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white'>
+                <select value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white h-12'>
                   <option value="">- เลือก -</option>
                   <option value="นาย">นาย</option>
                   <option value="นาง">นาง</option>
@@ -269,7 +269,7 @@ export default function Home() {
                 <label className=''>เพศ:</label>
               </div>
               <div className='col-span-1 md:col-span-2 my-2 mx-2 md:mx-0'>
-                <select value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                <select value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12'>
                   <option value="">- เลือก -</option>
                   <option value="ชาย">ชาย</option>
                   <option value="หญิง">หญิง</option>
@@ -280,7 +280,7 @@ export default function Home() {
                 <label className=''>สัญชาติ: </label>
               </div>
               <div className='col-span-2 my-2 md:ml-2 mx-2 md:mx-0'>
-                <input value={regNation} onChange={(e) => setRegNation(e.target.value)} name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regNation} onChange={(e) => setRegNation(e.target.value)} name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
 
 
@@ -290,13 +290,13 @@ export default function Home() {
                 <label className=''>ชื่อ:</label>
               </div>
               <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regName} onChange={(e) => setRegName(e.target.value)} name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regName} onChange={(e) => setRegName(e.target.value)} name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>นามสกุล:</label>
               </div>
               <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regLastname} onChange={(e) => setRegLastname(e.target.value)} name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regLastname} onChange={(e) => setRegLastname(e.target.value)} name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
 
 
@@ -306,13 +306,13 @@ export default function Home() {
                 <label className=''>Name:</label>
               </div>
               <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regEname} onChange={(e) => setRegEname(e.target.value)} name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regEname} onChange={(e) => setRegEname(e.target.value)} name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>Surname:</label>
               </div>
               <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regElastname} onChange={(e) => setRegElastname(e.target.value)} name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regElastname} onChange={(e) => setRegElastname(e.target.value)} name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
 
               {/* เบอร์โทร อีเมลล์ */}
@@ -321,13 +321,13 @@ export default function Home() {
                 <label className=''>เบอร์โทรศัพท์ติดต่อ:</label>
               </div>
               <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regPhone} onChange={(e) => setRegPhone(e.target.value)} name='regPhone' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regPhone} onChange={(e) => setRegPhone(e.target.value)} name='regPhone' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
               <div className='col-start-7 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>Email:</label>
               </div>
               <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regEmail} onChange={(e) => setRegEmail(e.target.value)} name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regEmail} onChange={(e) => setRegEmail(e.target.value)} name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
 
               {/* รูป */}
@@ -335,7 +335,7 @@ export default function Home() {
                 <label className=''>อัพโหลดรูปภาพ :</label>
               </div>
               <div className='md:mx-0md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 mx-2 md:mx-0'>
-                <input type="file" id='regImg' name="regImg" className='' onChange={handleFileUpload} />
+                <input type="file" id='regImg' name="regImg" className='h-12' onChange={handleFileUpload}/>
               </div>
 
 
@@ -365,7 +365,7 @@ export default function Home() {
                 <label className=''>สถาบันการศึกษา:</label>
               </div>
               <div className=' col-span-6 my-2 mx-2 md:mx-0'>
-                <input value={regSchool} onChange={(e) => setRegSchool(e.target.value)} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regSchool} onChange={(e) => setRegSchool(e.target.value)} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
 
 
@@ -376,7 +376,7 @@ export default function Home() {
                 <label className=''>สำเร็จการศึกษาระดับ:</label>
               </div>
               <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <select value={regDegree} onChange={(e) => setRegDegree(e.target.value)} name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
+                <select value={regDegree} onChange={(e) => setRegDegree(e.target.value)} name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12'>
                   <option value="">-- เลือกระดับ --</option>
                   <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
                   <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
@@ -387,7 +387,7 @@ export default function Home() {
                 <label className=''>เกรดเฉลี่ย</label>
               </div>
               <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regGpa} onChange={(e) => setRegGpa(e.target.value)} name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input value={regGpa} onChange={(e) => setRegGpa(e.target.value)} name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
             </div>
 
@@ -433,7 +433,7 @@ export default function Home() {
                 <label className=''>คณะ:</label>
               </div>
               <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <select name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white' onChange={handleFacultyChange}>
+                <select name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12' onChange={handleFacultyChange}>
                   <option value="">-- เลือกคณะ --</option>
                   <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
                   <option value="คณะวิทยาศาสตร์และเทคโนโลยี">คณะวิทยาศาสตร์และเทคโนโลยี</option>
@@ -445,7 +445,7 @@ export default function Home() {
                 <label className=''>สาขา:</label>
               </div>
               <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <select name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'
+                <select name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12'
                   disabled={!regFaculty} // Disable the select if faculty is not selected
                   value={regMajor}
                   onChange={(e) => setRegMajor(e.target.value)}
