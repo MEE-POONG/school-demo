@@ -153,7 +153,7 @@ export default function Welfare() {
                                     WebkitFilter: 'drop-shadow(2px 2px 5px #444444)',
                                     filter: 'drop-shadow(2px 2px 5px #444444)'
                                 }} />
-                                <div className=' text-center bg-white my-auto'>
+                                <div className=' text-center bg-white mb-14'>
                                     <p className='text-[#1F306A] text-sm md:text-2xl lg:text-4xl mt-4'>นายพิชาภพ ลักขษร</p>
                                     <p className='text-[#8DB600] text-sm md:text-xl lg:text-2xl mt-2'>หัวหน้าที่ปรึกษา</p>
                                     <p className='text-[#536878] text-sm md:text-xl lg:text-2xl mt-1'>061-519-6515</p>
@@ -171,7 +171,7 @@ export default function Welfare() {
                                 filter: 'drop-shadow(2px 2px 5px #444444)'
                             }} />
 
-                            <div className='text-center'>
+                            <div className='text-center mb-14'>
                                 <p className='text-[#1F306A] text-sm md:text-2xl lg:text-4xl mt-4'>นาง พรพิมล ลักขษร</p>
                                 <h2 className='text-[#8DB600] text-sm md:text-xl lg:text-2xl mt-2'>ผู้ช่วยที่ปรึกษา</h2>
                                 <h2 className='text-[#536878] text-sm md:text-xl lg:text-2xl mt-1'>061-519-6551</h2>
@@ -189,7 +189,7 @@ export default function Welfare() {
                                 filter: 'drop-shadow(2px 2px 5px #444444)'
                             }} />
 
-                            <div className='text-center'>
+                            <div className='text-center mb-14'>
                                 <p className='text-[#1F306A] text-sm md:text-2xl lg:text-4xl mt-4'>นาย วรรธนัย บุตรมั้น</p>
                                 <h2 className='text-[#8DB600] text-sm md:text-xl lg:text-2xl mt-2'>สื่อและประชาสัมพันธ์</h2>
                                 <h2 className='text-[#536878] text-sm md:text-xl lg:text-2xl mt-1'>061-019-8815</h2>
