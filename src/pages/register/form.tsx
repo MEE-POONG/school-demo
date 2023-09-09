@@ -248,7 +248,7 @@ export default function Home() {
                 <label className=''>วัน/เดือน/ปีเกิด:</label>
               </div>
               <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regBirth} onChange={(e) => setRegBirth(e.target.value)} name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white h-12" />
+                <input value={regBirth} onChange={(e) => setRegBirth(e.target.value)} name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white  h-12" />
               </div>
 
 
