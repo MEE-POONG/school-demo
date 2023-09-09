@@ -65,10 +65,10 @@ export default function Welfare() {
 
 
       {/* ข้อมูล 6 ช่อง */}
-      <div className='bg-black bg-opacity-80 mb-28'>
-        <div className='p-5'>
-          <div className='bg-gradient-to-r from-[#1F306A] via-[#FFBF00] to-black w-full h-1 '></div>
-        </div>
+      <div className='bg-black bg-opacity-80'>
+       
+        <div className="md:w-full h-2 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+   
 
         {/* 6 คอลั่ม */}
         <div className='container mx-auto md:mt-10 pb-10 md:pb-24'>
@@ -144,6 +144,8 @@ export default function Welfare() {
 
           </div>
         </div>
+        <div className="md:w-full h-2 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+
       </div>
 
     </RootLayout>
