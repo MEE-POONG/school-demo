@@ -12,13 +12,13 @@ export default function Welfare() {
     <RootLayout>
       {/* banner คณะและหลักสูตร */}
       <div className="relative">
-        <img src="/img/news/building2.png" alt="" />
-        <div className="absolute inset-0  mb-2 md:mb-24  flex justify-center items-center">
-          {/* <h1 className='text-white text-xl md:text-6xl lg:text-7xl '>
-                    วิทยาลัยเทคโนโลยีพนมวันท์
-                    </h1>    */}
+        <img src="/img/news/bg-news.png" alt="" className=" w-full filter brightness-50" />
+        {/* <div className="absolute inset-0  mb-2 md:mb-24  flex justify-center items-center"> */}
+        <div className="absolute inset-x-0 top-[30%]  sm:top-[65%] md:top-[40%] xl:top-[40%]  md:h-40 text-center">
+          <h2 className=' text-white text-3xl md:text-4xl lg:text-6xl drop-shadow-xl font-semibold'>ข่าว "พนมวันท์"</h2>
         </div>
-      </div>
+        </div>
+      {/* </div> */}
 
       {/* แทบ ข่าวประชาสัมพันธ์ */}
       <div className="">
