@@ -71,7 +71,7 @@ export default function Welfare() {
    
 
         {/* 6 คอลั่ม */}
-        <div className='container mx-auto md:mt-10 pb-10 md:pb-24'>
+        <div className='container mx-auto mt-10 md:mt-10 pb-10 md:pb-24'>
           <div className='grid grid-rows-2 gap-4 md:gap-16'>
             <div className="grid sm:grid-cols-3 gap-4 md:gap-16 mx-5">
               {/* 1 */}
