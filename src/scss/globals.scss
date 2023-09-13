@@ -15,6 +15,9 @@
     display: none !important;
   }
 
+input[type="search"] {
+    -webkit-appearance: none;
+  }
 @import "iconstyles.css";
 @import "loading.css";
 
