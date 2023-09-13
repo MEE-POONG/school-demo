@@ -15,7 +15,7 @@ const Footer = () => {
             />
             <span className="self-center text-[10px] md:text-lg font-medium text-white">
               <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
-              <hr className="w-full h-[2px] bg-white my-1" />
+              <hr className="md:w-full h-[2px] lg:w-[415px] xl:w-full bg-white my-1" />
               <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
               <p>TEL : 044-955121-122 &nbsp;FAX : 044-955120</p>
             </span>
