@@ -15,9 +15,11 @@
     display: none !important;
   }
 
-input[type="search"] {
-    -webkit-appearance: none;
-  }
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
+}
 @import "iconstyles.css";
 @import "loading.css";
 

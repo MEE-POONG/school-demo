@@ -334,8 +334,8 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>อัพโหลดรูปภาพ :</label>
               </div>
-              <div className='md:mx-0md:col-span-2 md:my-2 md:self-center md:flex md:justify-center flex items-center pb-4 md:pb-0 mx-2 md:mx-0'>
-                <input type="file" id='regImg' name="regImg" className='h-12' onChange={handleFileUpload} />
+              <div className='md:mx-0 md:col-span-4 md:my-2 md:self-center md:flex items-center pb-4 md:pb-0 mx-2 md:mx-0'>
+                <input type="file" id='regImg' name="regImg" className='' onChange={handleFileUpload}/>
               </div>
 
 
@@ -352,7 +352,7 @@ export default function Home() {
 
 
 
-            <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
+          <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
               <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ประวัติการศึกษา</h1>
             </div>
 
@@ -380,7 +380,7 @@ export default function Home() {
                   <option value="">-- เลือกระดับ --</option>
                   <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
                   <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
-                  <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">ประกาศนียบัตรวิชาชีพ (ปวช.)</option>
+                  <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">ประกาศนียบัตรวิชาชีพ (ปวช.)</option> 
                 </select>
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
@@ -402,7 +402,7 @@ export default function Home() {
           <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
 
-            <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
+          <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
               <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> คณะ/สาขา</h1>
             </div>
 
