@@ -414,7 +414,7 @@ export default function Home() {
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>หลักสูตร:</label>
               </div>
-              <div className='md:col-span-1 md:my-2 md:self-center md:flex md:justify-center ml-5 flex items-center'>
+              <div className='md:col-span-1 md:my-2 md:self-center md:flex  ml-5 flex items-center'>
                 <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="4ปี" type="radio" className="w-5 h-5" />
                 <label className='ml-4 md:ml-1 md:text-sm '>4 ปี</label>
               </div>
