@@ -17,11 +17,11 @@
 
 input {
     border-radius: 0;
-  }
-  
-input[type="search"] {
     -webkit-appearance: none;
-  }
+    -moz-appearance: none;
+    appearance: none;
+
+}
 @import "iconstyles.css";
 @import "loading.css";
 
