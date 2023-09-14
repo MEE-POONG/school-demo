@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Mitr } from "next/font/google";
 import React from "react";
 import Footer from "./footer";
 import ComponentsNavbar from "./navbar";
@@ -8,7 +8,10 @@ import VisiterCounter from "@/components/visiterCounter";
 import BackToTopButton from "./BackTotop";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const mainFont = Mitr({ 
+  weight: "400",
+  subsets:['latin'],
+});
 
 export default function RootLayout({
   children,
@@ -17,32 +20,32 @@ export default function RootLayout({
 }) {
   return (
     <>
-  
-      <VisiterCounter/>
+
+      <VisiterCounter />
       <header className="top-0 z-50 sticky">
-        <ComponentsNavbar/>
+        <ComponentsNavbar />
       </header>
-      
+
       <Head>
-       <title>PhanomwanCollege</title>
-       <meta
+        <title>PhanomwanCollege</title>
+        <meta
           name="description"
           content="PHANOMWAN COLLEGE"
         />
-         <link rel="icon" href="/panomwan.ico" />
-         </Head>
-      
+        <link rel="icon" href="/panomwan.ico" />
+      </Head>
+
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
-      <Link href="https://www.facebook.com/PhanomwanCollege/">
-      <p className="text-gray-400 underline"> <img
+        <Link href="https://www.facebook.com/PhanomwanCollege/">
+          <p className="text-gray-400 underline"> <img
             className=" absolute inset-y-0 right-0 w-16"
             src="/img/messenger-Logo.png"
           /></p>
-          </Link>
-    </div>
-      <main className={inter.className}> 
-      {children}
-      <BackToTopButton/>
+        </Link>
+      </div>
+      <main className={mainFont.className}>
+        {children}
+        <BackToTopButton />
       </main>
       <Footer />
     </>
@@ -52,4 +55,3 @@ export default function RootLayout({
 
 
 
- 
