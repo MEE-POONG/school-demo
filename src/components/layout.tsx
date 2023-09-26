@@ -8,9 +8,9 @@ import VisiterCounter from "@/components/visiterCounter";
 import BackToTopButton from "./BackTotop";
 
 
-const mainFont = Mitr({ 
+const mainFont = Mitr({
   weight: "400",
-  subsets:['latin'],
+  subsets: ['latin'],
 });
 
 export default function RootLayout({
@@ -20,12 +20,6 @@ export default function RootLayout({
 }) {
   return (
     <>
-
-      <VisiterCounter />
-      <header className="top-0 z-50 sticky">
-        <ComponentsNavbar />
-      </header>
-
       <Head>
         <title>PhanomwanCollege</title>
         <meta
@@ -34,13 +28,18 @@ export default function RootLayout({
         />
         <link rel="icon" href="/panomwan.ico" />
       </Head>
-
+      <VisiterCounter />
+      <header className="top-0 z-50 sticky">
+        <ComponentsNavbar />
+      </header>
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
         <Link href="https://www.facebook.com/PhanomwanCollege/">
-          <p className="text-gray-400 underline"> <img
-            className=" absolute inset-y-0 right-0 w-16"
-            src="/img/messenger-Logo.png"
-          /></p>
+          <p className="text-gray-400 underline">
+            <img
+              className=" absolute inset-y-0 right-0 w-16"
+              src="/img/messenger-Logo.png"
+            />
+          </p>
         </Link>
       </div>
       <main className={mainFont.className}>

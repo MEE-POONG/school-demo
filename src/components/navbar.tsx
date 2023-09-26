@@ -43,9 +43,7 @@ const ComponentsNavbar: React.FC = () => {
                 src="/img/Logo_panomwan.png"
                 width={100}
                 height={100}
-                className="w-[65px] md:w-[90px]" alt="" />
-
-
+                className="w-[65px] md:w-[80px]" alt="" />
               <div className="text-white">
                 <p className="text-sm md:text-lg ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
                 <div className=" bg-white h-[2px] sm/w-[300px]" />
@@ -54,7 +52,6 @@ const ComponentsNavbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Button Bar */}
           <div onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white"
           >
@@ -65,7 +62,6 @@ const ComponentsNavbar: React.FC = () => {
           </div>
         </div>
 
-        {/* nav link here */}
         <ul className="md:flex gap-5 hidden font-medium text-sm md:text-md lg:text-lg items-center">
           {Links.map((link) => (
             <li key={link.name} className="text-white hover:bg-[#FFFAFA] hover:text-black px-3 py-2 rounded-md font-medium"
@@ -167,11 +163,11 @@ const ComponentsNavbar: React.FC = () => {
 
         </ul>
         <ul className="mt-1.5 text-center ">
-            <Link href="/register/form">
+          <Link href="/register/form">
             <button className="w-full bg-amber-400 hover:bg-white px-4 py-1.5 rounded-md  ">
               <p className="text-black hover:text-[#1F306A]">สมัครเรียน</p>
-              </button>
-            </Link>
+            </button>
+          </Link>
         </ul>
       </div>
 
