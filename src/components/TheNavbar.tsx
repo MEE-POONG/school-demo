@@ -28,7 +28,7 @@ const TheNavbar: React.FC = () => {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mb-4 mt-2 flex flex-col lg:mb-0 lg:mt-0 lg:flex-row lg:items-center ">
       {navbarArray.map((item) => {
         if (item.children) {
           return (
@@ -37,9 +37,9 @@ const TheNavbar: React.FC = () => {
               as="li"
               variant="small"
               color="blue-gray"
-              className="p-1 font-normal relative group text-md"
+              className="font-normal relative group text-md"
             >
-              <a href={item.link} className="flex items-center">
+              <a href={item.link} className="flex text-white items-center text-md px-3 py-2">
                 {item.name}
               </a>
               <ul className="absolute left-0 mt-2 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -49,7 +49,7 @@ const TheNavbar: React.FC = () => {
                     as="li"
                     variant="small"
                     color="blue-gray"
-                    className="p-1 font-normal"
+                    className="font-normal"
                   >
                     <a href={child.link} className="flex items-center text-md">
                       {child.name}
@@ -66,9 +66,9 @@ const TheNavbar: React.FC = () => {
               as="li"
               variant="small"
               color="blue-gray"
-              className="p-1 font-normal"
+              className="font-normal"
             >
-              <a href={item.link} className="flex items-center text-md">
+              <a href={item.link} className="flex text-white items-center text-md px-3 py-2">
                 {item.name}
               </a>
             </Typography>
@@ -98,7 +98,7 @@ const TheNavbar: React.FC = () => {
           </div>
         </Typography>
         <div className="flex items-center gap-4">
-          <div className="mr-4 hidden lg:block">
+          <div className="hidden lg:block">
             {navList}
           </div>
           <Button
