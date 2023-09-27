@@ -55,7 +55,7 @@ const Thesliderbar = () => {
             <div className="md:w-full h-2 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
             <div id="default-carousel" className="relative bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900 " data-carousel="static">
                 <div className="slider-container">
-                    <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
+                    {/* <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
                         {sliderSchoolData?.map((sliderSchool) => (
                             <div key={sliderSchool.id}>
                                 <img
@@ -65,7 +65,7 @@ const Thesliderbar = () => {
                                 />
                             </div>
                         ))}
-                    </Slider>
+                    </Slider> */}
                     <div
                         className='absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2'
                         style={{ transform: 'translateX(-50%)' }}

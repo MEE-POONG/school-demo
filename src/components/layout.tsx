@@ -1,7 +1,7 @@
 import { Mitr } from "next/font/google";
 import React from "react";
 import Footer from "./footer";
-import ComponentsNavbar from "./navbar";
+import TheNavbar from "./TheNavbar";
 import Link from "next/link";
 import Head from "next/head";
 import VisiterCounter from "@/components/visiterCounter";
@@ -29,9 +29,7 @@ export default function RootLayout({
         <link rel="icon" href="/panomwan.ico" />
       </Head>
       <VisiterCounter />
-      <header className="top-0 z-50 sticky">
-        <ComponentsNavbar />
-      </header>
+      <TheNavbar />
       <div className="fixed bottom-[150px]  left-0 right-5 z-40 px-4 py-2 ">
         <Link href="https://www.facebook.com/PhanomwanCollege/">
           <p className="text-gray-400 underline">

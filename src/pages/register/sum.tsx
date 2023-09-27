@@ -1,6 +1,6 @@
 
 import { Inter } from 'next/font/google'
-import Navbar from '@/components/navbar'
+import Navbar from '@/components/TheNavbar'
 import RootLayout from '@/components/layout'
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";

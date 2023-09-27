@@ -1,7 +1,7 @@
-import '@/scss/globals.css'
 import type { AppProps } from 'next/app'
 import Loading from '@/components/loading';
 import React, { useState } from 'react';
+import '@/scss/globals.css'
 
 
 
