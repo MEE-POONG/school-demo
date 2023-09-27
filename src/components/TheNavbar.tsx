@@ -6,6 +6,7 @@ import {
   Button,
   IconButton,
   Card,
+  Collapse
 } from "@material-tailwind/react";
 import Image from "next/image";
 import { navbarArray } from "../../data/navbar";
@@ -147,12 +148,12 @@ const TheNavbar: React.FC = () => {
           </IconButton>
         </div>
       </div>
-      <MobileNav open={openNav}>
+      <Collapse open={openNav} className="text-center">
         {navList}
         <Button variant="gradient" size="sm" fullWidth className="mb-2 text-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-blue-700 text-md">
           <span>สมัครเรียน</span>
         </Button>
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 };
