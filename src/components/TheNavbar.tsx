@@ -63,7 +63,7 @@ const TheNavbar: React.FC = () => {
                     color="blue-gray"
                     className="font-normal"
                   >
-                    <a href={child.link} className="flex items-center text-md">
+                    <a href={child.link} className="flex items-center text-md xl:text-lg">
                       {child.name}
                     </a>
                   </Typography>
@@ -80,7 +80,7 @@ const TheNavbar: React.FC = () => {
               color="blue-gray"
               className="font-normal"
             >
-              <a href={item.link} className="flex text-white items-center text-md px-3 py-2">
+              <a href={item.link} className="flex text-white items-center text-md xl:text-lg px-3 py-2">
                 {item.name}
               </a>
             </Typography>
@@ -104,7 +104,7 @@ const TheNavbar: React.FC = () => {
             height={100}
             className="w-[65px] md:w-[80px]" alt="" />
           <div className="text-white ml-4">
-            <p className="text-sm md:text-md ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
+            <p className="text-sm md:text-md xl:text-lg">วิทยาลัยเทคโนโลยีพนมวันท์</p>
             <div className=" bg-white h-[2px] sm/w-[300px]" />
             <p className="text-[10px] mt-0.5 md:text-sm" >Phanomwan College of Technology</p>
           </div>
@@ -161,7 +161,7 @@ const TheNavbar: React.FC = () => {
       </div>
       <Collapse open={openNav} className="text-center">
         {navList}
-        <Button variant="gradient" size="sm" fullWidth className="mb-2 text-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-blue-700 text-md">
+        <Button variant="gradient" size="sm" fullWidth className="mb-2 text-md bg-gradient-to-r from-blue-500 to-green-400 hover:from-green-400 hover:to-yellow-400 text-md">
           <span>สมัครเรียน</span>
         </Button>
       </Collapse>
