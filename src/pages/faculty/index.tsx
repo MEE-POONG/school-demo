@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/TheNavbar'
-import RootLayout from '@/components/layout'
+import TheLayout from '@/components/TheLayout'
 import Link from 'next/link';
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
@@ -41,7 +41,7 @@ export default function Faculty() {
 
 
   return (
-    <RootLayout>
+    <TheLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
       {/* banner คณะและหลักสูตร */}
       <div className="relative w-full  h-[150px] md:h-[300px] lg:h-[450px]">
@@ -144,6 +144,6 @@ export default function Faculty() {
       </div>
 
 
-    </RootLayout>
+    </TheLayout>
   )
 }

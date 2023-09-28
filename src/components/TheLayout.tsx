@@ -13,7 +13,7 @@ const mainFont = Mitr({
   subsets: ['latin'],
 });
 
-export default function RootLayout({
+export default function TheLayout({
   children,
 }: {
   children: React.ReactNode;

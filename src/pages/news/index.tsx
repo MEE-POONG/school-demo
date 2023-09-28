@@ -1,6 +1,6 @@
 import Activityloader from "@/components/Activityloader";
 import Newloader from "@/components/Newloader";
-import RootLayout from "@/components/layout";
+import TheLayout from "@/components/TheLayout";
 import { Inter } from "next/font/google";
 import Link from 'next/link';
 
@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Welfare() {
   return (
-    <RootLayout>
+    <TheLayout>
       {/* banner คณะและหลักสูตร */}
       <div className="relative">
         <img src="/img/news/bg-news.png" alt="" className=" w-full filter brightness-50" />
@@ -56,6 +56,6 @@ export default function Welfare() {
 
 
 
-      </RootLayout>
+      </TheLayout>
   );
 }

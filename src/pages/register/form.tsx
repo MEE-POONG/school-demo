@@ -1,7 +1,7 @@
 
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/TheNavbar'
-import RootLayout from '@/components/layout'
+import TheLayout from '@/components/TheLayout'
 
 
 import React, { useRef, useState, useEffect } from "react";
@@ -207,7 +207,7 @@ export default function Home() {
 
 
   return (
-    <RootLayout>
+    <TheLayout>
 
       <div className='container mx-auto md:py-24 py-12'>
 
@@ -504,6 +504,6 @@ export default function Home() {
       )}
 
 
-    </RootLayout>
+    </TheLayout>
   )
 }

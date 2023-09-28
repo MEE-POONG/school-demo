@@ -1,7 +1,7 @@
 
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/TheNavbar'
-import RootLayout from '@/components/layout'
+import TheLayout from '@/components/TheLayout'
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -77,7 +77,7 @@ export default function Sum() {
 
 
   return (
-    <RootLayout>
+    <TheLayout>
 
       <div className='container mx-auto md:py-24 py-12'>
 
@@ -324,6 +324,6 @@ export default function Sum() {
       </div>
 
 
-    </RootLayout>
+    </TheLayout>
   )
 }

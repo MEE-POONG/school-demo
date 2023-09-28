@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import RootLayout from '@/components/layout'
+import TheLayout from '@/components/TheLayout'
 import { BsBuildingFill } from "react-icons/bs";
 import { IoNewspaperSharp } from "react-icons/io5";
 import { PiHandCoinsBold } from "react-icons/pi";
@@ -45,7 +45,7 @@ export default function Welfare() {
         };
     }, []);
     return (
-        <RootLayout>
+        <TheLayout>
             {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
             <div className="relative">
                 <img src="/img/advisor/contactban.png" alt="" />
@@ -354,7 +354,7 @@ export default function Welfare() {
 
 
 
-        </RootLayout>
+        </TheLayout>
 
     )
 }

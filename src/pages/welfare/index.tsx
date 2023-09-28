@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import RootLayout from '@/components/layout'
+import TheLayout from '@/components/TheLayout'
 import { BsBuildingFill } from "react-icons/bs";
 import { IoNewspaperSharp } from "react-icons/io5";
 import { PiHandCoinsBold } from "react-icons/pi";
@@ -46,7 +46,7 @@ export default function Welfare() {
   }, []);
 
   return (
-    <RootLayout>
+    <TheLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
       {/* banner คณะและหลักสูตร */}
       <div className="relative w-full h-[150px] md:h-[300px] lg:h-[500px]">
@@ -148,7 +148,7 @@ export default function Welfare() {
 
       </div>
 
-    </RootLayout>
+    </TheLayout>
 
   )
 }

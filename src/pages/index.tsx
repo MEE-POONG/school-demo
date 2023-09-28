@@ -1,4 +1,4 @@
-import RootLayout from "@/components/layout";
+import TheLayout from "@/components/TheLayout";
 import Thesliderbar from '@/container/Home/TheSlider';
 import Activity from "@/container/Home/activity";
 import Menu from "@/container/Home/menu";
@@ -9,7 +9,7 @@ import Statistics from "@/container/Home/statistics";
 export default function Index() {
   return (
     <>
-      <RootLayout>
+      <TheLayout>
         <Thesliderbar />
         {/* <Menu /> */}
         {/* <div className="container mx-auto  md:py-10 py-2 text-center mt-5">
@@ -27,7 +27,7 @@ export default function Index() {
         {/* <div className="min-h-screen">
 
         </div> */}
-      </RootLayout>
+      </TheLayout>
     </>
   )
 }

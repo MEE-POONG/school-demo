@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import RootLayout from '@/components/layout';
+import TheLayout from '@/components/TheLayout';
 import Link from 'next/link';
 import Loading from '@/components/loading';
 
@@ -32,7 +32,7 @@ const NewsArticle: React.FC = () => {
   }, [id]);
 
   return (
-    <RootLayout>
+    <TheLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
 
       <div className="relative p-7 md:p-3">
@@ -48,7 +48,7 @@ const NewsArticle: React.FC = () => {
           </p>
         </div>
       </div>
-    </RootLayout>
+    </TheLayout>
   );
 };
 
