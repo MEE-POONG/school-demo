@@ -10,9 +10,7 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
-      fontFamily: {
-        fontTH: "'Prompt', sans-serif"
-      }
+      
     },
   },
   plugins: [],

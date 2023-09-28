@@ -1,4 +1,3 @@
-import { Mitr } from "next/font/google";
 import React from "react";
 import Footer from "./footer";
 import TheNavbar from "./TheNavbar";
@@ -7,11 +6,6 @@ import Head from "next/head";
 import VisiterCounter from "@/components/visiterCounter";
 import BackToTopButton from "./BackTotop";
 
-
-const mainFont = Mitr({
-  weight: "400",
-  subsets: ['latin'],
-});
 
 export default function RootLayout({
   children,
@@ -40,7 +34,7 @@ export default function RootLayout({
           </p>
         </Link>
       </div>
-      <main className={mainFont.className}>
+      <main>
         {children}
         <BackToTopButton />
       </main>

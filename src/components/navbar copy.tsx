@@ -34,7 +34,7 @@ const ComponentsNavbar: React.FC = () => {
 
 
   return (
-    <nav className="bg-[#1F306A] sm/h-[130px] font-fontTH ">
+    <nav className="bg-[#1F306A] sm/h-[130px]  ">
       <div className="flex justify-around gap-5 mx-auto px-2 sm:px-6 lg:px-8 py-3 flex-wrap  h-[100%] drop-shadow-lg" >
         <div className="grid grid-flow-col items-center gap-5" >
           <div >

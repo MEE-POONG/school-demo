@@ -11,7 +11,7 @@ export default function DropdownRegister() {
   return (
     <Menu as="div" className="relative inline-block  ">
       <div>
-        <Menu.Button className="inline-flex w-full gap-x-1.5 rounded-md px-3 py-2 text-20 font-medium text-white text-sm font-fontTH  shadow-sm">
+        <Menu.Button className="inline-flex w-full gap-x-1.5 rounded-md px-3 py-2 text-20 font-medium text-white text-sm   shadow-sm">
           สนใจสมัครเรียน
           <ChevronDownIcon
             className="-mr-1 h-5 w-5 text-gray-400"
