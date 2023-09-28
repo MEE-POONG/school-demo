@@ -29,7 +29,7 @@ const TheNavbar: React.FC = () => {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col lg:mb-0 lg:mt-0 lg:flex-row lg:items-center ">
+    <ul className="mb-4 mt-2 flex flex-col lg:mb-0 lg:mt-0 lg:flex-row items-center ">
       {navbarArray.map((item) => {
         if (item.children) {
           return (
@@ -80,7 +80,7 @@ const TheNavbar: React.FC = () => {
   );
 
   return (
-    <Navbar className="fixed top-0 z-10 h-max max-w-full border-0 bg-blue-700 rounded-none py-1 px-2 lg:px-4 lg:py-1">
+    <Navbar className="fixed top-0 z-10 h-max max-w-full border-0 bg-blue-700 rounded-none px-4 py-2 lg:px-8 lg:py-2">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
@@ -105,13 +105,13 @@ const TheNavbar: React.FC = () => {
           <Button
             variant="gradient"
             size="sm"
-            className="hidden lg:inline-block bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-blue-700 text-md"
+            className="hidden lg:inline-block bg-gradient-to-r from-blue-500 to-green-400 hover:from-green-400 hover:to-yellow-400 text-md"
           >
             <span>สมัครเรียน</span>
           </Button>
           <IconButton
             variant="text"
-            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden text-white"
             ripple={false}
             onClick={() => setOpenNav(!openNav)}
           >
