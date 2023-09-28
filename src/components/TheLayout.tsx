@@ -7,16 +7,7 @@ import VisiterCounter from "@/components/visiterCounter";
 import BackToTopButton from "./BackTotop";
 
 
-<<<<<<< HEAD:src/components/layout.tsx
-export default function RootLayout({
-=======
-const mainFont = Mitr({
-  weight: "400",
-  subsets: ['latin'],
-});
-
 export default function TheLayout({
->>>>>>> d9625f28de3dd884ffc4347e85075a8f346f6f1b:src/components/TheLayout.tsx
   children,
 }: {
   children: React.ReactNode;
