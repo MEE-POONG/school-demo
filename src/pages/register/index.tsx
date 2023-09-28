@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/TheNavbar'
-import RootLayout from '@/components/layout'
+import TheLayout from '@/components/TheLayout'
 import Link from 'next/link';
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
@@ -37,7 +37,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <RootLayout>
+    <TheLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
       <div className='relative'>
         <img className='contrast-50' src="/img/register/17.3.jpg" alt="" />
@@ -89,6 +89,6 @@ export default function Home() {
       <img className='' src="/img/register/b2.png" alt="" />
 
      
-    </RootLayout>
+    </TheLayout>
   )
 }

@@ -2,9 +2,13 @@ import Link from "next/link";
 import React from "react";
 
 
-const Footer = () => {
+const TheFooter = () => {
   return (
+<<<<<<< HEAD:src/components/footer.tsx
     <footer className=" bg-[#2067ad] w-full ">
+=======
+    <footer className=" bg-blue-700 w-full font-fontTH">
+>>>>>>> d9625f28de3dd884ffc4347e85075a8f346f6f1b:src/components/TheFooter.tsx
       <div className="container mx-auto p-7 lg:flex lg:justify-between items-center ">
         <div>
           <Link href="./" className="flex">
@@ -79,4 +83,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default TheFooter;

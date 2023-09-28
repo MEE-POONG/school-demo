@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./footer";
+import TheFooter from "./TheFooter";
 import TheNavbar from "./TheNavbar";
 import Link from "next/link";
 import Head from "next/head";
@@ -7,7 +7,16 @@ import VisiterCounter from "@/components/visiterCounter";
 import BackToTopButton from "./BackTotop";
 
 
+<<<<<<< HEAD:src/components/layout.tsx
 export default function RootLayout({
+=======
+const mainFont = Mitr({
+  weight: "400",
+  subsets: ['latin'],
+});
+
+export default function TheLayout({
+>>>>>>> d9625f28de3dd884ffc4347e85075a8f346f6f1b:src/components/TheLayout.tsx
   children,
 }: {
   children: React.ReactNode;
@@ -38,7 +47,7 @@ export default function RootLayout({
         {children}
         <BackToTopButton />
       </main>
-      <Footer />
+      <TheFooter />
     </>
   );
 }

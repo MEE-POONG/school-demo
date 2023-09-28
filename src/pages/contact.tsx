@@ -1,7 +1,7 @@
 
 import React from "react"
 import Image from 'next/image';
-import RootLayout from "@/components/layout";
+import TheLayout from "@/components/TheLayout";
 import StickyBox from 'react-sticky-box';
 import Link from 'next/link';
 
@@ -10,7 +10,7 @@ export default function Contact() {
 
     return (
         
-        <RootLayout>
+        <TheLayout>
               <title>PhanomwanCollege</title>
        <meta
           name="description"
@@ -71,7 +71,7 @@ export default function Contact() {
         </div>
        
        
-        </RootLayout>
+        </TheLayout>
 
     )
 }

@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import RootLayout from "@/components/layout";
+import TheLayout from "@/components/TheLayout";
 import Link from "next/link";
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
@@ -38,7 +38,7 @@ export default function About() {
 
 
     return (
-        <RootLayout>
+        <TheLayout>
             {isLoading && <Loading />} 
             <title>about</title>
             {/* banner คณะและหลักสูตร */}
@@ -154,6 +154,6 @@ export default function About() {
             </div>
             {/* แทบ รู้จักพนมวันท์ */}
 
-        </RootLayout>
+        </TheLayout>
     );
 }

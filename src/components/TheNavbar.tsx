@@ -13,6 +13,7 @@ import { navbarArray } from "../../data/navbar";
 
 const TheNavbar: React.FC = () => {
   const [openNav, setOpenNav] = useState<boolean>(false);
+  const [isScrolling, setIsScrolling] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,10 +22,20 @@ const TheNavbar: React.FC = () => {
       }
     };
 
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -52,7 +63,7 @@ const TheNavbar: React.FC = () => {
                     color="blue-gray"
                     className="font-normal"
                   >
-                    <a href={child.link} className="flex items-center text-md">
+                    <a href={child.link} className="flex items-center text-md xl:text-lg">
                       {child.name}
                     </a>
                   </Typography>
@@ -69,7 +80,7 @@ const TheNavbar: React.FC = () => {
               color="blue-gray"
               className="font-normal"
             >
-              <a href={item.link} className="flex text-white items-center text-md px-3 py-2">
+              <a href={item.link} className="flex text-white items-center text-md xl:text-lg px-3 py-2">
                 {item.name}
               </a>
             </Typography>
@@ -80,7 +91,7 @@ const TheNavbar: React.FC = () => {
   );
 
   return (
-    <Navbar className="fixed top-0 z-10 h-max max-w-full border-0 bg-blue-700 rounded-none px-4 py-2 lg:px-8 lg:py-2">
+    <Navbar className={`fixed top-0 z-10 h-max max-w-full border-0 transition-all duration-200 ease-in-out ${!isScrolling ? "bg-blue-700" : "bg-blue-700/50"}  rounded-none px-4 py-2 lg:px-8 lg:py-2`}>
       <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
@@ -93,7 +104,7 @@ const TheNavbar: React.FC = () => {
             height={100}
             className="w-[65px] md:w-[80px]" alt="" />
           <div className="text-white ml-4">
-            <p className="text-sm md:text-md ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
+            <p className="text-sm md:text-md xl:text-lg">วิทยาลัยเทคโนโลยีพนมวันท์</p>
             <div className=" bg-white h-[2px] sm/w-[300px]" />
             <p className="text-[10px] mt-0.5 md:text-sm" >Phanomwan College of Technology</p>
           </div>
@@ -150,7 +161,7 @@ const TheNavbar: React.FC = () => {
       </div>
       <Collapse open={openNav} className="text-center">
         {navList}
-        <Button variant="gradient" size="sm" fullWidth className="mb-2 text-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-blue-700 text-md">
+        <Button variant="gradient" size="sm" fullWidth className="mb-2 text-md bg-gradient-to-r from-blue-500 to-green-400 hover:from-green-400 hover:to-yellow-400 text-md">
           <span>สมัครเรียน</span>
         </Button>
       </Collapse>
