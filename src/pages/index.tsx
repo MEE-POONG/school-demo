@@ -9,7 +9,7 @@ export default function Index() {
   return (
     <>
       <TheLayout>
-        {/* <HeadHome /> */}
+        <HeadHome />
         <SlidNews/>
         {/* <Menu /> */}
         {/* <div className="container mx-auto  md:py-10 py-2 text-center mt-5">

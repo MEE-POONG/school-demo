@@ -57,7 +57,7 @@ const SlidNews: React.FC = () => {
 
   return (
     <div id="default-carousel" className="relative" data-carousel="static">
-    <div className="slider-container">
+    <div className="slider-container mt-40">
   
         <Slider {...sliderSettings} ref={(slider) => setSliderRef(slider)}>
             {newsSchoolData?.map((newsSchool) => (
