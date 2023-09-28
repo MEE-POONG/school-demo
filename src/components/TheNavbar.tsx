@@ -54,16 +54,16 @@ const TheNavbar: React.FC = () => {
               <button className="flex text-white items-center text-md px-3 py-2">
                 {item.name}
               </button>
-              <ul className="absolute left-0 mt-2 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <ul className="absolute w-full left-0 mt-2 bg-white py-1 border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 {item.children.map((child) => (
                   <Typography
                     key={child.name}
                     as="li"
                     variant="small"
                     color="blue-gray"
-                    className="font-normal"
+                    className="font-normal "
                   >
-                    <a href={child.link} className="flex items-center text-md xl:text-lg">
+                    <a href={child.link} className="flex justify-center text-md xl:text-lg hover:bg-blue-500 hover:text-white">
                       {child.name}
                     </a>
                   </Typography>
