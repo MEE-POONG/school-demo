@@ -40,9 +40,9 @@ const TheNavbar: React.FC = () => {
               color="blue-gray"
               className="font-normal relative group text-md"
             >
-              <a href={item.link} className="flex text-white items-center text-md px-3 py-2">
+              <button className="flex text-white items-center text-md px-3 py-2">
                 {item.name}
-              </a>
+              </button>
               <ul className="absolute left-0 mt-2 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 {item.children.map((child) => (
                   <Typography
