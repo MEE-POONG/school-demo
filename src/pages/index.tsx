@@ -1,6 +1,7 @@
 import TheLayout from "@/components/TheLayout";
 import { CarouselSlider } from "@/container/Home/Carousel";
 import HeadHome from '@/container/Home/headder';
+import Menu from "@/container/Home/menu";
 import SlidNews from "@/container/Home/sliderNew";
 import Thesliderbar from "@/container/Home/TheSlider";
 
@@ -10,8 +11,8 @@ export default function Index() {
     <>
       <TheLayout>
         <HeadHome />
-        <SlidNews/>
-        {/* <Menu /> */}
+        {/* <SlidNews/> */}
+        <Menu />
         {/* <div className="container mx-auto  md:py-10 py-2 text-center mt-5">
           <span className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl mx-5 mt-6">
             <span className=" text-blue-800 ">ข่าว</span>
