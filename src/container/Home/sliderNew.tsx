@@ -11,7 +11,7 @@ interface newsSchool {
   // Add more properties here based on your data structure
 }
 
-const IndexPage: React.FC = () => {
+const SlidNews: React.FC = () => {
   const [newsSchoolData, setnewsSchoolData] = useState<newsSchool[]>([]);
   const [sliderRef, setSliderRef] = useState<Slider | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -141,4 +141,4 @@ const IndexPage: React.FC = () => {
   );
 };
 
-export default IndexPage;
+export default SlidNews;

@@ -1,16 +1,16 @@
 import TheLayout from "@/components/TheLayout";
-import Thesliderbar from '@/container/Home/TheSlider';
-import Activity from "@/container/Home/activity";
-import Menu from "@/container/Home/menu";
-import SliderNews from "@/container/Home/sliderNew";
-import Statistics from "@/container/Home/statistics";
+import { CarouselSlider } from "@/container/Home/Carousel";
+import HeadHome from '@/container/Home/headder';
+import SlidNews from "@/container/Home/sliderNew";
+import Thesliderbar from "@/container/Home/TheSlider";
 
 
 export default function Index() {
   return (
     <>
       <TheLayout>
-        <Thesliderbar />
+        {/* <HeadHome /> */}
+        <SlidNews/>
         {/* <Menu /> */}
         {/* <div className="container mx-auto  md:py-10 py-2 text-center mt-5">
           <span className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl mx-5 mt-6">
