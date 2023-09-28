@@ -34,10 +34,8 @@ export default function TheLayout({
           </p>
         </Link>
       </div>
-      <main>
-        {children}
-        <BackToTopButton />
-      </main>
+      {children}
+      <BackToTopButton />
       <TheFooter />
     </>
   );

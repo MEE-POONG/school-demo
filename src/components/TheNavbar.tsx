@@ -91,7 +91,7 @@ const TheNavbar: React.FC = () => {
   );
 
   return (
-    <Navbar className={`fixed top-0 z-10 h-max max-w-full border-0 transition-all duration-200 ease-in-out ${!isScrolling ? "bg-blue-700" : "bg-blue-700/50"}  rounded-none px-4 py-2 lg:px-8 lg:py-2`}>
+    <Navbar className={`fixed top-0 z-10 h-max max-w-full border-0 transition-all duration-200 ease-in-out bg-blue-500/20	${!isScrolling ? "bg-gradient-to-r from-blue-500 to-blue-700" : ""}  rounded-none px-4 py-2 lg:px-8 lg:py-2`}>
       <div className="flex items-center justify-between">
         <Typography
           as="a"
