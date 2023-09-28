@@ -1,6 +1,6 @@
 import { Mitr } from "next/font/google";
 import React from "react";
-import Footer from "./footer";
+import TheFooter from "./TheFooter";
 import TheNavbar from "./TheNavbar";
 import Link from "next/link";
 import Head from "next/head";
@@ -44,7 +44,7 @@ export default function TheLayout({
         {children}
         <BackToTopButton />
       </main>
-      <Footer />
+      <TheFooter />
     </>
   );
 }

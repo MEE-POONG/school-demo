@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 
 
-const Footer = () => {
+const TheFooter = () => {
   return (
-    <footer className=" bg-[#1F306A] w-full font-fontTH">
+    <footer className=" bg-blue-700 w-full font-fontTH">
       <div className="container mx-auto p-7 lg:flex lg:justify-between items-center ">
         <div>
           <Link href="./" className="flex">
@@ -79,4 +79,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default TheFooter;
