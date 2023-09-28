@@ -51,7 +51,7 @@ const TheNavbar: React.FC = () => {
               color="blue-gray"
               className="font-normal relative group text-md"
             >
-              <button className="flex text-white items-center text-md px-3 py-2">
+              <button className="flex text-white xl:text-lg items-center text-md px-3 py-2">
                 {item.name}
               </button>
               <ul className="absolute w-full left-0 mt-2 bg-white py-1 border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
