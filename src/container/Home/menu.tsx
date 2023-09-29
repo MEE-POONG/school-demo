@@ -1,13 +1,14 @@
+import { Card, CardHeader, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 import { FaMoneyBill, FaUserGraduate } from "react-icons/fa";
 import { RiFilePaper2Line, RiGraduationCapLine } from "react-icons/ri";
 
 export default function Menu() {
     return (
-        <div className="relative">
-            <img className="w-full h-[100px] sm:h-[200px] md:h-[300px] lg:h-[200px] xl:h-[200px] bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900" src="/img/event/111.png" alt="Event" />
+        <div className="py-8 sm:py-4 flex justify-between">
+            {/* <img className="w-full h-[100px] sm:h-[200px] md:h-[300px] lg:h-[200px] xl:h-[200px] bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900" src="/img/event/111.png" alt="Event" /> */}
 
-            <div className="absolute inset-0 mb-8 flex flex-wrap place-content-evenly h-[100%] items-center">
+            {/* <div className="absolute inset-0 mb-8 flex flex-wrap place-content-evenly h-[100%] items-center">
                 <Link href="/register/form" className="contactIcon text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                     <RiFilePaper2Line className="mx-auto h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
                     สมัครเรียน
@@ -24,7 +25,47 @@ export default function Menu() {
                     <FaUserGraduate className="mx-auto  h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
                     คณะที่เปิดสอน
                 </Link>
-            </div>
+            </div> */}
+            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] p-4">
+                <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
+                    <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
+                        สมัครเรียน
+                    </Typography>
+                    <Typography variant="h1" color="white" className="mt-6 flex justify-center gap-1 text-7xl font-normal">
+                        <RiFilePaper2Line className="mx-auto h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                    </Typography>
+                </CardHeader>
+            </Card>
+            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] p-4">
+                <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
+                    <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
+                        สวัสดิการ
+                    </Typography>
+                    <Typography variant="h1" color="white" className="mt-6 flex justify-center gap-1 text-7xl font-normal">
+                        <FaMoneyBill className="mx-auto  h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                    </Typography>
+                </CardHeader>
+            </Card>
+            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] p-4">
+                <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
+                    <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
+                        ปรึกษาเพิ่มเติม
+                    </Typography>
+                    <Typography variant="h1" color="white" className="mt-6 flex justify-center gap-1 text-7xl font-normal">
+                        <RiGraduationCapLine className="mx-auto  h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                    </Typography>
+                </CardHeader>
+            </Card>
+            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] p-4">
+                <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
+                    <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
+                        คณะที่เปิดสอน
+                    </Typography>
+                    <Typography variant="h1" color="white" className="mt-6 flex justify-center gap-1 text-7xl font-normal">
+                        <FaUserGraduate className="mx-auto  h-[70px] w-10 sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                    </Typography>
+                </CardHeader>
+            </Card>
         </div>
     );
 };
