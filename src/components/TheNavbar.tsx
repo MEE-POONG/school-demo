@@ -11,6 +11,14 @@ import {
 import Image from "next/image";
 import { navbarArray } from "../../data/navbar";
 
+import { Noto_Sans_Thai } from "next/font/google";
+
+
+const mainFont = Noto_Sans_Thai({
+  weight: "400",
+  subsets: ['latin'],
+});
+
 const TheNavbar: React.FC = () => {
   const [openNav, setOpenNav] = useState<boolean>(false);
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
