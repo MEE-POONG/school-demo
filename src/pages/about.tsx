@@ -45,7 +45,7 @@ export default function About() {
             <div className="container mx-auto mt-20 md:py-24 md:mt-24">
                 <img className="w-full md:rounded-t-xl" src="/img/school/panomtext.png" alt="" />
                 <div className="shadow-xl px-5 py-3">
-                    <h2 className='text-[#fbbf24] text-center py-5 text-lg md:text-2xl lg:text-4xl drop-shadow-xl font-semibold'>
+                    <h2 className='text-black text-center py-5 text-lg md:text-2xl lg:text-4xl drop-shadow-xl font-semibold'>
                         รู้จัก”พนมวันท์”
                     </h2>
 

@@ -5,13 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import VisiterCounter from "@/components/visiterCounter";
 import BackToTopButton from "./BackTotop";
-import { Noto_Sans_Thai } from "next/font/google";
 
-
-const mainFont = Noto_Sans_Thai({
-  weight: "400",
-  subsets: ['latin'],
-});
 
 
 export default function TheLayout({
