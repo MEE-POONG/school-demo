@@ -5,7 +5,7 @@ import { RiFilePaper2Line, RiGraduationCapLine } from "react-icons/ri";
 
 export default function Menu() {
     return (
-        <div className="py-8 sm:py-4 flex justify-between">
+        <div className="py-8 my-8 sm:py-4 flex justify-between">
             {/* <img className="w-full h-[100px] sm:h-[200px] md:h-[300px] lg:h-[200px] xl:h-[200px] bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900" src="/img/event/111.png" alt="Event" /> */}
 
             {/* <div className="absolute inset-0 mb-8 flex flex-wrap place-content-evenly h-[100%] items-center">
@@ -26,7 +26,7 @@ export default function Menu() {
                     คณะที่เปิดสอน
                 </Link>
             </div> */}
-            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] p-4">
+            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] md:max-w-[10rem] sm:max-w-[8rem] p-4 m-auto">
                 <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                     <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                         สมัครเรียน
@@ -36,7 +36,7 @@ export default function Menu() {
                     </Typography>
                 </CardHeader>
             </Card>
-            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] p-4">
+            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] md:max-w-[10rem] sm:max-w-[8rem] p-4 m-auto">
                 <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                     <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                         สวัสดิการ
@@ -46,7 +46,7 @@ export default function Menu() {
                     </Typography>
                 </CardHeader>
             </Card>
-            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] p-4">
+            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] md:max-w-[10rem] sm:max-w-[8rem] p-4 m-auto">
                 <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                     <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                         ปรึกษาเพิ่มเติม
@@ -56,7 +56,7 @@ export default function Menu() {
                     </Typography>
                 </CardHeader>
             </Card>
-            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] p-4">
+            <Card color="blue" variant="gradient" className="w-full max-w-[12rem] md:max-w-[10rem] sm:max-w-[8rem] p-4 m-auto">
                 <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                     <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                         คณะที่เปิดสอน
