@@ -57,7 +57,7 @@ const HeadHome = () => {
     return (
         <div className="relative flex h-screen content-center items-center justify-center pt-24">
             <div className="absolute top-0 h-full w-full bg-[url('/img/school/panomtext.png')] bg-cover bg-center" />
-            <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
+            <div className="absolute top-0 h-full w-full bg-blue-800/70 bg-cover bg-center " />
             <div className="max-w-8xl container relative mx-auto h-full">
                 <div className="py-6 px-4 sm:p-6 md:py-10 md:px-8 w-full h-full flex items-center justify-center">
                     <div className=" mx-auto grid grid-cols-1 lg:gap-x-20 lg:grid-cols-2">
@@ -67,16 +67,16 @@ const HeadHome = () => {
                         </div>
                         <div className="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
                             <img src={`/img/school/panomtext.png`} alt="" className="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy" />
-                            <img src={`/img/school/panomtext.png`} alt="" className="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy" />
-                            <img src={`/img/school/panomtext.png`} alt="" className="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-32" loading="lazy" />
+                            <img src={`/img/school/panomtext.png`} alt="" className="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-64" loading="lazy" />
+                            <img src={`/img/school/panomtext.png`} alt="" className="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-64" loading="lazy" />
                         </div>
                         <dl className="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2">
                             <dt className="sr-only">Reviews</dt>
-                            <dd className="text-blue-700 flex items-center dark:text-blue-700">
-                                <svg width="24" height="24" fill="none" aria-hidden="true" className="mr-1 stroke-current dark:stroke-blue-500">
+                            <dd className="text-yellow-700 flex items-center dark:text-blue-700 font-bold">
+                                <svg width="24" height="24" fill="none" aria-hidden="true" className="mr-1 stroke-current dark:stroke-yellow-500">
                                     <path d="m12 5 2 5h5l-4 4 2.103 5L12 16l-5.103 3L9 14l-4-4h5l2-5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <span >4.89 <span className="text-slate-400 font-normal">(128)</span></span>
+                                <span >4.89 <span className="text-slate-400 font-bold">(128)</span></span>
                             </dd>
                             <dt className="sr-only">Location</dt>
                             <dd className="flex items-center text-white">

@@ -6,8 +6,8 @@ import { RiFilePaper2Line, RiGraduationCapLine } from "react-icons/ri";
 export default function Menu() {
     return (
         <div className="my-8 flex justify-around flex-wrap">
-            <Link href="/register/form" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-content-center">
-                <Card color="blue" variant="gradient" className="w-full  p-4">
+            <Link href="/register/form" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center">
+                <Card color="blue" variant="gradient" className="w-full sm:max-w-[10rem] p-4">
                     <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                         <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                             สมัครเรียน
@@ -18,8 +18,8 @@ export default function Menu() {
                     </CardHeader>
                 </Card>
             </Link>
-            <Link href="/welfare" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-content-center">
-                <Card color="blue" variant="gradient" className="w-full  p-4">
+            <Link href="/welfare" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center">
+                <Card color="blue" variant="gradient" className="w-full sm:max-w-[10rem] p-4">
                     <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                         <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                             สวัสดิการ
@@ -30,8 +30,8 @@ export default function Menu() {
                     </CardHeader>
                 </Card>
             </Link>
-            <Link href="/advisor" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-content-center">
-                <Card color="blue" variant="gradient" className="w-full  p-4">
+            <Link href="/advisor" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center">
+                <Card color="blue" variant="gradient" className="w-full sm:max-w-[10rem] p-4">
                     <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                         <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                             ปรึกษาเพิ่มเติม
@@ -42,8 +42,8 @@ export default function Menu() {
                     </CardHeader>
                 </Card>
             </Link>
-            <Link href="/faculty" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-content-center">
-                <Card color="blue" variant="gradient" className="w-full  p-4">
+            <Link href="/faculty" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center">
+                <Card color="blue" variant="gradient" className="w-full sm:max-w-[10rem] p-4">
                     <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                         <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                             คณะที่เปิดสอน
