@@ -56,7 +56,7 @@ export default function Welfare() {
                 </div>
             </div>
             {/* ทีมที่ปรึกษา กับ ขีด */}
-            <div className=' px-2 md:px-14 py-5'>
+            <div className=' px-2 md:px-14 py-10'>
                 <p className='text-2xl  md:text-5xl text-[#1F306A]'>
                     ทีมที่ปรึกษา
                 </p>
