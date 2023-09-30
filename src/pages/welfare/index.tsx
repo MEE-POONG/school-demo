@@ -56,7 +56,7 @@ export default function Welfare() {
           <div className="flex flex-wrap items-center">
             <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
               <p
-                className="mb-6 font-medium text-5xl text-white"
+                className="mb-6 font-medium text-xl md:text-4xl text-white"
               >
                 สวัสดิการนักศึกษา
               </p>
@@ -65,14 +65,13 @@ export default function Welfare() {
         </div>
       </div>
 
-      <div className='m-5 lg:my-10 text-center sm:flex justify-center gap-4 text-[15px] md:text-xl lg:text-2xl font-bold'>
+      <div className='mt-10 lg:mt-24 text-center sm:flex justify-center gap-4 text-[15px] md:text-xl lg:text-2xl font-bold'>
         <p >สิ่งที่นักศึกษาจะได้จากการเรียนที่</p>
         <p >วิทยาลัยเทคโนโลยีพนมวันท์</p>
       </div>
 
-
-      <div className='container mx-auto p-5 md:p-10 '>
-        <div className='grid lg:grid-cols-3 justify-center gap-5'>
+      <div className='container mx-auto p-5 md:p-20 '>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-5'>
           <div className='p-5 shadow-xl rounded-md text-center'>
             <img className='mx-auto' src="/icons/office.png" alt="" />
             <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>หอพักฟรี</p>

@@ -39,40 +39,45 @@ export default function Home() {
   return (
     <TheLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
-      <div className='relative w-full h-full'>
-        <div className="absolute bg-[url('/img/register/17.3.jpg')]" />
-        <div className='absolute inset-x-0 top-[35%]  md:h-40 text-center'>
-          {/* <h1 className=' text-xl md:text-6xl text-yellow-400 drop-shadow-md'>สมัครเข้าศึกษา</h1>
-            <h2 className=' text-xl text-white md:text-6xl'>วิทยาลัยเทคโนโลยีพนมวันท์</h2> */}
-          <h1 className='text-3xl md:text-4xl lg:text-6xl text-yellow-400 drop-shadow-md'>สมัครเข้าศึกษ</h1>
-          <h2 className='text-3xl md:text-4xl lg:text-6xl text-white'>วิทยาลัยเทคโนโลยีพนมวันท์</h2>
+      <div className='relative flex h-96 md:h-[600px] content-center items-center justify-center pt-24'>
+        <div className="absolute top-0 h-full w-full bg-[url('/img/register/17.3.jpg')] bg-cover bg-center" />
+        <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
+        <div className="max-w-8xl container relative mx-auto">
+          <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
+            <p className="font-medium text-xl md:text-4xl text-amber-600"
+            >
+              สมัครเข้าศึกษา
+            </p>
+            <p className='font-medium text-xl md:text-4xl text-white'>
+              วิทยาลัยเทคโนโลยีพนมวันท์
+            </p>
+          </div>
         </div>
       </div>
 
+      {/* Descript. */}
+      <div className=" container mx-auto my-3 lg:my-24 p-2 bg-white">
+        <h4 className='text-xl md:text-4xl text-white mb-10 bg-blue-400 py-2 text-center'>สิ่งที่ควรรู้ก่อนสมัครเรียน</h4>
 
-
-
-      {/* <div className=' bg-zinc-800 h-[350px]'> */}
-      <div className='bg-zinc-800 sm:h-[1000px] md:h-[350px] lg:h-[400px] xl:h-[350px]'>
-        <div className='container mx-auto md:py-10 py-7'>
-          <div className=' text-yellow-600 text-2xl md:text-4xl drop-shadow-md mx-5 font-semibold mb-2'>สิ่งที่ควรรู้ก่อนสมัครเรียน </div>
-          <div className="grid grid-row-2 md:grid-flow-col gap-4 rounded-md bg-yellow-500 p-4 mx-5 ">
-            
-            
-            
-            <div className='md:border-r-2 border-black p-2'>
-              <h2 className=' text-xl md:text-xl lg:text-2xl xl:text-3xl text-blue-950 font-semibold'>คุณสมบัติของผู้เรียน</h2>
-              <span className=' text-sm md:text-md lg:text-xl'>
+        <div className='md:flex justify-center gap-24 mb-10 '>
+          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-2.5'>
+            <img src="/icons/features.png" alt="" />
+            <div >
+              <p className='font-semibold text-lg md:text-2xl'>คุณสมบัติของผู้เรียน</p>
+              <span className=' text-xs lg:text-base '>
                 <h3 >เป็นผู้สำเร็จการศึกษาดังต่อไปนี้</h3>
                 <li>มัธยมศึกษาตอนปลาย(ม.6) หรือ เทียบเท่า</li>
                 <li>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</li>
                 <li>ประกาศนียบัตรวิชาชีพ (ปวช.)</li>
               </span>
             </div>
+          </div>
 
+          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-2.5 mt-10 md:mt-0' >
+            <img src="/icons/job.png" alt="" />
             <div>
-              <h2 className='text-xl md:text-xl lg:text-2xl xl:text-3xl text-blue-950 font-semibold'>หลักฐานในการใช้สมัครเรียน</h2>
-              <span className='text-sm md:text-md lg:text-xl'>
+              <p className='font-semibold textlg  md:text-2xl'>หลักฐานในการใช้สมัครเรียน</p>
+              <span className='text-xs lg:text-base'>
                 <li>รูปถ่ายหน้าตรงไม่สวมหมวกไม่สวมแว่นตาดำขนาด 1 นิ้วจำนวน 1 รูป</li>
                 <li>สำเนาผลการเรียน ม.ปลาย หรือเทียบเท่า จำนวน 1 ชุด</li>
                 <li>สำเนาทะเบียนบ้าน จำนวน 1 ชุด ( กรณียังไม่มีใบ รบ. ให้ใช้ใบรับรองผลการเรียนแทน )</li>
@@ -80,15 +85,13 @@ export default function Home() {
               </span>
             </div>
           </div>
-
         </div>
+        <img className='shadow-xl'  src="/img/register/b1.png" alt="" />
+        <img className='shadow-xl' src="/img/register/b2.png" alt="" />
       </div>
 
 
-      <img className='' src="/img/register/b1.png" alt="" />
-      <img className='' src="/img/register/b2.png" alt="" />
 
-     
-    </TheLayout>
+    </TheLayout >
   )
 }
