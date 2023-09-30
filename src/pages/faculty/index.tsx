@@ -52,7 +52,7 @@ export default function Faculty() {
             <div className="flex flex-wrap items-center">
               <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
                 <p
-                  className="mb-6 font-medium text-3xl text-amber-600"
+                  className="mb-6 font-medium text-xl md:text-4xl text-amber-600"
                 >
                   คณะและหลักสูตร
                 </p>

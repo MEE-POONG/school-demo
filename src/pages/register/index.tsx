@@ -44,11 +44,11 @@ export default function Home() {
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
           <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
-            <p className="font-medium text-lg md:text-5xl text-amber-600"
+            <p className="font-medium text-xl md:text-4xl text-amber-600"
             >
               สมัครเข้าศึกษา
             </p>
-            <p className='font-medium text-lg md:text-5xl text-white'>
+            <p className='font-medium text-xl md:text-4xl text-white'>
               วิทยาลัยเทคโนโลยีพนมวันท์
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function Home() {
       </div>
 
       {/* Descript. */}
-      <div className=" container mx-auto my-3 lg:my-24 p-2">
+      <div className=" container mx-auto my-3 lg:my-24 p-2 bg-white">
         <h4 className='text-xl md:text-4xl text-white mb-10 bg-blue-400 py-2 text-center'>สิ่งที่ควรรู้ก่อนสมัครเรียน</h4>
 
         <div className='md:flex justify-center gap-24 mb-10 '>
