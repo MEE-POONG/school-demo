@@ -1,91 +1,160 @@
-import Link from "next/link";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import React, { useState, useEffect } from 'react';
-import Loading from "@/components/loading";
+import TitleText from "@/components/TitleText";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+import { useState } from "react";
 
-interface IndexNews {
-  id: number;
-  activityImg: string;
-  activityTitle: string;
-  activitySubDetail: string;
-  // Add other properties if there are more
-}
+export const Activity: React.FC = () => {
+  const [selectType, setSelectType] = useState("");
+  const data = [
+    {
+      label: "ทั้งหมด",
+      value: "ss",
+    },
+    {
+      label: "ประชาสัมพันธ์",
+      value: "Relations",
+    },
 
+    {
+      label: "กิจกรรม",
+      value: "Activity",
+    },
 
-export default function Activity() {
-  const initialVisibleItems = 3;
-  const [visibleItems, setVisibleItems] = useState(initialVisibleItems);
-  const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
-  const [isLoading, setIsLoading] = useState(true);
-  const handleLoadMore = () => {
-    setVisibleItems(visibleItems + 3);
-  };
-
-  useEffect(() => {
-    fetch('/api/activitySchool')
-      .then((response) => response.json())
-      .then((data) => {
-        setIndexNewsData(data.activitySchool);
-        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
-      });
-  }, []);
-
+  ];
 
   return (
-    <div>
-      {isLoading && <Loading />}
-      <div className="bg-[#1F306A]/80 w-full h-[900px] sm:h-[1150px] md:h-[900px] lg:h-[550px] xl:h-[550px]">
-        <div className="md:w-full h-2 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
-        <h1 className=" text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl mx-5 mt-6 md:ml-0 py-5 text-center text-yellow-400">
-          กิจกรรมที่ผ่านมา
-        </h1>
-        
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {activitySchoolData.slice(0, visibleItems).map((activitySchool) => (
-              <Link key={activitySchool.id} href={`/activity/${activitySchool.id}`} passHref>
-                {/* <div key={activitySchool.id} className="block p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 w-80"> */}
-                <div key={activitySchool.id} className="block p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 w-72 sm:w-50 md:w-72 lg:w-72 xl:w-96 ">
+    <div className="container m-auto">
+      <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
+      <Tabs id="custom-animation" value="">
+        <TabsHeader className="bg-yellow-800 text-blue-700"
+          indicatorProps={{
+            className: "bg-yellow-800 shadow-none !text-gray-900",
+          }}
+        >
+          {data.map(({ label, value }) => (
+            <Tab key={value} value={value}
+              className={`font-bold text-white `}
+
+            >
+              {label}
+            </Tab>
+          ))}
+        </TabsHeader>
+        <TabsBody
+          animate={{
+            initial: { y: 250 },
+            mount: { y: 0 },
+            unmount: { y: 250 },
+          }}
+        >
+          {data.map(({ value }) => (
+            <TabPanel key={value} value={value} >
+              <Card className="w-1/2 flex-row">
+                <CardHeader
+                  shadow={false}
+                  floated={false}
+                  className="m-0 w-2/5 shrink-0 rounded-r-none"
+                >
                   <img
-                    className="w-full h-32 sm:h-48 md:h-52 object-cover"
-                    src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${activitySchool.activityImg ? activitySchool.activityImg : 'f701ce08-7ebe-4af2-c4ec-2b3967392900'}/public`}
-                    alt="activitySchool image"
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+                    alt="card-image"
+                    className="h-full w-full object-cover"
                   />
-                  <div className="px-4 py-2 sm:py-3 md:py-4 h-16 sm:h-20 md:h-24">
-                    <div className="text-sm sm:text-base md:text-lg lg:text-lg font-bold mb-2">
-                      {activitySchool.activityTitle}
-                    </div>
-                  </div>
-                </div>
-               
-
-              </Link>
-            ))}
-          </div>
-        </div>
-
-
-
-        <div className="md:w-full h-0.5 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900  md:h-150 lg:h-190 container mx-auto items-center justify-center mb-5"></div>
-        <div className="text-center min-h-[140px] w-full place-items-center overflow-x-auto lg:overflow-visible rounded-lg p-2">
-          <Link
-            href="news"
-            className="text-sm sm:text-base md:text-lg lg:text-lg underline underline-offset-1 middle none center mr-4 rounded-lg bg-blue-900 py-3 px-5 font-sans font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          >
-            อ่านทั้งหมด
-          </Link>
-        </div>
-      </div>
-      <div className="md:w-full h-2  bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="h6" color="gray" className="mb-4 uppercase">
+                    startups
+                  </Typography>
+                  <Typography variant="h4" color="blue-gray" className="mb-2">
+                    Lyft launching cross-platform service this week
+                  </Typography>
+                  <Typography color="gray" className="mb-8 font-normal">
+                    Like so many organizations these days, Autodesk is a company in
+                    transition. It was until recently a traditional boxed software company
+                    selling licenses. Yet its own business model disruption is only part
+                    of the story
+                  </Typography>
+                  <a href="#" className="inline-block">
+                    <Button variant="text" className="flex items-center gap-2">
+                      Learn More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        className="h-4 w-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </Button>
+                  </a>
+                </CardBody>
+              </Card>
+              <Card className="w-1/2 flex-row">
+                <CardHeader
+                  shadow={false}
+                  floated={false}
+                  className="m-0 w-2/5 shrink-0 rounded-r-none"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+                    alt="card-image"
+                    className="h-full w-full object-cover"
+                  />
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="h6" color="gray" className="mb-4 uppercase">
+                    startups
+                  </Typography>
+                  <Typography variant="h4" color="blue-gray" className="mb-2">
+                    Lyft launching cross-platform service this week
+                  </Typography>
+                  <Typography color="gray" className="mb-8 font-normal">
+                    Like so many organizations these days, Autodesk is a company in
+                    transition. It was until recently a traditional boxed software company
+                    selling licenses. Yet its own business model disruption is only part
+                    of the story
+                  </Typography>
+                  <a href="#" className="inline-block">
+                    <Button variant="text" className="flex items-center gap-2">
+                      Learn More
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        className="h-4 w-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </Button>
+                  </a>
+                </CardBody>
+              </Card>
+            </TabPanel>
+          ))}
+        </TabsBody>
+      </Tabs>
     </div>
   );
 }
-
-
-

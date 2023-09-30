@@ -112,7 +112,7 @@ const TheNavbar: React.FC = () => {
             height={100}
             className="w-[65px] md:w-[80px]" alt="" />
           <div className="text-white ml-4">
-            <p className="text-sm md:text-md xl:text-lg">วิทยาลัยเทคโนโลยีพนมวันท์</p>
+            <p className="text-sm md:text-lg">วิทยาลัยเทคโนโลยีพนมวันท์</p>
             <div className=" bg-white h-[2px] sm/w-[300px]" />
             <p className="text-[10px] mt-0.5 md:text-sm" >Phanomwan College of Technology</p>
           </div>

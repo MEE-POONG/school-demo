@@ -91,7 +91,7 @@ const HeadHome = () => {
                             </dd>
                         </dl>
                         <div className="mt-4 col-start-1 row-start-3 self-center sm:mt-0 sm:col-start-2 sm:row-start-2 sm:row-span-2 lg:mt-6 lg:col-start-1 lg:row-start-3 lg:row-end-4 text-center lg:text-start ">
-                            <button type="button" className="bg-blue-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Check availability</button>
+                            <button type="button" className="bg-yellow-800 hover:bg-yellow-900 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg">Check availability</button>
                         </div>
                         <p className="mt-4 text-sm  md:text-lg leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400 text-white">
                             This sunny and spacious room is for those traveling light and looking for a comfy and cosy place to lay their head for a night or two. This beach house sits in a vibrant neighborhood littered with cafes, pubs, restaurants and supermarkets and is close to all the major attractions such as Edinburgh Castle and Arthur's Seat.
