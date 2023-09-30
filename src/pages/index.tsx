@@ -1,4 +1,5 @@
 import TheLayout from "@/components/TheLayout";
+import Activity from "@/container/Home/activity";
 import { CarouselSlider } from "@/container/Home/Carousel";
 import HeadHome from '@/container/Home/headder';
 import Menu from "@/container/Home/menu";
@@ -20,10 +21,10 @@ export default function Index() {
           </span>
           <div className="md:w-full h-1 mt-4 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
           <div className=" mx-auto py-2 items-center justify-center w-full">
-           
+
           </div>
         </div> */}
-        {/* <Activity /> */}
+        <Activity />
         {/* <Statistics /> */}
         {/* <div className="min-h-screen">
 
