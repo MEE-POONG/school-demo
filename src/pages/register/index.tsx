@@ -39,12 +39,12 @@ export default function Home() {
   return (
     <TheLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
-      <div className='relative'>
-        <img className='contrast-50' src="/img/register/17.3.jpg" alt="" />
+      <div className='relative w-full h-full'>
+        <div className="absolute bg-[url('/img/register/17.3.jpg')]" />
         <div className='absolute inset-x-0 top-[35%]  md:h-40 text-center'>
           {/* <h1 className=' text-xl md:text-6xl text-yellow-400 drop-shadow-md'>สมัครเข้าศึกษา</h1>
             <h2 className=' text-xl text-white md:text-6xl'>วิทยาลัยเทคโนโลยีพนมวันท์</h2> */}
-          <h1 className='text-3xl md:text-4xl lg:text-6xl text-yellow-400 drop-shadow-md'>สมัครเข้าศึกษา</h1>
+          <h1 className='text-3xl md:text-4xl lg:text-6xl text-yellow-400 drop-shadow-md'>สมัครเข้าศึกษ</h1>
           <h2 className='text-3xl md:text-4xl lg:text-6xl text-white'>วิทยาลัยเทคโนโลยีพนมวันท์</h2>
         </div>
       </div>

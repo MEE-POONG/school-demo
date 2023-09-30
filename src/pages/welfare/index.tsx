@@ -49,106 +49,69 @@ export default function Welfare() {
     <TheLayout>
       {isLoading && <Loading />} {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
       {/* banner คณะและหลักสูตร */}
-      <div className="relative w-full h-[150px] md:h-[300px] lg:h-[500px]">
-        <img src="/img/welfare/welfarebanner.png" alt="" className='h-full brightness-50 object-cover' />
-        <div className="absolute inset-0 top-10 mb-8 md:mb-24 flex justify-center items-center ">
-          <h2 className='text-[#fbbf24] text-3xl md:text-3xl lg:text-6xl drop-shadow-xl font-semibold'>สวัสดิการนักศึกษา</h2>
-        </div>
-
-      </div>
-
-      {/* สิ่งที่นักศึกษาจะได้ */}
-      <div className='m-5 lg:my-10 text-center sm:flex justify-center gap-4'>
-        <p className='text-[15px] md:text-xl lg:text-2xl font-bold'>สิ่งที่นักศึกษาจะได้จากการเรียนที่</p>
-        <p className='text-[15px] md:text-xl lg:text-2xl font-bold'>วิทยาลัยเทคโนโลยีพนมวันท์</p>
-      </div>
-
-
-      {/* ข้อมูล 6 ช่อง */}
-      <div className='bg-black bg-opacity-80'>
-       
-        <div className="md:w-full h-2 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
-   
-
-        {/* 6 คอลั่ม */}
-        <div className='container mx-auto mt-10 md:mt-10 pb-10 md:pb-24'>
-          <div className='grid grid-rows-2 gap-4 md:gap-16'>
-            <div className="grid sm:grid-cols-3 gap-4 md:gap-16 mx-5">
-              {/* 1 */}
-              <div className=''>
-                <div className='bg-[#1F306A] rounded-t-xl'>
-                  <h1 className='font-semibold text-center text-white text-md md:text-lg lg:text-xl py-3 pl-2'>หอพักฟรี</h1>
-                </div>
-                <div className='bg-white rounded-b-xl h-28 md:h-40 lg:h-36 p-3'>
-                  <p className='text-[13px] md:text-[15px] lg:text-base indent-6'>บริการหอพักนักศึกษา ฟรี 1 ปีการศึกษา ห้องพักแต่ละห้องมีสิ่งอำนวยความสะดวกให้นักศึกษาและหอพักอยู่ใต้การดูแลควบคุมของอาจารย์ประจำหอพัก</p>
-                </div>
-              </div>
-              {/* 2 */}
-              <div className=''>
-                <div className='bg-[#1F306A]  rounded-t-xl'>
-                  <h1 className='font-semibold text-center text-white text-md md:text-lg lg:text-xl py-3 pl-2'>กู้เรียน</h1>
-                </div>
-                <div className='bg-white rounded-b-xl h-28 md:h-40 lg:h-36 p-3'>
-                  <p className='text-[13px] md:text-[15px] lg:text-base indent-6'>ได้รับพิจารณาให้กู้ กยศ. หรือ กรอ. ตลอดจนจบการศึกษา โดยไม่ต้องสำรองจ่าย</p>
-                </div>
-              </div>
-
-              {/* 3 */}
-              <div>
-                <div className='bg-[#1F306A] rounded-t-xl'>
-                  <h1 className='font-semibold text-center text-white text-md md:text-lg lg:text-xl py-3 pl-2'>ศูนย์การเรียนรู้</h1>
-                </div>
-                <div className='bg-white rounded-b-xl h-28 md:h-40 lg:h-36 p-3'>
-                  <p className='text-[13px] md:text-[15px] lg:text-base indent-6'>ศูนย์ระบบสารสนเทศเพื่อการเรียนรู้และห้องสมุดเพื่อให้นักศึกษาและคณะอาจารย์ได้ใช้ประโยชน์</p>
-                </div>
-              </div>
+      <div className='relative flex h-96 content-center items-center justify-center pt-24'>
+        <div className="absolute top-0 h-full w-full bg-[url('/img/welfare/welfarebanner.png')] bg-cover bg-center" />
+        <div className="absolute top-0 h-full w-full bg-black/50 bg-cover bg-center" />
+        <div className="max-w-8xl container relative mx-auto">
+          <div className="flex flex-wrap items-center">
+            <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
+              <p
+                className="mb-6 font-medium text-5xl text-white"
+              >
+                สวัสดิการนักศึกษา
+              </p>
             </div>
-
-            <div className='grid sm:grid-cols-3 gap-4 md:gap-16 mx-5'>
-              {/* 4 */}
-              <div>
-                <div className='bg-[#1F306A] rounded-t-xl'>
-                  <h1 className='font-semibold text-center text-white text-md md:text-lg lg:text-xl py-3 pl-2'>รายได้ระหว่างเรียน</h1>
-                </div>
-                <div className='bg-white rounded-b-xl h-28 md:h-40 lg:h-36 p-3'>
-                  <p className='text-[13px] md:text-[15px] lg:text-base indent-6'> มีบริการจัดหางาน PartTime ช่วงปิดภาคเรียน</p>
-                </div>
-              </div>
-
-              {/* 5 */}
-              <div>
-                <div className='bg-[#1F306A] rounded-t-xl'>
-                  <h1 className='font-semibold text-center text-white text-md md:text-lg lg:text-xl py-3 pl-2'>สวัสดิการรัฐ</h1>
-                </div>
-                <div className='bg-white rounded-b-xl h-28 md:h-40 lg:h-36 p-3'>
-                  <p className='text-[13px] md:text-[15px] lg:text-base indent-6'> บุตรข้าราชการสามารถเบิกค่าเล่าเรียนได้ตลอดหลักสูตร</p>
-                </div>
-              </div>
-
-              {/* 6 */}
-              <div>
-                <div className='bg-[#1F306A] rounded-t-xl'>
-                  <h1 className='font-semibold text-center text-white text-md md:text-lg lg:text-xl py-3 pl-2'>นักศึกษาวิชาทหาร</h1>
-                </div>
-                <div className='bg-white rounded-b-xl h-28 md:h-40 lg:h-36 p-3'>
-                  <p className='text-[13px] md:text-[15px] lg:text-base indent-6'> นักศึกษามีสิทธิ์สมัครเรียนวิชาการ (รด.)
-                    ต่อเนื่องปี 4 ปี 5 ได้
-                    พร้อมทำเรื่องผ่อนผันการเกณฑ์ทหาร</p>
-                </div>
-              </div>
-            </div>
-
-
-
-
-
           </div>
         </div>
-        <div className="md:w-full h-2 bg-gradient-to-r from-blue-900 via-yellow-500 to-blue-900"></div>
+      </div>
+
+      <div className='m-5 lg:my-10 text-center sm:flex justify-center gap-4 text-[15px] md:text-xl lg:text-2xl font-bold'>
+        <p >สิ่งที่นักศึกษาจะได้จากการเรียนที่</p>
+        <p >วิทยาลัยเทคโนโลยีพนมวันท์</p>
+      </div>
+
+
+      <div className='container mx-auto p-5 md:p-10 '>
+        <div className='grid lg:grid-cols-3 justify-center gap-5'>
+          <div className='p-5 shadow-xl rounded-md text-center'>
+            <img className='mx-auto' src="/icons/office.png" alt="" />
+            <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>หอพักฟรี</p>
+            <p className='text-left indent-6 text-xs md:text-base'>บริการหอพักนักศึกษา ฟรี 1 ปีการศึกษา ห้องพักแต่ละห้องมีสิ่งอำนวยความสะดวกให้นักศึกษาและหอพักอยู่ใต้การดูแลควบคุมของอาจารย์ประจำหอพัก</p>
+          </div>
+          <div className='p-5 shadow-xl rounded-md text-center'>
+            <img className='mx-auto' src="/icons/mortarboard.png" alt="" />
+            <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>กู้เรียน</p>
+            <p className='text-left indent-6 text-xs md:text-base'>ได้รับพิจารณาให้กู้ กยศ. หรือ กรอ. ตลอดจนจบการศึกษา โดยไม่ต้องสำรองจ่าย</p>
+          </div>
+          <div className='p-5 shadow-xl rounded-md text-center'>
+            <img className='mx-auto' src="/icons/research-center.png" alt="" />
+            <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>ศูนย์การเรียนรู้</p>
+            <p className='text-left indent-6 text-xs md:text-base'>ศูนย์ระบบสารสนเทศเพื่อการเรียนรู้และห้องสมุดเพื่อให้นักศึกษาและคณะอาจารย์ได้ใช้ประโยชน์</p>
+          </div>
+          <div className='p-5 shadow-xl rounded-md text-center'>
+            <img className='mx-auto' src="/icons/profit.png" alt="" />
+            <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>รายได้ระหว่างเรียน</p>
+            <p className='text-left indent-6 text-xs md:text-base'>มีบริการจัดหางาน PartTime ช่วงปิดภาคเรียน</p>
+          </div>
+          <div className='p-5 shadow-xl rounded-md text-center'>
+            <img className='mx-auto' src="/icons/welfare.png" alt="" />
+            <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>สวัสดิการรัฐ</p>
+            <p className='text-left indent-6 text-xs md:text-base'>บุตรข้าราชการสามารถเบิกค่าเล่าเรียนได้ตลอดหลักสูตร</p>
+          </div>
+          <div className='p-5 shadow-xl rounded-md text-center'>
+            <img className='mx-auto' src="/icons/military.png" alt="" />
+            <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>นักศึกษาวิชาทหาร</p>
+            <p className='text-left indent-6 text-xs md:text-base'>นักศึกษามีสิทธิ์สมัครเรียนวิชาการ (รด.) ต่อเนื่องปี 4 ปี 5 ได้ พร้อมทำเรื่องผ่อนผันการเกณฑ์ทหาร</p>
+          </div>
+        </div>
 
       </div>
 
-    </TheLayout>
+
+
+
+
+    </TheLayout >
 
   )
 }
