@@ -9,7 +9,7 @@ import {
   Collapse
 } from "@material-tailwind/react";
 import Image from "next/image";
-import { navbarArray } from "../../data/navbar";
+import { navbarArray } from "../data/navbar";
 
 import { Noto_Sans_Thai } from "next/font/google";
 

@@ -15,9 +15,9 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { newsArray, newsMenu } from "../../../data/news";
 import { News } from "@prisma/client";
 import Loading from "@/components/loading";
+import { newsMenu } from "../../data/news";
 
 
 export const NewNews: React.FC = () => {
@@ -117,7 +117,7 @@ export const NewNews: React.FC = () => {
                         {news.subTitle}
                       </Typography>
                     </CardBody>
-                    <CardFooter className="text-center">
+                    <CardFooter className="pt-0">
                       <Link href="#" className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-3 rounded-lg">
                         รายละเอียด
                         <svg
