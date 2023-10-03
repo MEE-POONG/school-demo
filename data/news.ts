@@ -18,7 +18,7 @@ export const newsArray = [
     {
         id: "n1",
         title: "ข่าว กขค",
-        img:"img.png",
+        img:"/img/school/panomtext.png",
         type: "Activity",
         subTitle: "aaas",
         detail: "aaaa"
@@ -26,7 +26,7 @@ export const newsArray = [
     {
         id: "n2",
         title: "ข่าว กขค",
-        img:"img.png",
+        img:"/img/school/panomtext.png",
         type: "Activity",
         subTitle: "aaas",
         detail: "aaaa"
@@ -34,7 +34,7 @@ export const newsArray = [
     {
         id: "n3",
         title: "ข่าว กขค",
-        img:"img.png",
+        img:"/img/school/panomtext.png",
         type: "Relations",
         subTitle: "aaas",
         detail: "aaaa"
@@ -42,7 +42,7 @@ export const newsArray = [
     {
         id: "n3",
         title: "ข่าว กขค",
-        img:"img.png",
+        img:"/img/school/panomtext.png",
         type: "Relations",
         subTitle: "aaas",
         detail: "aaaa"
