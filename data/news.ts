@@ -5,7 +5,7 @@ export const newsMenu = [
     },
     {
         label: "ประชาสัมพันธ์",
-        value: "Relations",
+        value: "News",
     },
 
     {
@@ -13,38 +13,4 @@ export const newsMenu = [
         value: "Activity",
     },
 
-];
-export const newsArray = [
-    {
-        id: "n1",
-        title: "ข่าว กขค",
-        img:"/img/school/panomtext.png",
-        type: "Activity",
-        subTitle: "aaas",
-        detail: "aaaa"
-    },
-    {
-        id: "n2",
-        title: "ข่าว กขค",
-        img:"/img/school/panomtext.png",
-        type: "Activity",
-        subTitle: "aaas",
-        detail: "aaaa"
-    },
-    {
-        id: "n3",
-        title: "ข่าว กขค",
-        img:"/img/school/panomtext.png",
-        type: "Relations",
-        subTitle: "aaas",
-        detail: "aaaa"
-    },
-    {
-        id: "n3",
-        title: "ข่าว กขค",
-        img:"/img/school/panomtext.png",
-        type: "Relations",
-        subTitle: "aaas",
-        detail: "aaaa"
-    },
 ];

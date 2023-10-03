@@ -30,7 +30,7 @@ export const NewNews: React.FC = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1
   };
   useEffect(() => {
@@ -55,7 +55,7 @@ export const NewNews: React.FC = () => {
     console.log(newsArray);
 
   }, [newsArray]);
-  
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -94,10 +94,10 @@ export const NewNews: React.FC = () => {
           <Slider {...settings}>
             {(() => {
               const filteredNews = newsArray?.filter(news => (selectType !== "" ? news.type === selectType : true));
-              const displayNews = filteredNews?.length < 3 ? filteredNews.concat(filteredNews) : filteredNews;
+              const displayNews = filteredNews?.length < 4 ? filteredNews.concat(filteredNews) : filteredNews;
               return displayNews?.slice(selectType ? 0 : -10).map(news => (
                 <div key={news.id}>
-                  <Card className="my-6 w-96 overflow-hidden">
+                  <Card className="my-6 w-72 overflow-hidden mx-auto">
                     <CardHeader
                       floated={false}
                       shadow={false}
@@ -110,32 +110,30 @@ export const NewNews: React.FC = () => {
                       />
                     </CardHeader>
                     <CardBody>
-                      <Typography variant="h4" color="blue-gray">
+                      <Typography variant="h6" color="blue-gray" className="title-clamp">
                         {news.title}
                       </Typography>
-                      <Typography variant="lead" color="gray" className="mt-3 font-normal">
+                      <Typography variant="lead" color="gray" className="mt-3 font-normal text-sm subtitle-clamp">
                         {news.subTitle}
                       </Typography>
                     </CardBody>
-                    <CardFooter className="flex items-center justify-between">
-                      <Link href="#" className="inline-block">
-                        <Button variant="text" className="flex items-center gap-2 bg-blue-400 hover:text-white hover:bg-yellow-800">
-                          Learn More
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                            className="h-4 w-4"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                            />
-                          </svg>
-                        </Button>
+                    <CardFooter className="text-center">
+                      <Link href="#" className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-3 rounded-lg">
+                        รายละเอียด
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          className="h-4 w-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                          />
+                        </svg>
                       </Link>
                     </CardFooter>
                   </Card>
