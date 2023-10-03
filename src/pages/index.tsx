@@ -1,5 +1,5 @@
 import TheLayout from "@/components/TheLayout";
-import { Activity } from "@/container/Home/Activity";
+import { NewNews } from "@/container/Home/News";
 import { CarouselSlider } from "@/container/Home/Carousel";
 import HeadHome from '@/container/Home/headder';
 import Menu from "@/container/Home/menu";
@@ -15,8 +15,7 @@ export default function Index() {
         <HeadHome />
         {/* <SlidNews/> */}
         <Menu />
-  
-        <Activity />
+        <NewNews />
         <Statistics />
         {/* <div className="min-h-screen">
 

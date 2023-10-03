@@ -19,6 +19,7 @@ model AdminUser {
   updatedAt  DateTime? @updatedAt
   deleted_at DateTime? @map("deleted_at")
 }
+
 model SliderSchool {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
   img1       String?
@@ -26,6 +27,7 @@ model SliderSchool {
   updatedAt  DateTime? @updatedAt
   deleted_at DateTime? @map("deleted_at")
 }
+
 model RegSchool {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
   irImg         String?
@@ -36,17 +38,18 @@ model RegSchool {
 }
 
 model News {
-  id          String    @id @default(auto()) @map("_id") @db.ObjectId
-  title       String? // ชื่อกิจกรรม
-  type        String?
-  subTitle    String? // หัวข้อย่่อ 
-  detail      String? // รายละเอียด
-  img         String? // รูปกิจกรรม
-  date        String? // วันที่
-  createdAt   DateTime? @default(now())
-  updatedAt   DateTime? @updatedAt
-  deleted_at  DateTime? @map("deleted_at")
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  title      String? // ชื่อกิจกรรม
+  type       String?
+  subTitle   String? // หัวข้อย่่อ 
+  detail     String? // รายละเอียด
+  img        String? // รูปกิจกรรม
+  date       String? // วันที่
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+  deleted_at DateTime? @map("deleted_at")
 }
+
 model RegisterForm {
   id            String  @id @default(auto()) @map("_id") @db.ObjectId
   regId         String? //รหัสนักศึกษา

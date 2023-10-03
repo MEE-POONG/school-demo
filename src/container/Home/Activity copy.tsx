@@ -17,7 +17,7 @@ interface IndexNews {
 export default function Activity() {
   const initialVisibleItems = 3;
   const [visibleItems, setVisibleItems] = useState(initialVisibleItems);
-  const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
+  const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); 
   const [isLoading, setIsLoading] = useState(true);
   const handleLoadMore = () => {
     setVisibleItems(visibleItems + 3);

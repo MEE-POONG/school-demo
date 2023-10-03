@@ -11,16 +11,21 @@ import {
   Typography,
   Button,
   CardFooter,
-  Tooltip,
-  Avatar,
 } from "@material-tailwind/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { newsArray, newsMenu } from "../../../data/news";
+import { News } from "@prisma/client";
+import Loading from "@/components/loading";
 
-export const Activity: React.FC = () => {
+
+export const NewNews: React.FC = () => {
   const [selectType, setSelectType] = useState("");
+  const [newsArray, setNewsArray] = useState<News[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -28,9 +33,40 @@ export const Activity: React.FC = () => {
     slidesToShow: 3,
     slidesToScroll: 1
   };
+  useEffect(() => {
+    fetch('/api/news')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setNewsArray(data?.newsData);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError(error.message);
+        setIsLoading(false);
+      });
+  }, []);
+  useEffect(() => {
+    console.log(newsArray);
+
+  }, [newsArray]);
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="container m-auto">
+      {isLoading && <Loading />}
       <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
       <Tabs id="custom-animation" value={selectType}>
         <TabsHeader className="bg-yellow-800 text-blue-700"
@@ -57,9 +93,9 @@ export const Activity: React.FC = () => {
         >
           <Slider {...settings}>
             {(() => {
-              const filteredNews = newsArray.filter(news => (selectType !== "" ? news.type === selectType : true));
-              const displayNews = filteredNews.length < 3 ? filteredNews.concat(filteredNews) : filteredNews;
-              return displayNews.slice(selectType ? 0 : -10).map(news => (
+              const filteredNews = newsArray?.filter(news => (selectType !== "" ? news.type === selectType : true));
+              const displayNews = filteredNews?.length < 3 ? filteredNews.concat(filteredNews) : filteredNews;
+              return displayNews?.slice(selectType ? 0 : -10).map(news => (
                 <div key={news.id}>
                   <Card className="my-6 w-96 overflow-hidden">
                     <CardHeader
