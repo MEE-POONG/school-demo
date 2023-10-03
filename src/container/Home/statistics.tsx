@@ -1,8 +1,53 @@
 import Visiter from "@/components/visiter";
+import { Card, CardHeader, Typography } from "@material-tailwind/react";
+import { FaMoneyBill, FaUserGraduate } from "react-icons/fa";
+import { RiFilePaper2Line, RiGraduationCapLine } from "react-icons/ri";
 
 export default function Statistics() {
     return (
         <>
+            <div className="container m-auto my-8 flex justify-around flex-wrap">
+                <Card color="blue" variant="gradient" className="w-full sm:max-w-[10rem] p-4">
+                    <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
+                        <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
+                            สมัครเรียน
+                        </Typography>
+                        <Typography variant="h1" color="white" className="mt-6 flex justify-center gap-1 text-7xl font-normal">
+                            <RiFilePaper2Line className="mx-auto h-[70px] sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                        </Typography>
+                    </CardHeader>
+                </Card>
+                <Card color="blue" variant="gradient" className="w-full sm:max-w-[10rem] p-4">
+                    <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
+                        <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
+                            สวัสดิการ
+                        </Typography>
+                        <Typography variant="h1" color="white" className="mt-6 flex justify-center gap-1 text-7xl font-normal">
+                            <FaMoneyBill className="mx-auto  h-[70px] sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                        </Typography>
+                    </CardHeader>
+                </Card>
+                <Card color="blue" variant="gradient" className="w-full sm:max-w-[10rem] p-4">
+                    <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
+                        <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
+                            ปรึกษาเพิ่มเติม
+                        </Typography>
+                        <Typography variant="h1" color="white" className="mt-6 flex justify-center gap-1 text-7xl font-normal">
+                            <RiGraduationCapLine className="mx-auto  h-[70px] sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                        </Typography>
+                    </CardHeader>
+                </Card>
+                <Card color="blue" variant="gradient" className="w-full sm:max-w-[10rem] p-4">
+                    <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
+                        <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
+                            คณะที่เปิดสอน
+                        </Typography>
+                        <Typography variant="h1" color="white" className="mt-6 flex justify-center gap-1 text-7xl font-normal">
+                            <FaUserGraduate className="mx-auto  h-[70px] sm:w-30 md:w-48 lg:w-62 xl:w-80" />
+                        </Typography>
+                    </CardHeader>
+                </Card>
+            </div>
             <div className=" bg-slate-800 w-full h-[200px]">
 
 
@@ -86,7 +131,7 @@ export default function Statistics() {
                         4
                         <span className="mx-2 text-white text-lg md:text-xl lg:text-2xl">คณะ</span>
                     </p>
-                   <p className=" mx-5 text-yellow-400 text-lg md:text-xl lg:text-2xl">
+                    <p className=" mx-5 text-yellow-400 text-lg md:text-xl lg:text-2xl">
                         20
                         <span className=" mx-2 text-white text-lg md:text-xl lg:text-2xl">หลักสูตร</span>
                     </p>
@@ -96,13 +141,13 @@ export default function Statistics() {
                             กำลังศึกษา
                         </span>
                     </p>
-                        <div className=" mx-5 text-yellow-400 text-lg md:text-xl lg:text-2xl">
-                            <Visiter />
-                            <span className=" mx-2 text-white text-lg md:text-xl lg:text-2xl">
-                                ผู้เข้าชม
-                            </span>
-                        </div>
-                    
+                    <div className=" mx-5 text-yellow-400 text-lg md:text-xl lg:text-2xl">
+                        <Visiter />
+                        <span className=" mx-2 text-white text-lg md:text-xl lg:text-2xl">
+                            ผู้เข้าชม
+                        </span>
+                    </div>
+
                 </div>
 
 
