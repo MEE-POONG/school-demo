@@ -83,7 +83,7 @@ export const Relations: React.FC = () => {
               const displayNews = filteredNews?.length < 4 ? filteredNews.concat(filteredNews) : filteredNews;
               return displayNews?.slice(selectType ? 0 : -10).map(news => (
                 <li key={"/"} className="flex">
-                  <Link href={""} className="hover:border-blue-500 hover:border-solid hover:bg-blue-300  group w-full flex flex-col px-4 justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
+                  <Link href={""} className="hover:border-blue-500 hover:border-solid hover:text-yellow-800  hover:bg-blue-100 group w-full flex flex-col px-4 justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
                     <div className="min-w-0 flex-auto">
                       <p className="text-sm font-semibold leading-6">{news?.title}</p>
                       <p className="mt-1 truncate text-xs leading-5 text-gray-500">{news?.subTitle}</p>
