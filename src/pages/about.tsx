@@ -42,12 +42,14 @@ export default function About() {
         <TheLayout>
             {isLoading && <Loading />}
             <title>about</title>
-            <div className="container mx-auto mt-20 md:py-24 md:mt-24">
-                <img className="w-full md:rounded-t-xl" src="/img/school/panomtext.png" alt="" />
-                <div className="shadow-xl px-8 py-3">
-                    <h4 className='text-black text-center py-5 ttext-xl md:text-4xl font-semibold'>
-                        รู้จัก&nbsp;”พนมวันท์”
-                    </h4>
+            <div className="container mx-auto mt-20 md:py-24 md:mt-24 ">
+                <img className="w-full md:rounded-t-xl animate-fade animate-duration-[1500ms]" src="/img/school/panomtext.png" alt="" />
+                <div className="px-8 py-3">
+                    <div className="border-l-2 border-amber-400 mt-6">
+                        <h4 className='text-black text-xl md:text-4xl font-semibold ml-5 animate-fade-left '>
+                            รู้จัก&nbsp;”พนมวันท์”
+                        </h4>
+                    </div>
 
                     <div className="md:mt-10 text-justify border-b-2 border-gray-500/30">
                         <p className="text-[#2797FF] text-base md:text-xl mb-2">ข้อมูลสถาบัน</p>
@@ -69,31 +71,36 @@ export default function About() {
                         </p>
                     </div>
 
-                    <div className="mt-7 border-b-2 border-gray-500/30 pb-5 text-center">
-                        <p className="text-[#2797FF] text-base md:text-xl mb-1">ตราสัญลักษณ์</p>
-                        <p className="text-[#2797FF] text-base md:text-xl ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
-                        <img className="w-36 mx-auto my-5" src="/img/Logo_panomwan.png" alt="" />
-                        <p className=" indent-5 md:indent-8 text-black text-xs md:text-base ">
-                            สัญลักษณ์ของวิทยาลัยเทคโนโลยีพนมวันท์มีเครื่องหมายเป็นรูปตรา
-                            วงกลม ภานในวงกลม เป็นรูปดอกบัวบาน 8  กลีบล้อมรอบ
-                            ปราสาทหิน
-                        </p>
+                    <div className="lg:flex justify-center items-center mt-7 border-b-2 border-gray-500/30 pb-5 text-center">
+                        <div className="">
+                            <p className="text-[#2797FF] text-base md:text-xl mb-1">ตราสัญลักษณ์</p>
+                            <p className="text-[#2797FF] text-base md:text-xl ">วิทยาลัยเทคโนโลยีพนมวันท์</p>
+                            <img className="w-24 md:w-36 mx-auto my-5" src="/img/Logo_panomwan.png" alt="" />
+                        </div>
+                        <div className="space-y-2">
+                            <p className="indent-5 md:indent-8 text-black text-xs md:text-base">
+                                สัญลักษณ์ของวิทยาลัยเทคโนโลยีพนมวันท์มีเครื่องหมายเป็นรูปตรา
+                                วงกลม ภานในวงกลม เป็นรูปดอกบัวบาน 8  กลีบล้อมรอบ
+                                ปราสาทหิน
+                            </p>
 
-                        <div className="md:flex justify-center gap-3 text-xs md:text-base  text-center">
-                            <p className="text-[#6CB4EE]">ดอกบัวบาน 8 กลีบ</p>
-                            <span className="text-black indent-10 md:indent-0">หมายถึง ทางแห่งความสำเร็จมรรค 8 </span>
-                        </div>
-                        <div className="md:flex justify-center gap-3 text-xs md:text-base  text-center">
-                            <p className="text-[#6CB4EE]">กลีบบัวทั้ง 8 </p>
-                            <span className="text-black indent-10 md:indent-0">หมายถึง ปรัชญาและปณิธานของวิทยาลัย </span>
-                        </div>
-                        <div className="lg:flex justify-center gap-3 text-xs md:text-base  text-center">
-                            <p className="text-[#6CB4EE]">ยอดปราสาทหิน </p>
-                            <span className="text-black indent-10 lg:indent-0"> หมายถึง ความสูงสุด ความแข็งแกร่งอุตสาหะ พากเพียร ศิลปและวัฒนธรรมท้องถิ่น </span>
-                        </div>
-                        <div className="text-xs md:text-base  text-center">
-                            <p className="text-[#6CB4EE]">ปรัชญาและปณิธานของวิทยาลัย </p>
-                            <span className="text-black italic text-center ">&quot; ฝีมือ เทคโนโลยี วิจัย วัฒนธรรม คุณธรรม ความก้าวหน้า ความสำเร็จและสนองสังคม &quot;</span>
+                            <div className="text-[#6CB4EE] md:flex justify-center gap-3 text-xs md:text-base  text-center">
+                                ดอกบัวบาน 8 กลีบ
+                                <span className="text-black line-clamp-none">หมายถึง ทางแห่งความสำเร็จมรรค 8 </span>
+                            </div>
+
+                            <div className="md:flex justify-center gap-3 text-xs md:text-base text-[#6CB4EE] text-center">
+                                กลีบบัวทั้ง 8
+                                <span className="text-black line-clamp-none">หมายถึง ปรัชญาและปณิธานของวิทยาลัย </span>
+                            </div>
+                            <div className="lg:flex justify-center gap-3 text-xs md:text-base text-[#6CB4EE] text-center">
+                                ยอดปราสาทหิน
+                                <span className="text-black line-clamp-none"> หมายถึง ความสูงสุด ความแข็งแกร่งอุตสาหะ พากเพียร ศิลปและวัฒนธรรมท้องถิ่น </span>
+                            </div>
+                            <div className="text-xs md:text-base text-[#6CB4EE] text-center">
+                                ปรัชญาและปณิธานของวิทยาลัย
+                                <span className="text-black italic text-center  line-clamp-none">&quot; ฝีมือ เทคโนโลยี วิจัย วัฒนธรรม คุณธรรม ความก้าวหน้า ความสำเร็จและสนองสังคม &quot;</span>
+                            </div>
                         </div>
                     </div>
 
@@ -122,7 +129,7 @@ export default function About() {
                     </div>
 
                     <div className="flex justify-center ">
-                        <img className="w-1/2" src="/img/advisor/borad285.png" alt="" style={{
+                        <img className="w-full md:w-[900px]" src="/img/advisor/borad285.png" alt="" style={{
                             WebkitFilter: 'drop-shadow(10px 10px 5px #000000)',
                             filter: 'drop-shadow(10px 10px 5px #000000)'
                         }} />
