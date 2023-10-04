@@ -56,11 +56,11 @@ export default function Home() {
       </div>
 
       {/* Descript. */}
-      <div className=" container mx-auto my-3 lg:my-24 p-2 bg-white">
-        <h4 className='text-xl md:text-4xl text-white mb-10 bg-blue-400 py-2 text-center'>สิ่งที่ควรรู้ก่อนสมัครเรียน</h4>
+      <div className=" container mx-auto my-3 lg:my-24 p-2">
+        <h4 className='text-xl md:text-3xl text-white mb-10 bg-blue-400 py-2 text-center'>สิ่งที่ควรรู้ก่อนสมัครเรียน</h4>
 
         <div className='md:flex justify-center gap-24 mb-10 '>
-          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-2.5'>
+          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-4 animate-flip-down animate-duration-[900ms]'>
             <img src="/icons/features.png" alt="" />
             <div >
               <p className='font-semibold text-lg md:text-2xl'>คุณสมบัติของผู้เรียน</p>
@@ -73,7 +73,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-2.5 mt-10 md:mt-0' >
+          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-4 mt-10 md:mt-0 animate-flip-down animate-duration-[900ms]' >
             <img src="/icons/job.png" alt="" />
             <div>
               <p className='font-semibold textlg  md:text-2xl'>หลักฐานในการใช้สมัครเรียน</p>
