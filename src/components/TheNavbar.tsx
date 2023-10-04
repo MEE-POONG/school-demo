@@ -108,8 +108,8 @@ const TheNavbar: React.FC = () => {
         >
           <Image
             src="/img/Logo_panomwan.png"
-            width={isScrolling && window.innerWidth >= 1024 ? 60 : 100}
-            height={isScrolling && window.innerWidth >= 1024 ? 60 : 100}
+            width={isScrolling && window.innerWidth >= 1024 ? 50 : 100}
+            height={isScrolling && window.innerWidth >= 1024 ? 50 : 100}
             className={`transition-all duration-300 ${isScrolling && window.innerWidth >= 1024 ? "w-[60px]" : "w-[65px] md:w-[80px]"}`}
             alt=""
           />
