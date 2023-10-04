@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { News } from "@prisma/client";
 import Loading from "@/components/loading";
-import { newsMenu } from "../../data/news";
+import { newsMenu } from "@/data/news";
 
 
 export const NewNews: React.FC = () => {

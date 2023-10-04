@@ -99,7 +99,7 @@ const TheNavbar: React.FC = () => {
   );
 
   return (
-    <Navbar className={`fixed top-0 z-50 h-max max-w-full border-0 transition-all duration-200 ease-in-out bg-blue-500/70	${!isScrolling ? "bg-gradient-to-r from-blue-500 to-blue-700" : ""}  rounded-none px-4 py-2 lg:px-8 lg:py-2`}>
+    <Navbar className={`fixed top-0 z-50 h-max max-w-full border-0 transition-all duration-200 ease-in-out bg-blue-500/70	${!isScrolling ? "bg-gradient-to-r from-blue-500 to-blue-700" : ""} rounded-none px-4 py-2 lg:px-8 lg:py-2`}>
       <div className="flex items-center justify-between">
         <Typography
           as="a"
@@ -108,9 +108,11 @@ const TheNavbar: React.FC = () => {
         >
           <Image
             src="/img/Logo_panomwan.png"
-            width={100}
-            height={100}
-            className="w-[65px] md:w-[80px]" alt="" />
+            width={isScrolling && window.innerWidth >= 1024 ? 60 : 100}
+            height={isScrolling && window.innerWidth >= 1024 ? 60 : 100}
+            className={`transition-all duration-300 ${isScrolling && window.innerWidth >= 1024 ? "w-[60px]" : "w-[65px] md:w-[80px]"}`}
+            alt=""
+          />
           <div className="text-white ml-4">
             <p className="text-sm md:text-lg">วิทยาลัยเทคโนโลยีพนมวันท์</p>
             <div className=" bg-white h-[2px] sm/w-[300px]" />

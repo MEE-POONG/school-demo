@@ -4,20 +4,12 @@ import {
   TabsHeader,
   TabsBody,
   Tab,
-  TabPanel,
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button,
-  CardFooter,
 } from "@material-tailwind/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Slider from "react-slick";
 import { News } from "@prisma/client";
 import Loading from "@/components/loading";
-import { newsRelations } from "../../data/news";
+import { newsRelations } from "@/data/news";
 
 
 export const Relations: React.FC = () => {
@@ -84,22 +76,22 @@ export const Relations: React.FC = () => {
             unmount: { y: 250 },
           }}
         >
-          <ul role="list" className="divide-y rounded divide-gray-100 h-[40rem] overflow-y-auto bg-gray-100 ">
+          <ul className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
             {newsArray.map((list) => (
-              <Link href={""}>
-                <li key={list?.id} className="flex justify-between py-2 hover:text-yellow-900 hover:bg-blue-100">
-                  <div className="flex min-w-0 gap-x-4 mx-4">
-                    <div className="min-w-0 flex-auto">
-                      <p className="text-sm font-semibold leading-6">{list?.title}</p>
-                      <p className="mt-1 truncate text-xs leading-5 text-gray-500">{list?.subTitle}</p>
-                    </div>
+              <li className="flex">
+                <Link href={""} className="hover:border-blue-500 hover:border-solid hover:bg-yellow-300 hover:text-blue-500 group w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
+                  <div className="min-w-0 flex-auto">
+                    <p className="text-sm font-semibold leading-6">{list?.title}</p>
+                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">{list?.subTitle}</p>
                   </div>
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
           </ul>
+
         </TabsBody>
       </Tabs>
-    </div>
+
+    </div >
   );
 }
