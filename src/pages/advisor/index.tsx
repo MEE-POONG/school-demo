@@ -59,7 +59,7 @@ export default function Welfare() {
             </div>
 
             {/* เนื้อหาส่วนทีมที่ปรึกษา */}
-            <div className='bg-[#1F306A]/80  bg-opacity-80 px-2 md:px-14 pb-10'>
+            <div className='bg-blue-400  bg-opacity-80 px-2 md:px-14 pb-10'>
                 {/* คำอธิบายทีมที่ปรึกษา */}
 
                 <div className='container mx-auto'>
