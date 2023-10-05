@@ -10,6 +10,35 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model HeadPage {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  title      String?
+  subTitle   String? // หัวข้อย่่อ 
+  pageCheck  String?
+  pathBtn    String?
+  detail     String?
+  imgOne     String?
+  imgTwo     String?
+  imgThree   String?
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+  deleted_at DateTime? @map("deleted_at")
+}
+
+model News {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  title      String? // ชื่อกิจกรรม
+  type       String?
+  subTitle   String? // หัวข้อย่่อ 
+  detail     String? // รายละเอียด
+  img        String? // รูปกิจกรรม
+  date       String? // วันที่
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+  deleted_at DateTime? @map("deleted_at")
+}
+
+// NO 
 model AdminUser {
   id       String  @id @default(auto()) @map("_id") @db.ObjectId
   username String?
@@ -35,19 +64,6 @@ model RegSchool {
   createdAt     DateTime? @default(now())
   updatedAt     DateTime? @updatedAt
   deleted_at    DateTime? @map("deleted_at")
-}
-
-model News {
-  id         String    @id @default(auto()) @map("_id") @db.ObjectId
-  title      String? // ชื่อกิจกรรม
-  type       String?
-  subTitle   String? // หัวข้อย่่อ 
-  detail     String? // รายละเอียด
-  img        String? // รูปกิจกรรม
-  date       String? // วันที่
-  createdAt  DateTime? @default(now())
-  updatedAt  DateTime? @updatedAt
-  deleted_at DateTime? @map("deleted_at")
 }
 
 model RegisterForm {
