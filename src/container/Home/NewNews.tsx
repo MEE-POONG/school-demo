@@ -13,7 +13,8 @@ import {
   CardFooter,
 } from "@material-tailwind/react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import Aos from "aos";
 import Slider from "react-slick";
 import { News } from "@prisma/client";
 import Loading from "@/components/loading";
@@ -33,6 +34,13 @@ export const NewNews: React.FC = () => {
     slidesToShow: 4,
     slidesToScroll: 1
   };
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
+
   useEffect(() => {
     fetch('/api/news')
       .then((response) => {
@@ -65,7 +73,7 @@ export const NewNews: React.FC = () => {
   }
 
   return (
-    <div className="container m-auto">
+    <div className="container m-auto" data-aos="fade-right">
       {isLoading && <Loading />}
       <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
       <Tabs id="custom-animation" value={selectType}>
