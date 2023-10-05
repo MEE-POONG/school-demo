@@ -11,14 +11,22 @@ import { useEffect, useState } from "react";
 import { News } from "@prisma/client";
 import Loading from "@/components/loading";
 import { newsRelations } from "@/data/news";
+import Aos from "aos";
 
 
 export const Relations: React.FC = () => {
+
   const [selectType, setSelectType] = useState("Relations");
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
+  
   useEffect(() => {
     fetch('/api/news')
       .then((response) => {
@@ -77,7 +85,7 @@ export const Relations: React.FC = () => {
             unmount: { y: 250 },
           }}
         >
-          <ul className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
+          <ul  data-aos="fade-up" className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
             {(() => {
               const filteredNews = newsArray.filter(news => news.type === selectType).slice(0, 10);
               const displayNews = filteredNews?.length < 4 ? filteredNews.concat(filteredNews) : filteredNews;
