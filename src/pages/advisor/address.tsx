@@ -14,7 +14,7 @@ const AddressContact = () => {
                     <div className="flex flex-wrap justify-between">
 
                         <div className="text-sm md:text-base">
-                            <div>
+                            <div className="border-b py-2">
                                 <p className=" text-amber-600 font-semibold text-xl mb-2">วิทยาลัยเทคโนโลยีพนมวันท์</p>
                                 <p>ที่อยู่: &nbsp;
                                     <span>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</span>

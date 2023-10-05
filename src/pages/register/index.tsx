@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import Navbar from '@/components/TheNavbar'
 import TheLayout from '@/components/TheLayout'
 import Link from 'next/link';
+import { TbBellRingingFilled } from "react-icons/tb";
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 
@@ -57,7 +58,9 @@ export default function Home() {
 
       {/* Descript. */}
       <div className=" container mx-auto my-3 lg:my-24 p-2">
-        <h4 className='text-xl md:text-3xl text-white mb-10 bg-blue-400 py-2 text-center'>สิ่งที่ควรรู้ก่อนสมัครเรียน</h4>
+        <div className='text-xl md:text-3xl mb-10 flex items-center'>
+          <TbBellRingingFilled className='text-amber-700 mr-2 h-10' /> สิ่งที่ควรรู้ก่อนสมัครเรียน
+        </div>
 
         <div className='md:flex justify-center gap-24 mb-10 '>
           <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-4 animate-flip-down animate-duration-[900ms]'>
