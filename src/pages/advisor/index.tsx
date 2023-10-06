@@ -1,14 +1,10 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import TheLayout from '@/components/TheLayout'
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 import AddressContact from './address';
+import TeamAdvisor from './teamAdvisor';
 
-
-
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Welfare() {
     const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
@@ -55,11 +51,36 @@ export default function Welfare() {
                 <p className='text-xl md:text-3xl text-[#1F306A]'>ทีมที่ปรึกษา</p>
 
                 <p className='text-black text-xs md:text-base indent-8 py-5'>
-                    ทีมอาจารย์ที่ปรึกษาคอยดูแลตลอดหลักสูตรการเรียน  ด้วยประสบการณ์มากกว่า 20 ปี
+                    ทีมอาจารย์ที่ปรึกษาคอยดูแลตลอดหลักสูตรการเรียน ด้วยประสบการณ์มากกว่า 20 ปี
                     ไม่ว่าจะติดปัญหาด้านการเงิน เวลา หรือระยะทางให้พวกเราทีมอาจารย์ที่ปรึกษาช่วยแก้ปัญหา
                     พร้อมแนะแนวแผนการเรียนให้ฟรี
                 </p>
-                
+                <div className="grid grid-cols-3 gap-2 md:gap-28 ">
+                    <div className='shadow-lg p-5 rounded-md'>
+                        <img className='mx-auto w-10 md:w-auto'
+                            src="/icons/experience.png" alt="" />
+                        <p className='text-xs md:text-base text-blue-400 text-center'>ดูแลตลอดหลักสูตร</p>
+                    </div>
+
+                    <div className='shadow-lg py-5 rounded-md'>
+                        <img
+                            src="/icons/loyal-customer.png" alt=""
+                            className='mx-auto w-10 md:w-auto' />
+                        <p className='text-xs md:text-base text-blue-400 text-center'>ประสบการณ์มากกว่า 20 ปี</p>
+                    </div>
+
+                    <div className='shadow-lg py-5 rounded-md'>
+                        <img
+                            src="/icons/guide.png" alt="" 
+                            className='mx-auto w-10 md:w-auto' />
+                        <p className='text-xs md:text-base text-blue-400 text-center'> แนะแนวแผนการเรียนให้ฟรี</p>
+                    </div>
+                </div>
+
+                <div>
+                    <TeamAdvisor/>
+                </div>
+
             </div>
             <div>
                 <AddressContact />
