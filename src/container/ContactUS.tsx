@@ -1,4 +1,5 @@
-import TitleText from "@/components/TitleText";
+
+import React, { useEffect, useState } from "react";
 import {
   Tabs,
   TabsHeader,
@@ -12,12 +13,6 @@ import {
   Button,
   CardFooter,
 } from "@material-tailwind/react";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import Slider from "react-slick";
-import { News } from "@prisma/client";
-import Loading from "@/components/loading";
-import { newsMenu } from "@/data/news";
 import { FaEnvelope, FaPhoneAlt, FaSearchLocation } from "react-icons/fa";
 import Aos from "aos";
 

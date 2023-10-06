@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { TbBellRingingFilled } from "react-icons/tb";
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
+import SwiperComponent from '@/container/Sreact';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
 
   // useEffect สำหรับจำลองการโหลดรูปภาพทุกตัวในหน้า
@@ -89,8 +90,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img className='shadow-xl'  src="/img/register/b1.png" alt="" />
-        <img className='shadow-xl' src="/img/register/b2.png" alt="" />
+        <SwiperComponent />
       </div>
 
 

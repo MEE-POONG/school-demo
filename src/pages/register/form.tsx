@@ -336,7 +336,7 @@ export default function Home() {
                 <label className=''>อัพโหลดรูปภาพ :</label>
               </div>
               <div className='md:col-span-4 md:my-2 md:self-center md:flex items-center pb-4 md:pb-0 mx-2 md:mx-0'>
-                <input type="file" id='regImg' name="regImg" className='w-full' onChange={handleFileUpload} />
+                <input type="file" id='regImg' name="regImg" className='w-full' onChange={handleFileUpload}/>
               </div>
 
 
@@ -353,7 +353,7 @@ export default function Home() {
 
 
 
-            <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
+          <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
               <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ประวัติการศึกษา</h1>
             </div>
 
@@ -381,7 +381,7 @@ export default function Home() {
                   <option value="">-- เลือกระดับ --</option>
                   <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
                   <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
-                  <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">ประกาศนียบัตรวิชาชีพ (ปวช.)</option>
+                  <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">ประกาศนียบัตรวิชาชีพ (ปวช.)</option> 
                 </select>
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
@@ -394,13 +394,21 @@ export default function Home() {
 
 
           </div>
+
+
+
+
+
           {/* คณะ/สาขา  */}
           <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
 
-            <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
+          <div className='bg-black bg-opacity-80 w-full h-[40px] md:h-[50px] drop-shadow-md  shadow-md '>
               <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> คณะ/สาขา</h1>
             </div>
+
+
+
             <div className='md:grid md:grid-cols-12 grid-cols-1 '>
               {/* หลักสูตร */}
 
@@ -416,6 +424,10 @@ export default function Home() {
                 <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-5 h-5 " />
                 <label className='ml-4 md:ml-1 md:text-sm'>2 ปี (ต่อเนื่อง)</label>
               </div>
+
+
+
+
               {/* คณะ และ สาขา */}
 
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
@@ -447,6 +459,13 @@ export default function Home() {
                   ))}
                 </select>
               </div>
+
+
+
+
+
+
+
             </div>
 
 
