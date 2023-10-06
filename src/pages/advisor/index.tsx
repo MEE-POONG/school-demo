@@ -4,10 +4,18 @@ import { useState, useEffect } from 'react'; // เพิ่มการ import 
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 import AddressContact from './address';
 import TeamAdvisor from './teamAdvisor';
+import Aos from "aos";
+
 
 
 export default function Welfare() {
     const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+    useEffect(() => {
+        Aos.init({
+          duration: 1000,
+        });
+      }, []);
 
     useEffect(() => {
         const images = document.querySelectorAll('img'); // เลือกทุก <img> ในหน้า
@@ -46,7 +54,7 @@ export default function Welfare() {
                 </div>
             </div>
 
-            <div className='container mx-auto px-2 md:px-14 py-5'>
+            <div className='container mx-auto px-2 md:px-14 py-5 md:mt-28'>
                 <p className='text-light-blue-600'>Advisor</p>
                 <p className='text-xl md:text-3xl text-[#1F306A]'>ทีมที่ปรึกษา</p>
 
@@ -56,44 +64,36 @@ export default function Welfare() {
                     พร้อมแนะแนวแผนการเรียนให้ฟรี
                 </p>
                 <div className="grid grid-cols-3 gap-2 md:gap-28 ">
-                    <div className='shadow-lg p-5 rounded-md'>
+                    <div className='shadow-lg p-5 rounded-md hover:animate-shake'>
                         <img className='mx-auto w-10 md:w-auto'
                             src="/icons/experience.png" alt="" />
                         <p className='text-xs md:text-base text-blue-400 text-center'>ดูแลตลอดหลักสูตร</p>
                     </div>
 
-                    <div className='shadow-lg py-5 rounded-md'>
+                    <div className='shadow-lg py-5 rounded-md hover:animate-shake'>
                         <img
                             src="/icons/loyal-customer.png" alt=""
                             className='mx-auto w-10 md:w-auto' />
                         <p className='text-xs md:text-base text-blue-400 text-center'>ประสบการณ์มากกว่า 20 ปี</p>
                     </div>
 
-                    <div className='shadow-lg py-5 rounded-md'>
+                    <div className='shadow-lg py-5 rounded-md hover:animate-shake'>
                         <img
-                            src="/icons/guide.png" alt="" 
+                            src="/icons/guide.png" alt=""
                             className='mx-auto w-10 md:w-auto' />
                         <p className='text-xs md:text-base text-blue-400 text-center'> แนะแนวแผนการเรียนให้ฟรี</p>
                     </div>
                 </div>
 
-                <div>
-                    <TeamAdvisor/>
+                <div className='mt-10'>
+                    <TeamAdvisor />
+                </div>
+
+                <div data-aos="fade-right">
+                    <AddressContact />
                 </div>
 
             </div>
-            <div>
-                <AddressContact />
-            </div>
-
-
-
-
-
-
-
-
-
 
         </TheLayout>
 

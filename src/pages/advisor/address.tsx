@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { BiLogoFacebookCircle } from "react-icons/bi";
 
 const AddressContact = () => {
+    
     return (
         <>
-            <div className="container mx-auto px-2 md:px-14 py-5">
                 <div className="mt-8">
                     <p className="text-light-blue-600">Contact</p>
                     <p className='text-xl md:text-3xl text-[#1F306A]'>
@@ -37,14 +37,14 @@ const AddressContact = () => {
                                     <span>061-019-8815</span>
                                 </p>
                                 <p className="flex items-center"><BiLogoFacebookCircle />
-                                    <span>Facebook: &nbsp;061-019-8815</span>
+                                    <a href="">&nbsp;FB: &nbsp;teacher Pornpimol</a>
                                 </p>
                             </div>
                         </div>
 
                         {/* mail */}
 
-                        
+
                     </div>
                     <div className="mt-5">
                         <iframe
@@ -54,7 +54,6 @@ const AddressContact = () => {
                         </iframe>
                     </div>
                 </div>
-            </div>
         </>
     )
 }

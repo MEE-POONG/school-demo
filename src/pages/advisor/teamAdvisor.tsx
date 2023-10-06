@@ -5,6 +5,9 @@ import { BiLogoFacebookCircle } from "react-icons/bi";
 const TeamAdvisor = () => {
     return (
         <>
+        <div>
+            <img src="/img/advisor/pichapop.png" alt="" />
+        </div>
         </>
     )
 }
