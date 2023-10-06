@@ -62,7 +62,7 @@ export default function Home() {
           <TbBellRingingFilled className='text-amber-700 mr-2 h-10' /> สิ่งที่ควรรู้ก่อนสมัครเรียน
         </div>
 
-        <div className='md:flex justify-center gap-24 mb-10 '>
+        <div className='md:flex justify-center gap-10 mb-10 '>
           <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-4 animate-flip-down animate-duration-[900ms]'>
             <img src="/icons/features.png" alt="" />
             <div >

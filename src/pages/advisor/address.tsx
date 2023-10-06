@@ -11,8 +11,7 @@ const AddressContact = () => {
                     <p className='text-xl md:text-3xl text-[#1F306A]'>
                         ช่องทางการติดต่อ
                     </p>
-                    <div className="flex flex-wrap justify-between">
-
+                    <div className="flex flex-wrap gap-10">
                         <div className="text-sm md:text-base">
                             <div className="border-b py-2">
                                 <p className=" text-amber-600 font-semibold text-xl mb-2">วิทยาลัยเทคโนโลยีพนมวันท์</p>
@@ -42,16 +41,17 @@ const AddressContact = () => {
                                 </p>
                             </div>
                         </div>
-                        {/* <div>
-                            <img className="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32" src="/img/Logo_panomwan.png" />
-                        </div> */}
-                        <div className="mt-5 md:mt-0">
-                            <iframe
-                                className="md:w-[600px] h-full rounded-lg"
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15410.825965346847!2d102.1841477!3d15.0643421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311949e7e29a02b3%3A0x8b0fbbc3758d561f!2z4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4LiZ4Lih4Lin4Lix4LiZ4LiX4LmMIFBoYW5vbXdhbiBDb2xsZWdlIG9mIFRlY2hub2xvZ3k!5e0!3m2!1sth!2sth!4v1689326551888!5m2!1sth!2sth" >
 
-                            </iframe>
-                        </div>
+                        {/* mail */}
+
+                        
+                    </div>
+                    <div className="mt-5">
+                        <iframe
+                            className="md:w-full h-full md:h-96 rounded-lg"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15410.825965346847!2d102.1841477!3d15.0643421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311949e7e29a02b3%3A0x8b0fbbc3758d561f!2z4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lie4LiZ4Lih4Lin4Lix4LiZ4LiX4LmMIFBoYW5vbXdhbiBDb2xsZWdlIG9mIFRlY2hub2xvZ3k!5e0!3m2!1sth!2sth!4v1689326551888!5m2!1sth!2sth" >
+
+                        </iframe>
                     </div>
                 </div>
             </div>
