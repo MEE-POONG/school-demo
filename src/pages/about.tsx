@@ -4,11 +4,18 @@ import { Typography } from "@material-tailwind/react";
 import Link from "next/link";
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
+import Aos from "aos";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
     const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,
+        });
+    }, []);
 
     // useEffect สำหรับจำลองการโหลดรูปภาพทุกตัวในหน้า
     useEffect(() => {
@@ -68,7 +75,7 @@ export default function About() {
                         <rect width="100%" height="100%" strokeWidth={0} fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
                     </svg>
                 </div>
-                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10" data-aos="fade-up">
                     <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                         <div className="lg:pr-4">
                             <div className="lg:max-w-lg">
@@ -140,7 +147,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center container mx-auto bg-gradient-to-r rounded-lg mb-8">
+            <div className="flex justify-center container mx-auto bg-gradient-to-r rounded-lg mb-8" data-aos="zoom-in-up">
                 <img className="w-full " src="/img/advisor/borad285.png" alt="" style={{
                     WebkitFilter: 'drop-shadow(10px 10px 5px #000000)',
                     filter: 'drop-shadow(10px 10px 5px #000000)'
