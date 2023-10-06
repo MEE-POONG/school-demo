@@ -3,8 +3,7 @@ import TheLayout from '@/components/TheLayout'
 import Link from 'next/link';
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
-import { Typography } from '@material-tailwind/react';
-
+import Aos from 'aos';
 
 
 export default function Faculty() {
@@ -38,6 +37,12 @@ export default function Faculty() {
     };
   }, []);
 
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
+
 
   return (
     <TheLayout>
@@ -65,10 +70,10 @@ export default function Faculty() {
         {/* container ใหญ่ */}
         <div className='max-w-5xl container mx-auto p-6 lg:p-10 lg:mt-24 mb-10 '>
           {/* คณะบริหารธุรกิจ*/}
-          <div
+          <div data-aos="zoom-in"
             className="lg:mx-auto md:flex md:items-center bg-neutral-800 overflow-hidden 
                       rounded-lg drop-shadow-lg text-black border-b-2 
-                      animate-fade-right animate-duration-[1500ms]"
+                      "
           >
             <div className="h-auto md:w-[380px] flex-none bg-cover rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden" >
               <img className=''
@@ -90,11 +95,11 @@ export default function Faculty() {
 
 
           {/* คณะวิทยาศาสตร์และเทคโนโลยี */}
-          <div
-              className="mt-5 lg:mx-auto md:flex md:flex-row-reverse md:items-center bg-neutral-800/75 
+          <div data-aos="fade-right"
+            className="mt-5 lg:mx-auto md:flex md:flex-row-reverse md:items-center bg-neutral-800/75 
               overflow-hidden rounded-lg  drop-shadow-lg text-black border-b-2
-              animate-fade-left animate-duration-[1500ms]"
-            >
+             "
+          >
             <div className="h-auto md:w-[350px] flex-none bg-cover rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden" >
               <img className=''
                 src="/img/faculty/sFsci.png" alt="" />
@@ -110,11 +115,11 @@ export default function Faculty() {
 
 
           {/* คณะศิลปศาสตร์*/}
-          <div 
-              className="mt-5 lg:mx-auto md:flex md:items-center bg-neutral-800 overflow-hidden rounded-lg  
+          <div data-aos="fade-left"
+            className="mt-5 lg:mx-auto md:flex md:items-center bg-neutral-800 overflow-hidden rounded-lg  
               drop-shadow-lg text-black border-b-2
-              animate-fade-right animate-duration-[1500ms]"
-            >
+              "
+          >
             <div className=" md:w-[350px] md:h-[230px] flex-none bg-cover rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden" >
               <img className='h-full'
                 src="/img/faculty/Flib.png" alt="" />
@@ -129,11 +134,11 @@ export default function Faculty() {
           </div>
 
           {/* คณะวิศวกรรมศาสตร์ */}
-          <div 
-              className="mt-5 lg:mx-auto md:flex md:flex-row-reverse md:items-center bg-neutral-800/75 
+          <div data-aos="fade-right"
+            className="mt-5 lg:mx-auto md:flex md:flex-row-reverse md:items-center bg-neutral-800/75 
               overflow-hidden rounded-lg  drop-shadow-lg text-black border-b-2
-              animate-fade-left animate-duration-[1500ms]"
-            >
+             "
+          >
             <div className="h-auto md:w-[350px] flex-none bg-cover rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden" >
               <img className=''
                 src="/img/faculty/sFeng.png" alt="" />
