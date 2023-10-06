@@ -6,7 +6,7 @@ const AddressContact = () => {
     
     return (
         <>
-                <div className="mt-8">
+                <div className="mt-10 md:mt-20">
                     <p className="text-light-blue-600">Contact</p>
                     <p className='text-xl md:text-3xl text-[#1F306A]'>
                         ช่องทางการติดต่อ
@@ -14,7 +14,7 @@ const AddressContact = () => {
                     <div className="flex flex-wrap gap-10">
                         <div className="text-sm md:text-base">
                             <div className="border-b py-2">
-                                <p className=" text-amber-600 font-semibold text-xl mb-2">วิทยาลัยเทคโนโลยีพนมวันท์</p>
+                                <p className=" text-amber-600 font-semibold text-base md:text-xl mb-2">วิทยาลัยเทคโนโลยีพนมวันท์</p>
                                 <p>ที่อยู่: &nbsp;
                                     <span>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</span>
                                 </p>
@@ -28,16 +28,16 @@ const AddressContact = () => {
                                     <span>phanomwanu@gmail.com</span>
                                 </p>
                             </div>
-                            <div className="mt-5">
-                                <p className=" text-amber-600 font-semibold text-xl mb-2 flex">
+                            <div className="mt-5 border-b pb-2">
+                                <div className="flex items-end text-amber-600 font-semibold text-base md:text-xl mb-2">
                                     พรพิมล ลักขษร
-                                    <span className="text-black font-thin text-lg ml-5">ผู้ช่วยที่ปรึกษา</span>
-                                </p>
+                                    <span className="text-black font-thin text-sm md:text-lg ml-2">ผู้ช่วยที่ปรึกษา</span>
+                                </div>
                                 <p>โทร: &nbsp;
                                     <span>061-019-8815</span>
                                 </p>
                                 <p className="flex items-center"><BiLogoFacebookCircle />
-                                    <a href="">&nbsp;FB: &nbsp;teacher Pornpimol</a>
+                                    <a href="https://www.facebook.com/TeacherPornpimol">&nbsp;FB: &nbsp;teacher Pornpimol</a>
                                 </p>
                             </div>
                         </div>
