@@ -7,32 +7,11 @@ interface sliderSchool {
     img1: string;
 }
 
-const HeadHome = () => {
-
-    const [sliderSchoolData, setsliderSchoolData] = useState<sliderSchool[]>([]); // Specify the type here
-    const [sliderRef, setSliderRef] = useState<Slider | null>(null);
-    const [activeSlide, setActiveSlide] = useState(0);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        fetch('/api/sliderSchool')
-            .then((response) => response.json())
-            .then((data) => {
-                setsliderSchoolData(data.sliderSchool);
-                setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
-
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
-
-            });
-    }, []);
-
+const HeadHome: React.FC = () => {
 
     return (
         <div className="relative flex h-screen content-center items-center justify-center pt-24">
-            <div className="absolute top-0 h-full w-full bg-[url('/img/school/panomtext.png')] bg-cover bg-center" />
+            <div className="absolute top-0 h-full w-full bg-[url('/img/school/panomtext.png')] bg-fixed bg-center bg-no-repeat bg-cover" />
             <div className="absolute top-0 h-full w-full bg-blue-800/70 bg-cover bg-center " />
             <div className="max-w-8xl container relative mx-auto h-full">
                 <div className="py-6 px-4 sm:p-6 md:py-10 md:px-8 w-full h-full flex items-center justify-center">
@@ -43,7 +22,7 @@ const HeadHome = () => {
                         </div>
                         <div className="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
                             <img src={`https://imagedelivery.net/${""}/600`} alt="" className="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy" />
-                            <img src={`https://imagedelivery.net/${""}/600`}alt="" className="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-64" loading="lazy" />
+                            <img src={`https://imagedelivery.net/${""}/600`} alt="" className="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-64" loading="lazy" />
                             <img src={`https://imagedelivery.net/${""}/600`} alt="" className="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-64" loading="lazy" />
                         </div>
                         <dl className="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2 animate-fade-right">
