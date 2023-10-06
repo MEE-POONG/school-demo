@@ -20,7 +20,7 @@ const HeadHome: React.FC = () => {
                             <h1 className="mt-1 text-lg xl:text-4xl font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Beach House in Collingwood</h1>
                             <p className="text-sm xl:text-2xl leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400">Entire house</p>
                         </div>
-                        <div className="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
+                        <div className="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0 animate-fade-left">
                             <img src={`https://imagedelivery.net/${""}/600`} alt="" className="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy" />
                             <img src={`https://imagedelivery.net/${""}/600`} alt="" className="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-64" loading="lazy" />
                             <img src={`https://imagedelivery.net/${""}/600`} alt="" className="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-64" loading="lazy" />

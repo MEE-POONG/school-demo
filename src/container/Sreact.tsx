@@ -3,7 +3,6 @@ import SwiperCore, { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
-// Initialize Swiper modules
 SwiperCore.use([Navigation, Autoplay]);
 
 const SwiperComponent: React.FC = () => {
