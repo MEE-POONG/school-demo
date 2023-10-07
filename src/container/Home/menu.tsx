@@ -14,7 +14,7 @@ export const Menu: React.FC = () => {
       }, []);
     return (
         <div className="container m-auto my-8 flex justify-around flex-wrap">
-            <Link href="/register/form" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="0"  data-aos-duration="300">
+            <Link href="/register/form" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="0"  data-aos-duration="100">
                 <Card className="w-full sm:max-w-[10rem] p-4 bg-blue-400 hover:bg-yellow-800">
                     <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                         <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
@@ -26,7 +26,7 @@ export const Menu: React.FC = () => {
                     </CardHeader>
                 </Card>
             </Link>
-            <Link href="/welfare" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center drop-shadow-lg"  data-aos="fade-up" data-aos-delay="300"  data-aos-duration="300">
+            <Link href="/welfare" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center drop-shadow-lg"  data-aos="fade-up" data-aos-delay="100"  data-aos-duration="100">
                 <Card className="w-full sm:max-w-[10rem] p-4 bg-blue-400 hover:bg-yellow-800">
                     <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                         <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
@@ -38,7 +38,7 @@ export const Menu: React.FC = () => {
                     </CardHeader>
                 </Card>
             </Link>
-            <Link href="/advisor" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center drop-shadow-lg"  data-aos="fade-up" data-aos-delay="600"  data-aos-duration="300">
+            <Link href="/advisor" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center drop-shadow-lg"  data-aos="fade-up" data-aos-delay="200"  data-aos-duration="100">
                 <Card className="w-full sm:max-w-[10rem] p-4 bg-blue-400 hover:bg-yellow-800">
                     <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                         <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
@@ -50,7 +50,7 @@ export const Menu: React.FC = () => {
                     </CardHeader>
                 </Card>
             </Link>
-            <Link href="/faculty" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center drop-shadow-lg"  data-aos="fade-up" data-aos-delay="900"  data-aos-duration="300" >
+            <Link href="/faculty" className="p-4 md:max-w-[12rem] w-1/2 flex my-4 justify-center drop-shadow-lg"  data-aos="fade-up" data-aos-delay="300"  data-aos-duration="100" >
                 <Card className="w-full sm:max-w-[10rem] p-4 bg-blue-400 hover:bg-yellow-800">
                     <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none text-center">
                         <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
