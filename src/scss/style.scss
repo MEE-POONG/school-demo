@@ -36,4 +36,29 @@
 }
 .aos-init {
     opacity: 0;
-  }
+}
+.table-scroll {
+    width: 100%;
+    margin: 0;
+    tbody {
+        display: block;
+        height: calc(90vh - 209px);
+        overflow-y: scroll;
+    }
+    thead,
+    tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        td.first {
+            width: 1rem;
+            text-align: right;
+        }
+    }
+    thead {
+        width: calc(100% - 1em);
+        th {
+            text-align: center;
+        }
+    }
+}
