@@ -9,6 +9,7 @@ export const navbarArray = [
         children: [
             { name: 'วิธีการสมัคร', link: '/register' },
             { name: 'ทีมที่ปรึกษา', link: '/advisor' },
+            { name: 'ค่าเล่าเรียน', link: '/termfees' },
         ],
     },
 ];
