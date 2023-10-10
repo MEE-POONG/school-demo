@@ -6,6 +6,7 @@ import { TbBellRingingFilled } from "react-icons/tb";
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 import SwiperComponent from '@/container/Sreact';
+import TermFees from '@/container/Register/TermFees';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -91,10 +92,8 @@ export default function RegisterPage() {
           </div>
         </div>
         <SwiperComponent />
+        <TermFees />
       </div>
-
-
-
     </TheLayout >
   )
 }
