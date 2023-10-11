@@ -77,7 +77,7 @@ export const NewNews: React.FC = () => {
       {isLoading && <Loading />}
       <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
       <Tabs id="custom-animation" value={selectType}>
-        <TabsHeader className="bg-yellow-800 text-blue-700"
+        <TabsHeader className="bg-yellow-800 "
           indicatorProps={{
             className: "bg-yellow-800 shadow-none !text-gray-900",
           }}
