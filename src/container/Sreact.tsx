@@ -6,7 +6,7 @@ SwiperCore.use([Navigation, Autoplay]);
 
 const SwiperComponent: React.FC = () => {
   return (
-    <>
+    <div className='shadow-lg'>
       <Swiper
          spaceBetween={30}
          centeredSlides={true}
@@ -27,7 +27,7 @@ const SwiperComponent: React.FC = () => {
           <img className="shadow-xl" src="/img/register/b2.png" alt="Slide Image" />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }
 

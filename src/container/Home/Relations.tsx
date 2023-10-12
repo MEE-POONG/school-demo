@@ -78,7 +78,7 @@ export const Relations: React.FC = () => {
           ))}
         </TabsHeader>
         <TabsBody
-          className="pb-8 pt-4"
+          className="pb-8 pt-4 bg-white my-8 shadow-lg rounded-xl"
           animate={{
             initial: { y: 250 },
             mount: { y: 0 },

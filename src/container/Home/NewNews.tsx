@@ -92,7 +92,6 @@ export const NewNews: React.FC = () => {
           ))}
         </TabsHeader>
         <TabsBody
-          className="py-8"
           animate={{
             initial: { y: 250 },
             mount: { y: 0 },

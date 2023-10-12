@@ -65,7 +65,7 @@ export default function RegisterPage() {
         </div>
 
         <div className='md:flex justify-center gap-10 mb-10 '>
-          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-4 animate-flip-down animate-duration-[900ms]'>
+          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-4 animate-flip-down animate-duration-[900ms] bg-white'>
             <img src="/icons/features.png" alt="" />
             <div >
               <p className='font-semibold text-lg md:text-2xl'>คุณสมบัติของผู้เรียน</p>
@@ -78,7 +78,7 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-4 mt-10 md:mt-0 animate-flip-down animate-duration-[900ms]' >
+          <div className='flex flex-wrap justify-center items-center gap-5 shadow-lg rounded-lg p-4 mt-10 md:mt-0 animate-flip-down animate-duration-[900ms]  bg-white' >
             <img src="/icons/job.png" alt="" />
             <div>
               <p className='font-semibold textlg  md:text-2xl'>หลักฐานในการใช้สมัครเรียน</p>

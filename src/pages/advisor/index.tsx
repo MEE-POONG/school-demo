@@ -65,13 +65,13 @@ export default function Welfare() {
                         พร้อมแนะแนวแผนการเรียนให้ฟรี
                     </p>
                     <div className="grid grid-cols-3 gap-2 md:gap-28 ">
-                        <div className='shadow-lg p-5 rounded-md hover:animate-shake'>
+                        <div className='shadow-lg p-5 rounded-md hover:animate-shake bg-white'>
                             <img className='mx-auto w-10 md:w-auto'
                                 src="/icons/experience.png" alt="" />
                             <p className='text-xs md:text-base text-blue-400 text-center'>ดูแลตลอดหลักสูตร</p>
                         </div>
 
-                        <div className='shadow-lg py-5 rounded-md hover:animate-shake'>
+                        <div className='shadow-lg py-5 rounded-md hover:animate-shake bg-white'>
                             <img
                                 src="/icons/loyal-customer.png" alt=""
                                 className='mx-auto w-10 md:w-auto' />
@@ -79,7 +79,7 @@ export default function Welfare() {
                         </div>
 
 
-                        <div className='shadow-lg py-5 rounded-md hover:animate-shake'>
+                        <div className='shadow-lg py-5 rounded-md hover:animate-shake bg-white'>
                             <img
                                 src="/icons/guide.png" alt=""
                                 className='mx-auto w-10 md:w-auto' />

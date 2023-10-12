@@ -25,8 +25,10 @@ export default function TheLayout({
       </Head>
       <VisiterCounter />
       <TheNavbar />
-      <div>{children}</div>
-     
+      <div className="relative">
+        {children}
+        <div className="bg-line h-screen" />
+      </div>
       <BackToTopButton />
       <TheFooter />
     </>
