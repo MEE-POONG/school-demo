@@ -70,8 +70,8 @@ export default function Faculty() {
         {/* container ใหญ่ */}
         <div className='max-w-5xl container mx-auto p-6 lg:p-10 lg:mt-24 mb-10 '>
           {/* คณะบริหารธุรกิจ*/}
-          <div data-aos="zoom-in"
-            className="lg:mx-auto md:flex md:items-center bg-neutral-800 overflow-hidden 
+          <div  data-aos="fade-left"
+            className="bg-white lg:mx-auto md:flex md:items-center bg-neutral-800 overflow-hidden 
                       rounded-lg drop-shadow-lg text-black border-b-2 
                       "
           >
@@ -96,7 +96,7 @@ export default function Faculty() {
 
           {/* คณะวิทยาศาสตร์และเทคโนโลยี */}
           <div data-aos="fade-right"
-            className="mt-5 lg:mx-auto md:flex md:flex-row-reverse md:items-center bg-neutral-800/75 
+            className="bg-white mt-5 lg:mx-auto md:flex md:flex-row-reverse md:items-center bg-neutral-800/75 
               overflow-hidden rounded-lg  drop-shadow-lg text-black border-b-2
              "
           >
@@ -116,7 +116,7 @@ export default function Faculty() {
 
           {/* คณะศิลปศาสตร์*/}
           <div data-aos="fade-left"
-            className="mt-5 lg:mx-auto md:flex md:items-center bg-neutral-800 overflow-hidden rounded-lg  
+            className="bg-white mt-5 lg:mx-auto md:flex md:items-center bg-neutral-800 overflow-hidden rounded-lg  
               drop-shadow-lg text-black border-b-2
               "
           >
@@ -135,7 +135,7 @@ export default function Faculty() {
 
           {/* คณะวิศวกรรมศาสตร์ */}
           <div data-aos="fade-right"
-            className="mt-5 lg:mx-auto md:flex md:flex-row-reverse md:items-center bg-neutral-800/75 
+            className="bg-white mt-5 lg:mx-auto md:flex md:flex-row-reverse md:items-center bg-neutral-800/75 
               overflow-hidden rounded-lg  drop-shadow-lg text-black border-b-2
              "
           >
@@ -158,16 +158,12 @@ export default function Faculty() {
               <div className=''>
                 <p className='text-[#1F306A] text-[12px] lg:text-[16px]'>หมายเหตุ :</p>
               </div>
-
               <div className='col-span-3 md:col-span-11'>
                 <p className='text-[#1F306A] text-[12px] lg:text-[16px]'>เสาร์-อาทิตย์ เรียนออนไลน์  </p>
                 <p className='text-[#1F306A] text-[12px] lg:text-[16px]'>เครื่องหมาย + แทนสาขาที่เปิดหลักสูตร วันเสาร์-อาทิตย์</p>
               </div>
-
-
             </div>
           </div>
-
         </div>
       </div>
 
