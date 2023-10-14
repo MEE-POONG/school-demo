@@ -1,7 +1,4 @@
 import React from "react";
-import { FaLocationDot } from "react-icons/fa6";
-import { BiLogoFacebookCircle } from "react-icons/bi";
-import { BsTelephone } from "react-icons/bs";
 
 const TeamAdvisor = () => {
     return (

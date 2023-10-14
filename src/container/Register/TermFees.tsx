@@ -13,7 +13,7 @@ const TermFees: React.FC = () => {
         <table className="table-scroll w-full table-auto text-left">
           <thead className="tuition-fees border-collapse">
             <tr>
-              <th rowSpan={2} className="p-4 border border-slate-600 text-center border-l">สาขาวิชา</th>
+              <th rowSpan={2} className="p-4 w-36 border border-slate-600 text-center border-l">สาขาวิชา</th>
               <th colSpan={3} className="p-4 w-72 border border-slate-600 text-center border-l">กองทุนกู้ยืม<span >*</span></th>
               <th rowSpan={2} className="p-4 w-48 border border-slate-600  border-l">ค่าเล่าเรียน<br />เทอม 1/1 (มิ.ย. – ก.ค.) </th>
               <th rowSpan={2} className="p-4 w-48 border border-slate-600  border-l">ค่าเล่าเรียน<br />เทอม 1/2</th>
@@ -35,7 +35,7 @@ const TermFees: React.FC = () => {
                 </tr>
                 {TermFeesBranch.filter(branch => branch.TermFeesGroupID === group.id).map((branch) => (
                   <tr key={branch.id} className="even:bg-blue-gray-50/50">
-                    <td className="text-center border-l p-4">{branch.FieldStudy}</td>
+                    <td className="w-36 text-center border-l p-4">{branch.FieldStudy}</td>
                     <td className="w-24 text-center border-l p-4">{branch.kysOne ? "yes" : "no"}</td>
                     <td className="w-24 text-center border-l p-4">{branch.kysTwo ? "yes" : "no"}</td>
                     <td className="w-24 text-center border-l p-4">{branch.kysThree ? "yes" : "no"}</td>

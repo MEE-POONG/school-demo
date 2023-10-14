@@ -2,13 +2,13 @@ import Image from 'next/image'
 import TheLayout from '@/components/TheLayout'
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
-import AddressContact from './address';
-import TeamAdvisor from './teamAdvisor';
+import AddressContact from '@/container/advisor/address';
+import TeamAdvisor from '@/container/advisor/teamAdvisor';
 import Aos from "aos";
 
 
 
-export default function Welfare() {
+export default function Advisor() {
     const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
 
     useEffect(() => {
