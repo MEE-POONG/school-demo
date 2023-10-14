@@ -30,8 +30,8 @@ export default function Statistics() {
         <>
             <div ref={ref} className="bg-blue-400">
                 <div className="container m-auto flex justify-center flex-wrap py-8">
-                    <div className="flex w-full justify-between">
-                        <div className='flex justify-center flex-1 text-yellow-700 text-lg md:text-3xl lg:text-6xl'>
+                    <div className="flex md:w-full justify-between">
+                        <div className='flex justify-center text-yellow-700 text-lg md:text-3xl lg:text-6xl'>
                             <p className="">
                                 {isVisible && <CountUp end={4} duration={2.5} />}
                                 <span className="mx-2 text-white text-lg md:text-xl lg:text-2xl">
@@ -39,7 +39,7 @@ export default function Statistics() {
                                 </span>
                             </p>
                         </div>
-                        <div className='flex justify-center flex-1 text-yellow-700 text-lg md:text-3xl lg:text-6xl'>
+                        <div className='flex justify-center text-yellow-700 text-lg md:text-3xl lg:text-6xl'>
                             <p className="">
                                 {isVisible && <CountUp end={20} duration={2.5} />}
                                 <span className="mx-2 text-white text-lg md:text-xl lg:text-2xl">
@@ -47,7 +47,7 @@ export default function Statistics() {
                                 </span>
                             </p>
                         </div>
-                        <div className='flex justify-center flex-1 text-yellow-700 text-lg md:text-3xl lg:text-6xl'>
+                        <div className='flex justify-center text-yellow-700 text-lg md:text-3xl lg:text-6xl'>
                             <p className="">
                                 {isVisible && <CountUp end={500} duration={2.5} />}
                                 <span className="mx-2 text-white text-lg md:text-xl lg:text-2xl">
@@ -55,7 +55,7 @@ export default function Statistics() {
                                 </span>
                             </p>
                         </div>
-                        <div className='flex justify-center flex-1 text-yellow-700 text-lg md:text-3xl lg:text-6xl'>
+                        <div className='flex justify-center text-yellow-700 text-lg md:text-3xl lg:text-6xl'>
                             <p className="">
                                 {isVisible && <CountUp end={1449} duration={2.5} />}
                                 <span className="mx-2 text-white text-lg md:text-xl lg:text-2xl">

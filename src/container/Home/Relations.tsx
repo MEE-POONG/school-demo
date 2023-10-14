@@ -62,15 +62,15 @@ export const Relations: React.FC = () => {
     <div className="container m-auto">
       {isLoading && <Loading />}
       <TitleText titleText={"ประชาสัมพันธ์"} titleTextTo={""} />
-      <Tabs id="custom-animation" value={selectType}>
-        <TabsHeader className="bg-blue-700 text-white0"
+      <Tabs id="custom-animation" value={selectType} >
+        <TabsHeader className="bg-blue-700 text-white flex-wrap md:flex-nowrap justify-center"
           indicatorProps={{
             className: "bg-blue-500 shadow-none !text-gray-900",
           }}
         >
           {newsRelations.map(({ label, value }) => (
             <Tab key={value} value={value}
-              className={`font-bold text-white `}
+              className={`font-bold text-white w-1/2 md:w-full`}
               onClick={() => setSelectType(value)}
             >
               {label}
@@ -78,7 +78,7 @@ export const Relations: React.FC = () => {
           ))}
         </TabsHeader>
         <TabsBody
-          className="pb-8 pt-4 bg-white my-8 shadow-lg rounded-xl"
+          className="pb-4 pt-4 bg-white my-8 shadow-lg rounded-xl"
           animate={{
             initial: { y: 250 },
             mount: { y: 0 },

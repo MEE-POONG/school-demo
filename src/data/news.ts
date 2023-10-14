@@ -20,7 +20,7 @@ export const newsRelations = [
         value: "Relations",
     },
     {
-        label: "ผู้สนใจเข้าศึกษา",
+        label: "สนใจเข้าศึกษา",
         value: "Interested",
     },
     {
