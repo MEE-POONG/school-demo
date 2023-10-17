@@ -5,11 +5,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import useAxios from "axios-hooks";
-import Link from 'next/link';
 import Loading from '@/container/Register/loading';
-import Modal from '@/container/Register/modal';
 import Missing from '@/container/Register/modalmissing';
 import Success from '@/container/Register/modalsuccess';
+import ButtonSubmit from '@/container/Register/buttonSubmit';
 
 
 export default function ApplyToStudyForm() {
@@ -204,24 +203,17 @@ export default function ApplyToStudyForm() {
 
   return (
     <TheLayout>
-
       <div className='container mx-auto md:py-24 py-12'>
-
         <div className='text-center mt-24'>
           <img src="/img/Logo_panomwan.png" className='w-28 mx-auto' alt="" />
           <p>วิทยาลัยเทคโนโลยีพนมวันท์</p>
         </div>
 
-        <h3 className='text-lg lg:text-3xl text-center mt-10 mb-8'>แบบฟอร์มสำหรับกรอกข้อมูลการสัมครเรียน</h3>
+        <h2 className='text-lg lg:text-3xl text-center mt-10 mb-8'>แบบฟอร์มสำหรับกรอกข้อมูลการสัมครเรียน</h2>
         <div className='bg-white p-5'>
           {/* ข้อมูลผู้สมัคร  */}
           <div className=''>
-
-            <div className=' w-full h-[40px] md:h-[50px] '>
-              <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ข้อมูลผู้สมัคร</h1>
-            </div>
-
-
+            <h3 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ข้อมูลผู้สมัคร</h3>
             <div className=' md:grid md:grid-cols-12 grid-cols-1 pb-2 pt-4 '>
               {/* บัตรประชาชน กับ วันเดือนปี */}
 
@@ -336,18 +328,10 @@ export default function ApplyToStudyForm() {
 
           {/* ประวัติการศึกษา  */}
           <div className=' my-10 pb-2 '>
-
-
-
-            <div className=' w-full h-[40px] md:h-[50px] '>
-              <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ประวัติการศึกษา</h1>
-            </div>
-
-
+            <h3 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ประวัติการศึกษา</h3>
 
             <div className='md:grid md:grid-cols-12 grid-cols-1 pt-4 '>
               {/* สถาบันการศึกษา */}
-
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>สถาบันการศึกษา:</label>
               </div>
@@ -377,24 +361,12 @@ export default function ApplyToStudyForm() {
                 <input value={regGpa} onChange={(e) => setRegGpa(e.target.value)} name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
               </div>
             </div>
-
-
           </div>
-
-
-
 
 
           {/* คณะ/สาขา  */}
           <div className=' my-10 pb-2 '>
-
-
-            <div className=' w-full h-[40px] md:h-[50px] '>
-              <h1 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> คณะ/สาขา</h1>
-            </div>
-
-
-
+            <h3 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> คณะ/สาขา</h3>
             <div className='md:grid md:grid-cols-12 grid-cols-1 '>
               {/* หลักสูตร */}
 
@@ -413,9 +385,7 @@ export default function ApplyToStudyForm() {
 
 
 
-
               {/* คณะ และ สาขา */}
-
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>คณะ:</label>
               </div>
@@ -445,23 +415,13 @@ export default function ApplyToStudyForm() {
                   ))}
                 </select>
               </div>
-
-
-
-
-
-
-
             </div>
-
-
-
           </div>
 
           {/* ปุ่มส่งใบสมัคร */}
           <div className='flex justify-center'>
             {/* Modal */}
-            <Modal onSubmit={handleSubmit} />
+            <ButtonSubmit onSubmit={handleSubmit} />
           </div>
 
 

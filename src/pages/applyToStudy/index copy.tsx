@@ -10,7 +10,7 @@ import axios from "axios";
 import useAxios from "axios-hooks";
 import Link from 'next/link';
 import Loading from '@/container/Register/loading';
-import Modal from '@/container/Register/modal';
+import Modal from '@/container/Register/buttonSubmit';
 import Missing from '@/container/Register/modalmissing';
 import Success from '@/container/Register/modalsuccess';
 
