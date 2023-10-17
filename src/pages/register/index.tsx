@@ -1,5 +1,3 @@
-import { Inter } from 'next/font/google'
-import Navbar from '@/components/TheNavbar'
 import TheLayout from '@/components/TheLayout'
 import Link from 'next/link';
 import { TbBellRingingFilled } from "react-icons/tb";
@@ -7,11 +5,16 @@ import { useState, useEffect } from 'react'; // เพิ่มการ import 
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 import SwiperComponent from '@/container/Sreact';
 import TermFees from '@/container/Register/TermFees';
-
-const inter = Inter({ subsets: ['latin'] })
+import Aos from 'aos';
 
 export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
 
   // useEffect สำหรับจำลองการโหลดรูปภาพทุกตัวในหน้า
   useEffect(() => {

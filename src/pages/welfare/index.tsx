@@ -9,6 +9,7 @@ import { MdSupportAgent } from "react-icons/md";
 import { TbStars } from "react-icons/tb";
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
+import Aos from 'aos';
 
 
 
@@ -18,6 +19,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Welfare() {
   const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
 
   useEffect(() => {
     const images = document.querySelectorAll('img'); // เลือกทุก <img> ในหน้า
@@ -77,37 +84,37 @@ export default function Welfare() {
       <div className='container mx-auto p-5 md:p-20 '>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-5'>
           {/* 1 */}
-          <div className='p-5 shadow-xl rounded-md text-center animate-flip-down animate-duration-[900ms] bg-white'>
+          <div className='p-5 shadow-xl rounded-md text-center bg-white' data-aos="zoom-in">
             <img className='mx-auto' src="/icons/office.png" alt="" />
             <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>หอพักฟรี</p>
             <p className='text-left indent-6 text-xs md:text-base'>บริการหอพักนักศึกษา ฟรี 1 ปีการศึกษา ห้องพักแต่ละห้องมีสิ่งอำนวยความสะดวกให้นักศึกษาและหอพักอยู่ใต้การดูแลควบคุมของอาจารย์ประจำหอพัก</p>
           </div>
           {/* 2 */}
-          <div className='p-5 shadow-xl rounded-md text-center animate-flip-up animate-duration-[900ms] bg-white'>
+          <div className='p-5 shadow-xl rounded-md text-center bg-white' data-aos="zoom-in"> 
             <img className='mx-auto' src="/icons/mortarboard.png" alt="" />
             <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>กู้เรียน</p>
             <p className='text-left indent-6 text-xs md:text-base'>ได้รับพิจารณาให้กู้ กยศ. หรือ กรอ. ตลอดจนจบการศึกษา โดยไม่ต้องสำรองจ่าย</p>
           </div>
           {/* 3 */}
-          <div className='p-5 shadow-xl rounded-md text-center animate-flip-down animate-duration-[900ms] bg-white'>
+          <div className='p-5 shadow-xl rounded-md text-center bg-white' data-aos="zoom-in">
             <img className='mx-auto' src="/icons/research-center.png" alt="" />
             <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>ศูนย์การเรียนรู้</p>
             <p className='text-left indent-6 text-xs md:text-base'>ศูนย์ระบบสารสนเทศเพื่อการเรียนรู้และห้องสมุดเพื่อให้นักศึกษาและคณะอาจารย์ได้ใช้ประโยชน์</p>
           </div>
           {/* 4 */}
-          <div className='p-5 shadow-xl rounded-md text-center animate-flip-up animate-duration-[900ms] bg-white'>
+          <div className='p-5 shadow-xl rounded-md text-center bg-white' data-aos="zoom-in">
             <img className='mx-auto' src="/icons/profit.png" alt="" />
             <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>รายได้ระหว่างเรียน</p>
             <p className='text-left indent-6 text-xs md:text-base'>มีบริการจัดหางาน PartTime ช่วงปิดภาคเรียน</p>
           </div>
           {/* 5 */}
-          <div className='p-5 shadow-xl rounded-md text-center animate-flip-down animate-duration-[900ms] bg-white'>
+          <div className='p-5 shadow-xl rounded-md text-center bg-white' data-aos="zoom-in">
             <img className='mx-auto' src="/icons/welfare.png" alt="" />
             <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>สวัสดิการรัฐ</p>
             <p className='text-left indent-6 text-xs md:text-base'>บุตรข้าราชการสามารถเบิกค่าเล่าเรียนได้ตลอดหลักสูตร</p>
           </div>
           {/* 6 */}
-          <div className='p-5 shadow-xl rounded-md text-center animate-flip-up animate-duration-[900ms] bg-white'>
+          <div className='p-5 shadow-xl rounded-md text-center bg-white' data-aos="zoom-in">
             <img className='mx-auto' src="/icons/military.png" alt="" />
             <p className='text-lg md:text-xl text-amber-500 font-semibold my-2'>นักศึกษาวิชาทหาร</p>
             <p className='text-left indent-6 text-xs md:text-base'>นักศึกษามีสิทธิ์สมัครเรียนวิชาการ (รด.) ต่อเนื่องปี 4 ปี 5 ได้ พร้อมทำเรื่องผ่อนผันการเกณฑ์ทหาร</p>
