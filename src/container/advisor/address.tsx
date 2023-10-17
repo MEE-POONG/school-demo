@@ -5,7 +5,7 @@ const AddressContact = () => {
 
     return (
         <>
-            <div className="mt-10 md:mt-20">
+            <div className="mt-10 md:mt-20 bg-white p-5 rounded-md shadow-xl">
                 <p className="text-light-blue-600">Contact</p>
                 <p className='text-xl md:text-3xl text-[#1F306A]'>
                     ช่องทางการติดต่อ
