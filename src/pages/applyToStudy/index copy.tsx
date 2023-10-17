@@ -17,7 +17,7 @@ import Success from '@/container/Register/modalsuccess';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function ApplyToStudyForm() {
   const [{ error: errorMessage, loading: IndexActivityLoading }, executeIndexActivity] = useAxios({ url: '/api/registerForm', method: 'POST' }, { manual: true });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
