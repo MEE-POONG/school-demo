@@ -87,9 +87,9 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-                    <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+                    <div className="lg:-ml-12 -mt-12 lg:p-12 lg:sticky lg:top-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden" data-aos="fade-left">
                         <img
-                            className="w-[48rem] h-[34rem] object-cover max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+                            className="w-full h-40 lg:w-[48rem] md:h-[34rem] object-cover max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
                             src="/img/school/panomtext.png"
                             alt=""
                         />
