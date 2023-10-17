@@ -1,8 +1,7 @@
-import { TermFees_HEAD, TermFeesGroup, TermFeesBranch } from '@/data/TermFees';
-import { Card, Typography } from '@material-tailwind/react';
+import { CourseGroup, CourseList } from '@/data/TermFees';
+import { Card } from '@material-tailwind/react';
 import React from 'react';
 import SwiperCore, { Navigation, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 SwiperCore.use([Navigation, Autoplay]);
 
@@ -26,14 +25,14 @@ const TermFees: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {TermFeesGroup.map((group) => (
+            {CourseGroup.map((group) => (
               <React.Fragment key={group.id}>
                 <tr className="bg-blue-400 text-white">
                   <td colSpan={7} className='p-4'>
                     {group.name}
                   </td>
                 </tr>
-                {TermFeesBranch.filter(branch => branch.TermFeesGroupID === group.id).map((branch) => (
+                {CourseList.filter(branch => branch.TermFeesGroupID === group.id).map((branch) => (
                   <tr key={branch.id} className="even:bg-blue-gray-50/50">
                     <td className="w-36 text-center border-l p-4">{branch.FieldStudy}</td>
                     <td className="w-24 text-center border-l p-4">{branch.kysOne ? "yes" : "no"}</td>
