@@ -9,6 +9,7 @@ import Loading from '@/container/Register/loading';
 import Missing from '@/container/Register/modalmissing';
 import Success from '@/container/Register/modalsuccess';
 import ButtonSubmit from '@/container/Register/buttonSubmit';
+import { FaRegHandPointRight } from "react-icons/fa";
 
 
 export default function ApplyToStudyForm() {
@@ -204,229 +205,245 @@ export default function ApplyToStudyForm() {
   return (
     <TheLayout>
       <div className='container mx-auto md:py-24 py-12'>
-        <div className='text-center mt-24'>
+        <div className='text-center 4'>
           <img src="/img/Logo_panomwan.png" className='w-28 mx-auto' alt="" />
           <p>วิทยาลัยเทคโนโลยีพนมวันท์</p>
         </div>
 
-        <h2 className='text-lg lg:text-3xl text-center mt-10 mb-8'>แบบฟอร์มสำหรับกรอกข้อมูลการสัมครเรียน</h2>
-        <div className='bg-white p-5'>
-          {/* ข้อมูลผู้สมัคร  */}
-          <div className=''>
-            <h3 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ข้อมูลผู้สมัคร</h3>
-            <div className=' md:grid md:grid-cols-12 grid-cols-1 pb-2 pt-4 '>
-              {/* บัตรประชาชน กับ วันเดือนปี */}
 
-              <div className='col-start-1 col-end-4 md:md:text-right p-3 my-2'>
-                <label className=''>บัตรประจำตัวประชาชน:</label>
-              </div>
-              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regIdpersonal} onChange={(e) => setRegIdpersonal(e.target.value)} name='regIdpersonal' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-              <div className='col-start-6 col-end-8 md:md:text-right p-3 my-2 '>
-                <label className=''>วัน/เดือน/ปีเกิด:</label>
-              </div>
-              <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regBirth} onChange={(e) => setRegBirth(e.target.value)} name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white  h-12" />
+        <p className='mt-8 text-lg pl-3 border-b border-black mb-3'>การสมัครเรียน สามารถทำได้ 2วิธี ดังนี้</p>
+        <div className='lg:grid grid-cols-12 px-3'>
+
+          <div className="col-span-8">
+            <div className='bg-white p-2 md:p-8 shadow-lg rounded-lg lg:w-10/12 mx-auto'>
+              <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 1 สมัครเรียนออนไลน์</h2>
+              {/* ส่วนที่1 ข้อมูลผู้สมัคร*/}
+              <div className='w-full'>
+                <p className='text-base lg:text-lg font-semibold mb-5 border-b border-blue-100'>ส่วนที่ 1 ข้อมูลผู้สมัคร</p>
+                {/* 1 */}
+                <div className='md:flex justify-start flex-wrap gap-3  px-3'>
+                  <div className='md:flex items-center'>
+                    <label htmlFor="" className='text-xs lg:text-sm'>บัตรประจำตัวประชาชน:</label>
+                    <input
+                      value={regIdpersonal} onChange={(e) => setRegIdpersonal(e.target.value)}
+                      name='regIdpersonal' type="text"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                              leading-tight focus:outline-none text-xs lg:text-sm"
+                    />
+                  </div>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>วัน/เดือน/ปีเกิด:</label>
+                    <input
+                      value={regBirth} onChange={(e) => setRegBirth(e.target.value)}
+                      name='regBirth' type="date"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm" />
+                  </div>
+                  <div className='md:flex items-center'>
+                    <label htmlFor="" className='text-xs lg:text-sm'>เพศ:</label>
+                    <select
+                      value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex'
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm'>
+                      <option >- เลือก -</option>
+                      <option value="ชาย">ชาย</option>
+                      <option value="หญิง">หญิง</option>
+                    </select>
+                  </div>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>สัญชาติ:</label>
+                    <input
+                      value={regNation} onChange={(e) => setRegNation(e.target.value)} name='regNation' type="text"
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm'
+                    />
+                  </div>
+                </div>
+
+                {/* 2 */}
+                <div className='md:flex justify-start flex-wrap gap-3  px-3 mt-3'>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>คำนำหน้าชื่อ:</label>
+                    <select
+                      value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix'
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm'>
+                      <option value="">- เลือก -</option>
+                      <option value="นาย">นาย</option>
+                      <option value="นาง">นาง</option>
+                      <option value="นางสาว">นางสาว</option>
+                    </select>
+                  </div>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>ชื่อ:</label>
+                    <input value={regName} onChange={(e) => setRegName(e.target.value)} name='regName' type="text"
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm'
+                    />
+                  </div>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>นามสกุล:</label>
+                    <input value={regLastname} onChange={(e) => setRegLastname(e.target.value)} name='regLastname' type="text"
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm'
+                    />
+                  </div>
+                </div>
+
+                {/* 3 */}
+                <div className='md:flex justify-start flex-wrap gap-3  px-3 mt-3'>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>Name:</label>
+                    <input value={regEname} onChange={(e) => setRegEname(e.target.value)} name='regEname' type="text" placeholder='ชื่อภาษาอังกฤษ'
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm capitalize'
+                    />
+                  </div>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>Lastname:</label>
+                    <input value={regElastname} onChange={(e) => setRegElastname(e.target.value)} name='regElastname' type="text" placeholder='นามสกุลภาษาอังกฤษ'
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm capitalize'
+                    />
+                  </div>
+                </div>
+
+                {/* 4 */}
+                <div className='md:flex justify-start flex-wrap gap-3  px-3 mt-3'>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>เบอร์โทรศัพท์ติดต่อ:</label>
+                    <input value={regPhone} onChange={(e) => setRegPhone(e.target.value)} name='regPhone' type="text"
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm'
+                    />
+                  </div>
+                  <div className='md:flex items-center '>
+                    <label htmlFor="" className='text-xs lg:text-sm'>Email:</label>
+                    <input value={regEmail} onChange={(e) => setRegEmail(e.target.value)} name='regEmail' type="email"
+                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm'
+                    />
+                  </div>
+                  <div className='md:flex items-center'>
+                    <p className='text-xs lg:text-sm'>อัพโหลดรูปภาพ :</p>
+                    <input type="file" id='regImg' name="regImg" onChange={handleFileUpload}
+                      className='w-full md:w-auto py-2 px-3 ml-3 text-xs lg:text-sm '
+                    />
+                  </div>
+                </div>
+
               </div>
 
-
-              {/* คำนำหน้า เพศ สัญชาติ */}
-
-              <div className='col-start-2 col-end-4 md:md:text-right p-3 my-2'>
-                <label className=''>คำนำหน้าชื่อ:</label>
-              </div>
-              <div className=' col-span-1 md:col-span-2  md:my-2 mx-2 md:mx-0'>
-                <select value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix' className=' block w-full md:w-1/2 bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white h-12'>
-                  <option value="">- เลือก -</option>
-                  <option value="นาย">นาย</option>
-                  <option value="นาง">นาง</option>
-                  <option value="นางสาว">นางสาว</option>
-                </select>
-              </div>
-              <div className='col-start-5 md:col-start-6 md:text-right p-3 my-2 '>
-                <label className=''>เพศ:</label>
-              </div>
-              <div className='col-span-1 md:col-span-2 my-2 mx-2 md:mx-0'>
-                <select value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12'>
-                  <option value="">- เลือก -</option>
-                  <option value="ชาย">ชาย</option>
-                  <option value="หญิง">หญิง</option>
-                </select>
-              </div>
-
-              <div className='col-start-7 md:col-start-9 md:text-right p-3 my-2 '>
-                <label className=''>สัญชาติ: </label>
-              </div>
-              <div className='col-span-2 my-2 md:ml-2 mx-2 md:mx-0'>
-                <input value={regNation} onChange={(e) => setRegNation(e.target.value)} name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-
-
-              {/* ชื่อ นามสกุล */}
-
-              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
-                <label className=''>ชื่อ:</label>
-              </div>
-              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regName} onChange={(e) => setRegName(e.target.value)} name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-              <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
-                <label className=''>นามสกุล:</label>
-              </div>
-              <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regLastname} onChange={(e) => setRegLastname(e.target.value)} name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
+              {/* ส่วนที่2 ประวัติการศึกษา*/}
+              <div className='w-full mt-10'>
+                <p className='text-base lg:text-lg font-semibold mb-5 border-b border-blue-100'>ส่วนที่ 2 ประวัติการศึกษา</p>
+                <div className='md:flex items-center justify-start flex-wrap gap-3 px-3 mt-3'>
+                  <label htmlFor="" className='text-xs lg:text-sm'>สถาบันการศึกษา:</label>
+                  <input
+                    value={regSchool} onChange={(e) => setRegSchool(e.target.value)} name='regSchool' type="text"
+                    className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5
+                            leading-tight focus:outline-none text-xs lg:text-sm"
+                  />
+                </div>
+                <div className='md:flex justify-start flex-wrap gap-3 px-3 mt-3'>
+                  <div className='md:flex items-center'>
+                    <label htmlFor="" className='text-xs lg:text-sm'>สำเร็จการศึกษาระดับ:</label>
+                    <select value={regDegree} onChange={(e) => setRegDegree(e.target.value)} name='regDegree'
+                      className='appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                                leading-tight focus:outline-none text-xs lg:text-sm'>
+                      <option value="">-- เลือกระดับ --</option>
+                      <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
+                      <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
+                      <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">ประกาศนียบัตรวิชาชีพ (ปวช.)</option>
+                    </select>
+                  </div>
+                  <div className='md:flex items-center'>
+                    <label htmlFor="" className='text-xs lg:text-sm'>เกรดเฉลี่ย:</label>
+                    <input
+                      value={regGpa} onChange={(e) => setRegGpa(e.target.value)} name='regGpa' type="text"
+                      className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                            leading-tight focus:outline-none text-xs lg:text-sm"
+                    />
+                  </div>
+                </div>
               </div>
 
+              {/* ส่วนที่3 คณะ/สาขา*/}
+              <div className='w-full mt-10'>
+                <p className='text-base lg:text-lg font-semibold mb-5 border-b border-blue-100'>ส่วนที่ 2 คณะ/สาขา</p>
+                <div className='md:flex items-center justify-start flex-wrap gap-3 px-3 mt-3'>
+                  <label className='text-xs lg:text-sm'>หลักสูตร:</label>
+                  <div className='md:col-span-1 md:my-2 md:self-center md:flex  ml-5 flex items-center'>
+                    <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="4ปี" type="radio" className="w-3 h-3" />
+                    <label className='ml-4 md:ml-1 text-xs lg:text-sm '>4 ปี</label>
+                  </div>
 
-              {/* Name Surname */}
+                  <div className='md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center '>
+                    <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-3 h-3 " />
+                    <label className='ml-4 md:ml-1 text-xs lg:text-sm'>2 ปี (ต่อเนื่อง)</label>
+                  </div>
+                </div>
+                <div className='md:flex justify-start flex-wrap gap-3 px-3 mt-3'>
+                  <div className='md:flex items-center'>
+                    <label htmlFor="" className='text-xs lg:text-sm'>คณะ:</label>
+                    <select name='regFaculty' onChange={handleFacultyChange}
+                      className='appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                              leading-tight focus:outline-none text-xs lg:text-sm'
+                    >
+                      <option value="">-- เลือกคณะ --</option>
+                      <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
+                      <option value="คณะวิทยาศาสตร์และเทคโนโลยี">คณะวิทยาศาสตร์และเทคโนโลยี</option>
+                      <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
+                      <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
+                    </select>
+                  </div>
+                  <div className='md:flex items-center'>
+                    <label htmlFor="" className='text-xs lg:text-sm'>สาขา:</label>
+                    <select name='regMajor' className='appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                              leading-tight focus:outline-none text-xs lg:text-sm'
+                      disabled={!regFaculty} // Disable the select if faculty is not selected
+                      value={regMajor}
+                      onChange={(e) => setRegMajor(e.target.value)}
+                    >
+                      <option value="" disabled>-- เลือกสาขา --</option>
+                      {majorOptionsByFaculty[regFaculty]?.map((major) => (
+                        <option key={major} value={major}>
+                          {major}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
 
-              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
-                <label className=''>Name:</label>
+              <div className='flex justify-center mt-10'>
+                {/* Modal */}
+                <ButtonSubmit onSubmit={handleSubmit} />
               </div>
-              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regEname} onChange={(e) => setRegEname(e.target.value)} name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-              <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
-                <label className=''>Surname:</label>
-              </div>
-              <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regElastname} onChange={(e) => setRegElastname(e.target.value)} name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-
-              {/* เบอร์โทร อีเมลล์ */}
-
-              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
-                <label className=''>เบอร์โทรศัพท์ติดต่อ:</label>
-              </div>
-              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regPhone} onChange={(e) => setRegPhone(e.target.value)} name='regPhone' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-              <div className='col-start-7 col-end-8 md:text-right p-3 my-2 '>
-                <label className=''>Email:</label>
-              </div>
-              <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regEmail} onChange={(e) => setRegEmail(e.target.value)} name='regEmail' type="email" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-
-              {/* รูป */}
-              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
-                <label className=''>อัพโหลดรูปภาพ :</label>
-              </div>
-              <div className='md:col-span-4 md:my-2 md:self-center md:flex items-center pb-4 md:pb-0 mx-2 md:mx-0'>
-                <input type="file" id='regImg' name="regImg" className='w-full' onChange={handleFileUpload} />
-              </div>
-
-
-
             </div>
+          </div>
+
+          <div className='col-span-4 mt-5'>
+            <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 2 สมัครเรียนทางไปรษณีย์</h2>
+            <a href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing"
+              className='flex items-center gap-2 mb-3 text-lg text-blue-400 hover:text-blue-700'
+              download
+            >
+              <FaRegHandPointRight className='animate-pulse animate-infinite fill-orange-800' size={20} />
+              ดาวน์โหลดใบสมัคร
+            </a>
+            <a href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing">
+              <img src="/img/register_form.png" alt="" />
+            </a>
+            <p className='mt-3 text-blue-400'>กรอกข้อมูลให้สมบูรณ์ แล้วส่งใบสมัครพร้อมรูปถ่ายมาที่</p>
+            <p>วิทยาลัยเทคโนโลยีพนมวันท์</p>
+            <p>198 ถ.มิตรภาพ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
+
 
 
           </div>
-
-
-
-          {/* ประวัติการศึกษา  */}
-          <div className=' my-10 pb-2 '>
-            <h3 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> ประวัติการศึกษา</h3>
-
-            <div className='md:grid md:grid-cols-12 grid-cols-1 pt-4 '>
-              {/* สถาบันการศึกษา */}
-              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
-                <label className=''>สถาบันการศึกษา:</label>
-              </div>
-              <div className=' col-span-6 my-2 mx-2 md:mx-0'>
-                <input value={regSchool} onChange={(e) => setRegSchool(e.target.value)} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-
-
-
-              {/* ระดับการศึกษา */}
-
-              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
-                <label className=''>สำเร็จการศึกษาระดับ:</label>
-              </div>
-              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <select value={regDegree} onChange={(e) => setRegDegree(e.target.value)} name='regDegree' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12'>
-                  <option value="">-- เลือกระดับ --</option>
-                  <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
-                  <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
-                  <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">ประกาศนียบัตรวิชาชีพ (ปวช.)</option>
-                </select>
-              </div>
-              <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
-                <label className=''>เกรดเฉลี่ย</label>
-              </div>
-              <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <input value={regGpa} onChange={(e) => setRegGpa(e.target.value)} name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12" />
-              </div>
-            </div>
-          </div>
-
-
-          {/* คณะ/สาขา  */}
-          <div className=' my-10 pb-2 '>
-            <h3 className=' text-lg md:text-3xl text-[#FFBF00] p-2'> คณะ/สาขา</h3>
-            <div className='md:grid md:grid-cols-12 grid-cols-1 '>
-              {/* หลักสูตร */}
-
-              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
-                <label className=''>หลักสูตร:</label>
-              </div>
-              <div className='md:col-span-1 md:my-2 md:self-center md:flex  ml-5 flex items-center'>
-                <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="4ปี" type="radio" className="w-5 h-5" />
-                <label className='ml-4 md:ml-1 md:text-sm '>4 ปี</label>
-              </div>
-
-              <div className='md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center '>
-                <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-5 h-5 " />
-                <label className='ml-4 md:ml-1 md:text-sm'>2 ปี (ต่อเนื่อง)</label>
-              </div>
-
-
-
-              {/* คณะ และ สาขา */}
-              <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
-                <label className=''>คณะ:</label>
-              </div>
-              <div className=' col-span-2 my-2 mx-2 md:mx-0'>
-                <select name='regFaculty' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12' onChange={handleFacultyChange}>
-                  <option value="">-- เลือกคณะ --</option>
-                  <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
-                  <option value="คณะวิทยาศาสตร์และเทคโนโลยี">คณะวิทยาศาสตร์และเทคโนโลยี</option>
-                  <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
-                  <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
-                </select>
-              </div>
-              <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
-                <label className=''>สาขา:</label>
-              </div>
-              <div className='col-span-2 my-2 mx-2 md:mx-0'>
-                <select name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white h-12'
-                  disabled={!regFaculty} // Disable the select if faculty is not selected
-                  value={regMajor}
-                  onChange={(e) => setRegMajor(e.target.value)}
-                >
-                  <option value="" disabled>-- เลือกสาขา --</option>
-                  {majorOptionsByFaculty[regFaculty]?.map((major) => (
-                    <option key={major} value={major}>
-                      {major}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-
-          {/* ปุ่มส่งใบสมัคร */}
-          <div className='flex justify-center'>
-            {/* Modal */}
-            <ButtonSubmit onSubmit={handleSubmit} />
-          </div>
-
-
-
         </div>
+
 
 
 
