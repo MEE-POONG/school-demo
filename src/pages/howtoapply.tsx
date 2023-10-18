@@ -1,9 +1,7 @@
 import TheLayout from '@/components/TheLayout'
-import Link from 'next/link';
 import { TbBellRingingFilled } from "react-icons/tb";
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
-import SwiperComponent from '@/container/Sreact';
 import TermFees from '@/container/Register/TermFees';
 import Aos from 'aos';
 
@@ -94,7 +92,6 @@ export default function HowToApplyPage() {
             </div>
           </div>
         </div>
-        <SwiperComponent />
         <TermFees />
       </div>
     </TheLayout >
