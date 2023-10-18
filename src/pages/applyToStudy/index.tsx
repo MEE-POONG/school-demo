@@ -10,9 +10,16 @@ import Missing from '@/container/Register/modalmissing';
 import Success from '@/container/Register/modalsuccess';
 import ButtonSubmit from '@/container/Register/buttonSubmit';
 import { FaRegHandPointRight } from "react-icons/fa";
+import Aos from "aos";
+
 
 
 export default function ApplyToStudyForm() {
+  useEffect(() => {
+    Aos.init({
+        duration: 1000,
+    });
+}, []);
   const [{ error: errorMessage, loading: IndexActivityLoading }, executeIndexActivity] = useAxios({ url: '/api/registerForm', method: 'POST' }, { manual: true });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -205,8 +212,8 @@ export default function ApplyToStudyForm() {
   return (
     <TheLayout>
       <div className='container mx-auto md:py-24 py-12'>
-        <div className='text-center 4'>
-          <img src="/img/Logo_panomwan.png" className='w-28 mx-auto' alt="" />
+        <div className='text-center mt-10' data-aos="fade-up">
+          <img src="/img/Logo_panomwan.png" className='w-28 mx-auto' alt=""  />
           <p>วิทยาลัยเทคโนโลยีพนมวันท์</p>
         </div>
 
@@ -214,7 +221,7 @@ export default function ApplyToStudyForm() {
         <p className='mt-8 text-lg pl-3 border-b border-black mb-3'>การสมัครเรียน สามารถทำได้ 2วิธี ดังนี้</p>
         <div className='lg:grid grid-cols-12 px-3'>
 
-          <div className="col-span-8">
+          <div className="col-span-8" data-aos="fade-right">
             <div className='bg-white p-2 md:p-8 shadow-lg rounded-lg lg:w-10/12 mx-auto'>
               <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 1 สมัครเรียนออนไลน์</h2>
               {/* ส่วนที่1 ข้อมูลผู้สมัคร*/}
@@ -423,7 +430,7 @@ export default function ApplyToStudyForm() {
             </div>
           </div>
 
-          <div className='col-span-4 mt-5'>
+          <div className='col-span-4 mt-5' data-aos="fade-left">
             <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 2 สมัครเรียนทางไปรษณีย์</h2>
             <a href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing"
               className='flex items-center gap-2 mb-3 text-lg text-blue-400 hover:text-blue-700'
