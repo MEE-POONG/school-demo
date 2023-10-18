@@ -43,6 +43,7 @@ model News {
   type       String?
   detail     String? // รายละเอียด
   img        String? // รูปกิจกรรม
+  promoteImg String? // รูปกิจกรรม
   date       String? // วันที่
   createdAt  DateTime? @default(now())
   updatedAt  DateTime? @updatedAt
@@ -52,7 +53,9 @@ model News {
 
 model CourseGroup {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
-  name       String?
+  nameTH     String?
+  nameEN     String?
+  img        String?
   createdAt  DateTime? @default(now())
   updatedAt  DateTime? @updatedAt
   deleted_at DateTime? @map("deleted_at")
@@ -74,68 +77,71 @@ model CourseList {
 }
 
 model ContactUS {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  addressOne   String?
+  addressTwo   String?
+  addressThree String?
+  subDistrict  String?
+  district     String?
+  province     String?
+  zipcode      String?
+  tel          String?
+  fax          String?
+  email        String?
+  facebook     String?
+  createdAt    DateTime? @default(now())
+  updatedAt    DateTime? @updatedAt
+  deleted_at   DateTime? @map("deleted_at")
+}
 
+model welfare {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  img        String?
+  title      String?
+  detail     String?
   createdAt  DateTime? @default(now())
   updatedAt  DateTime? @updatedAt
   deleted_at DateTime? @map("deleted_at")
 }
 
 // // NO 
-// model AdminUser {
-//   id       String  @id @default(auto()) @map("_id") @db.ObjectId
-//   username String?
-//   password String?
+model AdminUser {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  username String?
+  password String?
 
-//   createdAt  DateTime? @default(now())
-//   updatedAt  DateTime? @updatedAt
-//   deleted_at DateTime? @map("deleted_at")
-// }
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+  deleted_at DateTime? @map("deleted_at")
+}
 
-// model SliderSchool {
-//   id         String    @id @default(auto()) @map("_id") @db.ObjectId
-//   img1       String?
-//   createdAt  DateTime? @default(now())
-//   updatedAt  DateTime? @updatedAt
-//   deleted_at DateTime? @map("deleted_at")
-// }
-
-// model RegSchool {
-//   id          String    @id @default(auto()) @map("_id") @db.ObjectId
-//   Img         String?
-//   Description String?
-//   createdAt   DateTime? @default(now())
-//   updatedAt   DateTime? @updatedAt
-//   deleted_at  DateTime? @map("deleted_at")
-// }
-
-// model RegisterForm {
-//   id         String    @id @default(auto()) @map("_id") @db.ObjectId
-//   studentId  String? //รหัสนักศึกษา
-//   Idpersonal String? //รหัหสบัตรประชาชน
-//   Birth      String? //วันเกิด
-//   Prefix     String? // คำนำหน้า
-//   Sex        String? // เพศ
-//   Nation     String? // ประเทศ
-//   Name       String? //ชื่อ
-//   Lastname   String? //นามสกุล
-//   Ename      String? //ชื่ออิง
-//   Elastname  String? // นามสกุลอิง
-//   Phone      String? //เบอร์
-//   Email      String? //เมล
-//   Img        String? //รูป
-//   //ประวัติการศึกษา
-//   School     String?
-//   Degree     String?
-//   Gpa        String?
-//   //ข้างล่างเป็นเกี่ยวกับคณะและหลักสูตร
-//   Program    String? //หลักสูตร
-//   Faculty    String?
-//   Major      String?
-//   createdAt  DateTime? @default(now())
-//   updatedAt  DateTime? @updatedAt
-//   deleted_at DateTime? @map("deleted_at")
-// }
+model RegisterForm {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  studentId  String? //รหัสนักศึกษา
+  Idpersonal String? //รหัหสบัตรประชาชน
+  Birth      String? //วันเกิด
+  Prefix     String? // คำนำหน้า
+  Sex        String? // เพศ
+  Nation     String? // ประเทศ
+  Name       String? //ชื่อ
+  Lastname   String? //นามสกุล
+  Ename      String? //ชื่ออิง
+  Elastname  String? // นามสกุลอิง
+  Phone      String? //เบอร์
+  Email      String? //เมล
+  Img        String? //รูป
+  //ประวัติการศึกษา
+  School     String?
+  Degree     String?
+  Gpa        String?
+  //ข้างล่างเป็นเกี่ยวกับคณะและหลักสูตร
+  Program    String? //หลักสูตร
+  Faculty    String?
+  Major      String?
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+  deleted_at DateTime? @map("deleted_at")
+}
 
 model IPAddress {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
