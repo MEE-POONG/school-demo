@@ -12,7 +12,7 @@ const SwiperComponent: React.FC = () => {
   }, []);
 
   return (
-    <div className='container m-auto mt-24'>
+    <div className='container m-auto mt-16 md:mt-24'>
       <div className='shadow-lg' data-aos="fade-down">
         <Swiper
           navigation={true} modules={[Navigation]}
