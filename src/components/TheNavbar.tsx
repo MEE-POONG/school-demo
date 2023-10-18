@@ -103,7 +103,7 @@ const TheNavbar: React.FC = () => {
       <div className="flex items-center justify-between">
         <Typography
           as="a"
-          href="#"
+          href="/"
           className="mr-4 cursor-pointer font-medium flex flex-row items-center"
         >
           <Image
