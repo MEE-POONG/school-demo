@@ -5,14 +5,14 @@ import { useRouter } from 'next/router'
 
 
 
-export default function Modal({ onSubmit}: any) {
+export default function ButtonSubmit({ onSubmit}: any) {
   const [openSubmit, setOpen] = useState(false)
   const router = useRouter()
   const cancelButtonRef = useRef(null)
 
   return (
     <>
-      <button onClick={() => setOpen(!openSubmit)} className='bg-black bg-opacity-80  text-[#FFBF00] rounded w-28 h-14 md:w-40 md:h-15 md:text-xl'>
+      <button onClick={() => setOpen(!openSubmit)} className='bg-blue-400 hover:bg-blue-700 text-white rounded-full py-1 px-4 text-sm md:text-lg'>
         ส่งใบสมัคร
       </button>
 

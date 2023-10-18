@@ -5,7 +5,7 @@ import Loading from '@/components/loading'; // เพิ่มการ import �
 import TermFees from '@/container/Register/TermFees';
 import Aos from 'aos';
 
-export default function RegisterPage() {
+export default function HowToApplyPage() {
   const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
 
   useEffect(() => {

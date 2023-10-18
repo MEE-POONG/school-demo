@@ -10,14 +10,14 @@ import axios from "axios";
 import useAxios from "axios-hooks";
 import Link from 'next/link';
 import Loading from '@/container/Register/loading';
-import Modal from '@/container/Register/modal';
+import Modal from '@/container/Register/buttonSubmit';
 import Missing from '@/container/Register/modalmissing';
 import Success from '@/container/Register/modalsuccess';
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function ApplyToStudyForm() {
   const [{ error: errorMessage, loading: IndexActivityLoading }, executeIndexActivity] = useAxios({ url: '/api/registerForm', method: 'POST' }, { manual: true });
   const [loading, setLoading] = useState(false);
   const router = useRouter();

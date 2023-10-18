@@ -7,7 +7,7 @@ export const navbarArray = [
         name: 'ข้อมูลเพิ่มเติม',
         link: '',
         children: [
-            { name: 'วิธีการสมัคร', link: '/register' },
+            { name: 'วิธีการสมัคร', link: '/howtoapply' },
             { name: 'ทีมที่ปรึกษา', link: '/advisor' },
         ],
     },

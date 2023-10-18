@@ -26,7 +26,7 @@ export const Relations: React.FC = () => {
       duration: 1000,
     });
   }, []);
-  
+
   useEffect(() => {
     fetch('/api/news')
       .then((response) => {
@@ -85,13 +85,13 @@ export const Relations: React.FC = () => {
             unmount: { y: 250 },
           }}
         >
-          <ul  data-aos="fade-up" className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
+          <ul data-aos="fade-up" className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6">
             {(() => {
               const filteredNews = newsArray.filter(news => news.type === selectType).slice(0, 10);
               const displayNews = filteredNews?.length < 4 ? filteredNews.concat(filteredNews) : filteredNews;
               return displayNews?.slice(selectType ? 0 : -10).map(news => (
                 <li key={"/"} className="flex">
-                  <Link href={""} className="hover:border-blue-500 hover:border-solid hover:text-yellow-800  hover:bg-blue-100 group w-full flex flex-col px-4 justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
+                  <Link href={""} className="hover:border-blue-500 hover:border-solid hover:text-blue-700  hover:bg-blue-100 group w-full flex flex-col px-4 justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
                     <div className="min-w-0 flex-auto">
                       <p className="text-sm font-semibold leading-6">{news?.title}</p>
                       <p className="mt-1 truncate text-xs leading-5 text-gray-500">{news?.subTitle}</p>
@@ -101,7 +101,14 @@ export const Relations: React.FC = () => {
               ));
             })()}
           </ul>
-          <button type="button" className="text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg ">ดูข่าวทั้งหมด {">>>>"}</button>
+          <div className="text-center">
+            <button
+              type="button"
+              className="text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg "
+            >ดูข่าวทั้งหมด {">>>>"}
+            </button>
+          </div>
+
         </TabsBody>
       </Tabs>
 

@@ -24,12 +24,12 @@ export const ContactUS: React.FC = () => {
         <div className="p-4 w-full sm:w-1/2 lg:w-1/3 flex my-4 justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
           <Card className="w-full  p-4 bg-white">
             <CardBody>
-              <FaEnvelope className="h-12 w-12 mb-3 text-yellow-800" />
+              <FaEnvelope className="h-8 w-8 lg:h-12 lg:w-12 mb-3 text-yellow-800" />
               <Typography variant="h5" color="blue-gray" className="mb-2 text-yellow-800">
                 Email Us
               </Typography>
               <Typography className="text-sm font-semibold leading-6 text-black">
-                E-mail :
+                phanomwanu@gmail.com
                 <br />
                 {/* ที่อยู่หนังสือราชการทางอิเล็กทรอนิกส์ :  */}
               </Typography>
@@ -39,7 +39,7 @@ export const ContactUS: React.FC = () => {
         <div className="p-4 w-full sm:w-1/2 lg:w-1/3 flex my-4 justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
           <Card className="w-full  p-4 bg-white">
             <CardBody>
-              <FaSearchLocation className="h-12 w-12 mb-3 text-yellow-800" />
+              <FaSearchLocation className="h-8 w-8 lg:h-12 lg:w-12 mb-3 text-yellow-800" />
               <Typography variant="h5" color="blue-gray" className="mb-2 text-yellow-800">
                 Address
               </Typography>
@@ -54,7 +54,7 @@ export const ContactUS: React.FC = () => {
         <div className="p-4 w-full sm:w-1/2 lg:w-1/3 flex my-4 justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
           <Card className="w-full  p-4 bg-white">
             <CardBody>
-              <FaPhoneAlt className="h-12 w-12 mb-3 text-yellow-800" />
+              <FaPhoneAlt className="h-8 w-8 lg:h-12 lg:w-12 text-yellow-800" />
               <Typography variant="h5" color="blue-gray" className="mb-2 text-yellow-800">
                 Call Us
               </Typography>
