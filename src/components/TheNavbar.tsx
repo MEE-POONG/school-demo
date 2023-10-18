@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from "react";
 import {
   Navbar,
-  MobileNav,
   Typography,
   Button,
   IconButton,
-  Card,
   Collapse
 } from "@material-tailwind/react";
 import Image from "next/image";
 import { navbarArray } from "../data/navbar";
-
-import { Noto_Sans_Thai } from "next/font/google";
-
-
-const mainFont = Noto_Sans_Thai({
-  weight: "400",
-  subsets: ['latin'],
-});
 
 const TheNavbar: React.FC = () => {
   const [openNav, setOpenNav] = useState<boolean>(false);
@@ -57,7 +47,7 @@ const TheNavbar: React.FC = () => {
               as="li"
               variant="small"
               color="blue-gray"
-              className="font-normal relative group text-md"
+              className=" relative group text-md"
             >
               <button className="flex text-white xl:text-lg items-center text-md px-3 py-2">
                 {item.name}
@@ -69,7 +59,7 @@ const TheNavbar: React.FC = () => {
                     as="li"
                     variant="small"
                     color="blue-gray"
-                    className="font-normal "
+                    className=" "
                   >
                     <a href={child.link} className="flex justify-center text-md xl:text-lg hover:bg-blue-500 hover:text-white">
                       {child.name}
@@ -86,7 +76,7 @@ const TheNavbar: React.FC = () => {
               as="li"
               variant="small"
               color="blue-gray"
-              className="font-normal"
+              className=""
             >
               <a href={item.link} className="flex text-white items-center text-md xl:text-lg px-3 py-2">
                 {item.name}
@@ -99,7 +89,7 @@ const TheNavbar: React.FC = () => {
   );
 
   return (
-    <Navbar className={`fixed top-0 z-50 h-max max-w-full border-0 transition-all duration-200 ease-in-out animate-fade-down bg-blue-500/70	${!isScrolling ? "bg-gradient-to-r from-blue-500 to-blue-700" : ""} rounded-none px-4 py-2 lg:px-8 lg:py-2`}>
+    <Navbar className={`font-kanit fixed top-0 z-50 h-max max-w-full border-0 transition-all duration-200 ease-in-out animate-fade-down bg-blue-500/70	${!isScrolling ? "bg-gradient-to-r from-blue-500 to-blue-700" : ""} rounded-none px-4 py-2 lg:px-8 lg:py-2`}>
       <div className="flex items-center justify-between">
         <Typography
           as="a"
