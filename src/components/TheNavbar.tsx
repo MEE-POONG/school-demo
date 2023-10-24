@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import Image from "next/image";
 import { navbarArray } from "../data/navbar";
+import Link from "next/link";
 
 const TheNavbar: React.FC = () => {
   const [openNav, setOpenNav] = useState<boolean>(false);
@@ -118,7 +119,7 @@ const TheNavbar: React.FC = () => {
             size="sm"
             className="hidden lg:inline-block bg-gradient-to-r from-blue-500 to-green-400 hover:from-green-400 hover:to-yellow-400 text-md"
           >
-            <a href="/applyToStudy">สมัครเรียน</a>
+            <Link href="/applyToStudy">สมัครเรียน</Link>
           </Button>
           <IconButton
             variant="text"
@@ -162,7 +163,7 @@ const TheNavbar: React.FC = () => {
       <Collapse open={openNav} className="text-center">
         {navList}
         <Button variant="gradient" size="sm" fullWidth className="mb-2 text-md bg-gradient-to-r from-blue-500 to-green-400 hover:from-green-400 hover:to-yellow-400 text-md">
-          <a href="/applyToStudy">สมัครเรียน</a>
+          <Link href="/applyToStudy">สมัครเรียน</Link>
         </Button>
       </Collapse>
     </Navbar>
