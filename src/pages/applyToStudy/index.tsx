@@ -218,11 +218,11 @@ export default function ApplyToStudyForm() {
         </div>
 
 
-        <p className='mt-8 text-lg pl-3 border-b border-black mb-3'>การสมัครเรียน สามารถทำได้ 2วิธี ดังนี้</p>
-        <div className='lg:grid grid-cols-12 px-3'>
+        <p className='mt-8 text-lg pl-3 mb-3'>การสมัครเรียน สามารถทำได้ 2วิธี ดังนี้</p>
+        <div className='lg:grid grid-cols-12 px-3 border-t border-black'>
 
           <div className="col-span-8 animate-fade-up" >
-            <div className='bg-white p-2 md:p-8 shadow-lg rounded-lg lg:w-10/12 mx-auto'>
+            <div className='bg-white p-2 md:p-8 shadow-lg rounded-lg lg:w-11/12'>
               <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 1 สมัครเรียนออนไลน์</h2>
               {/* ส่วนที่1 ข้อมูลผู้สมัคร*/}
               <div className='w-full'>
@@ -340,7 +340,6 @@ export default function ApplyToStudyForm() {
                 </div>
 
               </div>
-
               {/* ส่วนที่2 ประวัติการศึกษา*/}
               <div className='w-full mt-10'>
                 <p className='text-base lg:text-lg font-semibold mb-5 border-b border-blue-100'>ส่วนที่ 2 ประวัติการศึกษา</p>
@@ -374,7 +373,6 @@ export default function ApplyToStudyForm() {
                   </div>
                 </div>
               </div>
-
               {/* ส่วนที่3 คณะ/สาขา*/}
               <div className='w-full mt-10'>
                 <p className='text-base lg:text-lg font-semibold mb-5 border-b border-blue-100'>ส่วนที่ 2 คณะ/สาขา</p>
