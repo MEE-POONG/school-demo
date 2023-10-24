@@ -118,7 +118,7 @@ const TheNavbar: React.FC = () => {
             size="sm"
             className="hidden lg:inline-block bg-gradient-to-r from-blue-500 to-green-400 hover:from-green-400 hover:to-yellow-400 text-md"
           >
-            <span>สมัครเรียน</span>
+            <a href="/applyToStudy">สมัครเรียน</a>
           </Button>
           <IconButton
             variant="text"
@@ -162,7 +162,7 @@ const TheNavbar: React.FC = () => {
       <Collapse open={openNav} className="text-center">
         {navList}
         <Button variant="gradient" size="sm" fullWidth className="mb-2 text-md bg-gradient-to-r from-blue-500 to-green-400 hover:from-green-400 hover:to-yellow-400 text-md">
-          <span>สมัครเรียน</span>
+          <a href="/applyToStudy">สมัครเรียน</a>
         </Button>
       </Collapse>
     </Navbar>

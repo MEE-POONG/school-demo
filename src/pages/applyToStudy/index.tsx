@@ -221,7 +221,7 @@ export default function ApplyToStudyForm() {
         <p className='mt-8 text-lg pl-3 border-b border-black mb-3'>การสมัครเรียน สามารถทำได้ 2วิธี ดังนี้</p>
         <div className='lg:grid grid-cols-12 px-3'>
 
-          <div className="col-span-8" data-aos="fade-right">
+          <div className="col-span-8 animate-fade-up" >
             <div className='bg-white p-2 md:p-8 shadow-lg rounded-lg lg:w-10/12 mx-auto'>
               <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 1 สมัครเรียนออนไลน์</h2>
               {/* ส่วนที่1 ข้อมูลผู้สมัคร*/}
@@ -430,7 +430,7 @@ export default function ApplyToStudyForm() {
             </div>
           </div>
 
-          <div className='col-span-4 mt-5' data-aos="fade-left">
+          <div className='col-span-4 mt-5 animate-fade-up'>
             <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 2 สมัครเรียนทางไปรษณีย์</h2>
             <a href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing"
               className='flex items-center gap-2 mb-3 text-lg text-blue-400 hover:text-blue-700'
