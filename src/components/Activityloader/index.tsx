@@ -70,7 +70,7 @@ function Activityloader() {
       <div className='flex justify-center'>
         {visibleItems < activitySchoolData.length && (
           <button onClick={handleLoadMore} className=" mt-6 group relative h-12 w-40 overflow-hidden rounded-2xl bg-black bg-opacity-80 text-lg font-bold text-white">
-            โหลดเพิ่มเติม
+            โหลดเพิ่มเติม 
             <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30" />
           </button>
         )}

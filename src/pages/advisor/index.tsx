@@ -8,7 +8,7 @@ import Aos from "aos";
 
 
 
-export default function Welfare() {
+export default function Advisor() {
     const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
 
     useEffect(() => {
