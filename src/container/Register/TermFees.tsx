@@ -1,9 +1,6 @@
 import { CourseGroup, CourseList } from '@/data/TermFees';
 import { Card } from '@material-tailwind/react';
 import React from 'react';
-import SwiperCore, { Navigation, Autoplay } from 'swiper';
-
-SwiperCore.use([Navigation, Autoplay]);
 
 const TermFees: React.FC = () => {
   return (
