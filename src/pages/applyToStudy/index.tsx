@@ -11,6 +11,7 @@ import Success from '@/container/Register/modalsuccess';
 import ButtonSubmit from '@/container/Register/buttonSubmit';
 import { FaRegHandPointRight } from "react-icons/fa";
 import Aos from "aos";
+import Link from 'next/link';
 
 
 
@@ -430,16 +431,16 @@ export default function ApplyToStudyForm() {
 
           <div className='col-span-4 mt-5 animate-fade-up'>
             <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 2 สมัครเรียนทางไปรษณีย์</h2>
-            <a href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing"
+            <Link href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing"
               className='flex items-center gap-2 mb-3 text-lg text-blue-400 hover:text-blue-700'
               download
             >
               <FaRegHandPointRight className='animate-pulse animate-infinite fill-orange-800' size={20} />
               ดาวน์โหลดใบสมัคร
-            </a>
-            <a href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing">
+            </Link>
+            <Link href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing">
               <img src="/img/register_form.png" alt="" />
-            </a>
+            </Link>
             <p className='mt-3 text-blue-400'>กรอกข้อมูลให้สมบูรณ์ แล้วส่งใบสมัครพร้อมรูปถ่ายมาที่</p>
             <p>วิทยาลัยเทคโนโลยีพนมวันท์</p>
             <p>198 ถ.มิตรภาพ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>

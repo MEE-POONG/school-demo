@@ -123,7 +123,7 @@ export default function About() {
                                         </li>
                                         <li className="flex gap-x-2 mt-0">
                                             <span>
-                                                <strong className="font-semibold text-[#2797FF]">ปรัชญาและปณิธานของวิทยาลัย</strong> " ฝีมือ เทคโนโลยี วิจัย วัฒนธรรม คุณธรรม ความก้าวหน้า ความสำเร็จและสนองสังคม "
+                                                <strong className="font-semibold text-[#2797FF]">ปรัชญาและปณิธานของวิทยาลัย</strong> &quot; ฝีมือ เทคโนโลยี วิจัย วัฒนธรรม คุณธรรม ความก้าวหน้า ความสำเร็จและสนองสังคม &quot;
 
                                             </span>
                                         </li>
