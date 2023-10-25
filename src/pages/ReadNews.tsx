@@ -5,7 +5,7 @@ import { AiTwotoneCalendar } from "react-icons/ai";
 import { FaHandPointRight } from "react-icons/fa";
 import Slider from "react-slick";
 
-export default class ReadNewsPageextends extends Component {
+export default class ReadNewsPage extends Component {
     render() {
         const settings = {
             dots: true,
