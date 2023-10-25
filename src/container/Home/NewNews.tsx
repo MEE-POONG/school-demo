@@ -20,7 +20,6 @@ import { News } from "@prisma/client";
 import Loading from "@/components/loading";
 import { newsMenu } from "@/data/news";
 
-
 export const NewNews: React.FC = () => {
   const [selectType, setSelectType] = useState("");
   const [newsArray, setNewsArray] = useState<News[]>([]);
@@ -145,7 +144,7 @@ export const NewNews: React.FC = () => {
                       </Typography>
                     </CardBody>
                     <CardFooter className="pt-0">
-                      <Link href="#" className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
+                      <Link href="./ReadNews" className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
                         รายละเอียด
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +169,9 @@ export const NewNews: React.FC = () => {
           </Slider>
         </TabsBody>
       </Tabs>
-      <button type="button" className="text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg ">ดูข่าวทั้งหมด {">>>>"}</button>
+      <button type="button" className="text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg ">
+        <Link href="./ShowContentAll">ดูข่าวทั้งหมด {">>>>"}</Link>
+      </button>
     </div>
   );
 }
