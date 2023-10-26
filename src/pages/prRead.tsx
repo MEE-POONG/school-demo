@@ -2,9 +2,8 @@ import React from "react";
 import TheLayout from "@/components/TheLayout";
 import Image from 'next/image';
 import { AiTwotoneCalendar } from "react-icons/ai";
-import { Typography } from "@material-tailwind/react";
 
-export default function PRforRead() {
+const PRforRead: React.FC = () =>{
 
     return (
         <>
@@ -54,3 +53,4 @@ export default function PRforRead() {
     )
 
 }
+export default PRforRead;
