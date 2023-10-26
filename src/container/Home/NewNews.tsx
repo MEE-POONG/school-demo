@@ -19,14 +19,14 @@ import Loading from "@/components/loading";
 import { newsMenu } from "@/data/news";
 
 export const NewNews: React.FC = () => {
-  const [selectType, setSelectType] = useState("");
+  const [selectType, setSelectType] = useState(newsMenu[0].value); // Set initial state to the value of the first item
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [displayNews, setDisplayNews] = useState<News[]>([]); 
+  
 
-  const filteredNews = newsArray?.filter(news => (selectType !== "" ? news?.type === selectType : true));
-  const displayNews = filteredNews?.length < 4 ? filteredNews?.concat(filteredNews) : filteredNews;
-
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -79,10 +79,18 @@ export const NewNews: React.FC = () => {
         setIsLoading(false);
       });
   }, []);
-  useEffect(() => {
-    console.log(newsArray);
 
-  }, [newsArray]);
+  useEffect(() => {
+    // Step 2: Listen for changes in selectType
+    // Step 3: Filter and set displayNews based on the selected selectType
+    const filteredNews = newsArray?.filter((news) =>
+      selectType !== "" ? news?.type === selectType : true
+    );
+    const newDisplayNews =
+      filteredNews?.length < 4 ? filteredNews?.concat(filteredNews) : filteredNews;
+    setDisplayNews(newDisplayNews);
+  }, [selectType, newsArray]); // Listen for changes in selectType and newsArray
+
 
   if (isLoading) {
     return <div>Loading...</div>;
