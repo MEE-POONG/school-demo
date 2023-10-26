@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component,useEffect } from "react";
 import Slider from "react-slick";
 
 export default class HomeSlider extends Component {
+  
   render() {
     const settings = {
       dots: true,
@@ -11,7 +12,9 @@ export default class HomeSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
+    
     return (
+      
       <div className="container mx-auto mt-24">
         <Slider {...settings}>
           <div>

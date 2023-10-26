@@ -1,7 +1,6 @@
 import React from "react";
 import TheFooter from "./TheFooter";
 import TheNavbar from "./TheNavbar";
-import Link from "next/link";
 import Head from "next/head";
 import VisiterCounter from "@/components/visiterCounter";
 import BackToTopButton from "./BackTotop";
