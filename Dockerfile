@@ -1,5 +1,5 @@
 
-FROM node:16.20.2-alpine
+FROM --platform=linux/amd64 node:16.20.2-alpine
 
 WORKDIR /app
 COPY . .

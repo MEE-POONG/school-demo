@@ -2,6 +2,7 @@
 version: "3.7"
 services:
   web:
+    platform: linux/amd64
     command: npm run production
     container_name: next-docker-production
     volumes:
