@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import TheLayout from '@/components/TheLayout'
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading

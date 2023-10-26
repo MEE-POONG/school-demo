@@ -4,12 +4,10 @@ import {
   TabsHeader,
   TabsBody,
   Tab,
-  TabPanel,
   Card,
   CardHeader,
   CardBody,
   Typography,
-  Button,
   CardFooter,
 } from "@material-tailwind/react";
 import Link from "next/link";
@@ -25,6 +23,9 @@ export const NewNews: React.FC = () => {
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const filteredNews = newsArray?.filter(news => (selectType !== "" ? news?.type === selectType : true));
+  const displayNews = filteredNews?.length < 4 ? filteredNews?.concat(filteredNews) : filteredNews;
 
   const settings = {
     dots: false,
@@ -118,54 +119,45 @@ export const NewNews: React.FC = () => {
           }}
         >
           <Slider {...settings}>
-            {(() => {
-              const filteredNews = newsArray?.filter(news => (selectType !== "" ? news.type === selectType : true));
-              const displayNews = filteredNews?.length < 4 ? filteredNews.concat(filteredNews) : filteredNews;
-              return displayNews?.slice(selectType ? 0 : -10).map(news => (
-                <div key={news.id}>
-                  <Card className="my-6 w-72 overflow-hidden mx-auto">
-                    <CardHeader
-                      floated={false}
-                      shadow={false}
-                      color="transparent"
-                      className="m-0 rounded-none"
-                    >
-                      <img
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-                        alt="ui/ux review check"
-                      />
-                    </CardHeader>
-                    <CardBody>
-                      <Typography variant="h6" color="blue-gray" className="title-clamp">
-                        {news.title}
-                      </Typography>
-                      <Typography variant="lead" color="gray" className="mt-3 font-normal text-sm subtitle-clamp">
-                        {news.subTitle}
-                      </Typography>
-                    </CardBody>
-                    <CardFooter className="pt-0">
-                      <Link href="./ReadNews" className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
-                        รายละเอียด
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          className="h-4 w-4"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                          />
-                        </svg>
-                      </Link>
-                    </CardFooter>
-                  </Card>
-                </div>
-              ));
-            })()}
+            {displayNews?.slice(selectType ? 0 : -10).map((news) => (
+              <div key={news?.id}>
+                <Card className="my-6 w-72 overflow-hidden mx-auto">
+                  <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none">
+                    <img className="h-48 object-cover"
+                      src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news?.img || "4500f404-dbac-40f3-6696-ae768a38e800"}/700`}
+                      alt={news?.title || "Image Alt Text"}
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Typography variant="h6" color="blue-gray" className="title-clamp">
+                      {news?.title}
+                    </Typography>
+                    <Typography variant="lead" color="gray" className="mt-3 font-normal text-sm subtitle-clamp">
+                      {news?.subTitle}
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0">
+                    <Link href={`/ReadNews?id=${news?.id}`} className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
+                      รายละเอียด
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        className="h-4 w-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </div>
+            ))}
           </Slider>
         </TabsBody>
       </Tabs>
