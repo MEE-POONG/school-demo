@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { News } from "@prisma/client";
+import Link from "next/link";
 
 const HomeSlider = () => {
   const [newsArray, setNewsArray] = useState<News[]>([]);
@@ -77,13 +78,15 @@ const HomeSlider = () => {
           .filter((news) => news.promoteImg) // กรองข่าวที่มีภาพ promteImg ไม่ว่าง
           .map((news) => (
             <div key={news.id}>
+              <Link href={'${news.id}'}>
               <img
-                className="w-full h-[600px]"
+                className="w-[1800px] h-[600px] object-cover"
                 src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${
                   news.promoteImg
                 }/700`}
                 alt=""
               />
+              </Link>
             </div>
           ))}
       </Slider>
