@@ -78,7 +78,6 @@ export const NewNews: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log(selectType);
     fetch(`/api/news/search?page=1&pageSize=10&keyword=${selectType}`)
       .then((response) => {
         if (!response.ok) {

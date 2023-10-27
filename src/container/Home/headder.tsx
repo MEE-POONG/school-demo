@@ -1,11 +1,4 @@
-import { Typography } from '@material-tailwind/react';
-import React, { useEffect, useState } from 'react';
-
-interface sliderSchool {
-    id: number;
-    img1: string;
-}
-
+import React from 'react';
 const HeadHome: React.FC = () => {
 
     return (

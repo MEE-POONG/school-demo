@@ -1,6 +1,4 @@
 import TheLayout from '@/components/TheLayout'
-
-
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -12,8 +10,6 @@ import ButtonSubmit from '@/container/Register/buttonSubmit';
 import { FaRegHandPointRight } from "react-icons/fa";
 import Aos from "aos";
 import Link from 'next/link';
-
-
 
 export default function ApplyToStudyForm() {
   useEffect(() => {
@@ -173,8 +169,6 @@ export default function ApplyToStudyForm() {
       }
     }
   };
-
-
 
 
   // ตรงนี้ทำให้ถ้าเลือก คณะ สาขาจะแตกต่างกันไปตามคณะ
@@ -449,10 +443,6 @@ export default function ApplyToStudyForm() {
 
           </div>
         </div>
-
-
-
-
       </div>
 
       {isLoading ? (
