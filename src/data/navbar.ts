@@ -1,6 +1,7 @@
 export const navbarArray = [
     { name: 'หน้าแรก', link: '/' },
     { name: 'รู้จัก "พนมวันท์"', link: '/about' },
+    { name: 'ข่าวสาร', link: '/news' },
     { name: 'คณะ/หลักสูตร', link: '/faculty' },
     { name: 'สวัสดิการ', link: '/welfare' },
     {
