@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import Slider from "react-slick";
 
 export default class HomeSlider extends Component {

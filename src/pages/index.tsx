@@ -6,14 +6,14 @@ import HeadHome from '@/container/Home/headder';
 import { Menu } from "@/container/Home/menu";
 import Statistics from "@/container/Home/statistics";
 import { Relations } from "@/container/Home/Relations";
-import HomeSlider from '@/container/Home/HomeSlide';
+import HomeSlider from '@/container/Home/homeslide';
 
 export default function Index() {
   return (
     <TheLayout>
       <HeadHome />
       <Menu />
-      <HomeSlider />
+      <HomeSlider/>
       <NewNews />
       <Relations />
       <Statistics />
