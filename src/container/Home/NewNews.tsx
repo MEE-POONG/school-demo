@@ -19,7 +19,7 @@ import Loading from "@/components/loading";
 import { newsMenu } from "@/data/news";
 
 export const NewNews: React.FC = () => {
-  const [selectType, setSelectType] = useState(newsMenu[0].value); // Set initial state to the value of the first item
+  const [selectType, setSelectType] = useState(newsMenu[0].value); 
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -81,13 +81,30 @@ export const NewNews: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const filteredNews = newsArray?.filter((news) =>
-      selectType !== "" ? news?.type === selectType : true
-    );
-    const newDisplayNews =
-      filteredNews?.length < 4 ? filteredNews?.concat(filteredNews) : filteredNews;
-    setDisplayNews(newDisplayNews);
-  }, [selectType, newsArray]); 
+    console.log(selectType);
+    fetch(`/api/news/type=${selectType}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      setNewsArray(data?.newsData);
+      setIsLoading(false);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      setError(error.message);
+      setIsLoading(false);
+    });
+    // const filteredNews = newsArray?.filter((news) =>
+    //   selectType !== "" ? news?.type === selectType : true
+    // );
+    // const newDisplayNews =
+    //   filteredNews?.length < 4 ? filteredNews?.concat(filteredNews) : filteredNews;
+    // setDisplayNews(newDisplayNews);
+  }, [selectType]); 
   
 
   if (isLoading) {
