@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Aos from "aos";
 import { Card, CardHeader, Typography } from "@material-tailwind/react";
 import Link from "next/link";

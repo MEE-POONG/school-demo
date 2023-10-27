@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Welfare() {
+export default function NewsPage() {
   return (
     <TheLayout>
       {/* banner คณะและหลักสูตร */}

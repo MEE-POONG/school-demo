@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import {
   Card,
   CardBody,
-  CardHeader,
   Typography,
 } from "@material-tailwind/react";
 import { FaEnvelope, FaPhoneAlt, FaSearchLocation } from "react-icons/fa";

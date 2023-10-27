@@ -5,8 +5,6 @@ import AddressContact from '@/container/advisor/address';
 import TeamAdvisor from '@/container/advisor/teamAdvisor';
 import Aos from "aos";
 
-
-
 export default function Advisor() {
     const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
 
