@@ -1,11 +1,6 @@
 import Activityloader from "@/components/Activityloader";
 import Newloader from "@/components/Newloader";
 import TheLayout from "@/components/TheLayout";
-import { Inter } from "next/font/google";
-import Link from 'next/link';
-
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function NewsPage() {
   return (

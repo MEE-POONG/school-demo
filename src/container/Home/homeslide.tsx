@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { deflate } from "zlib";
+import Head from 'next/head';
 
 export default class HomeSlider extends Component {
 
@@ -28,3 +30,4 @@ export default class HomeSlider extends Component {
     );
   }
 }
+
