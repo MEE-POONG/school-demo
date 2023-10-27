@@ -1,12 +1,8 @@
-import { Inter } from "next/font/google";
 import TheLayout from "@/components/TheLayout";
-import { Typography } from "@material-tailwind/react";
-import Link from "next/link";
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 import Aos from "aos";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function About() {
     const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
