@@ -134,8 +134,9 @@ export const NewNews: React.FC = () => {
           }}
         >
           {/* Use Slider component with valid children */}
-          <Slider {...settings}>
-            {newsArray?.map((news) => (
+          ssss
+          {/* <Slider {...settings}>
+          {newsArray?.map((news) => (
               <div key={news?.id}>
                 <Card className="my-6 w-72 overflow-hidden mx-auto">
                   <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none">
@@ -174,7 +175,7 @@ export const NewNews: React.FC = () => {
                 </Card>
               </div>
             ))}
-          </Slider>
+          </Slider> */}
         </TabsBody>
       </Tabs>
       <button type="button" className="text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg ">
