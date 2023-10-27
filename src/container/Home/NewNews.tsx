@@ -106,7 +106,7 @@ export const NewNews: React.FC = () => {
   }
 
   return (
-    <div className="container m-auto" >
+    <div className="container m-auto">
       {isLoading && <Loading />}
       <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
       <Tabs id="custom-animation" value={selectType} data-aos="fade-right">
@@ -116,7 +116,9 @@ export const NewNews: React.FC = () => {
           }}
         >
           {newsMenu.map(({ label, value }) => (
-            <Tab key={value} value={value}
+            <Tab
+              key={value}
+              value={value}
               className={`font-bold text-white `}
               onClick={() => setSelectType(value)}
             >
@@ -131,6 +133,7 @@ export const NewNews: React.FC = () => {
             unmount: { y: 250 },
           }}
         >
+          {/* Use Slider component with valid children */}
           <Slider {...settings}>
             {newsArray?.map((news) => (
               <div key={news?.id}>
