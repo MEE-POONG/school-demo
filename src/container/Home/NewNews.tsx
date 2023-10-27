@@ -19,14 +19,11 @@ import Loading from "@/components/loading";
 import { newsMenu } from "@/data/news";
 
 export const NewNews: React.FC = () => {
-  const [selectType, setSelectType] = useState(newsMenu[0].value); 
+  const [selectType, setSelectType] = useState(newsMenu[0]?.value);
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [displayNews, setDisplayNews] = useState<News[]>([]); 
-  
 
-  
   const settings = {
     dots: false,
     infinite: true,
@@ -62,7 +59,7 @@ export const NewNews: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetch('/api/news')
+    fetch(`/api/news/search?page=1&pageSize=10&keyword=${selectType}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -82,30 +79,24 @@ export const NewNews: React.FC = () => {
 
   useEffect(() => {
     console.log(selectType);
-    fetch(`/api/news/type=${selectType}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then((data) => {
-      setNewsArray(data?.newsData);
-      setIsLoading(false);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      setError(error.message);
-      setIsLoading(false);
-    });
-    // const filteredNews = newsArray?.filter((news) =>
-    //   selectType !== "" ? news?.type === selectType : true
-    // );
-    // const newDisplayNews =
-    //   filteredNews?.length < 4 ? filteredNews?.concat(filteredNews) : filteredNews;
-    // setDisplayNews(newDisplayNews);
-  }, [selectType]); 
-  
+    fetch(`/api/news/search?page=1&pageSize=10&keyword=${selectType}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setNewsArray(data?.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError(error.message);
+        setIsLoading(false);
+      });
+
+  }, [selectType]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -116,10 +107,10 @@ export const NewNews: React.FC = () => {
   }
 
   return (
-    <div className="container m-auto" data-aos="fade-right">
+    <div className="container m-auto" >
       {isLoading && <Loading />}
       <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
-      {/* <Tabs id="custom-animation" value={selectType}>
+      <Tabs id="custom-animation" value={selectType} data-aos="fade-right">
         <TabsHeader className="bg-yellow-800 "
           indicatorProps={{
             className: "bg-yellow-800 shadow-none !text-gray-900",
@@ -142,7 +133,7 @@ export const NewNews: React.FC = () => {
           }}
         >
           <Slider {...settings}>
-            {displayNews?.slice(selectType ? 0 : -10).map((news) => (
+            {newsArray?.map((news) => (
               <div key={news?.id}>
                 <Card className="my-6 w-72 overflow-hidden mx-auto">
                   <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none">
@@ -183,7 +174,7 @@ export const NewNews: React.FC = () => {
             ))}
           </Slider>
         </TabsBody>
-      </Tabs> */}
+      </Tabs>
       <button type="button" className="text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg ">
         <Link href="./ShowContentAll">ดูข่าวทั้งหมด {">>>>"}</Link>
       </button>

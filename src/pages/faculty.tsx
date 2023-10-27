@@ -1,12 +1,10 @@
-import Navbar from '@/components/TheNavbar'
 import TheLayout from '@/components/TheLayout'
-import Link from 'next/link';
 import { useState, useEffect } from 'react'; // เพิ่มการ import useEffect
 import Loading from '@/components/loading'; // เพิ่มการ import คอมโพเนนต์ Loading
 import Aos from 'aos';
 
 
-export default function Faculty() {
+export default function FacultyPage() {
 
   const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
 

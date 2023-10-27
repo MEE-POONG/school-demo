@@ -227,9 +227,6 @@ export default function Sum() {
               <div className=' col-span-6 my-2'>
                 <input readOnly defaultValue={formData.regSchool} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
-
-
-
               {/* ระดับการศึกษา */}
 
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
@@ -246,22 +243,13 @@ export default function Sum() {
                 <input readOnly defaultValue={formData.regGpa} name='regGpa' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
             </div>
-
-
           </div>
-
-
-
-
-
           {/* คณะ/สาขา  */}
           <div className=' outline outline-1  drop-shadow-xl shadow-xl my-10 pb-2 '>
 
             <div className='bg-black bg-opacity-80 w-full h-[50px] drop-shadow-md  shadow-md '>
               <h1 className='text-3xl text-[#FFBF00] p-2'>คณะ/สาขา</h1>
             </div>
-
-
             <div className='md:grid md:grid-cols-12 grid-cols-1 '>
               {/* หลักสูตร */}
 
@@ -271,13 +259,7 @@ export default function Sum() {
               <div className=' col-span-1 my-2'>
                 <input readOnly defaultValue={formData.regSchool} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
-
-
-
-
-
               {/* คณะ และ สาขา */}
-
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>คณะ:</label>
               </div>
@@ -292,17 +274,7 @@ export default function Sum() {
                 <input readOnly defaultValue={formData.regMajor} name='regMajor' className='  text-sm block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                 </input>
               </div>
-
-
-
-
-
-
-
             </div>
-
-
-
           </div>
 
           {/* ปุ่มส่งใบสมัคร */}
@@ -314,13 +286,7 @@ export default function Sum() {
               </button>
             </Link>
           </div>
-
-
-
         </div>
-
-
-
       </div>
 
 

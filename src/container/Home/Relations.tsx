@@ -45,10 +45,7 @@ export const Relations: React.FC = () => {
         setIsLoading(false);
       });
   }, []);
-  useEffect(() => {
-    console.log(newsArray);
 
-  }, [newsArray]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -90,7 +87,7 @@ export const Relations: React.FC = () => {
               const filteredNews = newsArray.filter(news => news.type === selectType).slice(0, 10);
               const displayNews = filteredNews?.length < 4 ? filteredNews.concat(filteredNews) : filteredNews;
               return displayNews?.slice(selectType ? 0 : -10).map(news => (
-                <li key={"/"} className="flex">
+                <li key={news?.id} className="flex">
                   <Link href={""} className="hover:border-blue-500 hover:border-solid hover:text-blue-700  hover:bg-blue-100 group w-full flex flex-col px-4 justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
                     <div className="min-w-0 flex-auto">
                       <p className="text-sm font-semibold leading-6">{news?.title}</p>
