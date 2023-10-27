@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { News } from "@prisma/client";
 import { useRouter } from "next/router";
-import Image from 'next/image';
 import { AiTwotoneCalendar } from "react-icons/ai";
 import { FaHandPointRight } from "react-icons/fa";
 import TheLayout from "@/components/TheLayout";
