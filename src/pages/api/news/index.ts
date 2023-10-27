@@ -11,8 +11,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             try {
 
                 const newsData = await prisma.news.findMany({
-                    // skip: (page - 1) * pageSize,
-                    // take: pageSize,
+                    select: {
+                        promoteImg: true,
+                        // ...
+                    },
                 });
 
                 res.status(200).json({ newsData });
