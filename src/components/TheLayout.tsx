@@ -30,7 +30,7 @@ export default function TheLayout({
       </Head>
       <VisiterCounter />
       <TheNavbar />
-      <div className={mainFont.className}>
+      <div className="relative">
         {children}
         <div className="bg-line h-screen" />
       </div>
