@@ -1,6 +1,5 @@
 import { Typography } from '@material-tailwind/react';
 import React, { useEffect, useState } from 'react';
-import Slider from 'react-slick';
 
 interface sliderSchool {
     id: number;
