@@ -134,7 +134,7 @@ export const NewNews: React.FC = () => {
           }}
         >
           {/* Use Slider component with valid children */}
-          ssss
+          sssszzz
           {/* <Slider {...settings}>
           {newsArray?.map((news) => (
               <div key={news?.id}>

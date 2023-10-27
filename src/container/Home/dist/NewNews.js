@@ -102,7 +102,7 @@ exports.NewNews = function () {
                     initial: { y: 250 },
                     mount: { y: 0 },
                     unmount: { y: 250 }
-                } }, "ssss")),
+                } }, "sssszzz")),
         react_2["default"].createElement("button", { type: "button", className: "text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg " },
             react_2["default"].createElement(link_1["default"], { href: "./ShowContentAll" },
                 "\u0E14\u0E39\u0E02\u0E48\u0E32\u0E27\u0E17\u0E31\u0E49\u0E07\u0E2B\u0E21\u0E14 ",
