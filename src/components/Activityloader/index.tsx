@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Loading from '@/components/loading';
 // ...
@@ -19,8 +16,6 @@ function Activityloader() {
   const initialVisibleItems = 4;
   const [visibleItems, setVisibleItems] = useState(initialVisibleItems);
   const [activitySchoolData, setIndexNewsData] = useState<IndexNews[]>([]); // Use the defined interface here
-  const [sliderRef, setSliderRef] = useState<Slider | null>(null);
-  const [activeSlide, setActiveSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
 

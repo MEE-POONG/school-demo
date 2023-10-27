@@ -13,7 +13,7 @@ import {
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Aos from "aos";
-import Slider from "react-slick";
+import Slider from 'react-slick';
 import { News } from "@prisma/client";
 import Loading from "@/components/loading";
 import { newsMenu } from "@/data/news";
@@ -81,16 +81,14 @@ export const NewNews: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Step 2: Listen for changes in selectType
-    // Step 3: Filter and set displayNews based on the selected selectType
     const filteredNews = newsArray?.filter((news) =>
       selectType !== "" ? news?.type === selectType : true
     );
     const newDisplayNews =
       filteredNews?.length < 4 ? filteredNews?.concat(filteredNews) : filteredNews;
     setDisplayNews(newDisplayNews);
-  }, [selectType, newsArray]); // Listen for changes in selectType and newsArray
-
+  }, [selectType, newsArray]); 
+  
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -104,7 +102,7 @@ export const NewNews: React.FC = () => {
     <div className="container m-auto" data-aos="fade-right">
       {isLoading && <Loading />}
       <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
-      <Tabs id="custom-animation" value={selectType}>
+      {/* <Tabs id="custom-animation" value={selectType}>
         <TabsHeader className="bg-yellow-800 "
           indicatorProps={{
             className: "bg-yellow-800 shadow-none !text-gray-900",
@@ -168,7 +166,7 @@ export const NewNews: React.FC = () => {
             ))}
           </Slider>
         </TabsBody>
-      </Tabs>
+      </Tabs> */}
       <button type="button" className="text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg ">
         <Link href="./ShowContentAll">ดูข่าวทั้งหมด {">>>>"}</Link>
       </button>
