@@ -47,8 +47,8 @@ const HomeSlider = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -56,9 +56,9 @@ const HomeSlider = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
         },
       },
       {
@@ -78,9 +78,9 @@ const HomeSlider = () => {
           .filter((news) => news.promoteImg) // กรองข่าวที่มีภาพ promteImg ไม่ว่าง
           .map((news) => (
             <div key={news.id}>
-              <Link href={'${news.id}'}>
+              <Link key={news.id} href={`/news/${news.id}`} >
               <img
-                className="w-[1800px] h-[600px] object-cover"
+                className="w-full h-full"
                 src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${
                   news.promoteImg
                 }/700`}

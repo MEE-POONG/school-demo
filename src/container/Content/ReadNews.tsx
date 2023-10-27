@@ -1,10 +1,35 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import TheLayout from "@/components/TheLayout";
 import Image from 'next/image';
 import { AiTwotoneCalendar } from "react-icons/ai";
 import { FaHandPointRight } from "react-icons/fa";
 
 export default function ReadNewsPage() {
+    const router = useRouter();
+    const { id } = router.query; // ดึงค่า id จาก query parameters
+
+    const [articleData, setArticleData] = useState<any>({}); // กำหนดประเภทของข้อมูลบทความข่าว
+    const [isLoading, setIsLoading] = useState(true);
+
+
+    useEffect(() => {
+        if (id) {
+            fetch(`/api/news/${id}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    setArticleData(data); // กำหนดข้อมูลบทความข่าวที่ดึงมา
+                    //console.log(data);
+                    setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    setIsLoading(false); // ตั้งค่า isLoading เป็น false เมื่อโหลดเสร็จสมบูรณ์
+
+                });
+        }
+    }, [id]);
     return (
         <>
             <TheLayout>
@@ -26,13 +51,6 @@ export default function ReadNewsPage() {
                         </p>
                         <div className="mt-3 bg-white p-7 shadow-lg rounded-md">
                             <div className="text-xs md:text-base indent-8 ">
-                                เนื้อหาของกิจกรรม อธิบายที่มา วันที่ และรายละเอียดอื่น ๆ เล็กน้อย
-                                เนื้อหาของกิจกรรม อธิบายที่มา วันที่ และรายละเอียดอื่น ๆ เล็กน้อย
-                                เนื้อหาของกิจกรรม อธิบายที่มา วันที่ และรายละเอียดอื่น ๆ เล็กน้อย
-                                เนื้อหาของกิจกรรม อธิบายที่มา วันที่ และรายละเอียดอื่น ๆ เล็กน้อย
-                                เนื้อหาของกิจกรรม อธิบายที่มา วันที่ และรายละเอียดอื่น ๆ เล็กน้อย
-                                เนื้อหาของกิจกรรม อธิบายที่มา วันที่ และรายละเอียดอื่น ๆ เล็กน้อย
-                                เนื้อหาของกิจกรรม อธิบายที่มา วันที่ และรายละเอียดอื่น ๆ เล็กน้อย
                             </div>
                             <a href="#" className="text-xs md:text-base flex items-center mt-8">
                                 <FaHandPointRight className="animate-pulse animate-infinite animate-duration-[900ms] text-amber-800" />
