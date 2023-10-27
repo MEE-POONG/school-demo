@@ -4,7 +4,13 @@ import TheNavbar from "./TheNavbar";
 import Head from "next/head";
 import VisiterCounter from "@/components/visiterCounter";
 import BackToTopButton from "./BackTotop";
+import { Kanit } from "next/font/google";
 
+
+const mainFont = Kanit({
+  subsets: ['latin'],
+  weight: "400",
+});
 
 
 export default function TheLayout({
@@ -24,7 +30,7 @@ export default function TheLayout({
       </Head>
       <VisiterCounter />
       <TheNavbar />
-      <div className="relative">
+      <div className={mainFont.className}>
         {children}
         <div className="bg-line h-screen" />
       </div>
