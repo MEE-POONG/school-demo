@@ -1,5 +1,7 @@
 {
     "nuxt.isNuxtApp": false,
     "WillLuke.nextjs.hasPrompted": true,
-    "compile-hero.disable-compile-files-on-did-save-code": false
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "debug.allowBreakpointsEverywhere": true,
+    "files.autoGuessEncoding": true
 }

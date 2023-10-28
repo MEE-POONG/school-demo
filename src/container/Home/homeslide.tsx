@@ -36,7 +36,6 @@ const HomeSlider = () => {
   }
 
   const settings = {
-    dots: true,
     infinite: true,
     autoplay: true,
     speed: 2000,
@@ -73,7 +72,7 @@ const HomeSlider = () => {
 
   return (
     <div className="container mx-auto">
-      <Slider {...settings}>
+      <Slider {...settings} className="no-slick-arrow">
         {newsArray
           .filter((news) => news.promoteImg) // กรองข่าวที่มีภาพ promteImg ไม่ว่าง
           .map((news) => (
