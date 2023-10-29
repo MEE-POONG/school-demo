@@ -1,3 +1,4 @@
+import { Card, CardHeader, Typography } from '@material-tailwind/react';
 import React, { useState, useRef, useEffect } from 'react';
 import CountUp from 'react-countup';
 
@@ -29,17 +30,9 @@ export default function Statistics() {
     return (
         <>
             <div ref={ref} className="bg-blue-400 border-y-4 border-blue-700">
-                <div className="container mx-auto flex justify-center flex-wrap py-8">
+                {/* <div className="container mx-auto flex justify-center flex-wrap py-8">
                     <div className="flex md:w-full justify-between">
-                        <div className='flex justify-center text-yellow-700 text-base md:text-3xl lg:text-4xl'>
-                            <p className="">
-                                {isVisible && <CountUp end={4} duration={2.5} />}
-                                <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
-                                    คณะ
-                                </span>
-                            </p>
-                        </div>
-                        <div className='flex justify-center text-yellow-700 text-base md:text-3xl lg:text-4xl'>
+                        <div className='flex justify-center text-yellow-700 text-2xl md:text-3xl lg:text-4xl'>
                             <p className="">
                                 {isVisible && <CountUp end={20} duration={2.5} />}
                                 <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
@@ -47,7 +40,7 @@ export default function Statistics() {
                                 </span>
                             </p>
                         </div>
-                        <div className='flex justify-center text-yellow-700 text-base md:text-3xl lg:text-4xl'>
+                        <div className='flex justify-center text-yellow-700 text-2xl md:text-3xl lg:text-4xl'>
                             <p className="">
                                 {isVisible && <CountUp end={500} duration={2.5} />}
                                 <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
@@ -55,14 +48,48 @@ export default function Statistics() {
                                 </span>
                             </p>
                         </div>
-                        <div className='flex justify-center text-yellow-700 text-base md:text-3xl lg:text-4xl'>
+                        <div className='flex justify-center text-yellow-700 text-2xl md:text-3xl lg:text-4xl'>
                             <p className="">
-                                {isVisible && <CountUp end={1449} duration={2.5} />}
+                                {isVisible && <CountUp end={2449} duration={2.5} />}
                                 <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
                                     ผู้เข้าชม
                                 </span>
                             </p>
                         </div>
+                    </div>
+                </div> */}
+                <div className="container m-auto my-8 flex justify-around flex-wrap">
+                    <div className="md:max-w-[12rem] w-1/2 flex justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="100">
+                        <Typography variant="small" color="white" className=" text-yellow-700 text-2xl md:text-3xl lg:text-4xl">
+                            {isVisible && <CountUp end={4} duration={2.5} />}
+                            <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
+                                คณะ
+                            </span>
+                        </Typography>
+                    </div>
+                    <div className="md:max-w-[12rem] w-1/2 flex justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="100">
+                        <Typography variant="small" color="white" className=" text-yellow-700 text-2xl md:text-3xl lg:text-4xl">
+                            {isVisible && <CountUp end={20} duration={2.5} />}
+                            <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
+                                หลักสูตร
+                            </span>
+                        </Typography>
+                    </div>
+                    <div className="md:max-w-[12rem] w-1/2 flex justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="100">
+                        <Typography variant="small" color="white" className=" text-yellow-700 text-2xl md:text-3xl lg:text-4xl">
+                            {isVisible && <CountUp end={500} duration={2.5} />}
+                            <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
+                                กำลัง
+                            </span>
+                        </Typography>
+                    </div>
+                    <div className="md:max-w-[12rem] w-1/2 flex justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="100">
+                        <Typography variant="small" color="white" className=" text-yellow-700 text-2xl md:text-3xl lg:text-4xl">
+                            {isVisible && <CountUp end={2449} duration={2.5} />}
+                            <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
+                                ผู้เข้าชม
+                            </span>
+                        </Typography>
                     </div>
                 </div>
             </div>

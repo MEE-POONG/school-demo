@@ -88,9 +88,15 @@ export const Relations: React.FC = () => {
               return displayNews?.slice(selectType ? 0 : -10).map(news => (
                 <li key={news?.id} className="flex">
                   <Link href={""} className="hover:border-blue-500 hover:border-solid hover:text-blue-700  hover:bg-blue-100 group w-full flex flex-col px-4 justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
-                    <div className="min-w-0 flex-auto">
-                      <p className="text-sm font-semibold leading-6">{news?.title}</p>
-                      <p className="mt-1 truncate text-xs leading-5 text-gray-500">{news?.subTitle}</p>
+                    <div className="flex items-center">
+                      <img className="w object-cover mr-4 w-36 h-16"
+                        src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news?.img || "4500f404-dbac-40f3-6696-ae768a38e800"}/150`}
+                        alt={news?.title || "Image Alt Text"}
+                      />
+                      <div className="min-w-0 flex-auto">
+                        <p className="text-sm font-semibold leading-6">{news?.title}</p>
+                        <p className="mt-1 truncate text-xs leading-5 text-gray-500">{news?.subTitle}</p>
+                      </div>
                     </div>
                   </Link>
                 </li>
