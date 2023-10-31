@@ -20,18 +20,15 @@ const HeadHome: React.FC = () => {
                             <img src={`/img/school/panomtext.png`} alt="" className="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-64" loading="lazy" />
                         </div>
                         <dl className="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2 animate-fade-right">
-                            {/* <dt className="sr-only">Reviews</dt>
-                            <dd className="text-yellow-700 flex items-center dark:text-blue-700 font-bold">
-                                <svg width="24" height="24" fill="none" aria-hidden="true" className="mr-1 stroke-current dark:stroke-yellow-500">
-                                    <path d="m12 5 2 5h5l-4 4 2.103 5L12 16l-5.103 3L9 14l-4-4h5l2-5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                                <span >4.89 <span className="text-slate-400 font-bold">(128)</span></span>
-                            </dd> */}
                             <dt className="sr-only">Location</dt>
+<<<<<<< HEAD
                             <dd className="flex items-center text-white ">
                                 {/* <svg width="2" height="2" aria-hidden="true" fill="currentColor" className="mx-3 text-slate-300">
                                     <circle cx="1" cy="1" r="1" />
                                 </svg> */}
+=======
+                            <dd className="flex items-center text-white">
+>>>>>>> 49ef56792f05f3be5b94838c4fa38f1027903682
                                 <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1 text-slate-400 dark:text-slate-500" aria-hidden="true">
                                     <path d="M18 11.034C18 14.897 12 19 12 19s-6-4.103-6-7.966C6 7.655 8.819 5 12 5s6 2.655 6 6.034Z" />
                                     <path d="M14 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
