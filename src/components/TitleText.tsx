@@ -15,7 +15,7 @@ const TitleText: React.FC<TitleTextProps> = ({ titleText, titleTextTo }) => {
             <span className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl mx-5 mt-6">
                 <span className=" text-blue-800 ">{titleText}</span>
                 <span className=" text-yellow-700">{titleTextTo}</span>
-                <div className="md:w-full h-1 mt-4 bg-gradient-to-r from-blue-900 via-yellow-700 to-blue-900" />
+                <div className="w-full h-0.5 mt-4 bg-blue-700 shadow-xl" />
             </span>
         </div>
     );

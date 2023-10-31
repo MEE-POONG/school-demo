@@ -8,9 +8,11 @@ const HeadHome: React.FC = () => {
             <div className="max-w-8xl container relative mx-auto h-full">
                 <div className="py-6 px-4 sm:p-6 md:py-10 md:px-8 w-full h-full flex items-center justify-center">
                     <div className=" mx-auto grid grid-cols-1 lg:gap-x-20 lg:grid-cols-2">
-                        <div className="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1 animate-fade-right">
-                            <h1 className="mt-1 text-lg xl:text-4xl font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">วิทยาลัยเทคโนโลยีพนมวันท์</h1>
-                            <p className="text-sm xl:text-2xl leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400">ยินดีต้อนรับ</p>
+                        <div className="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1 animate-fade-right">
+                            <h1 className="mt-1 text-lg xl:text-4xl font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">
+                                วิทยาลัยเทคโนโลยีพนมวันท์
+                            </h1>
+                            <p className="mt-64 md:mt-0 text-sm xl:text-2xl leading-4 font-medium text-white sm:text-slate-500 dark:sm:text-slate-400">ยินดีต้อนรับ</p>
                         </div>
                         <div className="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0 animate-fade-left">
                             <img src={`/img/school/panomtext.png`} alt="" className="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy" />
