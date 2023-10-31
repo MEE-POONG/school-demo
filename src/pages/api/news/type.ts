@@ -23,13 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     switch (method) {
         case 'GET':
-            const query: RequestQuery = req.query as unknown as RequestQuery;
-            const page: number = parseInt(query.page || '1', 10);
-            const pageSize: number = parseInt(query.pageSize || '10', 10);
-            const newsData = await prisma.news.findMany({
-                skip: (page - 1) * pageSize,
-                take: pageSize,
-            });
+
             const newsTypes = await prisma.news.findMany({
                 select: {
                     type: true
@@ -38,9 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             });
             const distinctNewsTypes = newsTypes.map(nt => nt.type);
 
-            const totalUserAGsCount: number = await prisma.news.count();
-            const totalPages: number = Math.ceil(totalUserAGsCount / pageSize);
-            res.status(200).json({ success: true, newsData, distinctNewsTypes, pagination: { total: totalPages, page: page, pageSize: pageSize } });
+            res.status(200).json({ success: true, distinctNewsTypes });
             break;
         case 'POST':
             try {
