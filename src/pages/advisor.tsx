@@ -51,7 +51,7 @@ export default function Advisor() {
                 </div>
             </div>
 
-            <div className='container mx-auto px-2 md:px-14 my-10 lg:py-28'>
+            <div className='container mx-auto px-5 md:px-14 my-10 lg:py-28'>
                 <div data-aos="fade-up">
                     <p className='text-light-blue-600'>Advisor</p>
                     <p className='text-xl md:text-3xl text-[#1F306A]'>ทีมที่ปรึกษา</p>
@@ -62,13 +62,13 @@ export default function Advisor() {
                         พร้อมแนะแนวแผนการเรียนให้ฟรี
                     </p>
                     <div className="grid grid-cols-3 gap-2 md:gap-28 ">
-                        <div className='shadow-lg p-5 rounded-md hover:animate-shake bg-white'>
+                        <div className='shadow-lg p-5 rounded-md hover:animate-shake bg-white border-t-2 border-blue-300'>
                             <img className='mx-auto w-10 md:w-auto'
                                 src="/icons/experience.png" alt="" />
                             <p className='text-xs md:text-base text-blue-400 text-center'>ดูแลตลอดหลักสูตร</p>
                         </div>
 
-                        <div className='shadow-lg py-5 rounded-md hover:animate-shake bg-white'>
+                        <div className='shadow-lg py-5 rounded-md hover:animate-shake bg-white border-t-2 border-blue-300'>
                             <img
                                 src="/icons/loyal-customer.png" alt=""
                                 className='mx-auto w-10 md:w-auto' />
@@ -76,7 +76,7 @@ export default function Advisor() {
                         </div>
 
 
-                        <div className='shadow-lg py-5 rounded-md hover:animate-shake bg-white'>
+                        <div className='shadow-lg py-5 rounded-md hover:animate-shake bg-white border-t-2 border-blue-300'>
                             <img
                                 src="/icons/guide.png" alt=""
                                 className='mx-auto w-10 md:w-auto' />
@@ -89,7 +89,7 @@ export default function Advisor() {
                     <TeamAdvisor />
                 </div>
 
-                <div data-aos="fade-right">
+                <div className='' data-aos="fade-right">
                     <AddressContact />
                 </div>
 

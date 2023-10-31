@@ -6,29 +6,30 @@ const TheFooter = () => {
   return (
     <footer className="bg-blue-500 w-full">
       <div className="container mx-auto p-7 lg:flex lg:justify-between items-center ">
-        <div>
-          <Link href="./" className="flex">
+        <div className="md:flex">
+          <Link href="./" >
             <img
               src="/img/Logo_panomwan.png"
-              className="h-[50px]  md:h-[120px] mr-3"
+              className="h-[60px] md:h-[100px] mr-3"
               alt="Flowbite Logo"
             />
-            <span className="self-center text-[16px] md:text-lg font-medium text-white">
-              <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
-              <hr className="md:w-full h-[2px] lg:w-[400px] xl:w-full bg-white my-1" />
-              <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
-              <p>TEL : 044-955121-122 &nbsp;FAX : 044-955120</p>
-            </span>
           </Link>
+          <span className="self-center text-xs md:text-base font-medium text-white">
+            <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
+            <hr className="md:w-full h-[1px] lg:w-[400px] xl:w-full bg-white my-1" />
+            <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
+            <p>TEL : 044-955121-122 &nbsp;FAX : 044-955120</p>
+          </span>
+
         </div>
 
         <div className="mt-5 md:flex justify-around gap-16">
           <div className="">
-            <h4 className="md:mb-3 text-[14px] md:text-[18px] md:font-semibold text-white">
+            <h4 className="md:mb-3 text-sm md:text-base md:font-semibold text-white">
               คณะที่เปิดสอน
             </h4>
             <div className="bg-white w-full h-[0.25px] md:hidden mb-1"></div>
-            <ul className="text-white text-[14px] md:text-[16px]">
+            <ul className="text-white text-xs md:text-sm">
               <li className="mb-1">
                 คณะบริหารธรุกิจ
               </li>
@@ -45,9 +46,9 @@ const TheFooter = () => {
           </div>
 
           <div className="mt-5 md:mt-0">
-            <h4 className=" md:mb-3 text-[14px] md:text-[18px] md:font-semibold text-white">รายการ</h4>
+            <h4 className=" md:mb-3 text-sm md:text-base md:font-semibold text-white">รายการ</h4>
             <div className="bg-white w-full h-[0.25px] md:hidden mb-1"></div>
-            <ul className="text-white text-[14px] md:text-[16px]">
+            <ul className="text-white text-xs md:text-sm">
               <li className="mb-1">
                 <Link href="/register" className="hover:underline ">
                   สมัครเรียน
