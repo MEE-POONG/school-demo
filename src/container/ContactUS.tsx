@@ -20,50 +20,30 @@ export const ContactUS: React.FC = () => {
   return (
     <>
       <div className="container m-auto my-8 flex justify-around flex-wrap">
-        <div className="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
-          <Card className="w-full  bg-white">
-            <CardBody>
-              <FaEnvelope className="h-8 w-8 lg:h-12 lg:w-12 mb-3 text-yellow-800" />
-              <Typography variant="h5" color="blue-gray" className="mb-2 text-yellow-800">
-                Email Us
-              </Typography>
-              <Typography className="text-sm font-semibold leading-6 text-black">
-                phanomwanu@gmail.com
-                <br />
-                {/* ที่อยู่หนังสือราชการทางอิเล็กทรอนิกส์ :  */}
-              </Typography>
-            </CardBody>
-          </Card>
+        <div className="bg-white w-full md:w-4/12 lg:w-3/12 h-32 md:h-40 p-4 my-3 mx-5 md:mx-0 drop-shadow-lg rounded-md"
+          data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
+          <FaEnvelope className="h-8 w-8  mb-1 text-yellow-800" />
+          <span className="text-yellow-800 text-sm lg:text-base mb-2">Email Us</span>
+          <p className="text-xs md:text-sm xl:text-base">phanomwanu@gmail.com</p>
         </div>
-        <div className="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
-          <Card className="w-full  bg-white">
-            <CardBody>
-              <FaSearchLocation className="h-8 w-8 lg:h-12 lg:w-12 mb-3 text-yellow-800" />
-              <Typography variant="h5" color="blue-gray" className="mb-2 text-yellow-800">
-                Address
-              </Typography>
-              <Typography className="text-sm font-semibold leading-6 text-black">
-                วิทยาลัยเทคโนโลยีพนมวันท์
-                <br />
-                198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310
-              </Typography>
-            </CardBody>
-          </Card>
+        <div className="bg-white w-full md:w-4/12 lg:w-3/12 h-32 md:h-40 p-4 my-3 mx-5 drop-shadow-lg rounded-md"
+          data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
+          <div>
+            <FaSearchLocation className="h-8 w-8  mb-1 text-yellow-800" />
+            <span className="text-yellow-800 text-sm lg:text-base mb-2">Address</span>
+            <p className="text-xs md:text-sm xl:text-base">วิทยาลัยเทคโนโลยีพนมวันท์
+              198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310
+            </p>
+          </div>
         </div>
-        <div className="p-4 w-full sm:w-1/2 lg:w-1/3 flex justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
-          <Card className="w-full  bg-white">
-            <CardBody>
-              <FaPhoneAlt className="h-8 w-8 lg:h-12 lg:w-12 text-yellow-800" />
-              <Typography variant="h5" color="blue-gray" className="mb-2 text-yellow-800">
-                Call Us
-              </Typography>
-              <Typography className="text-sm font-semibold leading-6 text-black">
-                โทรศัพท์ : 044-955121-122
-                <br />
-                โทรสาร : 044-955120
-              </Typography>
-            </CardBody>
-          </Card>
+        <div className="bg-white w-full md:w-4/12 lg:w-3/12 h-32 md:h-40 p-4 my-3 mx-5 drop-shadow-lg rounded-md"
+          data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
+          <div>
+            <FaPhoneAlt className="h-8 w-8  mb-1 text-yellow-800" />
+            <span className="text-yellow-800 text-sm lg:text-base mb-2">Call Us</span>
+            <p className="text-xs md:text-sm xl:text-base">โทรศัพท์ : 061-019-8815</p>
+            <p className="text-xs md:text-sm xl:text-base">โทรสาร : 044-955120</p>
+          </div>
         </div>
       </div>
     </>
