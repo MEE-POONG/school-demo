@@ -61,7 +61,7 @@ const ReadNews: React.FC = () => {
             height={100}
             alt="Pictue of News"
           />
-          <p className="flex items-center mt-10 text-xs md:text-base">
+          <p className="flex items-center m```````````````t-10 text-xs md:text-base">
             <AiTwotoneCalendar /> &nbsp;
             วันที่ :<span className="text-blue-400">&nbsp;5 ตุลาคม 2566</span>
           </p>

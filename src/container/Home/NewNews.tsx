@@ -177,7 +177,7 @@ export const NewNews: React.FC = () => {
         </TabsBody>
       </Tabs>
       <button type="button" className="text-yellow-800 hover:text-yellow-900  text-sm leading-6 font-medium py-2 px-3 rounded-lg ">
-        <Link href="./ShowContentAll">ดูข่าวทั้งหมด {">>>>"}</Link>
+        <Link href="./news">ดูข่าวทั้งหมด {">>>>"}</Link>
       </button>
     </div>
   );

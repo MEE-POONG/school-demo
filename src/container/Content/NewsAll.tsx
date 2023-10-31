@@ -10,7 +10,7 @@ import React from "react";
 
 const NewsAll: React.FC = () => {
   return (
-    <div className="container mx-auto mt-24 py-20">
+    <div className="container">
       <h3 className="text-xl md:text-3xl ml-8 md:ml-0">ข่าวประชาสัมพันธ์</h3>
       <div className="flex flex-wrap justify-center md:justify-start">
         <div>
@@ -35,7 +35,7 @@ const NewsAll: React.FC = () => {
               </Typography>
             </CardBody>
             <CardFooter className="pt-0">
-              <Link href="./ReadNews" className="flex w-fit mx-auto text-xs md:text-sm items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
+              <Link href="" className="flex w-fit mx-auto text-xs md:text-sm items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
                 รายละเอียด
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

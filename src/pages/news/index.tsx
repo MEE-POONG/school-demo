@@ -6,28 +6,11 @@ import NewsAll from "@/container/Content/NewsAll";
 export default function NewsPage() {
   return (
     <TheLayout>
-
-      <NewsAll />
-
-      {/* เนื้อหาข่าวประชาสัมพันธ์ */}
-
-      <div className=" p-5">
-        <Newloader />
+      <div className="container mx-auto py-16">
+        <h3 className="mt-24 text-center text-2xl lg:text-4xl">ข่าวสาร และกิจกรรม</h3>
+        <div className="w-full h-0.5 bg-blue-400 my-7"></div>
+        <NewsAll />
       </div>
-
-      {/* แทบ ข่าวกิจกรรม */}
-      <div className="">
-        <h1 className="text-xl md:text-3xl">
-          ข่าวกิจกรรม
-        </h1>
-      </div>
-
-      {/* เนื้อหาข่าวกิจกรรม */}
-      <div className=" p-5">
-        <Activityloader />
-      </div>
-
-
 
     </TheLayout>
   );
