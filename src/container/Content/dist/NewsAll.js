@@ -1,14 +1,39 @@
 "use strict";
 exports.__esModule = true;
-var news_1 = require("@/data/news");
 var react_1 = require("@material-tailwind/react");
 var link_1 = require("next/link");
+var news_1 = require("@/data/news");
 var react_2 = require("react");
 var NewsAll = function () {
     var _a = react_2.useState("Relations"), selectType = _a[0], setSelectType = _a[1];
     var _b = react_2.useState([]), newsArray = _b[0], setNewsArray = _b[1];
     var _c = react_2.useState(true), isLoading = _c[0], setIsLoading = _c[1];
     var _d = react_2.useState(null), error = _d[0], setError = _d[1];
+    react_2.useEffect(function () {
+        fetch('/api/news')
+            .then(function (response) {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+            .then(function (data) {
+            setNewsArray(data === null || data === void 0 ? void 0 : data.newsData);
+            setIsLoading(false);
+        })["catch"](function (error) {
+            console.error('Error:', error);
+            setError(error.message);
+            setIsLoading(false);
+        });
+    }, []);
+    if (isLoading) {
+        return react_2["default"].createElement("div", null, "Loading...");
+    }
+    if (error) {
+        return react_2["default"].createElement("div", null,
+            "Error: ",
+            error);
+    }
     return (react_2["default"].createElement("div", { className: "container" },
         react_2["default"].createElement(react_1.Tabs, { id: "custom-animation", value: selectType },
             react_2["default"].createElement(react_1.TabsHeader, { className: "bg-blue-700 text-white flex-wrap md:flex-nowrap justify-center", indicatorProps: {

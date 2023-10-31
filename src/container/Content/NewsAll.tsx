@@ -1,4 +1,3 @@
-import { newsRelations } from "@/data/news";
 import {
   Tabs,
   TabsHeader,
@@ -7,13 +6,40 @@ import {
 } from "@material-tailwind/react";
 import { News } from "@prisma/client";
 import Link from "next/link";
-import React, { useState } from "react";
+import { newsRelations } from "@/data/news";
+import React, { useEffect, useState } from "react";
 
 const NewsAll: React.FC = () => {
   const [selectType, setSelectType] = useState("Relations");
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/news')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setNewsArray(data?.newsData);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError(error.message);
+        setIsLoading(false);
+      });
+  }, []);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="container">
