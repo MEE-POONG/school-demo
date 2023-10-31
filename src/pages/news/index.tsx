@@ -1,8 +1,6 @@
-import Activityloader from "@/components/Activityloader";
-import Newloader from "@/components/Newloader";
 import TheLayout from "@/components/TheLayout";
 import TitleText from "@/components/TitleText";
-import NewsAll from "@/container/Content/NewsAll";
+import NewsAll from "@/container/News/NewsAll";
 
 export default function NewsPage() {
   return (
