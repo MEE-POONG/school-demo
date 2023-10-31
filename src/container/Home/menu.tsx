@@ -16,7 +16,7 @@ export const Menu: React.FC = () => {
         <div className="container m-auto my-6 flex justify-around flex-wrap">
             <Link href="/applyToStudy" className="p-4 w-1/2  md:w-1/4 lg:w-1/6  flex my-2 justify-center drop-shadow-lg" data-aos="fade-up" data-aos-delay="0" data-aos-duration="100">
                 <Card className="w-full p-4 bg-blue-400 hover:bg-yellow-800">
-                    <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm md:text-base">
+                    <Typography variant="small" color="white" className="font-normal uppercase text-center text-sm sm:text-base md:text-md lg:text-lg xl:text-1xl">
                         สมัครเรียน
                     </Typography>
                     <Typography color="white" className="mt-3 flex justify-center gap-1 text-2xl md:text-4xl">
