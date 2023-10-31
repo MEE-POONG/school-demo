@@ -112,7 +112,7 @@ export const NewNews: React.FC = () => {
       <Tabs id="custom-animation" value={selectType} data-aos="fade-right">
         <TabsHeader className="bg-yellow-800 "
           indicatorProps={{
-            className: "bg-yellow-800 shadow-none !text-gray-900",
+            className: "bg-yellow-800 shadow-none ",
           }}
         >
           {newsMenu.map(({ label, value }) => (
@@ -134,8 +134,8 @@ export const NewNews: React.FC = () => {
           }}
         >
           <Slider {...settings}>
-          {newsArray?.map((news) => (
-              <div key={news?.id}>
+            {newsArray?.map((news) => (
+              <div key={news?.id} >
                 <Card className="my-6 w-72 overflow-hidden mx-auto">
                   <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none">
                     <img className="h-48 object-cover"
@@ -144,15 +144,17 @@ export const NewNews: React.FC = () => {
                     />
                   </CardHeader>
                   <CardBody>
-                    <Typography variant="h6" color="blue-gray" className="title-clamp">
+                    <Typography variant="h6" color="blue-gray" className="title-clamp text-xs md:text-base">
                       {news?.title}
                     </Typography>
-                    <Typography variant="lead" color="gray" className="mt-3 font-normal text-sm subtitle-clamp">
+                    <Typography variant="lead" color="gray" className="mt-3 font-normal text-xs md:text-base subtitle-clamp">
                       {news?.subTitle}
                     </Typography>
                   </CardBody>
                   <CardFooter className="pt-0">
-                    <Link href={`/news/${news.id}`} className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
+                    <Link href={`/news/${news.id}`}
+                      className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg text-xs md:text-base"
+                    >
                       รายละเอียด
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
