@@ -14,8 +14,8 @@ export default function Index() {
       <HeadHome />
       <Menu />
       <HomeSlider/>
-      <NewNews />
-      <Relations />
+      {/* <NewNews /> */}
+      {/* <Relations /> */}
       <Statistics />
       <ContactUS />
     </TheLayout>
