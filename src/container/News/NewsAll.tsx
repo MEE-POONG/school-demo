@@ -10,7 +10,8 @@ import { newsMenu, newsRelations } from "@/data/news";
 import React, { useEffect, useState } from "react";
 
 const NewsAll: React.FC = () => {
-  const [selectType, setSelectType] = useState(newsMenu[0]?.value);
+  const [newsMenu, setNewsMenu] = useState([]);
+  const [selectType, setSelectType] = useState("News");
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -23,9 +24,8 @@ const NewsAll: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("data : ", data);
-
-        setNewsArray(data?.newsData);
+        console.log("type : ", data?.distinctNewsTypes);
+        setNewsMenu(data?.distinctNewsTypes);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -34,6 +34,7 @@ const NewsAll: React.FC = () => {
         setIsLoading(false);
       });
   }, []);
+
   useEffect(() => {
     fetch('/api/news')
       .then((response) => {
@@ -59,6 +60,10 @@ const NewsAll: React.FC = () => {
     console.log("newsArray : ", newsArray);
   }, [newsArray])
 
+  useEffect(() => {
+    console.log("newsMenu : ", newsMenu);
+  }, [newsMenu])
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -70,25 +75,20 @@ const NewsAll: React.FC = () => {
   return (
     <div className="container">
       <Tabs id="custom-animation" value={selectType} >
-        <TabsHeader className="bg-blue-700 text-white flex-wrap md:flex-nowrap justify-center"
+        <TabsHeader
+          className="bg-blue-700 text-white flex-wrap md:flex-nowrap justify-center"
           indicatorProps={{
             className: "bg-blue-500 shadow-none !text-gray-900",
           }}
         >
-          {newsMenu.map(({ label, value }) => (
-            <Tab key={value} value={value}
-              className={`font-bold text-white w-1/2 md:w-full`}
-              onClick={() => setSelectType(value)}
+          {newsMenu.map((type) => (
+            <Tab
+              key={type}
+              value={type}
+              className="font-bold text-white w-1/2 md:w-full"
+              onClick={() => setSelectType(type)}
             >
-              {label}
-            </Tab>
-          ))}
-          {newsRelations.map(({ label, value }) => (
-            <Tab key={value} value={value}
-              className={`font-bold text-white w-1/2 md:w-full`}
-              onClick={() => setSelectType(value)}
-            >
-              {label}
+              {type}
             </Tab>
           ))}
         </TabsHeader>
