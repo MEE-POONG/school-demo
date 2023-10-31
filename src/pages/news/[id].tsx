@@ -56,8 +56,7 @@ const ReadNews: React.FC = () => {
           <div className="h-0.5 bg-blue-400 w-full my-2 rounded-full"></div>
           <img
             className="w-full h-auto lg:h-[450px] object-cover rounded-md shadow-lg"
-            src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news.promoteImg
-              }/700`}
+            src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news.img}/700`}
             width={1024}
             height={100}
             alt="Pictue of News"

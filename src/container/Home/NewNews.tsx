@@ -152,7 +152,7 @@ export const NewNews: React.FC = () => {
                     </Typography>
                   </CardBody>
                   <CardFooter className="pt-0">
-                    <Link href={`/ReadNews?id=${news?.id}`} className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
+                    <Link href={`/news/${news.id}`} className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg">
                       รายละเอียด
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
