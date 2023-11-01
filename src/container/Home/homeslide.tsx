@@ -73,21 +73,18 @@ export const HomeSlider: React.FC = () => {
   return (
     <div className="container mx-auto drop-shadow-xl">
       <Slider {...settings} className="no-slick-arrow">
-        {newsArray
-          .filter((news) => news.promoteImg) // กรองข่าวที่มีภาพ promteImg ไม่ว่าง
-          .map((news) => (
-            <div key={news.id}>
-              <Link key={news.id} href={`/news/${news.id}`} >
+        {newsArray.map((news) => (
+          <div key={news.id}>
+            <Link key={news.id} href={`/news/${news.id}`} >
               <img
                 className="w-full h-full rounded-md"
-                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${
-                  news.promoteImg
-                }/700`}
+                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news.promoteImg
+                  }/700`}
                 alt=""
               />
-              </Link>
-            </div>
-          ))}
+            </Link>
+          </div>
+        ))}
       </Slider>
     </div>
   );
