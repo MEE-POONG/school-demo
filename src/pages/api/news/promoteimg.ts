@@ -27,6 +27,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             const page: number = parseInt(query.page || '1', 10);
             const pageSize: number = parseInt(query.pageSize || '10', 10);
             const newsData = await prisma.news.findMany({
+                where: {
+                    promoteImg: {
+                        not: null
+                    }
+                },
                 skip: (page - 1) * pageSize,
                 take: pageSize,
             });

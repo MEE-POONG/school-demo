@@ -69,21 +69,14 @@ const NewsAll: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("data : ", data);
-
         setNewsArray(data?.newsData);
         setIsLoading(false);
       })
       .catch((error) => {
-        console.error('Error:', error);
         setError(error.message);
         setIsLoading(false);
       });
   }, [params]);
-
-  useEffect(() => {
-    console.log("newsArray : ", newsArray);
-  }, [newsArray])
 
   const handleSeeMore = () => {
     setParams(prevParams => ({
@@ -152,7 +145,7 @@ const NewsAll: React.FC = () => {
           <div className="text-center">
             <button
               type="button"
-              className="text-yellow-800 hover:text-yellow-900 text-sm leading-6 font-medium py-2 px-3 rounded-lg"
+              className={`text-yellow-800 hover:text-yellow-900 text-sm leading-6 font-medium py-2 px-3 rounded-lg ${checkTotal <= 1 ? 'hidden' : ''}`}
               onClick={handleSeeMore}  // Add the onClick handler here
             >
               See more {">>>>"}

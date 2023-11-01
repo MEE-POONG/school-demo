@@ -70,8 +70,6 @@ export const Relations: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("data : ", data);
-
         setNewsArray(data?.newsData);
         setIsLoading(false);
       })
@@ -81,10 +79,6 @@ export const Relations: React.FC = () => {
         setIsLoading(false);
       });
   }, [params]);
-
-  useEffect(() => {
-    console.log("newsArray : ", newsArray);
-  }, [newsArray])
 
   const handleSeeMore = () => {
     setParams(prevParams => ({

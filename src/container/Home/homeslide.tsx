@@ -9,7 +9,7 @@ const HomeSlider = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/news`)
+    fetch(`/api/news/promoteimg`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -18,6 +18,8 @@ const HomeSlider = () => {
       })
       .then((data) => {
         setNewsArray(data?.newsData);
+        console.log(data);
+        
         setIsLoading(false);
       })
       .catch((error) => {
@@ -72,7 +74,7 @@ const HomeSlider = () => {
 
   return (
     <div className="container mx-auto drop-shadow-xl">
-      {/* <Slider {...settings} className="no-slick-arrow">
+      <Slider {...settings} className="no-slick-arrow">
         {newsArray
           .filter((news) => news.promoteImg) // กรองข่าวที่มีภาพ promteImg ไม่ว่าง
           .map((news) => (
@@ -88,7 +90,7 @@ const HomeSlider = () => {
               </Link>
             </div>
           ))}
-      </Slider> */}
+      </Slider>
     </div>
   );
 };

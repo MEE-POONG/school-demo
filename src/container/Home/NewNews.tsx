@@ -85,8 +85,6 @@ export const NewNews: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("data : ", data);
-
         setNewsArray(data?.newsData);
         setIsLoading(false);
       })
@@ -97,16 +95,6 @@ export const NewNews: React.FC = () => {
       });
   }, [params]);
 
-  useEffect(() => {
-    console.log("newsArray : ", newsArray);
-  }, [newsArray])
-
-  const handleSeeMore = () => {
-    setParams(prevParams => ({
-      ...prevParams,
-      pageSize: prevParams.pageSize + 10,
-    }));
-  };
 
   const settings = {
     dots: false,
@@ -179,8 +167,8 @@ export const NewNews: React.FC = () => {
           }}
         >
           <Slider {...settings}
-             swipeToSlide={true}
-             focusOnSelect={true}
+            swipeToSlide={true}
+            focusOnSelect={true}
 
           >
             {newsArray.map((list) => (
