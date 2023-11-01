@@ -38,9 +38,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var client_1 = require("@prisma/client");
 var prisma = new client_1.PrismaClient();
+// ... [rest of the imports and type definitions]
 function handler(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var method, _a, query, page, pageSize, newsData, totalUserAGsCount, totalPages, newNews, error_1;
+        var method, _a, query, page, pageSize, keyword, searchCriteria, newsData, totalPartnersCount, totalPages, error_1;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -48,44 +49,56 @@ function handler(req, res) {
                     _a = method;
                     switch (_a) {
                         case 'GET': return [3 /*break*/, 1];
-                        case 'POST': return [3 /*break*/, 4];
                     }
-                    return [3 /*break*/, 8];
+                    return [3 /*break*/, 6];
                 case 1:
+                    _b.trys.push([1, 4, , 5]);
                     query = req.query;
                     page = parseInt(query.page || '1', 10);
                     pageSize = parseInt(query.pageSize || '10', 10);
+                    keyword = decodeURIComponent(query.keyword || '');
+                    searchCriteria = {};
+                    if (keyword) {
+                        searchCriteria.title = {
+                            contains: keyword,
+                            mode: 'insensitive'
+                        };
+                    }
+                    // If you want to search by newsTypeId as well
+                    if (query.newsTypeId) {
+                        searchCriteria.newsTypeId = query.newsTypeId;
+                    }
                     return [4 /*yield*/, prisma.news.findMany({
+                            where: searchCriteria,
                             skip: (page - 1) * pageSize,
-                            take: pageSize
+                            take: pageSize,
+                            orderBy: {
+                                createdAt: 'desc'
+                            },
+                            include: {
+                                NewsType: true // Include the NewsType details with each News item
+                            }
                         })];
                 case 2:
                     newsData = _b.sent();
-                    return [4 /*yield*/, prisma.news.count()];
-                case 3:
-                    totalUserAGsCount = _b.sent();
-                    totalPages = Math.ceil(totalUserAGsCount / pageSize);
-                    res.status(200).json({ success: true, newsData: newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
-                    return [3 /*break*/, 9];
-                case 4:
-                    _b.trys.push([4, 6, , 7]);
-                    return [4 /*yield*/, prisma.news.create({
-                            data: req.body
+                    return [4 /*yield*/, prisma.news.count({
+                            where: searchCriteria
                         })];
-                case 5:
-                    newNews = _b.sent();
-                    res.status(201).json(newNews);
-                    return [3 /*break*/, 7];
-                case 6:
+                case 3:
+                    totalPartnersCount = _b.sent();
+                    totalPages = Math.ceil(totalPartnersCount / pageSize);
+                    res.status(200).json({ success: true, newsData: newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
+                    return [3 /*break*/, 5];
+                case 4:
                     error_1 = _b.sent();
-                    res.status(500).json({ error: "An error occurred while creating the newsSchool" });
-                    return [3 /*break*/, 7];
-                case 7: return [3 /*break*/, 9];
-                case 8:
+                    res.status(500).json({ success: false, message: "An error occurred while fetching the news" });
+                    return [3 /*break*/, 5];
+                case 5: return [3 /*break*/, 7];
+                case 6:
                     res.setHeader('Allow', ['GET', 'POST']);
                     res.status(405).end("Method " + method + " Not Allowed");
-                    _b.label = 9;
-                case 9: return [2 /*return*/];
+                    _b.label = 7;
+                case 7: return [2 /*return*/];
             }
         });
     });

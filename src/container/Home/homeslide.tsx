@@ -72,7 +72,7 @@ const HomeSlider = () => {
 
   return (
     <div className="container mx-auto drop-shadow-xl">
-      <Slider {...settings} className="no-slick-arrow">
+      {/* <Slider {...settings} className="no-slick-arrow">
         {newsArray
           .filter((news) => news.promoteImg) // กรองข่าวที่มีภาพ promteImg ไม่ว่าง
           .map((news) => (
@@ -88,7 +88,7 @@ const HomeSlider = () => {
               </Link>
             </div>
           ))}
-      </Slider>
+      </Slider> */}
     </div>
   );
 };

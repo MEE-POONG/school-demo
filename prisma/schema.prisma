@@ -39,7 +39,6 @@ model Gallery {
 model News {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
   title      String? // ชื่อกิจกรรม
-  type       String?
   subTitle   String? // หัวข้อย่่อ 
   detail     String? // รายละเอียด
   img        String? // รูปกิจกรรม

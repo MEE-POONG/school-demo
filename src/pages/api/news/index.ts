@@ -30,10 +30,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 skip: (page - 1) * pageSize,
                 take: pageSize,
             });
-            
+
             const totalUserAGsCount: number = await prisma.news.count();
             const totalPages: number = Math.ceil(totalUserAGsCount / pageSize);
-            res.status(200).json({ success: true, data: newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
+            res.status(200).json({ success: true, newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
             break;
         case 'POST':
             try {

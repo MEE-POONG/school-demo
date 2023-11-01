@@ -40,7 +40,7 @@ var client_1 = require("@prisma/client");
 var prisma = new client_1.PrismaClient();
 function handler(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var method, _a, query, page, pageSize, newsData, totalUserAGsCount, totalPages, newNews, error_1;
+        var method, _a, newsType, error_1, newNews, error_2;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -48,44 +48,40 @@ function handler(req, res) {
                     _a = method;
                     switch (_a) {
                         case 'GET': return [3 /*break*/, 1];
-                        case 'POST': return [3 /*break*/, 4];
+                        case 'POST': return [3 /*break*/, 5];
                     }
-                    return [3 /*break*/, 8];
-                case 1:
-                    query = req.query;
-                    page = parseInt(query.page || '1', 10);
-                    pageSize = parseInt(query.pageSize || '10', 10);
-                    return [4 /*yield*/, prisma.news.findMany({
-                            skip: (page - 1) * pageSize,
-                            take: pageSize
-                        })];
-                case 2:
-                    newsData = _b.sent();
-                    return [4 /*yield*/, prisma.news.count()];
-                case 3:
-                    totalUserAGsCount = _b.sent();
-                    totalPages = Math.ceil(totalUserAGsCount / pageSize);
-                    res.status(200).json({ success: true, newsData: newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
                     return [3 /*break*/, 9];
-                case 4:
-                    _b.trys.push([4, 6, , 7]);
-                    return [4 /*yield*/, prisma.news.create({
+                case 1:
+                    _b.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, prisma.newsType.findMany({})];
+                case 2:
+                    newsType = _b.sent();
+                    res.status(200).json({ newsType: newsType });
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_1 = _b.sent();
+                    res.status(500).json({ error: "An error occurred while fetching the newsSchool" });
+                    return [3 /*break*/, 4];
+                case 4: return [3 /*break*/, 10];
+                case 5:
+                    _b.trys.push([5, 7, , 8]);
+                    return [4 /*yield*/, prisma.newsType.create({
                             data: req.body
                         })];
-                case 5:
+                case 6:
                     newNews = _b.sent();
                     res.status(201).json(newNews);
-                    return [3 /*break*/, 7];
-                case 6:
-                    error_1 = _b.sent();
+                    return [3 /*break*/, 8];
+                case 7:
+                    error_2 = _b.sent();
                     res.status(500).json({ error: "An error occurred while creating the newsSchool" });
-                    return [3 /*break*/, 7];
-                case 7: return [3 /*break*/, 9];
-                case 8:
+                    return [3 /*break*/, 8];
+                case 8: return [3 /*break*/, 10];
+                case 9:
                     res.setHeader('Allow', ['GET', 'POST']);
                     res.status(405).end("Method " + method + " Not Allowed");
-                    _b.label = 9;
-                case 9: return [2 /*return*/];
+                    _b.label = 10;
+                case 10: return [2 /*return*/];
             }
         });
     });

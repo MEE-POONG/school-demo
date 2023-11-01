@@ -20,8 +20,9 @@ interface RequestQuery {
     page?: string;
     pageSize?: string;
     keyword?: string;
-    position?: string;
+    newsTypeId?: string;
 }
+// ... [rest of the imports and type definitions]
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const { method } = req;
@@ -32,24 +33,31 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 const query: RequestQuery = req.query as unknown as RequestQuery;
                 const page: number = parseInt(query.page || '1', 10);
                 const pageSize: number = parseInt(query.pageSize || '10', 10);
-                let keyword: string = decodeURIComponent(query.keyword || '');
+                const keyword: string = decodeURIComponent(query.keyword || '');
 
                 const searchCriteria: Prisma.NewsWhereInput = {};
 
                 if (keyword) {
-                    searchCriteria.type = {
+                    searchCriteria.title = {
                         contains: keyword,
                         mode: 'insensitive'
                     };
                 }
 
-                const userAGs = await prisma.news.findMany({
-                    where: searchCriteria,
+                // If you want to search by newsTypeId as well
+                if (query.newsTypeId) {
+                    searchCriteria.newsTypeId = query.newsTypeId;
+                }
 
+                const newsData = await prisma.news.findMany({
+                    where: searchCriteria,
                     skip: (page - 1) * pageSize,
                     take: pageSize,
                     orderBy: {
                         createdAt: 'desc',
+                    },
+                    include: {
+                        NewsType: true  // Include the NewsType details with each News item
                     }
                 });
 
@@ -59,9 +67,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
                 const totalPages: number = Math.ceil(totalPartnersCount / pageSize);
 
-                res.status(200).json({ success: true, data: userAGs, pagination: { total: totalPages, page: page, pageSize: pageSize } });
+                res.status(200).json({ success: true, newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
             } catch (error) {
-                res.status(500).json({ success: false, message: "An error occurred while fetching the userAGs" });
+                res.status(500).json({ success: false, message: "An error occurred while fetching the news" });
             }
             break;
         default:

@@ -40,7 +40,7 @@ var client_1 = require("@prisma/client");
 var prisma = new client_1.PrismaClient();
 function handler(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var method, _a, newsTypes, distinctNewsTypes, newNews, error_1;
+        var method, _a, query, page, pageSize, keyword, searchCriteria, news, totalPartnersCount, totalPages, error_1;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -48,39 +48,49 @@ function handler(req, res) {
                     _a = method;
                     switch (_a) {
                         case 'GET': return [3 /*break*/, 1];
-                        case 'POST': return [3 /*break*/, 3];
                     }
-                    return [3 /*break*/, 7];
-                case 1: return [4 /*yield*/, prisma.news.findMany({
-                        select: {
-                            type: true
-                        },
-                        distinct: ['type']
-                    })];
-                case 2:
-                    newsTypes = _b.sent();
-                    distinctNewsTypes = newsTypes.map(function (nt) { return nt.type; });
-                    res.status(200).json({ success: true, distinctNewsTypes: distinctNewsTypes });
-                    return [3 /*break*/, 8];
-                case 3:
-                    _b.trys.push([3, 5, , 6]);
-                    return [4 /*yield*/, prisma.news.create({
-                            data: req.body
+                    return [3 /*break*/, 6];
+                case 1:
+                    _b.trys.push([1, 4, , 5]);
+                    query = req.query;
+                    page = parseInt(query.page || '1', 10);
+                    pageSize = parseInt(query.pageSize || '10', 10);
+                    keyword = decodeURIComponent(query.keyword || '');
+                    searchCriteria = {};
+                    if (keyword) {
+                        searchCriteria.type = {
+                            contains: keyword,
+                            mode: 'insensitive'
+                        };
+                    }
+                    return [4 /*yield*/, prisma.news.findMany({
+                            where: searchCriteria,
+                            skip: (page - 1) * pageSize,
+                            take: pageSize,
+                            orderBy: {
+                                createdAt: 'desc'
+                            }
                         })];
+                case 2:
+                    news = _b.sent();
+                    return [4 /*yield*/, prisma.news.count({
+                            where: searchCriteria
+                        })];
+                case 3:
+                    totalPartnersCount = _b.sent();
+                    totalPages = Math.ceil(totalPartnersCount / pageSize);
+                    res.status(200).json({ success: true, data: news, pagination: { total: totalPages, page: page, pageSize: pageSize } });
+                    return [3 /*break*/, 5];
                 case 4:
-                    newNews = _b.sent();
-                    res.status(201).json(newNews);
-                    return [3 /*break*/, 6];
-                case 5:
                     error_1 = _b.sent();
-                    res.status(500).json({ error: "An error occurred while creating the newsSchool" });
-                    return [3 /*break*/, 6];
-                case 6: return [3 /*break*/, 8];
-                case 7:
+                    res.status(500).json({ success: false, message: "An error occurred while fetching the news" });
+                    return [3 /*break*/, 5];
+                case 5: return [3 /*break*/, 7];
+                case 6:
                     res.setHeader('Allow', ['GET', 'POST']);
                     res.status(405).end("Method " + method + " Not Allowed");
-                    _b.label = 8;
-                case 8: return [2 /*return*/];
+                    _b.label = 7;
+                case 7: return [2 /*return*/];
             }
         });
     });
