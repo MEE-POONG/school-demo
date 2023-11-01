@@ -7,7 +7,6 @@ import {
 } from "@material-tailwind/react";
 import { News, NewsType } from "@prisma/client";
 import Link from "next/link";
-import { newsMenu, newsRelations } from "@/data/news";
 import Aos from "aos";
 
 interface Params {

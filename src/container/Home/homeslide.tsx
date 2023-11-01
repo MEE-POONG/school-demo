@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { News } from "@prisma/client";
 import Link from "next/link";
 
-const HomeSlider = () => {
+export const HomeSlider: React.FC = () => {
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,8 +18,6 @@ const HomeSlider = () => {
       })
       .then((data) => {
         setNewsArray(data?.newsData);
-        console.log(data);
-        
         setIsLoading(false);
       })
       .catch((error) => {
@@ -95,4 +93,3 @@ const HomeSlider = () => {
   );
 };
 
-export default HomeSlider;

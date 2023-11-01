@@ -6,7 +6,7 @@ import { Relations } from "@/container/Home/Relations";
 import HeadHome from '@/container/Home/headder';
 import { Menu } from "@/container/Home/menu";
 import Statistics from "@/container/Home/statistics";
-import HomeSlider from '@/container/Home/HomeSlide';
+import { HomeSlider } from '@/container/Home/HomeSlide';
 
 export default function Index() {
   return (
