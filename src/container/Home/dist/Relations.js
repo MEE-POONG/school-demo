@@ -11,22 +11,25 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 exports.__esModule = true;
+exports.Relations = void 0;
 var react_1 = require("react");
 var react_2 = require("@material-tailwind/react");
 var link_1 = require("next/link");
 var aos_1 = require("aos");
-var NewsAll = function () {
-    var _a = react_1.useState([]), newsMenu = _a[0], setNewsMenu = _a[1];
-    var _b = react_1.useState({
+var TitleText_1 = require("@/components/TitleText");
+exports.Relations = function () {
+    var _a;
+    var _b = react_1.useState([]), newsMenu = _b[0], setNewsMenu = _b[1];
+    var _c = react_1.useState({
         page: 1,
         pageSize: 10,
         keyword: '',
         newsTypeId: ''
-    }), params = _b[0], setParams = _b[1];
-    var _c = react_1.useState(0), checkTotal = _c[0], setCheckTotal = _c[1];
-    var _d = react_1.useState([]), newsArray = _d[0], setNewsArray = _d[1];
-    var _e = react_1.useState(true), isLoading = _e[0], setIsLoading = _e[1];
-    var _f = react_1.useState(null), error = _f[0], setError = _f[1];
+    }), params = _c[0], setParams = _c[1];
+    var _d = react_1.useState(0), checkTotal = _d[0], setCheckTotal = _d[1];
+    var _e = react_1.useState([]), newsArray = _e[0], setNewsArray = _e[1];
+    var _f = react_1.useState(true), isLoading = _f[0], setIsLoading = _f[1];
+    var _g = react_1.useState(null), error = _g[0], setError = _g[1];
     react_1.useEffect(function () {
         aos_1["default"].init({
             duration: 1000
@@ -87,11 +90,12 @@ var NewsAll = function () {
             "Error: ",
             error);
     }
-    return (react_1["default"].createElement("div", { className: "container" },
+    return (react_1["default"].createElement("div", { className: "container m-auto" },
+        react_1["default"].createElement(TitleText_1["default"], { titleText: "ข่าว & กิจกรรม", titleTextTo: "“พนมวันท์”" }),
         react_1["default"].createElement(react_2.Tabs, { id: "custom-animation", value: params.newsTypeId },
             react_1["default"].createElement(react_2.TabsHeader, { className: "bg-blue-700 text-white flex-wrap md:flex-nowrap justify-center", indicatorProps: {
                     className: "bg-blue-500 shadow-none !text-gray-900"
-                } }, newsMenu === null || newsMenu === void 0 ? void 0 : newsMenu.map(function (type) { return (react_1["default"].createElement(react_2.Tab, { key: type === null || type === void 0 ? void 0 : type.id, value: type === null || type === void 0 ? void 0 : type.id, className: "font-bold text-white w-1/2 md:w-full", onClick: function () { return setParams(function (prevParams) { return (__assign(__assign({}, prevParams), { newsTypeId: type === null || type === void 0 ? void 0 : type.id })); }); } }, type === null || type === void 0 ? void 0 : type.nameTH)); })),
+                } }, (_a = newsMenu === null || newsMenu === void 0 ? void 0 : newsMenu.filter(function (type) { return (type === null || type === void 0 ? void 0 : type.nameEN) !== "News" && (type === null || type === void 0 ? void 0 : type.nameEN) !== "Relations"; })) === null || _a === void 0 ? void 0 : _a.map(function (type) { return (react_1["default"].createElement(react_2.Tab, { key: type === null || type === void 0 ? void 0 : type.id, value: type === null || type === void 0 ? void 0 : type.id, className: "font-bold text-white w-1/2 md:w-full", onClick: function () { return setParams(function (prevParams) { return (__assign(__assign({}, prevParams), { newsTypeId: type === null || type === void 0 ? void 0 : type.id })); }); } }, type === null || type === void 0 ? void 0 : type.nameTH)); })),
             react_1["default"].createElement(react_2.TabsBody, { className: "pb-4 pt-4 bg-white my-8 shadow-lg rounded-xl", animate: {
                     initial: { y: 250 },
                     mount: { y: 0 },
@@ -109,4 +113,3 @@ var NewsAll = function () {
                         "See more ",
                         ">>>>"))))));
 };
-exports["default"] = NewsAll;
