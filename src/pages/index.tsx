@@ -7,13 +7,14 @@ import { Relations } from "@/container/Home/Relations";
 import HeadHome from '@/container/Home/headder';
 import { Menu } from "@/container/Home/menu";
 import Statistics from "@/container/Home/statistics";
+import { HomeSlider } from '@/container/Home/HomeSlider';
 
 export default function Index() {
   return (
     <TheLayout>
       <HeadHome />
       <Menu />
-   
+      <HomeSlider />
       <NewNews />
       <Relations />
       <Statistics />
