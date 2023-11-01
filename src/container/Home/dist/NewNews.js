@@ -10,13 +10,6 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
 exports.__esModule = true;
 exports.NewNews = void 0;
 var react_1 = require("react");
@@ -25,13 +18,13 @@ var link_1 = require("next/link");
 var aos_1 = require("aos");
 var TitleText_1 = require("@/components/TitleText");
 var react_slick_1 = require("react-slick");
-var repeatDataUntilMinLength = function (data, minLength) {
-    var result = __spreadArrays(data);
-    while (result.length < minLength) {
-        result = result.concat(data);
-    }
-    return result;
-};
+// const repeatDataUntilMinLength = (data: any, minLength: number) => {
+//   let result = [...data];
+//   while (result.length < minLength) {
+//     result = result.concat(data);
+//   }
+//   return result;
+// };
 exports.NewNews = function () {
     var _a;
     var _b = react_1.useState([]), newsMenu = _b[0], setNewsMenu = _b[1];
@@ -124,7 +117,7 @@ exports.NewNews = function () {
             }
         ]
     };
-    var newsToDisplay = repeatDataUntilMinLength(newsArray, 4);
+    // const newsToDisplay = repeatDataUntilMinLength(newsArray, 4);
     if (isLoading) {
         return react_1["default"].createElement("div", null, "Loading...");
     }
@@ -144,16 +137,31 @@ exports.NewNews = function () {
                     mount: { y: 0 },
                     unmount: { y: 250 }
                 } },
-                react_1["default"].createElement(react_slick_1["default"], __assign({}, settings, { focusOnSelect: true }), newsToDisplay.map(function (list) { return (react_1["default"].createElement("div", { key: list === null || list === void 0 ? void 0 : list.id },
-                    react_1["default"].createElement(react_2.Card, { className: "my-6 w-72 overflow-hidden mx-auto" },
-                        react_1["default"].createElement(react_2.CardHeader, { floated: false, shadow: false, color: "transparent", className: "m-0 rounded-none" },
-                            react_1["default"].createElement("img", { className: "h-48 object-cover", src: "https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/" + ((list === null || list === void 0 ? void 0 : list.img) || "4500f404-dbac-40f3-6696-ae768a38e800") + "/150", alt: (list === null || list === void 0 ? void 0 : list.title) || "Image Alt Text" })),
-                        react_1["default"].createElement(react_2.CardBody, null,
-                            react_1["default"].createElement(react_2.Typography, { variant: "h6", color: "blue-gray", className: "title-clamp text-xs md:text-base" }, list === null || list === void 0 ? void 0 : list.title),
-                            react_1["default"].createElement(react_2.Typography, { variant: "lead", color: "gray", className: "mt-3 font-normal text-xs md:text-base subtitle-clamp" }, list === null || list === void 0 ? void 0 : list.subTitle)),
-                        react_1["default"].createElement(react_2.CardFooter, { className: "pt-0" },
-                            react_1["default"].createElement(link_1["default"], { href: "/news/" + (list === null || list === void 0 ? void 0 : list.id), className: "flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg text-xs md:text-base" },
-                                "\u0E23\u0E32\u0E22\u0E25\u0E30\u0E40\u0E2D\u0E35\u0E22\u0E14",
-                                react_1["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 2, className: "h-4 w-4" },
-                                    react_1["default"].createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" }))))))); }))))));
+                react_1["default"].createElement(react_slick_1["default"], __assign({}, settings, { swipeToSlide: true, focusOnSelect: true }),
+                    newsArray.map(function (list) { return (react_1["default"].createElement("div", { key: list === null || list === void 0 ? void 0 : list.id },
+                        react_1["default"].createElement(react_2.Card, { className: "my-6 w-72 overflow-hidden mx-auto" },
+                            react_1["default"].createElement(react_2.CardHeader, { floated: false, shadow: false, color: "transparent", className: "m-0 rounded-none" },
+                                react_1["default"].createElement("img", { className: "h-48 object-cover", src: "https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/" + ((list === null || list === void 0 ? void 0 : list.img) || "4500f404-dbac-40f3-6696-ae768a38e800") + "/150", alt: (list === null || list === void 0 ? void 0 : list.title) || "Image Alt Text" })),
+                            react_1["default"].createElement(react_2.CardBody, null,
+                                react_1["default"].createElement(react_2.Typography, { variant: "h6", color: "blue-gray", className: "title-clamp text-xs md:text-base" }, list === null || list === void 0 ? void 0 : list.title),
+                                react_1["default"].createElement(react_2.Typography, { variant: "lead", color: "gray", className: "mt-3 font-normal text-xs md:text-base subtitle-clamp" }, list === null || list === void 0 ? void 0 : list.subTitle)),
+                            react_1["default"].createElement(react_2.CardFooter, { className: "pt-0" },
+                                react_1["default"].createElement(link_1["default"], { href: "/news/" + (list === null || list === void 0 ? void 0 : list.id), className: "flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg text-xs md:text-base" },
+                                    "\u0E23\u0E32\u0E22\u0E25\u0E30\u0E40\u0E2D\u0E35\u0E22\u0E14",
+                                    react_1["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 2, className: "h-4 w-4" },
+                                        react_1["default"].createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" }))))))); }),
+                    (newsArray === null || newsArray === void 0 ? void 0 : newsArray.length) < 4 ?
+                        newsArray.map(function (list) { return (react_1["default"].createElement("div", { key: list === null || list === void 0 ? void 0 : list.id },
+                            react_1["default"].createElement(react_2.Card, { className: "my-6 w-72 overflow-hidden mx-auto" },
+                                react_1["default"].createElement(react_2.CardHeader, { floated: false, shadow: false, color: "transparent", className: "m-0 rounded-none" },
+                                    react_1["default"].createElement("img", { className: "h-48 object-cover", src: "https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/" + ((list === null || list === void 0 ? void 0 : list.img) || "4500f404-dbac-40f3-6696-ae768a38e800") + "/150", alt: (list === null || list === void 0 ? void 0 : list.title) || "Image Alt Text" })),
+                                react_1["default"].createElement(react_2.CardBody, null,
+                                    react_1["default"].createElement(react_2.Typography, { variant: "h6", color: "blue-gray", className: "title-clamp text-xs md:text-base" }, list === null || list === void 0 ? void 0 : list.title),
+                                    react_1["default"].createElement(react_2.Typography, { variant: "lead", color: "gray", className: "mt-3 font-normal text-xs md:text-base subtitle-clamp" }, list === null || list === void 0 ? void 0 : list.subTitle)),
+                                react_1["default"].createElement(react_2.CardFooter, { className: "pt-0" },
+                                    react_1["default"].createElement(link_1["default"], { href: "/news/" + (list === null || list === void 0 ? void 0 : list.id), className: "flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg text-xs md:text-base" },
+                                        "\u0E23\u0E32\u0E22\u0E25\u0E30\u0E40\u0E2D\u0E35\u0E22\u0E14",
+                                        react_1["default"].createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 2, className: "h-4 w-4" },
+                                            react_1["default"].createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" }))))))); }) :
+                        "")))));
 };

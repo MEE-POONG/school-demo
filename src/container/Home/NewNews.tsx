@@ -24,13 +24,13 @@ interface Params {
   newsTypeId: string
 }
 
-const repeatDataUntilMinLength = (data: any, minLength: number) => {
-  let result = [...data];
-  while (result.length < minLength) {
-    result = result.concat(data);
-  }
-  return result;
-};
+// const repeatDataUntilMinLength = (data: any, minLength: number) => {
+//   let result = [...data];
+//   while (result.length < minLength) {
+//     result = result.concat(data);
+//   }
+//   return result;
+// };
 
 
 export const NewNews: React.FC = () => {
@@ -136,7 +136,7 @@ export const NewNews: React.FC = () => {
     ]
   };
 
-  const newsToDisplay = repeatDataUntilMinLength(newsArray, 4);
+  // const newsToDisplay = repeatDataUntilMinLength(newsArray, 4);
 
 
   if (isLoading) {
@@ -179,10 +179,11 @@ export const NewNews: React.FC = () => {
           }}
         >
           <Slider {...settings}
-          focusOnSelect={true}
+             swipeToSlide={true}
+             focusOnSelect={true}
 
           >
-            {newsToDisplay.map((list) => (
+            {newsArray.map((list) => (
               <div key={list?.id} >
                 <Card className="my-6 w-72 overflow-hidden mx-auto">
                   <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none">
@@ -223,6 +224,50 @@ export const NewNews: React.FC = () => {
                 </Card>
               </div>
             ))}
+            {newsArray?.length < 4 ?
+              newsArray.map((list) => (
+                <div key={list?.id} >
+                  <Card className="my-6 w-72 overflow-hidden mx-auto">
+                    <CardHeader floated={false} shadow={false} color="transparent" className="m-0 rounded-none">
+                      <img className="h-48 object-cover"
+                        src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${list?.img || "4500f404-dbac-40f3-6696-ae768a38e800"}/150`}
+                        alt={list?.title || "Image Alt Text"}
+                      />
+                    </CardHeader>
+                    <CardBody>
+                      <Typography variant="h6" color="blue-gray" className="title-clamp text-xs md:text-base">
+                        {list?.title}
+                      </Typography>
+                      <Typography variant="lead" color="gray" className="mt-3 font-normal text-xs md:text-base subtitle-clamp">
+                        {list?.subTitle}
+                      </Typography>
+                    </CardBody>
+                    <CardFooter className="pt-0">
+                      <Link href={`/news/${list?.id}`}
+                        className="flex w-fit mx-auto items-center bg-blue-400 text-white hover:bg-yellow-800 px-6 py-2 rounded-lg text-xs md:text-base"
+                      >
+                        รายละเอียด
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          className="h-4 w-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                          />
+                        </svg>
+                      </Link>
+                    </CardFooter>
+                  </Card>
+                </div>
+              )) :
+              ""
+            }
           </Slider>
         </TabsBody>
       </Tabs>
