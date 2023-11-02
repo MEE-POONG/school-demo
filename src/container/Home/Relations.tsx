@@ -9,7 +9,6 @@ import {
 import { News as PrismaNews, NewsType as PrismaNewsType } from '@prisma/client';
 import Link from "next/link";
 import { newsRelations } from "@/data/news";
-import Aos from "aos";
 import TitleText from "@/components/TitleText";
 
 interface News extends PrismaNews {
@@ -26,12 +25,6 @@ export const Relations: React.FC = () => {
   const [newsArray, setNewsArray] = useState<NewsType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  useEffect(() => {
-    Aos.init({
-      duration: 1000,
-    });
-  }, []);
 
   useEffect(() => {
     fetch(`/api/newsType`)
@@ -90,7 +83,6 @@ export const Relations: React.FC = () => {
           {newsArray?.map((listType) => (
             <TabPanel key={listType?.nameEN} value={listType?.nameEN} className="pt-4  pb-4  bg-white my-8 shadow-lg rounded-xl">
               <ul
-                data-aos="fade-up"
                 className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6"
               >
                 {listType?.News?.map((newsItem: any) => (
