@@ -15,10 +15,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     switch (method) {
         case 'GET':
             try {
-                const newsType = await prisma.newsType.findMany({
+                const newsTypes = await prisma.newsType.findMany();
+
+                // Map each NewsType to a Promise that resolves to the NewsType with the News items
+                const newsTypeWithNewsPromises = newsTypes.map(async (type) => {
+                    const news = await prisma.news.findMany({
+                        where: { newsTypeId: type.id },
+                        take: 10,
+                        orderBy: { createdAt: 'desc' }
+                    });
+                    return {
+                        ...type,
+                        News: news
+                    };
                 });
 
-                res.status(200).json({ newsType });
+                // Wait for all Promises to resolve
+                const data = await Promise.all(newsTypeWithNewsPromises);
+
+                res.status(200).json({ data });
             } catch (error) {
                 res.status(500).json({ error: "An error occurred while fetching the newsSchool" });
             }
