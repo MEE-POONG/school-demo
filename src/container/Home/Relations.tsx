@@ -72,7 +72,7 @@ export const Relations: React.FC = () => {
               key={type?.nameEN}
               value={type?.nameEN}
               className="font-bold text-white w-1/2 md:w-full"
-              onClick={() => setSelectKey(type?.nameTH)}
+              onClick={() => setSelectKey(type?.nameEN)}
             >
               {type?.nameTH}
             </Tab>
