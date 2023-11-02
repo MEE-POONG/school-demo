@@ -19,14 +19,13 @@ interface Params {
 }
 
 export const Relations: React.FC = () => {
-  const [newsMenu, setNewsMenu] = useState<NewsType[]>([]);
+  // const [newsMenu, setNewsMenu] = useState<NewsType[]>([]);
   const [params, setParams] = useState<Params>({
     page: 1,
     pageSize: 10,
-    keyword: '',
+    keyword: 'Activity',
     newsTypeId: ''
   })
-  const [checkTotal, setCheckTotal] = useState(0);
   const [newsArray, setNewsArray] = useState<News[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -46,12 +45,11 @@ export const Relations: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        setNewsMenu(data?.newsType);
+        // setNewsMenu(data?.newsType);
         setParams(prevParams => ({
           ...prevParams,
           newsTypeId: data?.newsType[0]?.id
         }));
-        setCheckTotal(data?.pagination?.total)
         setIsLoading(false);
       })
       .catch((error) => {
@@ -70,7 +68,7 @@ export const Relations: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        setNewsArray(data?.newsData);
+        setNewsArray(data?.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -98,21 +96,21 @@ export const Relations: React.FC = () => {
   return (
     <div className="container m-auto">
       <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
-      <Tabs id="custom-animation" value={params.newsTypeId} >
+      <Tabs id="custom-animation" value={params.keyword} >
         <TabsHeader
           className="bg-blue-700 text-white flex-wrap md:flex-nowrap justify-center"
           indicatorProps={{
             className: "bg-blue-500 shadow-none !text-gray-900",
           }}
         >
-          {newsMenu?.filter(type => type?.nameEN !== "News" && type?.nameEN !== "Relations")?.map((type) => (
+          {newsRelations?.map((type) => (
             <Tab
-              key={type?.id}
-              value={type?.id}
+              key={type?.nameEN}
+              value={type?.nameEN}
               className="font-bold text-white w-1/2 md:w-full"
               onClick={() => setParams(prevParams => ({
                 ...prevParams,
-                newsTypeId: type?.id
+                keyword: type?.nameEN
               }))}
             >
               {type?.nameTH}

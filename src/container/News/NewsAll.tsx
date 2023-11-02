@@ -60,7 +60,7 @@ const NewsAll: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`/api/newsType/search?page=${params.page}&pageSize=${params.pageSize}&keyword=${params.keyword}&newsTypeId=${params.newsTypeId}`)
+    fetch(`/api/newsType/search?page=${params.page}&pageSize=${params.pageSize}&keyword=${params.keyword}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -68,7 +68,7 @@ const NewsAll: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        setNewsArray(data?.newsData);
+        setNewsArray(data?.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -94,7 +94,7 @@ const NewsAll: React.FC = () => {
 
   return (
     <div className="container">
-      <Tabs id="custom-animation" value={params.newsTypeId} >
+      <Tabs id="custom-animation" value={params?.keyword} >
         <TabsHeader
           className="bg-blue-700 text-white flex-wrap md:flex-nowrap justify-center"
           indicatorProps={{
@@ -104,11 +104,11 @@ const NewsAll: React.FC = () => {
           {newsMenu?.map((type) => (
             <Tab
               key={type?.id}
-              value={type?.id}
+              value={type?.nameEN}
               className="font-bold text-white w-1/2 md:w-full"
               onClick={() => setParams(prevParams => ({
                 ...prevParams,
-                newsTypeId: type?.id
+                keyword: type?.nameEN
               }))}
             >
               {type?.nameTH}

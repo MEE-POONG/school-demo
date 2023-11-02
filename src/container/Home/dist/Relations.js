@@ -11,22 +11,24 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 exports.__esModule = true;
+exports.Relations = void 0;
 var react_1 = require("react");
 var react_2 = require("@material-tailwind/react");
 var link_1 = require("next/link");
+var news_1 = require("@/data/news");
 var aos_1 = require("aos");
-var NewsAll = function () {
-    var _a = react_1.useState([]), newsMenu = _a[0], setNewsMenu = _a[1];
-    var _b = react_1.useState({
+var TitleText_1 = require("@/components/TitleText");
+exports.Relations = function () {
+    // const [newsMenu, setNewsMenu] = useState<NewsType[]>([]);
+    var _a = react_1.useState({
         page: 1,
         pageSize: 10,
-        keyword: '',
+        keyword: 'Activity',
         newsTypeId: ''
-    }), params = _b[0], setParams = _b[1];
-    var _c = react_1.useState(0), checkTotal = _c[0], setCheckTotal = _c[1];
-    var _d = react_1.useState([]), newsArray = _d[0], setNewsArray = _d[1];
-    var _e = react_1.useState(true), isLoading = _e[0], setIsLoading = _e[1];
-    var _f = react_1.useState(null), error = _f[0], setError = _f[1];
+    }), params = _a[0], setParams = _a[1];
+    var _b = react_1.useState([]), newsArray = _b[0], setNewsArray = _b[1];
+    var _c = react_1.useState(true), isLoading = _c[0], setIsLoading = _c[1];
+    var _d = react_1.useState(null), error = _d[0], setError = _d[1];
     react_1.useEffect(function () {
         aos_1["default"].init({
             duration: 1000
@@ -41,13 +43,11 @@ var NewsAll = function () {
             return response.json();
         })
             .then(function (data) {
-            var _a;
-            setNewsMenu(data === null || data === void 0 ? void 0 : data.newsType);
+            // setNewsMenu(data?.newsType);
             setParams(function (prevParams) {
                 var _a;
                 return (__assign(__assign({}, prevParams), { newsTypeId: (_a = data === null || data === void 0 ? void 0 : data.newsType[0]) === null || _a === void 0 ? void 0 : _a.id }));
             });
-            setCheckTotal((_a = data === null || data === void 0 ? void 0 : data.pagination) === null || _a === void 0 ? void 0 : _a.total);
             setIsLoading(false);
         })["catch"](function (error) {
             console.error('Error:', error);
@@ -56,7 +56,7 @@ var NewsAll = function () {
         });
     }, []);
     react_1.useEffect(function () {
-        fetch("/api/newsType/search?page=" + params.page + "&pageSize=" + params.pageSize + "&keyword=" + params.keyword)
+        fetch("/api/newsType/search?page=" + params.page + "&pageSize=" + params.pageSize + "&keyword=" + params.keyword + "&newsTypeId=" + params.newsTypeId)
             .then(function (response) {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -67,6 +67,7 @@ var NewsAll = function () {
             setNewsArray(data === null || data === void 0 ? void 0 : data.data);
             setIsLoading(false);
         })["catch"](function (error) {
+            console.error('Error:', error);
             setError(error.message);
             setIsLoading(false);
         });
@@ -82,11 +83,12 @@ var NewsAll = function () {
             "Error: ",
             error);
     }
-    return (react_1["default"].createElement("div", { className: "container" },
-        react_1["default"].createElement(react_2.Tabs, { id: "custom-animation", value: params === null || params === void 0 ? void 0 : params.keyword },
+    return (react_1["default"].createElement("div", { className: "container m-auto" },
+        react_1["default"].createElement(TitleText_1["default"], { titleText: "ข่าว & กิจกรรม", titleTextTo: "“พนมวันท์”" }),
+        react_1["default"].createElement(react_2.Tabs, { id: "custom-animation", value: params.keyword },
             react_1["default"].createElement(react_2.TabsHeader, { className: "bg-blue-700 text-white flex-wrap md:flex-nowrap justify-center", indicatorProps: {
                     className: "bg-blue-500 shadow-none !text-gray-900"
-                } }, newsMenu === null || newsMenu === void 0 ? void 0 : newsMenu.map(function (type) { return (react_1["default"].createElement(react_2.Tab, { key: type === null || type === void 0 ? void 0 : type.id, value: type === null || type === void 0 ? void 0 : type.nameEN, className: "font-bold text-white w-1/2 md:w-full", onClick: function () { return setParams(function (prevParams) { return (__assign(__assign({}, prevParams), { keyword: type === null || type === void 0 ? void 0 : type.nameEN })); }); } }, type === null || type === void 0 ? void 0 : type.nameTH)); })),
+                } }, news_1.newsRelations === null || news_1.newsRelations === void 0 ? void 0 : news_1.newsRelations.map(function (type) { return (react_1["default"].createElement(react_2.Tab, { key: type === null || type === void 0 ? void 0 : type.nameEN, value: type === null || type === void 0 ? void 0 : type.nameEN, className: "font-bold text-white w-1/2 md:w-full", onClick: function () { return setParams(function (prevParams) { return (__assign(__assign({}, prevParams), { keyword: type === null || type === void 0 ? void 0 : type.nameEN })); }); } }, type === null || type === void 0 ? void 0 : type.nameTH)); })),
             react_1["default"].createElement(react_2.TabsBody, { className: "pb-4 pt-4 bg-white my-8 shadow-lg rounded-xl", animate: {
                     initial: { y: 250 },
                     mount: { y: 0 },
@@ -100,8 +102,7 @@ var NewsAll = function () {
                                 react_1["default"].createElement("p", { className: "text-sm font-semibold leading-6" }, list === null || list === void 0 ? void 0 : list.title),
                                 react_1["default"].createElement("p", { className: "mt-1 truncate text-xs leading-5 text-gray-500" }, list === null || list === void 0 ? void 0 : list.subTitle)))))); })),
                 react_1["default"].createElement("div", { className: "text-center" },
-                    react_1["default"].createElement("button", { type: "button", className: "text-yellow-800 hover:text-yellow-900 text-sm leading-6 font-medium py-2 px-3 rounded-lg " + (checkTotal <= 1 ? 'hidden' : ''), onClick: handleSeeMore },
+                    react_1["default"].createElement("button", { type: "button", className: "text-yellow-800 hover:text-yellow-900 text-sm leading-6 font-medium py-2 px-3 rounded-lg", onClick: handleSeeMore },
                         "See more ",
                         ">>>>"))))));
 };
-exports["default"] = NewsAll;

@@ -1,30 +1,37 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { PrismaClient, Prisma } from '@prisma/client';
 
-import { PrismaClient, Prisma } from '@prisma/client'
 const prisma = new PrismaClient();
+
+type NewsWithNewsType = Prisma.NewsGetPayload<{
+    include: { NewsType: true };
+}>;
 
 type Data = {
     success: boolean;
     message?: string;
-    data?: any;
-    pagination?: Pagination
+    data?: NewsWithNewsType[]; // Specify the expected data type
+    pagination?: Pagination;
 };
 
 type Pagination = {
     page: number;
     pageSize: number;
     total: number;
-}
+};
 
 interface RequestQuery {
     page?: string;
     pageSize?: string;
     keyword?: string;
-    newsTypeId?: string;
 }
-// ... [rest of the imports and type definitions]
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+// ...
+
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse<Data>
+) {
     const { method } = req;
 
     switch (method) {
@@ -36,17 +43,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 const keyword: string = decodeURIComponent(query.keyword || '');
 
                 const searchCriteria: Prisma.NewsWhereInput = {};
-
                 if (keyword) {
-                    searchCriteria.title = {
-                        contains: keyword,
-                        mode: 'insensitive'
-                    };
-                }
-
-                // If you want to search by newsTypeId as well
-                if (query.newsTypeId) {
-                    searchCriteria.newsTypeId = query.newsTypeId;
+                    searchCriteria.OR = [
+                        {
+                            NewsType: {
+                                OR: [
+                                    {
+                                        nameTH: {
+                                            contains: keyword,
+                                            mode: 'insensitive',
+                                        },
+                                    },
+                                    {
+                                        nameEN: {
+                                            contains: keyword,
+                                            mode: 'insensitive',
+                                        },
+                                    },
+                                ],
+                            },
+                        },
+                    ];
                 }
 
                 const newsData = await prisma.news.findMany({
@@ -57,17 +74,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                         createdAt: 'desc',
                     },
                     include: {
-                        NewsType: true  // Include the NewsType details with each News item
-                    }
+                        NewsType: true, // Includes the NewsType in the result set
+                    },
                 });
 
-                const totalPartnersCount: number = await prisma.news.count({
+                const totalNewsCount: number = await prisma.news.count({
                     where: searchCriteria,
                 });
 
-                const totalPages: number = Math.ceil(totalPartnersCount / pageSize);
+                const totalPages: number = Math.ceil(totalNewsCount / pageSize);
 
-                res.status(200).json({ success: true, newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
+                res.status(200).json({
+                    success: true,
+                    data: newsData,
+                    pagination: {
+                        total: totalPages,
+                        page: page,
+                        pageSize: pageSize,
+                    },
+                });
             } catch (error) {
                 res.status(500).json({ success: false, message: "An error occurred while fetching the news" });
             }

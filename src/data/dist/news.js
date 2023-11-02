@@ -1,36 +1,37 @@
-export const newsMenu = [
+"use strict";
+exports.__esModule = true;
+exports.newsRelations = exports.newsMenu = void 0;
+exports.newsMenu = [
     {
         id: "1",
         nameTH: "ข่าว",
-        nameEN: "News",
+        nameEN: "News"
     },
     {
         id: "1",
         nameTH: "ประชาสัมพันธ์",
-        nameEN: "Relations",
+        nameEN: "Relations"
     },
-
 ];
-export const newsRelations = [
+exports.newsRelations = [
     {
         nameTH: "กิจกรรม",
-        nameEN: "Activity",
+        nameEN: "Activity"
     },
     {
         nameTH: "สนใจเข้าศึกษา",
-        nameEN: "Interested",
+        nameEN: "Interested"
     },
     {
         nameTH: "นักศึกษาปัจจุบัน",
-        nameEN: "Current",
+        nameEN: "Current"
     },
     {
         nameTH: "บริการศิษย์เก่า",
-        nameEN: "AlumniServices",
+        nameEN: "AlumniServices"
     },
     {
         nameTH: "ร่วมงานกับเรา",
-        nameEN: "WorkWithUs",
+        nameEN: "WorkWithUs"
     },
-
 ];
