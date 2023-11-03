@@ -1,9 +1,8 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
-export default function Success({ onClose }:any) {
+export default function Success({ onClose }: any) {
     const [open, setOpen] = useState(true)
 
     const cancelButtonRef = useRef(null)
@@ -37,25 +36,25 @@ export default function Success({ onClose }:any) {
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                                     <div className='flex items-center justify-center'>
-                                        <BsFillCheckCircleFill className="h-52 w-52 text-green-600" aria-hidden="true" />
+                                        <BsFillCheckCircleFill className="h-10 w-10 text-green-600" aria-hidden="true" />
                                     </div>
 
                                     <div className='flex items-center justify-center mt-5'>
-                                        <h1 className='text-2xl'>บันทึกข้อมูลสำเร็จ</h1>
+                                        <h1 className='text-base'>บันทึกข้อมูลสำเร็จ</h1>
                                     </div>
 
                                     <div className='flex items-center justify-center mt-5'>
-                                        {/* <button
+                                        <button
                                             type="button"
-                                            className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
+                                            className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
                                             onClick={() => setOpen(false)}
                                         >
                                             ตกลง
-                                        </button> */}
+                                        </button>
                                     </div>
 
                                 </div>
-                               
+
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
