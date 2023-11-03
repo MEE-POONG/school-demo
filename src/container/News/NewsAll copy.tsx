@@ -14,11 +14,6 @@ interface News extends PrismaNews {
   map(arg0: (newsItem: any) => React.JSX.Element): React.ReactNode;
 }
 
-interface Pagination {
-  page: number;
-  pageSize: number;
-  totalPages: number;
-}
 interface NewsType extends PrismaNewsType {
   News: News;
 }
@@ -66,8 +61,8 @@ export const NewsAll: React.FC = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-
-        setNewsArray(prevNews => [...prevNews, ...data?.data]);
+        
+        // setNewsArray(prevNews => [...prevNews, ...data.data]);
         setCheckTotal(data?.pagination.total);
         setIsLoading(false);
       })
@@ -75,7 +70,7 @@ export const NewsAll: React.FC = () => {
         setError(error.message);
         setIsLoading(false);
       });
-  }, []);
+  }, [params]);
 
   useEffect(() => {
     console.log("76 : ", newsArray);
@@ -124,8 +119,7 @@ export const NewsAll: React.FC = () => {
               <ul
                 className="bg-slate-50 p-4 sm:px-8 sm:pt-6 sm:pb-8 lg:p-4 xl:px-8 xl:pt-6 xl:pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 text-sm leading-6"
               >
-                
-                {newsArray?.filter(list => listType?.id === list?.newsTypeId)?.map(list => (
+                {/* {newsArray?.filter(list => listType?.id === list?.newsTypeId)?.map(list => (
                   <li key={list?.id} className="flex">
                 
                     <Link href={`/news/${list?.id}`} className="hover:border-blue-500 hover:border-solid hover:text-blue-700 hover:bg-blue-100 group w-full flex flex-col px-4 justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-3">
@@ -140,8 +134,10 @@ export const NewsAll: React.FC = () => {
                         </div>
                       </div>
                     </Link>
+
                   </li>
-                ))}
+                ))} */}
+                ss
               </ul>
               <div className="text-center">
                 <button
