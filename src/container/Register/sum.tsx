@@ -1,13 +1,9 @@
 
-import { Inter } from 'next/font/google'
-import Navbar from '@/components/TheNavbar'
 import TheLayout from '@/components/TheLayout'
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Link from 'next/link'
-
-const inter = Inter({ subsets: ['latin'] })
 
 
 interface FormData {
@@ -16,14 +12,14 @@ interface FormData {
   regPrefix: string;
   regSex: string;
   regNation: string;
-  regName: string;
-  regLastname: string;
-  regEname: string;
-  regElastname: string;
+  regNameTh: string;
+  regLastnameTh: string;
+  regNameEng: string;
+  regLastnameEng: string;
   regPhone: string;
   regEmail: string;
   regImg: string;
-  regSchool: string;
+  regoldSchool: string;
   regDegree: string;
   regGpa: string;
   regProgram: string;
@@ -41,14 +37,14 @@ export default function Sum() {
     regPrefix: "",
     regSex: "",
     regNation: "",
-    regName: "",
-    regLastname: "",
-    regEname: "",
-    regElastname: "",
+    regNameTh: "",
+    regLastnameTh: "",
+    regNameEng: "",
+    regLastnameEng: "",
     regPhone: "",
     regEmail: "",
     regImg: "",
-    regSchool: "",
+    regoldSchool: "",
     regDegree: "",
     regGpa: "",
     regProgram: "",
@@ -89,7 +85,7 @@ export default function Sum() {
           </div>
 
           <div className='self-end'>
-            <Link href="/register"> <h1 className='text-2xl  md:text-3xl  text-[#1F306A]'>กลับ</h1> </Link>
+            <Link href="/applyToStudy"> <h1 className='text-2xl  md:text-3xl  text-[#1F306A]'>กลับ</h1> </Link>
           </div>
         </div>
 
@@ -153,13 +149,13 @@ export default function Sum() {
                 <label className=''>ชื่อ:</label>
               </div>
               <div className=' col-span-2 my-2'>
-                <input readOnly defaultValue={formData.regName} name='regName' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input readOnly defaultValue={formData.regNameTh} name='regNameTh' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>นามสกุล:</label>
               </div>
               <div className='col-span-2 my-2'>
-                <input readOnly defaultValue={formData.regLastname} name='regLastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input readOnly defaultValue={formData.regLastnameTh} name='regLastnameTh' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
 
@@ -169,13 +165,13 @@ export default function Sum() {
                 <label className=''>Name:</label>
               </div>
               <div className=' col-span-2 my-2'>
-                <input readOnly defaultValue={formData.regEname} name='regEname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input readOnly defaultValue={formData.regNameEng} name='regNameEng' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               <div className='col-start-6 col-end-8 md:text-right p-3 my-2 '>
                 <label className=''>Surname:</label>
               </div>
               <div className='col-span-2 my-2'>
-                <input readOnly defaultValue={formData.regElastname} name='regElastname' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input readOnly defaultValue={formData.regLastnameEng} name='regLastnameEng' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
 
               {/* เบอร์โทร อีเมลล์ */}
@@ -215,7 +211,7 @@ export default function Sum() {
                 <label className=''>สถาบันการศึกษา:</label>
               </div>
               <div className=' col-span-6 my-2'>
-                <input readOnly defaultValue={formData.regSchool} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input readOnly defaultValue={formData.regoldSchool} name='regoldSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               {/* ระดับการศึกษา */}
 
@@ -247,7 +243,7 @@ export default function Sum() {
                 <label className=''>หลักสูตร:</label>
               </div>
               <div className=' col-span-1 my-2'>
-                <input readOnly defaultValue={formData.regSchool} name='regSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
+                <input readOnly defaultValue={formData.regoldSchool} name='regoldSchool' type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
               {/* คณะ และ สาขา */}
 

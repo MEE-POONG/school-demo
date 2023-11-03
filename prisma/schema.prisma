@@ -130,25 +130,25 @@ model RegisterForm {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   studentId   String? //รหัสนักศึกษา
   Idpersonal  String? //รหัหสบัตรประชาชน
-  birth       String? //วันเกิด
-  prefix      String? // คำนำหน้า
-  sex         String? // เพศ
-  nation      String? // ประเทศ
-  name        String? //ชื่อ
-  lastname    String? //นามสกุล
-  engname     String? //ชื่ออิง
-  englastname String? // นามสกุลอิง
-  phone       String? //เบอร์
-  email       String? //เมล
-  img         String? //รูป
+  Birth       String? //วันเกิด
+  Prefix      String? // คำนำหน้า
+  Sex         String? // เพศ
+  Nation      String? // ประเทศ
+  NameTh      String? //ชื่อ
+  LastnameTh  String? //นามสกุล
+  NameEng     String? //ชื่ออิง
+  LastnameEng String? // นามสกุลอิง
+  Phone       String? //เบอร์
+  Email       String? //เมล
+  Img         String? //รูป
   //ประวัติการศึกษา
-  school      String?
-  degree      String?
-  gpa         String?
+  oldSchool   String?
+  Degree      String?
+  Gpa         String?
   //ข้างล่างเป็นเกี่ยวกับคณะและหลักสูตร
-  program     String? //หลักสูตร
-  faculty     String?
-  major       String?
+  Program     String? //หลักสูตร
+  Faculty     String?
+  Major       String?
   createdAt   DateTime? @default(now())
   updatedAt   DateTime? @updatedAt
   deleted_at  DateTime? @map("deleted_at")
