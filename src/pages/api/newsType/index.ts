@@ -16,8 +16,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         case 'GET':
             try {
                 const newsTypes = await prisma.newsType.findMany();
-
-                // Map each NewsType to a Promise that resolves to the NewsType with the News items
                 const newsTypeWithNewsPromises = newsTypes.map(async (type) => {
                     const news = await prisma.news.findMany({
                         where: { newsTypeId: type.id },
@@ -30,7 +28,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     };
                 });
 
-                // Wait for all Promises to resolve
                 const data = await Promise.all(newsTypeWithNewsPromises);
 
                 res.status(200).json({ data });

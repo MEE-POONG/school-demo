@@ -40,7 +40,7 @@ export const NewNews: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`/api/newsType`)
+    fetch(`/api/newsType/search`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -48,7 +48,6 @@ export const NewNews: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("36 : ", data?.data);
         setNewsArray(data?.data);
         setIsLoading(false);
       })

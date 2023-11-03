@@ -1,102 +1,52 @@
+import { PrismaClient } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient, Prisma } from '@prisma/client';
 
 const prisma = new PrismaClient();
-
-type NewsWithNewsType = Prisma.NewsGetPayload<{
-    include: { NewsType: true };
-}>;
-
-type Data = {
-    success: boolean;
-    message?: string;
-    data?: NewsWithNewsType[]; // Specify the expected data type
-    pagination?: Pagination;
-};
 
 type Pagination = {
     page: number;
     pageSize: number;
-    total: number;
-};
-
-interface RequestQuery {
-    page?: string;
-    pageSize?: string;
-    keyword?: string;
+    total: number
 }
 
-// ...
-
-export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const { method } = req;
 
     switch (method) {
         case 'GET':
             try {
-                const query: RequestQuery = req.query as unknown as RequestQuery;
-                const page: number = parseInt(query.page || '1', 10);
-                const pageSize: number = parseInt(query.pageSize || '10', 10);
-                const keyword: string = decodeURIComponent(query.keyword || '');
-
-                const searchCriteria: Prisma.NewsWhereInput = {};
-                if (keyword) {
-                    searchCriteria.OR = [
-                        {
-                            NewsType: {
-                                OR: [
-                                    {
-                                        nameTH: {
-                                            contains: keyword,
-                                            mode: 'insensitive',
-                                        },
-                                    },
-                                    {
-                                        nameEN: {
-                                            contains: keyword,
-                                            mode: 'insensitive',
-                                        },
-                                    },
-                                ],
-                            },
-                        },
-                    ];
-                }
-
-                const newsData = await prisma.news.findMany({
-                    where: searchCriteria,
-                    skip: (page - 1) * pageSize,
-                    take: pageSize,
-                    orderBy: {
-                        createdAt: 'desc',
-                    },
-                    include: {
-                        NewsType: true, // Includes the NewsType in the result set
-                    },
+                const newsTypes = await prisma.newsType.findMany();
+                const newsTypeWithNewsPromises = newsTypes.map(async (type) => {
+                    const news = await prisma.news.findMany({
+                        where: { newsTypeId: type.id },
+                        take: 10,
+                        orderBy: { createdAt: 'desc' }
+                    });
+                    return {
+                        ...type,
+                        News: news
+                    };
                 });
 
-                const totalNewsCount: number = await prisma.news.count({
-                    where: searchCriteria,
-                });
+                const data = await Promise.all(newsTypeWithNewsPromises);
 
-                const totalPages: number = Math.ceil(totalNewsCount / pageSize);
-
-                res.status(200).json({
-                    success: true,
-                    data: newsData,
-                    pagination: {
-                        total: totalPages,
-                        page: page,
-                        pageSize: pageSize,
-                    },
-                });
+                res.status(200).json({ data });
             } catch (error) {
-                res.status(500).json({ success: false, message: "An error occurred while fetching the news" });
+                res.status(500).json({ error: "An error occurred while fetching the newsSchool" });
             }
             break;
+        case 'POST':
+            try {
+                const newNews = await prisma.newsType.create({
+                    data: req.body,
+                });
+
+                res.status(201).json(newNews);
+            } catch (error) {
+                res.status(500).json({ error: "An error occurred while creating the newsSchool" });
+            }
+            break;
+
         default:
             res.setHeader('Allow', ['GET', 'POST']);
             res.status(405).end(`Method ${method} Not Allowed`);
