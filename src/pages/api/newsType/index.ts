@@ -3,37 +3,37 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 const prisma = new PrismaClient();
 
+type Data = {
+    success: boolean;
+    message?: string;
+    data?: any;
+    pagination?: Pagination
+};
+
 type Pagination = {
     page: number;
     pageSize: number;
     total: number
 }
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+interface RequestQuery {
+    page?: string;
+    pageSize?: string;
+}
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const { method } = req;
 
     switch (method) {
         case 'GET':
-            try {
-                const newsTypes = await prisma.newsType.findMany();
-                const newsTypeWithNewsPromises = newsTypes.map(async (type) => {
-                    const news = await prisma.news.findMany({
-                        where: { newsTypeId: type.id },
-                        take: 10,
-                        orderBy: { createdAt: 'desc' }
-                    });
-                    return {
-                        ...type,
-                        News: news
-                    };
-                });
-
-                const data = await Promise.all(newsTypeWithNewsPromises);
-
-                res.status(200).json({ data });
-            } catch (error) {
-                res.status(500).json({ error: "An error occurred while fetching the newsSchool" });
-            }
+            const query: RequestQuery = req.query as unknown as RequestQuery;
+            const page: number = parseInt(query.page || '1', 10);
+            const pageSize: number = parseInt(query.pageSize || '10', 10);
+            const newsTypeData = await prisma.newsType.findMany({
+                skip: (page - 1) * pageSize,
+                take: pageSize,
+            });
+            const totalNewsCount: number = await prisma.newsType.count();
+            const totalPages: number = Math.ceil(totalNewsCount / pageSize);
+            res.status(200).json({ success: true, data: newsTypeData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
             break;
         case 'POST':
             try {
@@ -41,9 +41,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     data: req.body,
                 });
 
-                res.status(201).json(newNews);
+                res.status(200).json({ success: true, data: newNews });
+
             } catch (error) {
-                res.status(500).json({ error: "An error occurred while creating the newsSchool" });
+                res.status(500).json({ success: false, message: "An unexpected error News" });
             }
             break;
 
