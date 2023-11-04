@@ -11,41 +11,56 @@ import { FaRegHandPointRight } from "react-icons/fa";
 import Aos from "aos";
 import Link from 'next/link';
 
+interface NewRegisterForm {
+    personalID: string;
+    birth: string;
+    prefix: string;
+    sex: string;
+    nation: string;
+    nameTh: string;
+    lastnameTh: string;
+    nameEng: string;
+    lastnameEng: string;
+    email: string;
+    phone: string;
+    img: string;
+    oldSchool: string;
+    degree: string;
+    gpa: string;
+    program: string;
+    faculty: string;
+    major: string;
+}
+
 export default function ApplyToStudyForm() {
   useEffect(() => {
     Aos.init({
       duration: 1000,
     });
   }, []);
-  const [{ error: errorMessage, loading: IndexActivityLoading }, executeIndexActivity] = useAxios({ url: '/api/registerForm', method: 'POST' }, { manual: true });
+  const [{ error: errorMessage, loading: RegisformLoading }, executeRegisform] = useAxios({ url: '/api/registerForm', method: 'POST' }, { manual: true });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const [id, setId] = useState<string>("")
 
-  const [regIdpersonal, setRegIdpersonal] = useState<string>(""); // Example for an input field
-  const [regBirth, setRegBirth] = useState<string>("");
-  const [regPrefix, setRegPrefix] = useState<string>("");
-
-
-  const [regSex, setRegSex] = useState<string>("");
-  const [regNation, setRegNation] = useState<string>("");
-  const [regNameTh, setRegNameTh] = useState<string>("");
-  const [regLastnameTh, setRegLastnameTH] = useState<string>("");
-  const [regNameEng, setRegNameEng] = useState<string>("");
-  const [regLastnameEng, setRegLastnameEng] = useState<string>("");
-  const [regPhone, setRegPhone] = useState<string>("");
-  const [regEmail, setRegEmail] = useState<string>("");
-
+  const [regpersonalID, setRegpersonalID] = useState<string>(""); // Example for an input field
+  const [regbirth, setRegbirth] = useState<string>("");
+  const [regprefix, setRegprefix] = useState<string>("");
+  const [regsex, setRegsex] = useState<string>("");
+  const [regnation, setRegnation] = useState<string>("");
+  const [regnameTh, setRegnameTh] = useState<string>("");
+  const [reglastnameTh, setReglastnameTh] = useState<string>("");
+  const [regnameEng, setRegnameEng] = useState<string>("");
+  const [reglastnameEng, setReglastnameEng] = useState<string>("");
+  const [regphone, setRegphone] = useState<string>("");
+  const [regemail, setRegemail] = useState<string>("");
   const [regImg, setRegImg] = useState<File | null>(null);
-
   const [regoldSchool, setRegoldSchool] = useState<string>("");
   const [regDegree, setRegDegree] = useState<string>("");
-  const [regGpa, setRegGpa] = useState<string>("");
-  const [regProgram, setRegProgram] = useState<string>("");
-
-  const [regFaculty, setRegFaculty] = useState<string>("");
-  const [regMajor, setRegMajor] = useState<string>("");
+  const [reggpa, setReggpa] = useState<string>("");
+  const [regprogram, setRegprogram] = useState<string>("");
+  const [regfaculty, setRegfaculty] = useState<string>("");
+  const [regmajor, setRegmajor] = useState<string>("");
 
   const [success, setSuccess] = useState(false);
   const [dataOut, setDataOut] = useState({});
@@ -68,26 +83,26 @@ export default function ApplyToStudyForm() {
     //event.stopPropagation();
     let missingFields = [];
     // Check for missing fields here...
-    if (!regIdpersonal) missingFields.push("บัตรประจำตัวประชาชน");
-    if (!regBirth) missingFields.push("วันเดือนปีเกิด");
-    if (!regPrefix) missingFields.push("คำนำหน้าชื่อ");
-    if (!regSex) missingFields.push("เพศ");
-    if (!regNation) missingFields.push("สัญชาติ");
-    if (!regNameTh) missingFields.push("ชื่อ");
-    if (!regLastnameTh) missingFields.push("นามสกุล");
-    if (!regNameEng) missingFields.push("ชื่อภาษาอังกฤษ");
-    if (!regLastnameEng) missingFields.push("นามสกุลภาษาอังกฤษ");
-    if (!regPhone) missingFields.push("เบอร์โทรศัพท์");
-    if (!regEmail) missingFields.push("อีเมล");
+    if (!regpersonalID) missingFields.push("บัตรประจำตัวประชาชน");
+    if (!regbirth) missingFields.push("วันเดือนปีเกิด");
+    if (!regprefix) missingFields.push("คำนำหน้าชื่อ");
+    if (!regsex) missingFields.push("เพศ");
+    if (!regnation) missingFields.push("สัญชาติ");
+    if (!regnameTh) missingFields.push("ชื่อ");
+    if (!reglastnameTh) missingFields.push("นามสกุล");
+    if (!regnameEng) missingFields.push("ชื่อภาษาอังกฤษ");
+    if (!reglastnameEng) missingFields.push("นามสกุลภาษาอังกฤษ");
+    if (!regphone) missingFields.push("เบอร์โทรศัพท์");
+    if (!regemail) missingFields.push("อีเมล");
     if (!regImg) missingFields.push("รูปภาพ");
 
     if (!regoldSchool) missingFields.push("สถาบันการศึกษา");
     if (!regDegree) missingFields.push("ระดับกาสำเร็จการศึกษาระดับ");
-    if (!regGpa) missingFields.push("เกรดเฉลี่ย");
-    if (!regProgram) missingFields.push("หลักสูตร");
+    if (!reggpa) missingFields.push("เกรดเฉลี่ย");
+    if (!regprogram) missingFields.push("หลักสูตร");
 
-    if (!regFaculty) missingFields.push("คณะ");
-    if (!regMajor) missingFields.push("สาขา");
+    if (!regfaculty) missingFields.push("คณะ");
+    if (!regmajor) missingFields.push("สาขา");
 
 
     if (missingFields.length > 0) {
@@ -96,11 +111,6 @@ export default function ApplyToStudyForm() {
       setIsMissingModalOpen(true);
       console.log("กรุณากรอกข้อมูลดังต่อไปนี้ให้ครบ :", missingFields.join(', '));
       return; // Exit the function here
-
-
-      // setAlertForm("warning");
-      // setInputForm(true);
-      // setCheckBody(`กรอกข้อมูลไม่ครบ: ${missingFields.join(', ')}`);
     } else {
       try {
         //setAlertForm("primary"); // set to loading
@@ -121,39 +131,32 @@ export default function ApplyToStudyForm() {
 
             // Prepare the data to send
             const data = {
-
-
               regImg: imageId, // Use the uploaded image ID
-
-
-              regIdpersonal: regIdpersonal,
-              regBirth: regBirth,
-              regPrefix: regPrefix,
-              regSex: regSex,
-              regNation: regNation,
-              regNameTh: regNameTh,
-              regLastnameTh: regLastnameTh,
-              regNameEng: regNameEng,
-              regLastnameEng: regLastnameEng,
-              regPhone: regPhone,
-              regEmail: regEmail,
-
+              regpersonalID: regpersonalID,
+              regbirth: regbirth,
+              regprefix: regprefix,
+              regsex: regsex,
+              regnation: regnation,
+              regnameTh: regnameTh,
+              reglastnameTh: reglastnameTh,
+              regnameEng: regnameEng,
+              reglastnameEng: reglastnameEng,
+              regphone: regphone,
+              regemail: regemail,
               regoldSchool: regoldSchool,
               regDegree: regDegree,
-              regGpa: regGpa,
-              regProgram: regProgram,
-
-              regFaculty: regFaculty,
-              regMajor: regMajor,
+              reggpa: reggpa,
+              regprogram: regprogram,
+              regfaculty: regfaculty,
+              regmajor: regmajor,
             };
 
-            const response = await executeIndexActivity({ data });
+            const response = await executeRegisform({ data });
             if (response && response.status === 201) {
               setIsLoading(false);
               setIsSuccess(true);
               setTimeout(() => {
-                // clear();
-                router.push(`/applyToStudy/sum?id=${response.data.id}`);
+                // router.push(`/applyToStudy/sum?id=${response.data.id}`);
                 // router.push(`/applyToStudy`);
               }, 1000);
             } else {
@@ -173,7 +176,7 @@ export default function ApplyToStudyForm() {
 
 
   // ตรงนี้ทำให้ถ้าเลือก คณะ สาขาจะแตกต่างกันไปตามคณะ
-  const majorOptionsByFaculty: { [key: string]: string[] } = {
+  const majorOptionsByfaculty: { [key: string]: string[] } = {
     "คณะบริหารธุรกิจ": [
       "สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)",
       "สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)",
@@ -198,10 +201,10 @@ export default function ApplyToStudyForm() {
   };
 
   // Handle the change event of the faculty select
-  const handleFacultyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedFaculty = event.target.value;
-    setRegFaculty(selectedFaculty);
-    setRegMajor(""); // Reset the selected major when changing faculty
+  const handlefacultyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedfaculty = event.target.value;
+    setRegfaculty(selectedfaculty);
+    setRegmajor(""); // Reset the selected major when changing faculty
   };
 
 
@@ -228,8 +231,8 @@ export default function ApplyToStudyForm() {
                   <div className='md:flex items-center'>
                     <label htmlFor="" className='text-xs lg:text-sm'>บัตรประจำตัวประชาชน:</label>
                     <input
-                      value={regIdpersonal} onChange={(e) => setRegIdpersonal(e.target.value)}
-                      name='regIdpersonal' type="text"
+                      value={regpersonalID} onChange={(e) => setRegpersonalID(e.target.value)}
+                      name='regpersonalID' type="text"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                               leading-tight focus:outline-none text-xs lg:text-sm"
                     />
@@ -237,15 +240,15 @@ export default function ApplyToStudyForm() {
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>วัน/เดือน/ปีเกิด:</label>
                     <input
-                      value={regBirth} onChange={(e) => setRegBirth(e.target.value)}
-                      name='regBirth' type="date"
+                      value={regbirth} onChange={(e) => setRegbirth(e.target.value)}
+                      name='regbirth' type="date"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm" />
                   </div>
                   <div className='md:flex items-center'>
                     <label htmlFor="" className='text-xs lg:text-sm'>เพศ:</label>
                     <select
-                      value={regSex} onChange={(e) => setRegSex(e.target.value)} name='regSex'
+                      value={regsex} onChange={(e) => setRegsex(e.target.value)} name='regsex'
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'>
                       <option >- เลือก -</option>
@@ -256,7 +259,7 @@ export default function ApplyToStudyForm() {
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>สัญชาติ:</label>
                     <input
-                      value={regNation} onChange={(e) => setRegNation(e.target.value)} name='regNation' type="text"
+                      value={regnation} onChange={(e) => setRegnation(e.target.value)} name='regnation' type="text"
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'
                     />
@@ -268,7 +271,7 @@ export default function ApplyToStudyForm() {
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>คำนำหน้าชื่อ:</label>
                     <select
-                      value={regPrefix} onChange={(e) => setRegPrefix(e.target.value)} name='regPrefix'
+                      value={regprefix} onChange={(e) => setRegprefix(e.target.value)} name='regprefix'
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'>
                       <option value="">- เลือก -</option>
@@ -279,14 +282,14 @@ export default function ApplyToStudyForm() {
                   </div>
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>ชื่อ:</label>
-                    <input value={regNameTh} onChange={(e) => setRegNameTh(e.target.value)} name='regName' type="text"
+                    <input value={regnameTh} onChange={(e) => setRegnameTh(e.target.value)} name='regName' type="text"
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'
                     />
                   </div>
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>นามสกุล:</label>
-                    <input value={regLastnameTh} onChange={(e) => setRegLastnameTH(e.target.value)} name='regLastname' type="text"
+                    <input value={reglastnameTh} onChange={(e) => setReglastnameTh(e.target.value)} name='regLastname' type="text"
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'
                     />
@@ -297,14 +300,14 @@ export default function ApplyToStudyForm() {
                 <div className='md:flex justify-start flex-wrap gap-3  px-3 mt-3'>
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>Name:</label>
-                    <input value={regNameEng} onChange={(e) => setRegNameEng(e.target.value)} name='regNameEng' type="text" placeholder='ชื่อภาษาอังกฤษ'
+                    <input value={regnameEng} onChange={(e) => setRegnameEng(e.target.value)} name='regnameEng' type="text" placeholder='ชื่อภาษาอังกฤษ'
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm capitalize'
                     />
                   </div>
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>Lastname:</label>
-                    <input value={regLastnameEng} onChange={(e) => setRegLastnameEng(e.target.value)} name='regElastname' type="text" placeholder='นามสกุลภาษาอังกฤษ'
+                    <input value={reglastnameEng} onChange={(e) => setReglastnameEng(e.target.value)} name='regElastname' type="text" placeholder='นามสกุลภาษาอังกฤษ'
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm capitalize'
                     />
@@ -315,14 +318,14 @@ export default function ApplyToStudyForm() {
                 <div className='md:flex justify-start flex-wrap gap-3  px-3 mt-3'>
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>เบอร์โทรศัพท์ติดต่อ:</label>
-                    <input value={regPhone} onChange={(e) => setRegPhone(e.target.value)} name='regPhone' type="text"
+                    <input value={regphone} onChange={(e) => setRegphone(e.target.value)} name='regphone' type="text"
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'
                     />
                   </div>
                   <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>Email:</label>
-                    <input value={regEmail} onChange={(e) => setRegEmail(e.target.value)} name='regEmail' type="email"
+                    <label htmlFor="" className='text-xs lg:text-sm'>email:</label>
+                    <input value={regemail} onChange={(e) => setRegemail(e.target.value)} name='regemail' type="email"
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'
                     />
@@ -362,7 +365,7 @@ export default function ApplyToStudyForm() {
                   <div className='md:flex items-center'>
                     <label htmlFor="" className='text-xs lg:text-sm'>เกรดเฉลี่ย:</label>
                     <input
-                      value={regGpa} onChange={(e) => setRegGpa(e.target.value)} name='regGpa' type="text"
+                      value={reggpa} onChange={(e) => setReggpa(e.target.value)} name='reggpa' type="text"
                       className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                             leading-tight focus:outline-none text-xs lg:text-sm"
                     />
@@ -375,19 +378,19 @@ export default function ApplyToStudyForm() {
                 <div className='md:flex items-center justify-start flex-wrap gap-3 px-3 mt-3'>
                   <label className='text-xs lg:text-sm'>หลักสูตร:</label>
                   <div className='md:col-span-1 md:my-2 md:self-center md:flex  ml-5 flex items-center'>
-                    <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="4ปี" type="radio" className="w-3 h-3" />
+                    <input onChange={(e) => setRegprogram(e.target.value)} name='regprogram' value="4ปี" type="radio" className="w-3 h-3" />
                     <label className='ml-4 md:ml-1 text-xs lg:text-sm '>4 ปี</label>
                   </div>
 
                   <div className='md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center '>
-                    <input onChange={(e) => setRegProgram(e.target.value)} name='regProgram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-3 h-3 " />
+                    <input onChange={(e) => setRegprogram(e.target.value)} name='regprogram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-3 h-3 " />
                     <label className='ml-4 md:ml-1 text-xs lg:text-sm'>2 ปี (ต่อเนื่อง)</label>
                   </div>
                 </div>
                 <div className='md:flex justify-start flex-wrap gap-3 px-3 mt-3'>
                   <div className='md:flex items-center'>
                     <label htmlFor="" className='text-xs lg:text-sm'>คณะ:</label>
-                    <select name='regFaculty' onChange={handleFacultyChange}
+                    <select name='regfaculty' onChange={handlefacultyChange}
                       className='appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                               leading-tight focus:outline-none text-xs lg:text-sm'
                     >
@@ -400,14 +403,14 @@ export default function ApplyToStudyForm() {
                   </div>
                   <div className='md:flex items-center'>
                     <label htmlFor="" className='text-xs lg:text-sm'>สาขา:</label>
-                    <select name='regMajor' className='appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                    <select name='regmajor' className='appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                               leading-tight focus:outline-none text-xs lg:text-sm'
-                      disabled={!regFaculty} // Disable the select if faculty is not selected
-                      value={regMajor}
-                      onChange={(e) => setRegMajor(e.target.value)}
+                      disabled={!regfaculty} // Disable the select if faculty is not selected
+                      value={regmajor}
+                      onChange={(e) => setRegmajor(e.target.value)}
                     >
                       <option value="" disabled>-- เลือกสาขา --</option>
-                      {majorOptionsByFaculty[regFaculty]?.map((major) => (
+                      {majorOptionsByfaculty[regfaculty]?.map((major) => (
                         <option key={major} value={major}>
                           {major}
                         </option>
