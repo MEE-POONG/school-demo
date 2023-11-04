@@ -65,8 +65,6 @@ export default function NewsPage() {
         return response.json();
       })
       .then((data) => {
-        console.log(params.page,params.keyword);
-        
         setNewsArray(prevNews => [...prevNews, ...data?.data]);
         setCheckPage(data?.paginationInfo)
         setIsLoading(false);
@@ -76,11 +74,32 @@ export default function NewsPage() {
         setError(error.message);
         setIsLoading(false);
       });
-  }, [params]);
+  }, []);
 
   useEffect(() => {
-    console.log(checkPage);
-  }, [checkPage]);
+    console.log(params.page);
+    
+    if(params.keyword !=='')
+    fetch(`/api/news/searchTypeID?page=${params.page}&pageSize=${params.pageSize}&keyword=${params.keyword}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("88 : ",data);
+        
+        // setNewsArray(prevNews => [...prevNews, ...data?.data]);
+        // setCheckPage(data?.paginationInfo)
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError(error.message);
+        setIsLoading(false);
+      });
+  }, [params.page]);
 
   const handleChangeSelectKey = (select: string) => {
     setSelectKey(select);
