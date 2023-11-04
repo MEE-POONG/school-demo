@@ -33,14 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   } else if (req.method === 'POST') {
     try {
-      // Assuming you're sending a file via a form with "file" field
-      const file = req.body.file; // Adjust this based on your form field name
-      // Handle file upload logic using the "file" variable
-      
-      // Example: Saving the file to a local directory
-      // const fs = require('fs');
-      // fs.writeFileSync('path/to/save/file', file);
-
+      const file = req.body.file; 
       res.status(200).send(file);
       
     } catch (error) {

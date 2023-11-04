@@ -4,24 +4,24 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 const prisma = new PrismaClient();
 
 interface NewRegisterForm {
-    Idpersonal: string;
-    Birth: string;
-    Prefix: string;
-    Sex: string;
-    Nation: string;
-    NameTh: string;
-    LastnameTh: string;
-    NameEng: string;
-    LastnameEng: string;
-    Email: string;
-    Phone: string;
-    Img: string;
+    personalID: string;
+    birth: string;
+    prefix: string;
+    sex: string;
+    nation: string;
+    nameTh: string;
+    lastnameTh: string;
+    nameEng: string;
+    lastnameEng: string;
+    email: string;
+    phone: string;
+    img: string;
     oldSchool: string;
-    Degree: string;
-    Gpa: string;
-    Program: string;
-    Faculty: string;
-    Major: string;
+    degree: string;
+    gpa: string;
+    program: string;
+    faculty: string;
+    major: string;
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -47,20 +47,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             // Insert data into the database using Prisma
             await prisma.registerForm.create({
                 data:{
-                    Idpersonal: data.Idpersonal,
-                    Birth: data.Birth,
-                    Nation: data.Nation,
-                    Sex: data.Sex,
-                    LastnameTh: data.LastnameTh,
-                    NameEng: data.NameEng,
-                    LastnameEng: data.LastnameEng,
-                    Phone: data.Phone,
-                    Email: data.Email,
-                    Img: data.Img,
+                    personalID: data.personalID,
+                    birth: data.birth,
+                    nation: data.nation,
+                    prefix: data.prefix,
+                    sex: data.sex,
+                    nameTh: data.nameTh,
+                    lastnameTh: data.lastnameTh,
+                    nameEng: data.nameEng,
+                    lastnameEng: data.lastnameEng,
+                    phone: data.phone,
+                    email: data.email,
+                    img: data.img,
                     oldSchool: data.oldSchool,
-                    Degree: data.Degree,
-                    Gpa: data.Gpa,
-                    Major: data.Major,
+                    degree: data.degree,
+                    gpa: data.gpa,
+                    program: data.program,
+                    faculty: data.faculty,
+                    major: data.major,
                 }
             });
 
