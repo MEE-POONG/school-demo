@@ -2,17 +2,12 @@ import { News, PrismaClient } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const prisma = new PrismaClient();
-type NewsDataByType = {
-    [key: string]: {
-        type: string;
-        pagination: Pagination;
-    };
-};
 
-type Pagination = {
-    page: number;
-    pageSize: number;
-    totalPages: number;
+interface Pagination {
+    type?: string;
+    page?: number;
+    pageSize?: number;
+    totalPages?: number;
 }
 interface RequestQuery {
     page?: string;
@@ -26,9 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             try {
                 const query: RequestQuery = req.query as unknown as RequestQuery;
                 const pageSize: number = parseInt(query.pageSize || '10', 10);
-                const page: number = parseInt(query.page || '1', 10);
 
-                // Fetch unique newsTypeIds
                 const uniqueNewsTypes = await prisma.news.groupBy({
                     by: ['newsTypeId'],
                     _count: {
@@ -36,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     }
                 });
                 let newsData: News[] = [];
-                const newsDataByType: NewsDataByType = {};
+                let paginationInfo: Pagination[] = []; // Use camelCase for variable names
                 for (const type of uniqueNewsTypes) {
                     if (type.newsTypeId === null) continue; // Skip if newsTypeId is null
 
@@ -52,14 +45,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     // Only add the type if there are news items
                     if (newsForType.length > 0) {
                         newsData = [...newsData, ...newsForType];
-                        newsDataByType[type.newsTypeId as string] = {
+                        paginationInfo.push({ // Add a new Pagination object to the array
+                            page: 1,
+                            pageSize: pageSize,
+                            totalPages: totalPages,
                             type: type.newsTypeId,
-                            pagination: {
-                                page: 1,
-                                pageSize: pageSize,
-                                totalPages: totalPages
-                            }
-                        };
+                        });
                     }
                 }
 
@@ -67,7 +58,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 res.status(200).json({
                     success: true,
                     data: newsData,
-                    check: newsDataByType,
+                    paginationInfo,
                 });
             } catch (error) {
                 console.error('Error:', error);

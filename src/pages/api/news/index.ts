@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const prisma = new PrismaClient();
+
 type Data = {
     success: boolean;
     message?: string;
@@ -18,7 +19,7 @@ interface RequestQuery {
     page?: string;
     pageSize?: string;
 }
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const { method } = req;
 
     switch (method) {
@@ -33,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
             const totalNewsCount: number = await prisma.news.count();
             const totalPages: number = Math.ceil(totalNewsCount / pageSize);
-            res.status(200).json({ success: true, newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
+            res.status(200).json({ success: true, data: newsData, pagination: { total: totalPages, page: page, pageSize: pageSize } });
             break;
         case 'POST':
             try {
@@ -41,9 +42,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     data: req.body,
                 });
 
-                res.status(201).json(newNews);
+                res.status(200).json({ success: true, data: newNews });
+
             } catch (error) {
-                res.status(500).json({ error: "An error occurred while creating the newsSchool" });
+                res.status(500).json({ success: false, message: "An unexpected error News" });
             }
             break;
 
