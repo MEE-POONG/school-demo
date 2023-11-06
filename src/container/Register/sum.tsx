@@ -28,7 +28,7 @@ interface FormData {
   // ... other properties ...
 }
 
-export default function        () {
+export default function SumCheck() {
   const router = useRouter();
   const [inid, setInid] = useState<String>("");
   const [formData, setFormData] = useState<FormData>({
