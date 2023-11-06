@@ -1,15 +1,20 @@
-import { Fragment, useRef, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { Fragment, useRef, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-export default function Missing({ onClose, missingFields = []  }:any) {
-  const [open, setOpen] = useState(true)
+export default function Missing({ onClose, missingFields = [] }: any) {
+  const [open, setOpen] = useState(true);
 
-  const cancelButtonRef = useRef(null)
+  const cancelButtonRef = useRef(null);
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+      <Dialog
+        as="div"
+        className="relative z-10"
+        initialFocus={cancelButtonRef}
+        onClose={setOpen}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -37,15 +42,22 @@ export default function Missing({ onClose, missingFields = []  }:any) {
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
                     <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                      <ExclamationTriangleIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
+                      <ExclamationTriangleIcon
+                        className="h-6 w-6 text-red-600"
+                        aria-hidden="true"
+                      />
                     </div>
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                      <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-base font-semibold leading-6 text-gray-900"
+                      >
                         กรุณากรอกข้อมูลให้ครบ
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
-                        กรุณากรอกข้อมูลดังต่อไปนี้ให้ครบ : {missingFields.join(', ')} ,
+                          กรุณากรอกข้อมูลดังต่อไปนี้ให้ครบ :{" "}
+                          {missingFields.join(", ")} ,
                         </p>
                       </div>
                     </div>
@@ -56,12 +68,11 @@ export default function Missing({ onClose, missingFields = []  }:any) {
                     type="button"
                     className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
                     onClick={() => {
-                        onClose(); // Call the onClose function from props
-                      }}
+                      onClose(); // Call the onClose function from props
+                    }}
                   >
                     ปิด
                   </button>
-                  
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -69,5 +80,5 @@ export default function Missing({ onClose, missingFields = []  }:any) {
         </div>
       </Dialog>
     </Transition.Root>
-  )
+  );
 }

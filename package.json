@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "production": "next build && next start"
+    "lint": "next lint --fix",
+    "production": "next build && next start",
+    "format:all": "prettier --write ."
   },
   "dependencies": {
     "@headlessui/react": "^1.7.15",
@@ -22,8 +23,9 @@
     "axios-hooks": "^4.0.0",
     "bootstrap": "^5.3.1",
     "cloudflare-api": "^1.0.2",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.9",
+    "eslint": "^8.53.0",
+    "eslint-config-next": "^14.0.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
     "express": "^4.18.2",
     "multer": "^1.4.5-lts.1",
     "next": "13.4.9",
@@ -53,7 +55,13 @@
     "@types/multer": "^1.4.7",
     "@types/react-slick": "^0.23.11",
     "autoprefixer": "^10.4.14",
+    "commitizen": "^4.3.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
     "postcss": "^8.4.27",
+    "prettier": "^3.0.3",
     "prisma": "^5.5.2",
     "tailwindcss": "^3.3.3",
     "tailwindcss-animated": "^1.0.1"

@@ -1,13 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
-
 const TheFooter = () => {
   return (
     <footer className="bg-blue-500 w-full">
       <div className="container mx-auto p-7 lg:flex lg:justify-between items-center ">
         <div className="md:flex">
-          <Link href="./" >
+          <Link href="./">
             <img
               src="/img/Logo_panomwan.png"
               className="h-[60px] md:h-[100px] mr-3"
@@ -20,7 +19,6 @@ const TheFooter = () => {
             <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
             <p>TEL : 044-955121-122 &nbsp;FAX : 044-955120</p>
           </span>
-
         </div>
 
         <div className="mt-5 md:flex justify-around gap-16">
@@ -30,23 +28,17 @@ const TheFooter = () => {
             </h4>
             <div className="bg-white w-full h-[0.25px] md:hidden mb-1"></div>
             <ul className="text-white text-xs md:text-sm">
-              <li className="mb-1">
-                คณะบริหารธรุกิจ
-              </li>
-              <li className="mb-1">
-                คณะวิทยาศาสตร์และเทคโนโลยี
-              </li>
-              <li className="mb-1">
-                คณะวิทยาศาสตร์
-              </li>
-              <li>
-                คณะศิลปศาสตร์
-              </li>
+              <li className="mb-1">คณะบริหารธรุกิจ</li>
+              <li className="mb-1">คณะวิทยาศาสตร์และเทคโนโลยี</li>
+              <li className="mb-1">คณะวิทยาศาสตร์</li>
+              <li>คณะศิลปศาสตร์</li>
             </ul>
           </div>
 
           <div className="mt-5 md:mt-0">
-            <h4 className=" md:mb-3 text-sm md:text-base md:font-semibold text-white">รายการ</h4>
+            <h4 className=" md:mb-3 text-sm md:text-base md:font-semibold text-white">
+              รายการ
+            </h4>
             <div className="bg-white w-full h-[0.25px] md:hidden mb-1"></div>
             <ul className="text-white text-xs md:text-sm">
               <li className="mb-1">
@@ -61,11 +53,8 @@ const TheFooter = () => {
               </li>
             </ul>
           </div>
-
         </div>
-
       </div>
-
 
       <div className=" bg-black w-full p-2">
         <div className=" text-white text-center text-[12px] md:text-xs">

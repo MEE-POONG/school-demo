@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Register: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -29,10 +29,10 @@ const BackToTopButton = () => {
         // backgroundColor: "#212529",
         color: "#",
         padding: "10px 15px",
-        cursor: "pointer",
+        cursor: "pointer"
       }}
     >
-      <BsArrowUpCircleFill size={35} color="#fbbf24"/>
+      <BsArrowUpCircleFill size={35} color="#fbbf24" />
     </button>
   );
 };

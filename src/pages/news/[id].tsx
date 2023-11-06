@@ -5,7 +5,6 @@ import { AiTwotoneCalendar } from "react-icons/ai";
 import { FaHandPointRight } from "react-icons/fa";
 import TheLayout from "@/components/TheLayout";
 
-
 const ReadNews: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -19,7 +18,7 @@ const ReadNews: React.FC = () => {
       fetch(`/api/news/${id}`)
         .then((response) => {
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
           }
           return response.json();
         })
@@ -28,7 +27,7 @@ const ReadNews: React.FC = () => {
           setIsLoading(false);
         })
         .catch((error) => {
-          console.error('Error:', error);
+          console.error("Error:", error);
           setError(error.message);
           setIsLoading(false);
         });
@@ -62,19 +61,18 @@ const ReadNews: React.FC = () => {
             alt="Pictue of News"
           />
           <p className="flex items-center m```````````````t-10 text-xs md:text-base">
-            <AiTwotoneCalendar /> &nbsp;
-            วันที่ :<span className="text-blue-400">&nbsp;5 ตุลาคม 2566</span>
+            <AiTwotoneCalendar /> &nbsp; วันที่ :
+            <span className="text-blue-400">&nbsp;5 ตุลาคม 2566</span>
           </p>
           <div className="mt-3 bg-white p-7 shadow-lg rounded-md">
-            <div className="text-xs md:text-base indent-8 ">
-              {news.detail}
-            </div>
+            <div className="text-xs md:text-base indent-8 ">{news.detail}</div>
             <a href="#" className="text-xs md:text-base flex items-center mt-8">
               <FaHandPointRight className="animate-pulse animate-infinite animate-duration-[900ms] text-amber-800" />
-              <span className="ml-2 text-blue-400 hover:underline">ต้องการโหลดรูปภาพ คลิก</span>
+              <span className="ml-2 text-blue-400 hover:underline">
+                ต้องการโหลดรูปภาพ คลิก
+              </span>
             </a>
           </div>
-
         </div>
       </div>
     </TheLayout>
