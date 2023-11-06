@@ -76,9 +76,6 @@ export default function SumCheck() {
     <TheLayout>
 
       <div className='container mx-auto md:py-24 py-12'>
-
-
-
         <div className='flex justify-between'>
           <div>
             <h1 className='text-2xl  md:text-5xl text-[#1F306A]'>สรุปข้อมูล</h1>
@@ -103,7 +100,6 @@ export default function SumCheck() {
 
             <div className=' md:grid md:grid-cols-12 grid-cols-1 pb-2 pt-4 '>
               {/* บัตรประชาชน กับ วันเดือนปี */}
-
               <div className='col-start-1 col-end-4 md:md:text-right p-3 my-2'>
                 <label className=''>บัตรประจำตัวประชาชน:</label>
               </div>
@@ -116,10 +112,7 @@ export default function SumCheck() {
               <div className='col-span-2 my-2'>
                 <input readOnly defaultValue={formData.regBirth} name='regBirth' type="date" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-2  leading-tight focus:outline-none focus:bg-white" />
               </div>
-
-
               {/* คำนำหน้า เพศ สัญชาติ */}
-
               <div className='col-start-2 col-end-4 md:md:text-right p-3 my-2'>
                 <label className=''>คำนำหน้าชื่อ:</label>
               </div>
@@ -134,17 +127,13 @@ export default function SumCheck() {
                 <input readOnly defaultValue={formData.regSex} name='regSex' className=' block w-full md:w-28   bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white'>
                 </input>
               </div>
-
               <div className='col-start-7 md:col-start-9 md:text-right p-3 my-2 '>
                 <label className=''>สัญชาติ: </label>
               </div>
               <div className='col-span-2 my-2 md:ml-2'>
                 <input readOnly defaultValue={formData.regNation} name='regNation' type="text" className="appearance-none block w-full md:w-2/3 bg-gray-200 text-gray-700 border border-black rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" />
               </div>
-
-
               {/* ชื่อ นามสกุล */}
-
               <div className='col-start-2 col-end-4 md:text-right p-3 my-2'>
                 <label className=''>ชื่อ:</label>
               </div>
