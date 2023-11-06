@@ -59,7 +59,7 @@ export const NewsAll: React.FC<NewsAllProps> = ({ selectKey, setSelectKey, menu,
                         alt={list?.title || "Image Alt Text"}
                       />
                       <div className="min-w-0 flex-auto">
-                        <p className="text-sm font-semibold leading-6">{list?.title} {listType?.id === list?.newsTypeId ? "true" : "false"}</p>
+                        <p className="text-sm font-semibold leading-6">{list?.title}</p>
                         <p className="mt-1 truncate text-xs leading-5 text-gray-500">{list?.subTitle}</p>
                       </div>
                     </div>
@@ -75,7 +75,7 @@ export const NewsAll: React.FC<NewsAllProps> = ({ selectKey, setSelectKey, menu,
                   className={`text-yellow-800 hover:text-yellow-900 text-sm leading-6 font-medium py-2 px-3 rounded-lg  ${list.page === list.totalPages ? 'hidden' : ''}`}
                   onClick={() => setKeyWord(list?.type, (list.page + 1))}
                 >
-                  ดูเพิ่ม {">>>>"} {list.page + 1}
+                  ดูเพิ่ม {">>>>"}
                 </button>
               </div>
             ))}

@@ -78,28 +78,45 @@ export default function NewsPage() {
 
   useEffect(() => {
     console.log(params.page);
-    
-    if(params.keyword !=='')
-    fetch(`/api/news/searchTypeID?page=${params.page}&pageSize=${params.pageSize}&keyword=${params.keyword}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("88 : ",data);
-        
-        // setNewsArray(prevNews => [...prevNews, ...data?.data]);
-        // setCheckPage(data?.paginationInfo)
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        setError(error.message);
-        setIsLoading(false);
-      });
+
+    if (params.keyword !== '')
+      fetch(`/api/news/searchTypeID?page=${params.page}&pageSize=${params.pageSize}&keyword=${params.keyword}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("88 : ", data);
+
+          setNewsArray(prevNews => [...prevNews, ...data?.data]);
+
+          setCheckPage(prevCheckPage => {
+            const newPaginationInfo = data?.paginationInfo[0];
+            const indexToUpdate = prevCheckPage.findIndex(item => item.type === newPaginationInfo.type);
+            if (indexToUpdate !== -1) {
+              const updatedCheckPage = [
+                ...prevCheckPage.slice(0, indexToUpdate),
+                newPaginationInfo,
+                ...prevCheckPage.slice(indexToUpdate + 1)
+              ];
+              return updatedCheckPage;
+            }
+            return prevCheckPage;
+          });
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          setError(error.message);
+          setIsLoading(false);
+        });
   }, [params.page]);
+
+  useEffect(() => {
+    console.log(checkPage);
+  }, [checkPage]);
 
   const handleChangeSelectKey = (select: string) => {
     setSelectKey(select);
