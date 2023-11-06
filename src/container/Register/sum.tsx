@@ -80,7 +80,6 @@ export default function SumCheck() {
           <div>
             <h1 className='text-2xl  md:text-5xl text-[#1F306A]'>สรุปข้อมูล</h1>
           </div>
-
           <div className='self-end'>
             <Link href="/applyToStudy"> <h1 className='text-2xl  md:text-3xl  text-[#1F306A]'>กลับ</h1> </Link>
           </div>
