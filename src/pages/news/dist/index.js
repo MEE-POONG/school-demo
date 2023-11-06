@@ -20,6 +20,8 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 exports.__esModule = true;
 var TheLayout_1 = require("@/components/TheLayout");
 var TitleText_1 = require("@/components/TitleText");
+var loading_1 = require("@/components/loading");
+var NewsAll_1 = require("@/container/News/NewsAll");
 var react_1 = require("react");
 function NewsPage() {
     var _a = react_1.useState([]), newsMenu = _a[0], setNewsMenu = _a[1];
@@ -113,7 +115,9 @@ function NewsPage() {
         setParams(function (prevParams) { return (__assign(__assign({}, prevParams), { keyword: search, page: page })); });
     };
     return (React.createElement(TheLayout_1["default"], null,
+        isLoading && React.createElement(loading_1["default"], null),
         React.createElement("div", { className: "container mx-auto py-16" },
-            React.createElement(TitleText_1["default"], { titleText: "ข่าว & กิจกรรม", titleTextTo: "“พนมวันท์”" }))));
+            React.createElement(TitleText_1["default"], { titleText: "ข่าว & กิจกรรม", titleTextTo: "“พนมวันท์”" }),
+            selectKey && React.createElement(NewsAll_1.NewsAll, { selectKey: selectKey, setSelectKey: handleChangeSelectKey, menu: newsMenu, dataArr: newsArray, setKeyWord: handleChangekeyword, checkPage: checkPage }))));
 }
 exports["default"] = NewsPage;
