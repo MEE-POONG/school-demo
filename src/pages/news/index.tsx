@@ -134,7 +134,7 @@ export default function NewsPage() {
     <TheLayout>
       <div className="container mx-auto py-16">
         <TitleText titleText={"ข่าว & กิจกรรม"} titleTextTo={"“พนมวันท์”"} />
-        {selectKey && <NewsAll selectKey={selectKey} setSelectKey={handleChangeSelectKey} menu={newsMenu} dataArr={newsArray} setKeyWord={handleChangekeyword} checkPage={checkPage} />}
+        {/* {selectKey && <NewsAll selectKey={selectKey} setSelectKey={handleChangeSelectKey} menu={newsMenu} dataArr={newsArray} setKeyWord={handleChangekeyword} checkPage={checkPage} />} */}
       </div>
     </TheLayout>
   );
