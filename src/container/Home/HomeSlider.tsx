@@ -12,7 +12,7 @@ export const HomeSlider: React.FC = () => {
     fetch(`/api/news/promoteimg`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
@@ -21,7 +21,7 @@ export const HomeSlider: React.FC = () => {
         setIsLoading(false);
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.error("Error:", error);
         setError(error.message);
         setIsLoading(false);
       });
@@ -49,25 +49,25 @@ export const HomeSlider: React.FC = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
-        },
+          dots: true
+        }
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 1,
-        },
+          initialSlide: 1
+        }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -75,11 +75,10 @@ export const HomeSlider: React.FC = () => {
       <Slider {...settings} className="no-slick-arrow">
         {newsArray.map((news) => (
           <div key={news.id}>
-            <Link key={news.id} href={`/news/${news.id}`} >
+            <Link key={news.id} href={`/news/${news.id}`}>
               <img
                 className="w-full h-full rounded-md"
-                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news.promoteImg
-                  }/700`}
+                src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news.promoteImg}/700`}
                 alt=""
               />
             </Link>
@@ -89,4 +88,3 @@ export const HomeSlider: React.FC = () => {
     </div>
   );
 };
-

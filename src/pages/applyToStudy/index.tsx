@@ -1,24 +1,48 @@
-import TheLayout from '@/components/TheLayout'
+import TheLayout from "@/components/TheLayout";
 import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import useAxios from "axios-hooks";
-import Loading from '@/container/Register/loading';
-import Missing from '@/container/Register/modalmissing';
-import Success from '@/container/Register/modalsuccess';
-import ButtonSubmit from '@/container/Register/buttonSubmit';
+import Loading from "@/container/Register/loading";
+import Missing from "@/container/Register/modalmissing";
+import Success from "@/container/Register/modalsuccess";
+import ButtonSubmit from "@/container/Register/buttonSubmit";
 import { FaRegHandPointRight } from "react-icons/fa";
 import Aos from "aos";
-import Link from 'next/link';
+import Link from "next/link";
 
+<<<<<<< HEAD
+=======
+interface NewRegisterForm {
+  personalID: string;
+  birth: string;
+  prefix: string;
+  sex: string;
+  nation: string;
+  nameTh: string;
+  lastnameTh: string;
+  nameEng: string;
+  lastnameEng: string;
+  email: string;
+  phone: string;
+  img: string;
+  oldSchool: string;
+  degree: string;
+  gpa: string;
+  program: string;
+  faculty: string;
+  major: string;
+}
+>>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
 
 export default function ApplyToStudyForm() {
   useEffect(() => {
     Aos.init({
-      duration: 1000,
+      duration: 1000
     });
   }, []);
-  const [{ error: errorMessage, loading: RegisformLoading }, executeRegisform] = useAxios({ url: '/api/registerForm', method: 'POST' }, { manual: true });
+  const [{ error: errorMessage, loading: RegisformLoading }, executeRegisform] =
+    useAxios({ url: "/api/registerForm", method: "POST" }, { manual: true });
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -57,7 +81,6 @@ export default function ApplyToStudyForm() {
     }
   };
 
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     //event.preventDefault();
     //event.stopPropagation();
@@ -82,12 +105,14 @@ export default function ApplyToStudyForm() {
     if (!faculty) missingFields.push("คณะ");
     if (!major) missingFields.push("สาขา");
 
-
     if (missingFields.length > 0) {
       // Handle missing fields...
       setMissingFields(missingFields);
       setIsMissingModalOpen(true);
-      console.log("กรุณากรอกข้อมูลดังต่อไปนี้ให้ครบ :", missingFields.join(', '));
+      console.log(
+        "กรุณากรอกข้อมูลดังต่อไปนี้ให้ครบ :",
+        missingFields.join(", ")
+      );
       return; // Exit the function here
     } else {
       try {
@@ -109,6 +134,7 @@ export default function ApplyToStudyForm() {
 
             // Prepare the data to send
             const data = {
+<<<<<<< HEAD
               regimg: imageId, // Use the uploaded image ID
               personalID: personalID,
               birth: birth,
@@ -127,6 +153,26 @@ export default function ApplyToStudyForm() {
               program: program,
               faculty: faculty,
               major: major,
+=======
+              regImg: imageId, // Use the uploaded image ID
+              regpersonalID: regpersonalID,
+              regbirth: regbirth,
+              regprefix: regprefix,
+              regsex: regsex,
+              regnation: regnation,
+              regnameTh: regnameTh,
+              reglastnameTh: reglastnameTh,
+              regnameEng: regnameEng,
+              reglastnameEng: reglastnameEng,
+              regphone: regphone,
+              regemail: regemail,
+              regoldSchool: regoldSchool,
+              regDegree: regDegree,
+              reggpa: reggpa,
+              regprogram: regprogram,
+              regfaculty: regfaculty,
+              regmajor: regmajor
+>>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
             };
 
             const response = await executeRegisform({ data });
@@ -139,11 +185,11 @@ export default function ApplyToStudyForm() {
               }, 1000);
             } else {
               // setAlertForm("danger");
-              throw new Error('Failed to send data');
+              throw new Error("Failed to send data");
             }
           } else {
             // setAlertForm("danger");
-            throw new Error('Image upload failed');
+            throw new Error("Image upload failed");
           }
         }
       } catch (error) {
@@ -152,29 +198,28 @@ export default function ApplyToStudyForm() {
     }
   };
 
-
   // ตรงนี้ทำให้ถ้าเลือก คณะ สาขาจะแตกต่างกันไปตามคณะ
   const majorOptionsByfaculty: { [key: string]: string[] } = {
-    "คณะบริหารธุรกิจ": [
+    คณะบริหารธุรกิจ: [
       "สาขาวิชาการจัดการอุตสาหกรรมและโลจิสติกส์ (บธ.บ)",
       "สาขาวิชาการจัดการโรงแรมและการท่องเที่ยว (บธ.บ.)",
       "สาขาวิชาระบบสารสนเทศ (บธ.บ.)",
       "สาขาวิชาการจัดการ (บธ.บ.)",
-      "สาขาวิชาการบัญชี (บช.บ.)",
+      "สาขาวิชาการบัญชี (บช.บ.)"
       // ... Add other options for this faculty ...
     ],
-    "คณะวิทยาศาสตร์และเทคโนโลยี": [
+    คณะวิทยาศาสตร์และเทคโนโลยี: [
       "สาขาวิชาสาธารณสุขศาสตร์ (สบ.)"
       // Add options for this faculty...
     ],
-    "คณะศิลปศาสตร์": [
+    คณะศิลปศาสตร์: [
       "สาขาวิชารัฐประศาสนศาสตร์ (รป.บ)"
       // Add options for this faculty...
     ],
-    "คณะวิศวกรรมศาสตร์": [
+    คณะวิศวกรรมศาสตร์: [
       "สาขาวิชาวิศวกรรมยานยนต์ (วศ.บ.)"
       // Add options for this faculty...
-    ],
+    ]
     // ... Add options for other faculties ...
   };
 
@@ -185,165 +230,274 @@ export default function ApplyToStudyForm() {
     setMajor(""); // Reset the selected major when changing faculty
   };
 
-
   return (
     <TheLayout>
-      <div className='container mx-auto md:py-24 py-12'>
-        <div className='text-center mt-10' data-aos="fade-up">
-          <img src="/img/Logo_panomwan.png" className='w-28 mx-auto' alt="" />
+      <div className="container mx-auto md:py-24 py-12">
+        <div className="text-center mt-10" data-aos="fade-up">
+          <img src="/img/Logo_panomwan.png" className="w-28 mx-auto" alt="" />
           <p>วิทยาลัยเทคโนโลยีพนมวันท์</p>
         </div>
 
-
-        <p className='mt-8 text-lg pl-3 mb-3'>การสมัครเรียน สามารถทำได้ 2วิธี ดังนี้</p>
-        <div className='lg:grid grid-cols-12 px-3 border-t border-black'>
-
-          <div className="col-span-8 animate-fade-up" >
-            <div className='bg-white p-2 md:p-8 shadow-lg rounded-lg lg:w-11/12'>
-              <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 1 สมัครเรียนออนไลน์</h2>
+        <p className="mt-8 text-lg pl-3 mb-3">
+          การสมัครเรียน สามารถทำได้ 2วิธี ดังนี้
+        </p>
+        <div className="lg:grid grid-cols-12 px-3 border-t border-black">
+          <div className="col-span-8 animate-fade-up">
+            <div className="bg-white p-2 md:p-8 shadow-lg rounded-lg lg:w-11/12">
+              <h2 className="text-lg lg:text-xl font-black mb-5">
+                วิธีที่ 1 สมัครเรียนออนไลน์
+              </h2>
               {/* ส่วนที่1 ข้อมูลผู้สมัคร*/}
-              <div className='w-full'>
-                <p className='text-base lg:text-lg font-semibold mb-5 border-b border-blue-100'>ส่วนที่ 1 ข้อมูลผู้สมัคร</p>
+              <div className="w-full">
+                <p className="text-base lg:text-lg font-semibold mb-5 border-b border-blue-100">
+                  ส่วนที่ 1 ข้อมูลผู้สมัคร
+                </p>
                 {/* 1 */}
-                <div className='md:flex justify-start flex-wrap gap-3  px-3'>
-                  <div className='md:flex items-center'>
-                    <label htmlFor="" className='text-xs lg:text-sm'>บัตรประจำตัวประชาชน:</label>
+                <div className="md:flex justify-start flex-wrap gap-3  px-3">
+                  <div className="md:flex items-center">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      บัตรประจำตัวประชาชน:
+                    </label>
                     <input
+<<<<<<< HEAD
                       value={personalID} onChange={(e) => setPersonalID(e.target.value)}
                       name='regpersonalID' type="text"
+=======
+                      value={regpersonalID}
+                      onChange={(e) => setRegpersonalID(e.target.value)}
+                      name="regpersonalID"
+                      type="text"
+>>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                               leading-tight focus:outline-none text-xs lg:text-sm"
                     />
                   </div>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>วัน/เดือน/ปีเกิด:</label>
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      วัน/เดือน/ปีเกิด:
+                    </label>
                     <input
+<<<<<<< HEAD
                       value={birth} onChange={(e) => setBirth(e.target.value)}
                       name='regbirth' type="date"
+=======
+                      value={regbirth}
+                      onChange={(e) => setRegbirth(e.target.value)}
+                      name="regbirth"
+                      type="date"
+>>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm" />
+                  leading-tight focus:outline-none text-xs lg:text-sm"
+                    />
                   </div>
-                  <div className='md:flex items-center'>
-                    <label htmlFor="" className='text-xs lg:text-sm'>เพศ:</label>
+                  <div className="md:flex items-center">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      เพศ:
+                    </label>
                     <select
+<<<<<<< HEAD
                       value={sex} onChange={(e) => setSex(e.target.value)} name='regsex'
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'>
                       <option >- เลือก -</option>
+=======
+                      value={regsex}
+                      onChange={(e) => setRegsex(e.target.value)}
+                      name="regsex"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm"
+                    >
+                      <option>- เลือก -</option>
+>>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
                       <option value="ชาย">ชาย</option>
                       <option value="หญิง">หญิง</option>
                     </select>
                   </div>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>สัญชาติ:</label>
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      สัญชาติ:
+                    </label>
                     <input
-                      value={regnation} onChange={(e) => setRegnation(e.target.value)} name='regnation' type="text"
-                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm'
+                      value={regnation}
+                      onChange={(e) => setRegnation(e.target.value)}
+                      name="regnation"
+                      type="text"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm"
                     />
                   </div>
                 </div>
 
                 {/* 2 */}
-                <div className='md:flex justify-start flex-wrap gap-3  px-3 mt-3'>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>คำนำหน้าชื่อ:</label>
+                <div className="md:flex justify-start flex-wrap gap-3  px-3 mt-3">
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      คำนำหน้าชื่อ:
+                    </label>
                     <select
-                      value={regprefix} onChange={(e) => setRegprefix(e.target.value)} name='regprefix'
-                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm'>
+                      value={regprefix}
+                      onChange={(e) => setRegprefix(e.target.value)}
+                      name="regprefix"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm"
+                    >
                       <option value="">- เลือก -</option>
                       <option value="นาย">นาย</option>
                       <option value="นาง">นาง</option>
                       <option value="นางสาว">นางสาว</option>
                     </select>
                   </div>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>ชื่อ:</label>
-                    <input value={regnameTh} onChange={(e) => setRegnameTh(e.target.value)} name='regName' type="text"
-                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm'
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      ชื่อ:
+                    </label>
+                    <input
+                      value={regnameTh}
+                      onChange={(e) => setRegnameTh(e.target.value)}
+                      name="regName"
+                      type="text"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm"
                     />
                   </div>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>นามสกุล:</label>
-                    <input value={reglastnameTh} onChange={(e) => setReglastnameTh(e.target.value)} name='regLastname' type="text"
-                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm'
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      นามสกุล:
+                    </label>
+                    <input
+                      value={reglastnameTh}
+                      onChange={(e) => setReglastnameTh(e.target.value)}
+                      name="regLastname"
+                      type="text"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm"
                     />
                   </div>
                 </div>
 
                 {/* 3 */}
-                <div className='md:flex justify-start flex-wrap gap-3  px-3 mt-3'>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>Name:</label>
-                    <input value={regnameEng} onChange={(e) => setRegnameEng(e.target.value)} name='regnameEng' type="text" placeholder='ชื่อภาษาอังกฤษ'
-                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm capitalize'
+                <div className="md:flex justify-start flex-wrap gap-3  px-3 mt-3">
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      Name:
+                    </label>
+                    <input
+                      value={regnameEng}
+                      onChange={(e) => setRegnameEng(e.target.value)}
+                      name="regnameEng"
+                      type="text"
+                      placeholder="ชื่อภาษาอังกฤษ"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm capitalize"
                     />
                   </div>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>Lastname:</label>
-                    <input value={reglastnameEng} onChange={(e) => setReglastnameEng(e.target.value)} name='regElastname' type="text" placeholder='นามสกุลภาษาอังกฤษ'
-                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm capitalize'
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      Lastname:
+                    </label>
+                    <input
+                      value={reglastnameEng}
+                      onChange={(e) => setReglastnameEng(e.target.value)}
+                      name="regElastname"
+                      type="text"
+                      placeholder="นามสกุลภาษาอังกฤษ"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm capitalize"
                     />
                   </div>
                 </div>
 
                 {/* 4 */}
-                <div className='md:flex justify-start flex-wrap gap-3  px-3 mt-3'>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>เบอร์โทรศัพท์ติดต่อ:</label>
-                    <input value={regphone} onChange={(e) => setRegphone(e.target.value)} name='regphone' type="text"
-                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm'
+                <div className="md:flex justify-start flex-wrap gap-3  px-3 mt-3">
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      เบอร์โทรศัพท์ติดต่อ:
+                    </label>
+                    <input
+                      value={regphone}
+                      onChange={(e) => setRegphone(e.target.value)}
+                      name="regphone"
+                      type="text"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm"
                     />
                   </div>
-                  <div className='md:flex items-center '>
-                    <label htmlFor="" className='text-xs lg:text-sm'>email:</label>
-                    <input value={regemail} onChange={(e) => setRegemail(e.target.value)} name='regemail' type="email"
-                      className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm'
+                  <div className="md:flex items-center ">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      email:
+                    </label>
+                    <input
+                      value={regemail}
+                      onChange={(e) => setRegemail(e.target.value)}
+                      name="regemail"
+                      type="email"
+                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                  leading-tight focus:outline-none text-xs lg:text-sm"
                     />
                   </div>
-                  <div className='md:flex items-center'>
-                    <p className='text-xs lg:text-sm'>อัพโหลดรูปภาพ :</p>
-                    <input type="file" id='regImg' name="regImg" onChange={handleFileUpload}
-                      className='w-full md:w-auto py-2 px-3 ml-3 text-xs lg:text-sm '
+                  <div className="md:flex items-center">
+                    <p className="text-xs lg:text-sm">อัพโหลดรูปภาพ :</p>
+                    <input
+                      type="file"
+                      id="regImg"
+                      name="regImg"
+                      onChange={handleFileUpload}
+                      className="w-full md:w-auto py-2 px-3 ml-3 text-xs lg:text-sm "
                     />
                   </div>
                 </div>
-
               </div>
               {/* ส่วนที่2 ประวัติการศึกษา*/}
-              <div className='w-full mt-10'>
-                <p className='text-base lg:text-lg font-semibold mb-5 border-b border-blue-100'>ส่วนที่ 2 ประวัติการศึกษา</p>
-                <div className='md:flex items-center justify-start flex-wrap gap-3 px-3 mt-3'>
-                  <label htmlFor="" className='text-xs lg:text-sm'>สถาบันการศึกษา:</label>
+              <div className="w-full mt-10">
+                <p className="text-base lg:text-lg font-semibold mb-5 border-b border-blue-100">
+                  ส่วนที่ 2 ประวัติการศึกษา
+                </p>
+                <div className="md:flex items-center justify-start flex-wrap gap-3 px-3 mt-3">
+                  <label htmlFor="" className="text-xs lg:text-sm">
+                    สถาบันการศึกษา:
+                  </label>
                   <input
-                    value={regoldSchool} onChange={(e) => setRegoldSchool(e.target.value)} name='regoldSchool' type="text"
+                    value={regoldSchool}
+                    onChange={(e) => setRegoldSchool(e.target.value)}
+                    name="regoldSchool"
+                    type="text"
                     className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5
                             leading-tight focus:outline-none text-xs lg:text-sm"
                   />
                 </div>
-                <div className='md:flex justify-start flex-wrap gap-3 px-3 mt-3'>
-                  <div className='md:flex items-center'>
-                    <label htmlFor="" className='text-xs lg:text-sm'>สำเร็จการศึกษาระดับ:</label>
-                    <select value={regDegree} onChange={(e) => setRegDegree(e.target.value)} name='regDegree'
-                      className='appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                                leading-tight focus:outline-none text-xs lg:text-sm'>
+                <div className="md:flex justify-start flex-wrap gap-3 px-3 mt-3">
+                  <div className="md:flex items-center">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      สำเร็จการศึกษาระดับ:
+                    </label>
+                    <select
+                      value={regDegree}
+                      onChange={(e) => setRegDegree(e.target.value)}
+                      name="regDegree"
+                      className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                                leading-tight focus:outline-none text-xs lg:text-sm"
+                    >
                       <option value="">-- เลือกระดับ --</option>
-                      <option value="มัธยมศึกษาปีที่ 6">มัธยมศึกษาปีที่ 6</option>
-                      <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
-                      <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">ประกาศนียบัตรวิชาชีพ (ปวช.)</option>
+                      <option value="มัธยมศึกษาปีที่ 6">
+                        มัธยมศึกษาปีที่ 6
+                      </option>
+                      <option value="ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)">
+                        ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)
+                      </option>
+                      <option value="ประกาศนียบัตรวิชาชีพ (ปวช.)">
+                        ประกาศนียบัตรวิชาชีพ (ปวช.)
+                      </option>
                     </select>
                   </div>
-                  <div className='md:flex items-center'>
-                    <label htmlFor="" className='text-xs lg:text-sm'>เกรดเฉลี่ย:</label>
+                  <div className="md:flex items-center">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      เกรดเฉลี่ย:
+                    </label>
                     <input
-                      value={reggpa} onChange={(e) => setReggpa(e.target.value)} name='reggpa' type="text"
+                      value={reggpa}
+                      onChange={(e) => setReggpa(e.target.value)}
+                      name="reggpa"
+                      type="text"
                       className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                             leading-tight focus:outline-none text-xs lg:text-sm"
                     />
@@ -351,43 +505,75 @@ export default function ApplyToStudyForm() {
                 </div>
               </div>
               {/* ส่วนที่3 คณะ/สาขา*/}
-              <div className='w-full mt-10'>
-                <p className='text-base lg:text-lg font-semibold mb-5 border-b border-blue-100'>ส่วนที่ 2 คณะ/สาขา</p>
-                <div className='md:flex items-center justify-start flex-wrap gap-3 px-3 mt-3'>
-                  <label className='text-xs lg:text-sm'>หลักสูตร:</label>
-                  <div className='md:col-span-1 md:my-2 md:self-center md:flex  ml-5 flex items-center'>
-                    <input onChange={(e) => setRegprogram(e.target.value)} name='regprogram' value="4ปี" type="radio" className="w-3 h-3" />
-                    <label className='ml-4 md:ml-1 text-xs lg:text-sm '>4 ปี</label>
+              <div className="w-full mt-10">
+                <p className="text-base lg:text-lg font-semibold mb-5 border-b border-blue-100">
+                  ส่วนที่ 2 คณะ/สาขา
+                </p>
+                <div className="md:flex items-center justify-start flex-wrap gap-3 px-3 mt-3">
+                  <label className="text-xs lg:text-sm">หลักสูตร:</label>
+                  <div className="md:col-span-1 md:my-2 md:self-center md:flex  ml-5 flex items-center">
+                    <input
+                      onChange={(e) => setRegprogram(e.target.value)}
+                      name="regprogram"
+                      value="4ปี"
+                      type="radio"
+                      className="w-3 h-3"
+                    />
+                    <label className="ml-4 md:ml-1 text-xs lg:text-sm ">
+                      4 ปี
+                    </label>
                   </div>
 
-                  <div className='md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center '>
-                    <input onChange={(e) => setRegprogram(e.target.value)} name='regprogram' value="2 ปี (ต่อเนื่อง)" type="radio" className="w-3 h-3 " />
-                    <label className='ml-4 md:ml-1 text-xs lg:text-sm'>2 ปี (ต่อเนื่อง)</label>
+                  <div className="md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center ">
+                    <input
+                      onChange={(e) => setRegprogram(e.target.value)}
+                      name="regprogram"
+                      value="2 ปี (ต่อเนื่อง)"
+                      type="radio"
+                      className="w-3 h-3 "
+                    />
+                    <label className="ml-4 md:ml-1 text-xs lg:text-sm">
+                      2 ปี (ต่อเนื่อง)
+                    </label>
                   </div>
                 </div>
-                <div className='md:flex justify-start flex-wrap gap-3 px-3 mt-3'>
-                  <div className='md:flex items-center'>
-                    <label htmlFor="" className='text-xs lg:text-sm'>คณะ:</label>
-                    <select name='regfaculty' onChange={handlefacultyChange}
-                      className='appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                              leading-tight focus:outline-none text-xs lg:text-sm'
+                <div className="md:flex justify-start flex-wrap gap-3 px-3 mt-3">
+                  <div className="md:flex items-center">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      คณะ:
+                    </label>
+                    <select
+                      name="regfaculty"
+                      onChange={handlefacultyChange}
+                      className="appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                              leading-tight focus:outline-none text-xs lg:text-sm"
                     >
                       <option value="">-- เลือกคณะ --</option>
                       <option value="คณะบริหารธุรกิจ">คณะบริหารธุรกิจ</option>
-                      <option value="คณะวิทยาศาสตร์และเทคโนโลยี">คณะวิทยาศาสตร์และเทคโนโลยี</option>
+                      <option value="คณะวิทยาศาสตร์และเทคโนโลยี">
+                        คณะวิทยาศาสตร์และเทคโนโลยี
+                      </option>
                       <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
-                      <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
+                      <option value="คณะวิศวกรรมศาสตร์">
+                        คณะวิศวกรรมศาสตร์{" "}
+                      </option>
                     </select>
                   </div>
-                  <div className='md:flex items-center'>
-                    <label htmlFor="" className='text-xs lg:text-sm'>สาขา:</label>
-                    <select name='regmajor' className='appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
-                              leading-tight focus:outline-none text-xs lg:text-sm'
+                  <div className="md:flex items-center">
+                    <label htmlFor="" className="text-xs lg:text-sm">
+                      สาขา:
+                    </label>
+                    <select
+                      name="regmajor"
+                      className="appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
+                              leading-tight focus:outline-none text-xs lg:text-sm"
                       disabled={!regfaculty} // Disable the select if faculty is not selected
                       value={regmajor}
                       onChange={(e) => setRegmajor(e.target.value)}
                     >
-                      <option value="" disabled>-- เลือกสาขา --</option>
+                      <option value="" disabled>
+                        -- เลือกสาขา --
+                      </option>
                       {majorOptionsByfaculty[regfaculty]?.map((major) => (
                         <option key={major} value={major}>
                           {major}
@@ -398,54 +584,56 @@ export default function ApplyToStudyForm() {
                 </div>
               </div>
 
-              <div className='flex justify-center mt-10'>
+              <div className="flex justify-center mt-10">
                 {/* Modal */}
                 <ButtonSubmit onSubmit={handleSubmit} />
               </div>
             </div>
           </div>
 
-          <div className='col-span-4 mt-5 animate-fade-up'>
-            <h2 className='text-lg lg:text-xl font-black mb-5'>วิธีที่ 2 สมัครเรียนทางไปรษณีย์</h2>
-            <Link href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing"
-              className='flex items-center gap-2 mb-3 text-lg text-blue-400 hover:text-blue-700'
+          <div className="col-span-4 mt-5 animate-fade-up">
+            <h2 className="text-lg lg:text-xl font-black mb-5">
+              วิธีที่ 2 สมัครเรียนทางไปรษณีย์
+            </h2>
+            <Link
+              href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing"
+              className="flex items-center gap-2 mb-3 text-lg text-blue-400 hover:text-blue-700"
               download
             >
-              <FaRegHandPointRight className='animate-pulse animate-infinite fill-orange-800' size={20} />
+              <FaRegHandPointRight
+                className="animate-pulse animate-infinite fill-orange-800"
+                size={20}
+              />
               ดาวน์โหลดใบสมัคร
             </Link>
             <Link href="https://drive.google.com/file/d/1emtEURTC2dy9VFLQ3Ef60xtwkkFazbPG/view?usp=sharing">
               <img src="/img/register_form.png" alt="" />
             </Link>
-            <p className='mt-3 text-blue-400'>กรอกข้อมูลให้สมบูรณ์ แล้วส่งใบสมัครพร้อมรูปถ่ายมาที่</p>
+            <p className="mt-3 text-blue-400">
+              กรอกข้อมูลให้สมบูรณ์ แล้วส่งใบสมัครพร้อมรูปถ่ายมาที่
+            </p>
             <p>วิทยาลัยเทคโนโลยีพนมวันท์</p>
             <p>198 ถ.มิตรภาพ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
-
-
-
           </div>
         </div>
       </div>
 
-      {isLoading ? (
-        <Loading />
-      ) : (
-        null
-      )}
+      {isLoading ? <Loading /> : null}
 
       {isMissingModalOpen && (
-        <Missing onClose={() => setIsMissingModalOpen(false)} missingFields={missingFields} />
+        <Missing
+          onClose={() => setIsMissingModalOpen(false)}
+          missingFields={missingFields}
+        />
       )}
 
       {isSuccess ? (
-        <Success onClose={() => {
-          setIsSuccess(false);
-        }} />
-      ) : (
-        null
-      )}
-
-
+        <Success
+          onClose={() => {
+            setIsSuccess(false);
+          }}
+        />
+      ) : null}
     </TheLayout>
-  )
+  );
 }
