@@ -11,26 +11,6 @@ import { FaRegHandPointRight } from "react-icons/fa";
 import Aos from "aos";
 import Link from 'next/link';
 
-interface NewRegisterForm {
-    personalID: string;
-    birth: string;
-    prefix: string;
-    sex: string;
-    nation: string;
-    nameTh: string;
-    lastnameTh: string;
-    nameEng: string;
-    lastnameEng: string;
-    email: string;
-    phone: string;
-    img: string;
-    oldSchool: string;
-    degree: string;
-    gpa: string;
-    program: string;
-    faculty: string;
-    major: string;
-}
 
 export default function ApplyToStudyForm() {
   useEffect(() => {
@@ -43,24 +23,24 @@ export default function ApplyToStudyForm() {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const [regpersonalID, setRegpersonalID] = useState<string>(""); // Example for an input field
-  const [regbirth, setRegbirth] = useState<string>("");
-  const [regprefix, setRegprefix] = useState<string>("");
-  const [regsex, setRegsex] = useState<string>("");
-  const [regnation, setRegnation] = useState<string>("");
-  const [regnameTh, setRegnameTh] = useState<string>("");
-  const [reglastnameTh, setReglastnameTh] = useState<string>("");
-  const [regnameEng, setRegnameEng] = useState<string>("");
-  const [reglastnameEng, setReglastnameEng] = useState<string>("");
-  const [regphone, setRegphone] = useState<string>("");
-  const [regemail, setRegemail] = useState<string>("");
-  const [regImg, setRegImg] = useState<File | null>(null);
-  const [regoldSchool, setRegoldSchool] = useState<string>("");
-  const [regDegree, setRegDegree] = useState<string>("");
-  const [reggpa, setReggpa] = useState<string>("");
-  const [regprogram, setRegprogram] = useState<string>("");
-  const [regfaculty, setRegfaculty] = useState<string>("");
-  const [regmajor, setRegmajor] = useState<string>("");
+  const [personalID, setPersonalID] = useState<string>(""); // Example for an input field
+  const [birth, setBirth] = useState<string>("");
+  const [prefix, setPrefix] = useState<string>("");
+  const [sex, setSex] = useState<string>("");
+  const [nation, setNation] = useState<string>("");
+  const [nameTh, setNameTh] = useState<string>("");
+  const [lastnameTh, setLastnameTh] = useState<string>("");
+  const [nameEng, setNameEng] = useState<string>("");
+  const [lastnameEng, setLastnameEng] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [img, setImg] = useState<File | null>(null);
+  const [oldSchool, setOldSchool] = useState<string>("");
+  const [degree, setDegree] = useState<string>("");
+  const [gpa, setGpa] = useState<string>("");
+  const [program, setProgram] = useState<string>("");
+  const [faculty, setFaculty] = useState<string>("");
+  const [major, setMajor] = useState<string>("");
 
   const [success, setSuccess] = useState(false);
   const [dataOut, setDataOut] = useState({});
@@ -73,7 +53,7 @@ export default function ApplyToStudyForm() {
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
     if (file) {
-      setRegImg(file); // Store the File object
+      setImg(file); // Store the File object
     }
   };
 
@@ -83,26 +63,24 @@ export default function ApplyToStudyForm() {
     //event.stopPropagation();
     let missingFields = [];
     // Check for missing fields here...
-    if (!regpersonalID) missingFields.push("บัตรประจำตัวประชาชน");
-    if (!regbirth) missingFields.push("วันเดือนปีเกิด");
-    if (!regprefix) missingFields.push("คำนำหน้าชื่อ");
-    if (!regsex) missingFields.push("เพศ");
-    if (!regnation) missingFields.push("สัญชาติ");
-    if (!regnameTh) missingFields.push("ชื่อ");
-    if (!reglastnameTh) missingFields.push("นามสกุล");
-    if (!regnameEng) missingFields.push("ชื่อภาษาอังกฤษ");
-    if (!reglastnameEng) missingFields.push("นามสกุลภาษาอังกฤษ");
-    if (!regphone) missingFields.push("เบอร์โทรศัพท์");
-    if (!regemail) missingFields.push("อีเมล");
-    if (!regImg) missingFields.push("รูปภาพ");
-
-    if (!regoldSchool) missingFields.push("สถาบันการศึกษา");
-    if (!regDegree) missingFields.push("ระดับกาสำเร็จการศึกษาระดับ");
-    if (!reggpa) missingFields.push("เกรดเฉลี่ย");
-    if (!regprogram) missingFields.push("หลักสูตร");
-
-    if (!regfaculty) missingFields.push("คณะ");
-    if (!regmajor) missingFields.push("สาขา");
+    if (!personalID) missingFields.push("บัตรประจำตัวประชาชน");
+    if (!birth) missingFields.push("วันเดือนปีเกิด");
+    if (!prefix) missingFields.push("คำนำหน้าชื่อ");
+    if (!sex) missingFields.push("เพศ");
+    if (!nation) missingFields.push("สัญชาติ");
+    if (!nameTh) missingFields.push("ชื่อ");
+    if (!lastnameTh) missingFields.push("นามสกุล");
+    if (!nameEng) missingFields.push("ชื่อภาษาอังกฤษ");
+    if (!lastnameEng) missingFields.push("นามสกุลภาษาอังกฤษ");
+    if (!phone) missingFields.push("เบอร์โทรศัพท์");
+    if (!email) missingFields.push("อีเมล");
+    if (!img) missingFields.push("รูปภาพ");
+    if (!oldSchool) missingFields.push("สถาบันการศึกษา");
+    if (!degree) missingFields.push("ระดับกาสำเร็จการศึกษาระดับ");
+    if (!gpa) missingFields.push("เกรดเฉลี่ย");
+    if (!program) missingFields.push("หลักสูตร");
+    if (!faculty) missingFields.push("คณะ");
+    if (!major) missingFields.push("สาขา");
 
 
     if (missingFields.length > 0) {
@@ -117,9 +95,9 @@ export default function ApplyToStudyForm() {
         console.log("กำลังอัพ");
         setIsLoading(true);
         // Upload the image
-        if (regImg) {
+        if (img) {
           const formData = new FormData();
-          formData.append("file", regImg); // Assuming 'activityImg' is a File object
+          formData.append("file", img); // Assuming 'activityImg' is a File object
           const uploadResponse = await axios.post(
             "https://upload-image.me-prompt-technology.com/",
             formData
@@ -131,24 +109,24 @@ export default function ApplyToStudyForm() {
 
             // Prepare the data to send
             const data = {
-              regImg: imageId, // Use the uploaded image ID
-              regpersonalID: regpersonalID,
-              regbirth: regbirth,
-              regprefix: regprefix,
-              regsex: regsex,
-              regnation: regnation,
-              regnameTh: regnameTh,
-              reglastnameTh: reglastnameTh,
-              regnameEng: regnameEng,
-              reglastnameEng: reglastnameEng,
-              regphone: regphone,
-              regemail: regemail,
-              regoldSchool: regoldSchool,
-              regDegree: regDegree,
-              reggpa: reggpa,
-              regprogram: regprogram,
-              regfaculty: regfaculty,
-              regmajor: regmajor,
+              regimg: imageId, // Use the uploaded image ID
+              personalID: personalID,
+              birth: birth,
+              prefix: prefix,
+              sex: sex,
+              nation: nation,
+              nameTh: nameTh,
+              lastnameTh: lastnameTh,
+              nameEng: nameEng,
+              lastnameEng: lastnameEng,
+              phone: phone,
+              email: email, 
+              oldSchool: oldSchool,
+              degree: degree,
+              gpa: gpa,
+              program: program,
+              faculty: faculty,
+              major: major,
             };
 
             const response = await executeRegisform({ data });
@@ -203,8 +181,8 @@ export default function ApplyToStudyForm() {
   // Handle the change event of the faculty select
   const handlefacultyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedfaculty = event.target.value;
-    setRegfaculty(selectedfaculty);
-    setRegmajor(""); // Reset the selected major when changing faculty
+    setFaculty(selectedfaculty);
+    setMajor(""); // Reset the selected major when changing faculty
   };
 
 
@@ -231,7 +209,7 @@ export default function ApplyToStudyForm() {
                   <div className='md:flex items-center'>
                     <label htmlFor="" className='text-xs lg:text-sm'>บัตรประจำตัวประชาชน:</label>
                     <input
-                      value={regpersonalID} onChange={(e) => setRegpersonalID(e.target.value)}
+                      value={personalID} onChange={(e) => setPersonalID(e.target.value)}
                       name='regpersonalID' type="text"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                               leading-tight focus:outline-none text-xs lg:text-sm"
@@ -240,7 +218,7 @@ export default function ApplyToStudyForm() {
                   <div className='md:flex items-center '>
                     <label htmlFor="" className='text-xs lg:text-sm'>วัน/เดือน/ปีเกิด:</label>
                     <input
-                      value={regbirth} onChange={(e) => setRegbirth(e.target.value)}
+                      value={birth} onChange={(e) => setBirth(e.target.value)}
                       name='regbirth' type="date"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm" />
@@ -248,7 +226,7 @@ export default function ApplyToStudyForm() {
                   <div className='md:flex items-center'>
                     <label htmlFor="" className='text-xs lg:text-sm'>เพศ:</label>
                     <select
-                      value={regsex} onChange={(e) => setRegsex(e.target.value)} name='regsex'
+                      value={sex} onChange={(e) => setSex(e.target.value)} name='regsex'
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'>
                       <option >- เลือก -</option>
