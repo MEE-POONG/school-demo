@@ -11,29 +11,6 @@ import { FaRegHandPointRight } from "react-icons/fa";
 import Aos from "aos";
 import Link from "next/link";
 
-<<<<<<< HEAD
-=======
-interface NewRegisterForm {
-  personalID: string;
-  birth: string;
-  prefix: string;
-  sex: string;
-  nation: string;
-  nameTh: string;
-  lastnameTh: string;
-  nameEng: string;
-  lastnameEng: string;
-  email: string;
-  phone: string;
-  img: string;
-  oldSchool: string;
-  degree: string;
-  gpa: string;
-  program: string;
-  faculty: string;
-  major: string;
-}
->>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
 
 export default function ApplyToStudyForm() {
   useEffect(() => {
@@ -134,7 +111,6 @@ export default function ApplyToStudyForm() {
 
             // Prepare the data to send
             const data = {
-<<<<<<< HEAD
               regimg: imageId, // Use the uploaded image ID
               personalID: personalID,
               birth: birth,
@@ -153,26 +129,6 @@ export default function ApplyToStudyForm() {
               program: program,
               faculty: faculty,
               major: major,
-=======
-              regImg: imageId, // Use the uploaded image ID
-              regpersonalID: regpersonalID,
-              regbirth: regbirth,
-              regprefix: regprefix,
-              regsex: regsex,
-              regnation: regnation,
-              regnameTh: regnameTh,
-              reglastnameTh: reglastnameTh,
-              regnameEng: regnameEng,
-              reglastnameEng: reglastnameEng,
-              regphone: regphone,
-              regemail: regemail,
-              regoldSchool: regoldSchool,
-              regDegree: regDegree,
-              reggpa: reggpa,
-              regprogram: regprogram,
-              regfaculty: regfaculty,
-              regmajor: regmajor
->>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
             };
 
             const response = await executeRegisform({ data });
@@ -259,15 +215,8 @@ export default function ApplyToStudyForm() {
                       บัตรประจำตัวประชาชน:
                     </label>
                     <input
-<<<<<<< HEAD
                       value={personalID} onChange={(e) => setPersonalID(e.target.value)}
                       name='regpersonalID' type="text"
-=======
-                      value={regpersonalID}
-                      onChange={(e) => setRegpersonalID(e.target.value)}
-                      name="regpersonalID"
-                      type="text"
->>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                               leading-tight focus:outline-none text-xs lg:text-sm"
                     />
@@ -277,15 +226,8 @@ export default function ApplyToStudyForm() {
                       วัน/เดือน/ปีเกิด:
                     </label>
                     <input
-<<<<<<< HEAD
                       value={birth} onChange={(e) => setBirth(e.target.value)}
                       name='regbirth' type="date"
-=======
-                      value={regbirth}
-                      onChange={(e) => setRegbirth(e.target.value)}
-                      name="regbirth"
-                      type="date"
->>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm"
                     />
@@ -295,20 +237,10 @@ export default function ApplyToStudyForm() {
                       เพศ:
                     </label>
                     <select
-<<<<<<< HEAD
                       value={sex} onChange={(e) => setSex(e.target.value)} name='regsex'
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'>
                       <option >- เลือก -</option>
-=======
-                      value={regsex}
-                      onChange={(e) => setRegsex(e.target.value)}
-                      name="regsex"
-                      className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
-                  leading-tight focus:outline-none text-xs lg:text-sm"
-                    >
-                      <option>- เลือก -</option>
->>>>>>> ba8595abe1bc4ee73ad791d8fee89da7d99102bc
                       <option value="ชาย">ชาย</option>
                       <option value="หญิง">หญิง</option>
                     </select>
