@@ -111,7 +111,7 @@ export default function ApplyToStudyForm() {
 
             // Prepare the data to send
             const data = {
-              regimg: imageId, // Use the uploaded image ID
+              img: imageId, // Use the uploaded image ID
               personalID: personalID,
               birth: birth,
               prefix: prefix,
@@ -216,7 +216,7 @@ export default function ApplyToStudyForm() {
                     </label>
                     <input
                       value={personalID} onChange={(e) => setPersonalID(e.target.value)}
-                      name='regpersonalID' type="text"
+                      name='personalID' type="text"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                               leading-tight focus:outline-none text-xs lg:text-sm"
                     />
@@ -227,7 +227,7 @@ export default function ApplyToStudyForm() {
                     </label>
                     <input
                       value={birth} onChange={(e) => setBirth(e.target.value)}
-                      name='regbirth' type="date"
+                      name='birth' type="date"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm"
                     />
@@ -237,7 +237,7 @@ export default function ApplyToStudyForm() {
                       เพศ:
                     </label>
                     <select
-                      value={sex} onChange={(e) => setSex(e.target.value)} name='regsex'
+                      value={sex} onChange={(e) => setSex(e.target.value)} name='sex'
                       className='appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm'>
                       <option >- เลือก -</option>
@@ -250,9 +250,9 @@ export default function ApplyToStudyForm() {
                       สัญชาติ:
                     </label>
                     <input
-                      value={regnation}
-                      onChange={(e) => setRegnation(e.target.value)}
-                      name="regnation"
+                      value={nation}
+                      onChange={(e) => setNation(e.target.value)}
+                      name="nation"
                       type="text"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm"
@@ -267,9 +267,9 @@ export default function ApplyToStudyForm() {
                       คำนำหน้าชื่อ:
                     </label>
                     <select
-                      value={regprefix}
-                      onChange={(e) => setRegprefix(e.target.value)}
-                      name="regprefix"
+                      value={prefix}
+                      onChange={(e) => setPrefix(e.target.value)}
+                      name="prefix"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm"
                     >
@@ -284,9 +284,9 @@ export default function ApplyToStudyForm() {
                       ชื่อ:
                     </label>
                     <input
-                      value={regnameTh}
-                      onChange={(e) => setRegnameTh(e.target.value)}
-                      name="regName"
+                      value={nameTh}
+                      onChange={(e) => setNameTh(e.target.value)}
+                      name="NameTh"
                       type="text"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm"
@@ -297,9 +297,9 @@ export default function ApplyToStudyForm() {
                       นามสกุล:
                     </label>
                     <input
-                      value={reglastnameTh}
-                      onChange={(e) => setReglastnameTh(e.target.value)}
-                      name="regLastname"
+                      value={lastnameTh}
+                      onChange={(e) => setLastnameTh(e.target.value)}
+                      name="LastnameTh"
                       type="text"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm"
@@ -314,9 +314,9 @@ export default function ApplyToStudyForm() {
                       Name:
                     </label>
                     <input
-                      value={regnameEng}
-                      onChange={(e) => setRegnameEng(e.target.value)}
-                      name="regnameEng"
+                      value={nameEng}
+                      onChange={(e) => setNameEng(e.target.value)}
+                      name="nameEng"
                       type="text"
                       placeholder="ชื่อภาษาอังกฤษ"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
@@ -328,9 +328,9 @@ export default function ApplyToStudyForm() {
                       Lastname:
                     </label>
                     <input
-                      value={reglastnameEng}
-                      onChange={(e) => setReglastnameEng(e.target.value)}
-                      name="regElastname"
+                      value={lastnameEng}
+                      onChange={(e) => setLastnameEng(e.target.value)}
+                      name="lastnameEng"
                       type="text"
                       placeholder="นามสกุลภาษาอังกฤษ"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
@@ -346,9 +346,9 @@ export default function ApplyToStudyForm() {
                       เบอร์โทรศัพท์ติดต่อ:
                     </label>
                     <input
-                      value={regphone}
-                      onChange={(e) => setRegphone(e.target.value)}
-                      name="regphone"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      name="phone"
                       type="text"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm"
@@ -359,9 +359,9 @@ export default function ApplyToStudyForm() {
                       email:
                     </label>
                     <input
-                      value={regemail}
-                      onChange={(e) => setRegemail(e.target.value)}
-                      name="regemail"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      name="email"
                       type="email"
                       className="appearance-nonec w-full md:w-auto block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                   leading-tight focus:outline-none text-xs lg:text-sm"
@@ -371,8 +371,8 @@ export default function ApplyToStudyForm() {
                     <p className="text-xs lg:text-sm">อัพโหลดรูปภาพ :</p>
                     <input
                       type="file"
-                      id="regImg"
-                      name="regImg"
+                      id="img"
+                      name="Img"
                       onChange={handleFileUpload}
                       className="w-full md:w-auto py-2 px-3 ml-3 text-xs lg:text-sm "
                     />
@@ -389,9 +389,9 @@ export default function ApplyToStudyForm() {
                     สถาบันการศึกษา:
                   </label>
                   <input
-                    value={regoldSchool}
-                    onChange={(e) => setRegoldSchool(e.target.value)}
-                    name="regoldSchool"
+                    value={oldSchool}
+                    onChange={(e) => setOldSchool(e.target.value)}
+                    name="oldSchool"
                     type="text"
                     className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5
                             leading-tight focus:outline-none text-xs lg:text-sm"
@@ -403,9 +403,9 @@ export default function ApplyToStudyForm() {
                       สำเร็จการศึกษาระดับ:
                     </label>
                     <select
-                      value={regDegree}
-                      onChange={(e) => setRegDegree(e.target.value)}
-                      name="regDegree"
+                      value={degree}
+                      onChange={(e) => setDegree(e.target.value)}
+                      name="degree"
                       className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                                 leading-tight focus:outline-none text-xs lg:text-sm"
                     >
@@ -426,9 +426,9 @@ export default function ApplyToStudyForm() {
                       เกรดเฉลี่ย:
                     </label>
                     <input
-                      value={reggpa}
-                      onChange={(e) => setReggpa(e.target.value)}
-                      name="reggpa"
+                      value={gpa}
+                      onChange={(e) => setGpa(e.target.value)}
+                      name="gpa"
                       type="text"
                       className="appearance-nonec w-full lg:w-1/2 block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                             leading-tight focus:outline-none text-xs lg:text-sm"
@@ -445,7 +445,7 @@ export default function ApplyToStudyForm() {
                   <label className="text-xs lg:text-sm">หลักสูตร:</label>
                   <div className="md:col-span-1 md:my-2 md:self-center md:flex  ml-5 flex items-center">
                     <input
-                      onChange={(e) => setRegprogram(e.target.value)}
+                      onChange={(e) => setProgram(e.target.value)}
                       name="regprogram"
                       value="4ปี"
                       type="radio"
@@ -458,7 +458,7 @@ export default function ApplyToStudyForm() {
 
                   <div className="md:col-span-2 md:my-2 md:self-center md:flex mt-2 ml-5 flex items-center ">
                     <input
-                      onChange={(e) => setRegprogram(e.target.value)}
+                      onChange={(e) => setProgram(e.target.value)}
                       name="regprogram"
                       value="2 ปี (ต่อเนื่อง)"
                       type="radio"
@@ -499,14 +499,14 @@ export default function ApplyToStudyForm() {
                       name="regmajor"
                       className="appearance-nonec w-full block text-gray-800 border focus:border-b-blue-400 rounded p-1.5 ml-3
                               leading-tight focus:outline-none text-xs lg:text-sm"
-                      disabled={!regfaculty} // Disable the select if faculty is not selected
-                      value={regmajor}
-                      onChange={(e) => setRegmajor(e.target.value)}
+                      disabled={!faculty} // Disable the select if faculty is not selected
+                      value={major}
+                      onChange={(e) => setMajor(e.target.value)}
                     >
                       <option value="" disabled>
                         -- เลือกสาขา --
                       </option>
-                      {majorOptionsByfaculty[regfaculty]?.map((major) => (
+                      {majorOptionsByfaculty[faculty]?.map((major) => (
                         <option key={major} value={major}>
                           {major}
                         </option>
