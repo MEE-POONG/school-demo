@@ -439,7 +439,7 @@ export default function ApplyToStudyForm() {
               {/* ส่วนที่3 คณะ/สาขา*/}
               <div className="w-full mt-10">
                 <p className="text-base lg:text-lg font-semibold mb-5 border-b border-blue-100">
-                  ส่วนที่ 2 คณะ/สาขา
+                  ส่วนที่ 3 คณะ/สาขา
                 </p>
                 <div className="md:flex items-center justify-start flex-wrap gap-3 px-3 mt-3">
                   <label className="text-xs lg:text-sm">หลักสูตร:</label>
