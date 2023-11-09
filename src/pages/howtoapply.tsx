@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"; // เพิ่มการ import 
 import Loading from "@/components/loading"; // เพิ่มการ import คอมโพเนนต์ Loading
 import TermFees from "@/container/Register/TermFees";
 import Aos from "aos";
+import TermFeesTabletwo from "@/container/Register/TermFeesTabletwo";
+import AdditionnalCosts from "@/container/Register/Additionalcosts";
 
 export default function HowToApplyPage() {
   const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
@@ -102,6 +104,9 @@ export default function HowToApplyPage() {
           </div>
         </div>
         <TermFees />
+        <TermFeesTabletwo />
+        <AdditionnalCosts/>
+
       </div>
     </TheLayout>
   );

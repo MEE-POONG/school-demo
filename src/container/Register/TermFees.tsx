@@ -6,49 +6,48 @@ const TermFees: React.FC = () => {
   return (
     <>
       <Card className="h-full w-full overflow-x-auto my-8">
+        <h3 className="text-xl font-semibold mb-2">ตารางแสดงค่าใช้จ่ายตลอดหลักสูตร ปริญญาตรี (ปกติ) </h3>
         <table className="table-scroll w-full table-auto text-left">
           <thead className="tuition-fees border-collapse">
             <tr>
               <th
                 rowSpan={2}
-                className="p-4 w-36 border border-slate-600 text-center border-l"
+                className="p-4 w-56 border border-slate-600 text-center border-l"
               >
                 สาขาวิชา
               </th>
-              <th
+              {/* <th
                 colSpan={3}
                 className="p-4 w-72 border border-slate-600 text-center border-l"
               >
                 กองทุนกู้ยืม<span>*</span>
-              </th>
+              </th> */}
               <th
                 rowSpan={2}
-                className="p-4 w-48 border border-slate-600  border-l"
+                className="p-4 w-32 border border-slate-600  border-l"
               >
-                ค่าเล่าเรียน
-                <br />
-                เทอม 1/1 (มิ.ย. – ก.ค.){" "}
+                ค่าเทียบโอน
               </th>
               <th
                 rowSpan={2}
-                className="p-4 w-48 border border-slate-600  border-l"
+                className="p-4 w-32 border border-slate-600  border-l"
               >
-                ค่าเล่าเรียน
+                เรียน ปกติ
                 <br />
-                เทอม 1/2
+                (จบ ม.6/ปวช./เทียบเท่า)
               </th>
-              <th
+              {/* <th
                 rowSpan={2}
-                className="p-4 w-48 border border-slate-600  border-l"
+                className="p-4 w-32 border border-slate-600  border-l"
               >
                 ค่าเล่าเรียนรวม
                 <br />
                 ตลอดหลักสูตร<span>**</span>
                 <br />
                 (ยังไม่รวมส่วนลดทุน){" "}
-              </th>
+              </th> */}
             </tr>
-            <tr>
+            {/* <tr>
               <th className="p-4 w-24 border border-slate-600 text-center border-l">
                 กยศ.
                 <br />
@@ -64,7 +63,7 @@ const TermFees: React.FC = () => {
                 <br />
                 ลักษณะที่ 3
               </th>
-            </tr>
+            </tr> */}
           </thead>
           <tbody>
             {CourseGroup.map((group) => (
@@ -78,10 +77,10 @@ const TermFees: React.FC = () => {
                   (branch) => branch.TermFeesGroupID === group.id
                 ).map((branch) => (
                   <tr key={branch.id} className="even:bg-blue-gray-50/50">
-                    <td className="w-36 text-center border-l p-4">
+                    <td className="w-56 text-center border-l p-4">
                       {branch.FieldStudy}
                     </td>
-                    <td className="w-24 text-center border-l p-4">
+                    {/* <td className="w-24 text-center border-l p-4">
                       {branch.kysOne ? "yes" : "no"}
                     </td>
                     <td className="w-24 text-center border-l p-4">
@@ -89,16 +88,16 @@ const TermFees: React.FC = () => {
                     </td>
                     <td className="w-24 text-center border-l p-4">
                       {branch.kysThree ? "yes" : "no"}
-                    </td>
-                    <td className="w-48 text-center border-l p-4">
+                    </td> */}
+                    <td className="w-32 text-center border-l p-4">
                       {branch.First}
                     </td>
-                    <td className="w-48 text-center border-l p-4">
+                    <td className="w-32 text-center border-l p-4">
                       {branch.Second}
                     </td>
-                    <td className="w-48 text-center border-l p-4">
+                    {/* <td className="w-32 text-center border-l p-4">
                       {branch.Sum}
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </React.Fragment>
