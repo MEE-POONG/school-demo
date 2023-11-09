@@ -8,6 +8,8 @@ import {
 } from "@material-tailwind/react";
 import { News, NewsType } from "@prisma/client";
 import Link from "next/link";
+import ButtonWithLoading from "./loading";
+
 interface NewsAllProps {
   selectKey: string;
   setSelectKey: (key: string) => void; // Define the type of setSelectKey as a function that takes a string and returns void
@@ -100,7 +102,7 @@ export const NewsAll: React.FC<NewsAllProps> = ({
                     }`}
                     onClick={() => setKeyWord(list?.type, list.page + 1)}
                   >
-                    ดูเพิ่ม {">>>>"}
+                    <ButtonWithLoading/>
                   </button>
                 </div>
               ))}
