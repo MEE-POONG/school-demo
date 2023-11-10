@@ -13,7 +13,7 @@ export const Menu: React.FC = () => {
     });
   }, []);
   return (
-    <div className="container m-auto my-6 flex justify-around flex-wrap">
+    <div className="container m-auto my-4 flex justify-around flex-wrap">
       <Link
         href="/applyToStudy"
         className="p-4 w-1/2  md:w-1/4 lg:w-1/6  flex my-2 justify-center drop-shadow-lg"
