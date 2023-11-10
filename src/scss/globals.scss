@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+* {
+  font-family: Kanit, "sans-serif";
+}
+
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 @import "aos/dist/aos.css";
 @import "swiper/swiper-bundle.css";
-@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
-* {
-  font-family: "Kanit", "sans-serif";
-  @import "./style.scss";
-}
+@import "./style.scss";
