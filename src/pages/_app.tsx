@@ -2,13 +2,26 @@ import type { AppProps } from "next/app";
 import Loading from "@/components/loading";
 import React, { useState } from "react";
 import "@/scss/globals.scss";
-import { Kanit } from "next/font/google";
+import { Inter, Roboto_Mono, Kanit } from 'next/font/google'
 
-const mainFont = Kanit({
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+ 
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
+  display: 'swap',
+})
+
+// Add Kanit font
+const kanit = Kanit({
   weight: "400",
+  variable:'--font-kanit',
   subsets: ["latin"]
-});
-
+})
 export default function App({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -16,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       {isLoading && <Loading />}{" "}
       {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
-      <main className={mainFont.className}>
+      <main  className={`${kanit.variable}`}>
         <Component {...pageProps} />
       </main>
     </>

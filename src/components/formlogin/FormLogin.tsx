@@ -26,7 +26,7 @@ const FormLogin: React.FC = () => {
               className="w-[200px] h-auto mx-10 "
               alt=""
             />
-            <h1 className="text-white font-bold text-2xl font-sans mt-8">
+            <h1 className="text-white font-bold text-2xl mt-8">
               วิทยาลัยเทคโนโลยีพนมวันท์
             </h1>
             <p className=" m-2 w-[270px] h-[2px] bg-[#FFBF00]"></p>
