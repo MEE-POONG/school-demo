@@ -1,20 +1,8 @@
 import type { AppProps } from "next/app";
 import Loading from "@/components/loading";
 import React, { useState } from "react";
-import "@/scss/globals.scss";
+import "@/scss/globals.css";
 import { Inter, Roboto_Mono, Kanit } from 'next/font/google'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
- 
-const roboto_mono = Roboto_Mono({
-  subsets: ['latin'],
-  variable: '--font-roboto-mono',
-  display: 'swap',
-})
 
 // Add Kanit font
 const kanit = Kanit({
@@ -29,6 +17,14 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       {isLoading && <Loading />}{" "}
       {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
+      
+      <style jsx global>{`
+      @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
+        html {
+          font-family: ${kanit.style.fontFamily};
+        }
+      `}</style>
       <main  className={`${kanit.variable}`}>
         <Component {...pageProps} />
       </main>
