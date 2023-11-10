@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import Loading from "@/components/loading";
 import React, { useState } from "react";
-import "@/scss/globals.css";
+import "@/scss/globals.scss";
 import { Inter, Roboto_Mono, Kanit } from 'next/font/google'
 
 // Add Kanit font
