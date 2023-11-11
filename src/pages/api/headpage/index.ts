@@ -15,30 +15,28 @@ export default async function handler(
         const page: number = Number(req.query.page) || 1;
         const pageSize: number = Number(req.query.pageSize) || 10;
 
-        const iPAddress = await prisma.iPAddress.findMany({
+        const headPages = await prisma.headPage.findMany({
+          skip: (page - 1) * pageSize,
+          take: pageSize,
         });
 
-        const totaliPAddress = await prisma.iPAddress.count();
-        const totalPage: number = Math.ceil(totaliPAddress / pageSize);
-        res.status(200).json({ iPAddress });
+        const totalHeadPages = await prisma.headPage.count();
+        const totalPages: number = Math.ceil(totalHeadPages / pageSize);
+
+        res.status(200).json({ data: headPages, pagination: { page, pageSize, total: totalHeadPages, totalPages } });
       } catch (error) {
-        res
-          .status(500)
-          .json({ error: "An error occurred while fetching the iPAddress" });
+        res.status(500).json({ error: "An error occurred while fetching the HeadPages" });
       }
       break;
-
     case "POST":
       try {
-        const newiPAddress = await prisma.iPAddress.create({
+        const newHeadPage = await prisma.headPage.create({
           data: req.body
         });
 
-        res.status(201).json(newiPAddress);
+        res.status(201).json(newHeadPage);
       } catch (error) {
-        res
-          .status(500)
-          .json({ error: "An error occurred while creating the iPAddress" });
+        res.status(500).json({ error: "An error occurred while creating the HeadPage" });
       }
       break;
 
