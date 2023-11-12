@@ -4,7 +4,7 @@ import Loading from "@/components/loading";
 import "@/scss/globals.scss";
 import Head from 'next/head';
 import type { AppProps } from "next/app";
-import { AppContextData } from "@/context";
+import AppContextData from "@/context";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
