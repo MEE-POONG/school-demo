@@ -1,36 +1,36 @@
-import React, { createContext, useState } from "react";
-import type { AppProps } from "next/app";
+// pages/_app.js
+import React, { useState } from "react";
 import Loading from "@/components/loading";
 import "@/scss/globals.scss";
-import { Kanit } from 'next/font/google'
+import Head from 'next/head';
+import type { AppProps } from "next/app";
+import { AppContextData } from "@/context";
 
-// Add Kanit font
-const kanit = Kanit({
-  weight: "400",
-  variable: '--font-kanit',
-  subsets: ["latin"]
-})
-
-
-export default function App({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
-  // const AppContext = createContext<AppContextData | undefined>(undefined);
+
+  // Define your context value
+  const contextValue = {
+    courseGroupsCount: 0,
+    courseListCount: 0,
+    studyingCounts: 0,
+    ipAddressesCount: 0,
+    contactData: [],
+    // Add more fields or functions as needed
+  };
 
   return (
-    <>
-      {isLoading && <Loading />}{" "}
-      {/* แสดงหน้าต่าง Loading ถ้า isLoading เป็น true */}
-
-      <style jsx global>{`
-      @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
-
-        html {
-          font-family: ${kanit.style.fontFamily};
-        }
-      `}</style>
-      <main className={`${kanit.variable}`}>
+    <AppContextData.Provider value={contextValue}>
+      <Head>
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" 
+          rel="stylesheet" 
+        />
+      </Head>
+      {isLoading && <Loading />}
+      <main>
         <Component {...pageProps} />
       </main>
-    </>
+    </AppContextData.Provider>
   );
 }
