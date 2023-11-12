@@ -16,6 +16,7 @@ model HeadPage {
   subTitle   String? // หัวข้อย่่อ 
   pageCheck  String?
   pathBtn    String?
+  btnTitle   String?
   detail     String?
   imgOne     String?
   imgTwo     String?
