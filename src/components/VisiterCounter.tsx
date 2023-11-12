@@ -9,6 +9,7 @@ interface IpDbItem {
 const VisiterCounter: React.FC = () => {
   const [ipAddress, setIpAddress] = useState("");
   const [ipDb, setIpDb] = useState<IpDbItem[]>([]);
+  const [visitorCount, setVisitorCount] = useState(0); // New state for visitor count
 
   const fetchIpAddress = async () => {
     try {
@@ -22,7 +23,8 @@ const VisiterCounter: React.FC = () => {
   const fetchIpDb = async () => {
     try {
       const response = await axios.get("/api/IPAddress");
-      setIpDb(response.data);
+      setVisitorCount(response.data?.length || 0); // Update visitor count
+      setIpDb(response?.data);
     } catch (error) {
       console.error(error);
     }
@@ -41,7 +43,6 @@ const VisiterCounter: React.FC = () => {
         .then(response => {
           if (response.status === 201) {
             console.log("Added IP address to the database:", ipAddress);
-            // Optionally, fetch the updated list of IPs from the database
             fetchIpDb();
           }
         })

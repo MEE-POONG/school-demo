@@ -78,7 +78,7 @@ export default function Statistics() {
             >
               {isVisible && <CountUp end={500} duration={2.5} />}
               <span className="mx-2 text-white text-base md:text-xl lg:text-2xl">
-                กำลัง
+                กำลังศึกษา
               </span>
             </Typography>
           </div>

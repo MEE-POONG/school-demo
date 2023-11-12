@@ -123,7 +123,7 @@ export const Relations: React.FC = () => {
                   href={"/news"}
                   className="text-yellow-800 hover:text-yellow-900 text-sm leading-6 font-medium py-2 px-3 rounded-lg"
                 >
-                  See more {">>>>"}
+                  ดูเพิ่มเติม {">>>>"}
                 </Link>
               </div>
             </TabPanel>

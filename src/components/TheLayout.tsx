@@ -2,14 +2,8 @@ import React from "react";
 import TheFooter from "./TheFooter";
 import TheNavbar from "./TheNavbar";
 import Head from "next/head";
-import VisiterCounter from "@/components/visiterCounter";
+import VisiterCounter from "@/components/VisiterCounter";
 import BackToTopButton from "./BackTotop";
-import { Kanit } from "next/font/google";
-
-const mainFont = Kanit({
-  subsets: ["latin"],
-  weight: "400"
-});
 
 export default function TheLayout({ children }: { children: React.ReactNode }) {
   return (
