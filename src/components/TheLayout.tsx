@@ -14,12 +14,12 @@ const mainFont = Kanit({
 export default function TheLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <VisiterCounter />
       <Head>
         <title>PhanomwanCollege</title>
         <meta name="description" content="PHANOMWAN COLLEGE" />
         <link rel="icon" href="/panomwan.ico" />
       </Head>
-      <VisiterCounter />
       <TheNavbar />
       <div className="relative">
         {children}

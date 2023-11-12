@@ -26,12 +26,6 @@ const HeadderHome: React.FC = () => {
             });
     }, []);
 
-    useEffect(() => {
-        if (headerData) {
-            console.log("headerData : ", headerData.title);
-        }
-    }, [headerData]);
-
     return (
         <div className="relative flex h-screen content-center items-center justify-center pt-24">
             <div className="absolute top-0 h-full w-full bg-[url('/img/school/panomtext.png')] bg-fixed bg-center bg-no-repeat bg-cover" />
@@ -55,13 +49,13 @@ const HeadderHome: React.FC = () => {
                                 loading="lazy"
                             />
                             <img
-                               src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${headerData?.imgTwo || "4500f404-dbac-40f3-6696-ae768a38e800"}/500`}
+                               src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${headerData?.imgTwo || "4500f404-dbac-40f3-6696-ae768a38e800"}/350`}
                                 alt=""
                                 className="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-64"
                                 loading="lazy"
                             />
                             <img
-                               src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${headerData?.imgThree || "4500f404-dbac-40f3-6696-ae768a38e800"}/500`}
+                               src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${headerData?.imgThree || "4500f404-dbac-40f3-6696-ae768a38e800"}/350`}
                                 alt=""
                                 className="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-64"
                                 loading="lazy"

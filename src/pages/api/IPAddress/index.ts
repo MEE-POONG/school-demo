@@ -11,39 +11,64 @@ export default async function handler(
 
   switch (method) {
     case "GET":
-      try {
-        const page: number = Number(req.query.page) || 1;
-        const pageSize: number = Number(req.query.pageSize) || 10;
-
-        const iPAddress = await prisma.iPAddress.findMany({
-        });
-
-        const totaliPAddress = await prisma.iPAddress.count();
-        const totalPage: number = Math.ceil(totaliPAddress / pageSize);
-        res.status(200).json({ iPAddress });
-      } catch (error) {
-        res
-          .status(500)
-          .json({ error: "An error occurred while fetching the iPAddress" });
-      }
+      await handleGET(req, res);
       break;
-
     case "POST":
-      try {
-        const newiPAddress = await prisma.iPAddress.create({
-          data: req.body
-        });
-
-        res.status(201).json(newiPAddress);
-      } catch (error) {
-        res
-          .status(500)
-          .json({ error: "An error occurred while creating the iPAddress" });
-      }
+      await handlePOST(req, res);
       break;
-
+    case "PUT":
+      await handlePUT(req, res);
+      break;
+    case "DELETE":
+      await handleDELETE(req, res);
+      break;
     default:
-      res.setHeader("Allow", ["GET", "POST"]);
+      res.setHeader("Allow", ["GET", "POST", "PUT", "DELETE"]);
       res.status(405).end(`Method ${method} Not Allowed`);
+  }
+}
+
+async function handleGET(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    const ipAddresses = await prisma.iPAddress.findMany();
+    res.status(200).json(ipAddresses);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching IP addresses" });
+  }
+}
+
+async function handlePOST(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    const newIPAddress = await prisma.iPAddress.create({
+      data: req.body
+    });
+    res.status(201).json(newIPAddress);
+  } catch (error) {
+    res.status(500).json({ message: "Error creating IP address" });
+  }
+}
+
+async function handlePUT(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    const id = req.query.id as string;
+    const updatedIPAddress = await prisma.iPAddress.update({
+      where: { id },
+      data: req.body
+    });
+    res.status(200).json(updatedIPAddress);
+  } catch (error) {
+    res.status(500).json({ message: "Error updating IP address" });
+  }
+}
+
+async function handleDELETE(req: NextApiRequest, res: NextApiResponse) {
+  try {
+    const id = req.query.id as string;
+    await prisma.iPAddress.delete({
+      where: { id }
+    });
+    res.status(200).json({ message: "IP address deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting IP address" });
   }
 }
