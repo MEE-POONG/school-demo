@@ -17,12 +17,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('/api/IPAddress')
+    fetch('/api/Context')
       .then(response => response.json())
       .then(data => {
         setContextValue(prev => ({
           ...prev,
-          ipAddressesCount: data?.length,
+          courseGroupsCount: data?.courseGroupsCount,
+          courseListCount: data?.courseListCount,
+          studyingCounts: data?.studyingCount,
+          ipAddressesCount: data?.ipAddressesCount,
+          contactData: data.contactData,
         }));
         setIsLoading(false);
       });
@@ -30,7 +34,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <AppContextData.Provider value={contextValue}>
-      
       {isLoading && <Loading />}
       <main>
         <Component {...pageProps} />

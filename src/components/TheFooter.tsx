@@ -1,7 +1,10 @@
+import AppContextData, { AppContextDataProps } from "@/context";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 
-const TheFooter = () => {
+const TheFooter: React.FC = () => {
+  const context: any = useContext<AppContextDataProps>(AppContextData);
+
   return (
     <footer className="bg-blue-500 w-full">
       <div className="container mx-auto p-7 lg:flex lg:justify-between items-center ">
@@ -16,8 +19,8 @@ const TheFooter = () => {
           <span className="self-center text-xs md:text-base font-medium text-white">
             <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
             <hr className="md:w-full h-[1px] lg:w-[400px] xl:w-full bg-white my-1" />
-            <p>198 ถ.มิตรภาพ-จอหอ ต.บ้านโพธิ์ อ.เมือง จ.นครราชสีมา 30310</p>
-            <p>TEL : 044-955121-122 &nbsp;FAX : 044-955120</p>
+            <p>{`${context?.contactData?.addressOne} ค.${context?.contactData?.subDistrict} อ.${context?.contactData?.district} จ.${context?.contactData?.province} ${context?.contactData?.zipcode}`}</p>
+            <p>TEL : {context?.contactData?.tel} &nbsp;FAX : {context?.contactData?.fax}</p>
           </span>
         </div>
 

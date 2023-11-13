@@ -59,7 +59,7 @@ export default function FacultyPage() {
           </div>
         </div>
         {/* container ใหญ่ */}
-        <div className="max-w-5xl container mx-auto p-6 lg:p-10 lg:mt-24 mb-10 ">
+        <div className="container mx-auto p-6 lg:p-10 lg:mt-24 mb-10 ">
           {/* คณะบริหารธุรกิจ*/}
           <div
             data-aos="fade-left"

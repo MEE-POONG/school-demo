@@ -12,7 +12,6 @@ export default function About() {
     });
   }, []);
 
-  // useEffect สำหรับจำลองการโหลดรูปภาพทุกตัวในหน้า
   useEffect(() => {
     const images = document.querySelectorAll("img"); // เลือกทุก <img> ในหน้า
     let loadedImages = 0;

@@ -19,21 +19,23 @@ const BackToTopButton = () => {
   }
 
   return (
-    <button
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      style={{
-        position: "fixed",
-        bottom: 20,
-        right: 10,
-        zIndex: 1,
-        // backgroundColor: "#212529",
-        color: "#",
-        padding: "10px 15px",
-        cursor: "pointer"
-      }}
-    >
-      <BsArrowUpCircleFill size={35} color="#fbbf24" />
-    </button>
+    <>
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        style={{
+          position: "fixed",
+          bottom: 20,
+          right: 10,
+          zIndex: 1,
+          // backgroundColor: "#212529",
+          color: "#",
+          padding: "10px 15px",
+          cursor: "pointer"
+        }}
+      >
+        <BsArrowUpCircleFill size={35} color="#fbbf24" />
+      </button>
+    </>
   );
 };
 
