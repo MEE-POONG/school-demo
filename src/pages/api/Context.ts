@@ -37,6 +37,6 @@ async function handleGET(req: NextApiRequest, res: NextApiResponse) {
             contactData: contact,
         });
     } catch (error) {
-        res.status(500).json({ message: "Error fetching HeadPages" });
+        res.status(500).json({ message: "Error fetching Context" });
     }
 }

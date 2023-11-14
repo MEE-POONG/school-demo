@@ -1,10 +1,15 @@
+// AboutPage.tsx
+import React, { useState, useEffect } from 'react';
 import TheLayout from "@/components/TheLayout";
-import { useState, useEffect } from "react"; // เพิ่มการ import useEffect
-import Loading from "@/components/loading"; // เพิ่มการ import คอมโพเนนต์ Loading
-import Aos from "aos";
+import Loading from "@/components/loading";
+import { About } from '@prisma/client';
+import Aos from 'aos';
 
-export default function About() {
-  const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+
+
+const AboutPage: React.FC = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [aboutData, setAboutData] = useState<About | null>(null);
 
   useEffect(() => {
     Aos.init({
@@ -13,34 +18,41 @@ export default function About() {
   }, []);
 
   useEffect(() => {
-    const images = document.querySelectorAll("img"); // เลือกทุก <img> ในหน้า
-    let loadedImages = 0;
+    fetch('/api/About')
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data);
 
-    function handleImageLoad() {
-      loadedImages++;
-      if (loadedImages === images.length) {
+        setAboutData(data);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching about data:', error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    const handleImageLoad = () => {
+      const images = document.querySelectorAll('img');
+      const allLoaded = Array.from(images).every(img => img.complete);
+      if (allLoaded) {
         setIsLoading(false);
       }
-    }
+    };
 
-    images.forEach((img) => {
-      if (img.complete) {
-        handleImageLoad();
-      } else {
-        img.addEventListener("load", handleImageLoad);
-      }
-    });
-
+    window.addEventListener('load', handleImageLoad);
     return () => {
-      images.forEach((img) => {
-        img.removeEventListener("load", handleImageLoad);
-      });
+      window.removeEventListener('load', handleImageLoad);
     };
   }, []);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <TheLayout>
-      {isLoading && <Loading />}
       <div className="relative isolate overflow-hidden px-6 py-24 sm:py-16  sm:pt-32 lg:overflow-visible lg:px-0">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
@@ -81,19 +93,13 @@ export default function About() {
             <div className="lg:pr-4">
               <div className="lg:max-w-lg">
                 <p className="text-base font-semibold leading-7 text-indigo-600">
-                  ข้อมูลสถาบัน
+                  {aboutData?.subTitle}
                 </p>
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  รู้จัก ”พนมวันท์”
+                  {aboutData?.title}
                 </h1>
                 <p className="mt-6 text-sm md:text-base leading-7 text-gray-700 indent-5 ">
-                  วิทยาลัยเทคโนโลยีพนมวันท์ ก่อตั้งขึ้นเมื่อวันที่ 21 พฤศจิกายน
-                  2550 ด้วยเจตนารมณ์ที่ตระหนักถึงความสำคัญของการศึกษา
-                  ในระดับปริญญาตรีอันจะนำไปสู่การพัฒนาทางด้านความคิดทักษะเชิงวิชาชีพมนุษยสัมพันธ์และคุณธรรม
-                  ซึ่งจะช่วยส่งเสริมและพัฒนาเยาวชนและประชาชนในท้องถิ่นโดยเฉพาะจังหวัดนครราชสีมาและจังหวัดใกล้เคียงรวมทั้งประเทศชาติ
-                  แบบยั่งยืน ดังนั้นวิทยาลัยเทคโนโลยีพนมวันท์
-                  จึงจัดให้มีการเรียนการสอน โดยให้ความสำคัญกับการเตรียมความพร้อม
-                  ในด้านศักยกาพและทรัพยากรสนับสนุนต่างๆเพื่อให้การจัดการเรีนการสอนเป็นไปอย่างมีประสิทธิภาพและบรรลุตามปนิธานที่ได้ตั้งไว้
+                  {aboutData?.detail}
                 </p>
               </div>
             </div>
@@ -104,7 +110,9 @@ export default function About() {
           >
             <img
               className="w-full h-40 lg:w-[48rem] md:h-[34rem] object-cover max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-              src="/img/school/panomtext.png"
+              src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${aboutData?.img ||
+                "4500f404-dbac-40f3-6696-ae768a38e800"
+                }/public`}
               alt=""
             />
           </div>
@@ -112,14 +120,7 @@ export default function About() {
             <div className="lg:pr-4 ">
               <div className="max-w-xl text-sm md:text-base leading-7 text-gray-700 lg:max-w-lg indent-5">
                 <p>
-                  วิทยาลัยได้เริ่มเปิดทำการสอนตั้งแต่ปีการศึกษา 2551
-                  ซึ่งได้จัดการเรียนการสอนในหลักสูตรบริหารธุรกิจบัณทิต
-                  และหลักสูตรบัญชีบัณฑิตด้วยความมุ่งมั่นของผู้ก่อตั้ง ผู้บริหาร
-                  และ คณาจารย์ที่จะพัฒนาวิทยาลัยเทคโนโลยีพนมวันท์ ให้มี
-                  ความเจริญก้าวหน้าอย่างต่อเนื่องและมั่นคงสามารถผลิตบุคลากรที่มีคุณค่าต่อสังคมเพื่อตอบสนองต่อความต้องการของท้องถิ่น
-                  และประเทศชาติ พร้อมทั้งเป็นแหล่งข้อมูลเชิงวิชาการให้แก่
-                  ชุมชนและท้องถิ่นทั้งนี้เพื่อให้วิทยาลัยฯ
-                  ได้อย่างแท้จริงตามเจตนารมณ์ของการก่อตั้งวิทยาลัยเทคโนโลยีพนมวันท์
+                  {aboutData?.detailTo}
                 </p>
 
                 <div className="bg-white p-3 shadow-md rounded-lg mt-12">
@@ -228,3 +229,5 @@ export default function About() {
     </TheLayout>
   );
 }
+
+export default AboutPage;
