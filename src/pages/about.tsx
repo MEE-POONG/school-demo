@@ -218,7 +218,9 @@ const AboutPage: React.FC = () => {
       >
         <img
           className="w-full "
-          src="/img/advisor/borad285.png"
+           src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${aboutData?.personChart ||
+                "4500f404-dbac-40f3-6696-ae768a38e800"
+                }/wlg`}
           alt=""
           style={{
             WebkitFilter: "drop-shadow(10px 10px 5px #000000)",
