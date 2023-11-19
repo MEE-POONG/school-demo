@@ -19,7 +19,7 @@ const TheFooter: React.FC = () => {
           <span className="self-center text-xs md:text-base font-medium text-white">
             <p>PHANOMWAN COLLEGE OF TECHNOLOGY</p>
             <hr className="md:w-full h-[1px] lg:w-[400px] xl:w-full bg-white my-1" />
-            <p>{`${context?.contactData?.addressOne} ค.${context?.contactData?.subDistrict} อ.${context?.contactData?.district} จ.${context?.contactData?.province} ${context?.contactData?.zipcode}`}</p>
+            <p>{`${context?.contactData?.addressOne} ${context?.contactData?.addressTwo} ${context?.contactData?.addressThree} ค.${context?.contactData?.subDistrict} อ.${context?.contactData?.district} จ.${context?.contactData?.province} ${context?.contactData?.zipcode}`}</p>
             <p>TEL : {context?.contactData?.tel} &nbsp;FAX : {context?.contactData?.fax}</p>
           </span>
         </div>

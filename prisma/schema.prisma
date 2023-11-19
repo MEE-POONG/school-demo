@@ -169,6 +169,7 @@ model About {
   title         String?
   subTitle      String?
   img           String?
+  logo          String?
   personChart   String?
   detail        String?
   detailTo      String?

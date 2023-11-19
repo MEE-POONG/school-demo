@@ -41,7 +41,7 @@ export const ContactUS: React.FC = () => {
               Address
             </span>
             <p className="text-xs md:text-sm xl:text-base">
-              {`${context?.contactData?.addressOne} ค.${context?.contactData?.subDistrict} อ.${context?.contactData?.district} จ.${context?.contactData?.province} ${context?.contactData?.zipcode}`}
+              {`${context?.contactData?.addressOne} ${context?.contactData?.addressTwo} ${context?.contactData?.addressThree} ค.${context?.contactData?.subDistrict} อ.${context?.contactData?.district} จ.${context?.contactData?.province} ${context?.contactData?.zipcode}`}
             </p>
           </div>
         </div>
