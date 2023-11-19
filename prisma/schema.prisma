@@ -26,6 +26,39 @@ model HeadPage {
   deleted_at DateTime? @map("deleted_at")
 }
 
+model About {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  title         String?
+  subTitle      String?
+  img           String?
+  logo          String?
+  personChart   String?
+  detail        String?
+  detailTo      String?
+  StudyingCount Int?
+  createdAt     DateTime? @default(now())
+  updatedAt     DateTime? @updatedAt
+  deleted_at    DateTime? @map("deleted_at")
+}
+
+model ContactUS {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  addressOne   String?
+  addressTwo   String?
+  addressThree String?
+  subDistrict  String?
+  district     String?
+  province     String?
+  zipcode      String?
+  tel          String?
+  fax          String?
+  email        String?
+  facebook     String?
+  createdAt    DateTime? @default(now())
+  updatedAt    DateTime? @updatedAt
+  deleted_at   DateTime? @map("deleted_at")
+}
+
 model Gallery {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
   img        String?
@@ -45,6 +78,8 @@ model News {
   img        String? // รูปกิจกรรม
   promoteImg String? // รูปกิจกรรม
   date       String? // วันที่
+  startDate  DateTime?
+  endDate    DateTime?
   createdAt  DateTime? @default(now())
   updatedAt  DateTime? @updatedAt
   deleted_at DateTime? @map("deleted_at")
@@ -90,35 +125,17 @@ model CourseList {
   courseGroupId   String?      @db.ObjectId
 }
 
-model ContactUS {
-  id           String    @id @default(auto()) @map("_id") @db.ObjectId
-  addressOne   String?
-  addressTwo   String?
-  addressThree String?
-  subDistrict  String?
-  district     String?
-  province     String?
-  zipcode      String?
-  tel          String?
-  fax          String?
-  email        String?
-  facebook     String?
-  createdAt    DateTime? @default(now())
-  updatedAt    DateTime? @updatedAt
-  deleted_at   DateTime? @map("deleted_at")
-}
-
 model welfare {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
   img        String?
   title      String?
+  subDetail  String?
   detail     String?
   createdAt  DateTime? @default(now())
   updatedAt  DateTime? @updatedAt
   deleted_at DateTime? @map("deleted_at")
 }
 
-// // NO 
 model AdminUser {
   id         String    @id @default(auto()) @map("_id") @db.ObjectId
   username   String?
@@ -162,19 +179,4 @@ model IPAddress {
   createdAt  DateTime? @default(now())
   updatedAt  DateTime? @updatedAt
   deleted_at DateTime? @map("deleted_at")
-}
-
-model About {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
-  title         String?
-  subTitle      String?
-  img           String?
-  logo          String?
-  personChart   String?
-  detail        String?
-  detailTo      String?
-  StudyingCount Int?
-  createdAt     DateTime? @default(now())
-  updatedAt     DateTime? @updatedAt
-  deleted_at    DateTime? @map("deleted_at")
 }
