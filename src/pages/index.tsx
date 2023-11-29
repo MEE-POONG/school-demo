@@ -11,13 +11,13 @@ import HeadderHome from "@/container/Home/HeadderHome";
 export default function Index() {
   return (
     <TheLayout>
-      <HeadderHome />
-      <Menu />
-      <HomeSlider />
+      {/* <HeadderHome /> */}
+      {/* <Menu /> */}
+      {/* <HomeSlider /> */}
       <NewNews />
       <Relations />
-      <Statistics />
-      <ContactUS />
+      {/* <Statistics /> */}
+      {/* <ContactUS /> */}
     </TheLayout>
   );
 }
