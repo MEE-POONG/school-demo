@@ -1,13 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { News } from "@prisma/client";
-import Link from "next/link";
+import { useRouter } from 'next/router';
 
 export const HomeSlider: React.FC = () => {
   const [newsArray, setNewsArray] = useState<News[]>([]);
+  const [mouseDownPos, setMouseDownPos] = useState({ x: 0, y: 0 });
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const handleMouseDown = (e: React.MouseEvent<HTMLImageElement>) => {
+    setMouseDownPos({ x: e.clientX, y: e.clientY });
+  };
+
+  const handleMouseUp = (newsId: string, e: React.MouseEvent<HTMLImageElement>) => {
+    if (Math.abs(mouseDownPos.x - e.clientX) < 5 && Math.abs(mouseDownPos.y - e.clientY) < 5) {
+      router.push(`/news/${newsId}`);
+    }
+  };
   useEffect(() => {
     fetch(`/api/news/promoteimg`)
       .then((response) => {
@@ -34,7 +45,6 @@ export const HomeSlider: React.FC = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
   const settings = {
     infinite: true,
     autoplay: true,
@@ -69,19 +79,21 @@ export const HomeSlider: React.FC = () => {
       }
     ]
   };
-
   return (
     <div className="container mx-auto drop-shadow-xl">
       <Slider {...settings} className="no-slick-arrow">
         {newsArray.map((news) => (
           <div key={news.id}>
-            <Link key={news.id} href={`/news/${news.id}`}>
+            <div className="w-full aspect-[21/9] ">
               <img
-                className="w-full h-full rounded-md"
+                onDragStart={(e) => e.preventDefault()}
+                onMouseDown={handleMouseDown}
+                onMouseUp={(e) => handleMouseUp(news.id, e)}
+                className="w-full h-full rounded-md object-cover"
                 src={`https://imagedelivery.net/QZ6TuL-3r02W7wQjQrv5DA/${news.promoteImg}/700`}
                 alt=""
               />
-            </Link>
+            </div>
           </div>
         ))}
       </Slider>
