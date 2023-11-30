@@ -71,6 +71,8 @@ export default function NewsPage() {
         setError(error.message);
         setIsLoading(false);
       });
+
+
   }, []);
 
   const handleLoadMore = (keyword: string) => {
@@ -88,6 +90,13 @@ export default function NewsPage() {
           console.log(data?.data);
           setNewsArray(prevNewsArray => [...prevNewsArray, ...data?.data]);
           setIsLoading(false);
+          const updatedArray = checkPage.map(item => {
+            if (item?.type === keyword) {
+              return { ...item, page: item.page + 1 };
+            }
+            return item;
+          });
+          setCheckPage(updatedArray);
         })
         .catch((error) => {
           console.error("Error:", error);
