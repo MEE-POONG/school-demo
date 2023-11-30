@@ -29,7 +29,7 @@ export default async function handler(
 
 async function handleGET(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const { page = '1', pageSize = '10', search, type } = req.query as QueryParams;
+    const { page = '1', pageSize = '10', search, } = req.query as QueryParams;
 
     const pageNum = parseInt(page, 10) || 1;
     const pageSizeNum = parseInt(pageSize, 10) || 10;
