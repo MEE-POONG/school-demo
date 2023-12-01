@@ -45,7 +45,7 @@ const TheFooter: React.FC = () => {
             <div className="bg-white w-full h-[0.25px] md:hidden mb-1"></div>
             <ul className="text-white text-xs md:text-sm">
               <li className="mb-1">
-                <Link href="/register" className="hover:underline ">
+                <Link href="/applyToStudy" className="hover:underline ">
                   สมัครเรียน
                 </Link>
               </li>
