@@ -30,7 +30,11 @@ export default async function handler(
 
 async function handleGET(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const courseGroups = await prisma.courseGroup.findMany();
+    const courseGroups = await prisma.courseGroup.findMany({
+      include: {
+        CourseList: true // Include CourseGroup data if needed
+      }
+    });
     res.status(200).json(courseGroups);
   } catch (error) {
     res.status(500).json({ message: "Error fetching course groups" });

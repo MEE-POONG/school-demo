@@ -6,9 +6,32 @@ import TermFees from "@/container/Register/TermFees";
 import Aos from "aos";
 import TermFeesTabletwo from "@/container/Register/TermFeesTabletwo";
 import AdditionnalCosts from "@/container/Register/Additionalcosts";
+import useAxios from "axios-hooks";
 
 export default function HowToApplyPage() {
   const [isLoading, setIsLoading] = useState(true); // เริ่มต้น isLoading เป็น true
+  const [courseALL, setCourseAll] = useState();
+
+
+  useEffect(() => {
+    fetch(`/api/CourseGroup`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        
+        setCourseAll(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setIsLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     Aos.init({
@@ -42,6 +65,7 @@ export default function HowToApplyPage() {
       });
     };
   }, []);
+
   return (
     <TheLayout>
       {isLoading && <Loading />}{" "}
@@ -103,9 +127,12 @@ export default function HowToApplyPage() {
             </div>
           </div>
         </div>
-        <TermFees />
-        <TermFeesTabletwo />
-        <AdditionnalCosts/>
+        {courseALL && <>
+          <TermFees list={courseALL} />
+          <TermFeesTabletwo list={courseALL} />
+        </>
+        }
+        <AdditionnalCosts />
 
       </div>
     </TheLayout>
