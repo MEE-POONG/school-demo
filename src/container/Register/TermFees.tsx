@@ -11,14 +11,14 @@ const TermFees: React.FC = () => {
   //   method: "GET",
   // });
 
-  const [{ data, loading, error }, getCourseList] = useAxios({
-    url: `/api/CourseGroup`,
-    method: "GET",
-  });
+  // const [{ data, loading, error }, getCourseList] = useAxios({
+  //   url: `/api/CourseGroup`,
+  //   method: "GET",
+  // });
 
-  useEffect(() => {
-    console.log("data : ",data);
-  }, [data]);
+  // useEffect(() => {
+  //   console.log("data : ",data);
+  // }, [data]);
   return (
     <>
       <Card className="h-full w-full overflow-x-auto my-8">

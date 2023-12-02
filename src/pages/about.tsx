@@ -18,7 +18,7 @@ const AboutPage: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetch('/api/About')
+    fetch('/api/about')
       .then(response => response.json())
       .then((data) => {
         console.log(data);
