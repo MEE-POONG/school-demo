@@ -1,8 +1,24 @@
 import { CourseGroup, CourseList } from "@/data/TermFees";
 import { Card } from "@material-tailwind/react";
-import React from "react";
+import useAxios from "axios-hooks";
+import React, { useEffect } from "react";
+
 
 const TermFees: React.FC = () => {
+
+  // const [{ data, loading, error }, getCourseGroup] = useAxios({
+  //   url: `/api/CourseGroup`,
+  //   method: "GET",
+  // });
+
+  const [{ data, loading, error }, getCourseList] = useAxios({
+    url: `/api/CourseGroup`,
+    method: "GET",
+  });
+
+  useEffect(() => {
+    console.log("data : ",data);
+  }, [data]);
   return (
     <>
       <Card className="h-full w-full overflow-x-auto my-8">
@@ -16,12 +32,7 @@ const TermFees: React.FC = () => {
               >
                 สาขาวิชา
               </th>
-              {/* <th
-                colSpan={3}
-                className="p-4 w-72 border border-slate-600 text-center border-l"
-              >
-                กองทุนกู้ยืม<span>*</span>
-              </th> */}
+      
               <th
                 rowSpan={2}
                 className="p-4 w-32 border border-slate-600  border-l"
@@ -36,34 +47,9 @@ const TermFees: React.FC = () => {
                 <br />
                 (จบ ม.6/ปวช./เทียบเท่า)
               </th>
-              {/* <th
-                rowSpan={2}
-                className="p-4 w-32 border border-slate-600  border-l"
-              >
-                ค่าเล่าเรียนรวม
-                <br />
-                ตลอดหลักสูตร<span>**</span>
-                <br />
-                (ยังไม่รวมส่วนลดทุน){" "}
-              </th> */}
+             
             </tr>
-            {/* <tr>
-              <th className="p-4 w-24 border border-slate-600 text-center border-l">
-                กยศ.
-                <br />
-                ลักษณะที่ 1
-              </th>
-              <th className="p-4 w-24 border border-slate-600 text-center border-l">
-                กยศ.
-                <br />
-                ลักษณะที่ 2
-              </th>
-              <th className="p-4 w-24 border border-slate-600 text-center border-l">
-                กยศ.
-                <br />
-                ลักษณะที่ 3
-              </th>
-            </tr> */}
+        
           </thead>
           <tbody>
             {CourseGroup.map((group) => (
@@ -80,24 +66,12 @@ const TermFees: React.FC = () => {
                     <td className="w-56 text-center border-l p-4">
                       {branch.FieldStudy}
                     </td>
-                    {/* <td className="w-24 text-center border-l p-4">
-                      {branch.kysOne ? "yes" : "no"}
-                    </td>
-                    <td className="w-24 text-center border-l p-4">
-                      {branch.kysTwo ? "yes" : "no"}
-                    </td>
-                    <td className="w-24 text-center border-l p-4">
-                      {branch.kysThree ? "yes" : "no"}
-                    </td> */}
                     <td className="w-32 text-center border-l p-4">
                       {branch.First}
                     </td>
                     <td className="w-32 text-center border-l p-4">
                       {branch.Second}
                     </td>
-                    {/* <td className="w-32 text-center border-l p-4">
-                      {branch.Sum}
-                    </td> */}
                   </tr>
                 ))}
               </React.Fragment>
