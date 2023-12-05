@@ -175,7 +175,7 @@ export const NewNews: React.FC = () => {
                 </Card>
               </div>
             ))}
-            {newsArray?.length < 4 &&
+            {/* {newsArray?.length < 4 &&
               Array.from({ length: 4 - newsArray.length }, (_, index) => (
                 <div key={index}>
                   <Card className="my-6 w-72 overflow-hidden mx-auto">
@@ -232,7 +232,7 @@ export const NewNews: React.FC = () => {
                   </Card>
                 </div>
               ))
-            }
+            } */}
           </Slider>
         </TabsBody>
       </Tabs>

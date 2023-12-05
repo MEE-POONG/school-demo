@@ -111,7 +111,7 @@ export const Relations: React.FC = () => {
                   </Link>
                 </li>
               ))}
-              {newsArray?.length < 10 &&
+              {/* {newsArray?.length < 10 &&
                 Array.from({ length: 10 - newsArray.length }, (_, index) => (
                   <li key={index} className="flex">
                     <Link
@@ -136,7 +136,7 @@ export const Relations: React.FC = () => {
                     </Link>
                   </li>
 
-                ))}
+                ))} */}
             </ul>
             <div className="text-center">
               <Link
